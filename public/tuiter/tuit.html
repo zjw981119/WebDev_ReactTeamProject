@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- navigate back to previous screen -->
+    <a href="navigation.html">Back</a>
+
+
+    <h1>Tuiter</h1>
+
+    <h2>Home</h2>
+    <!--  avatar  -->
+    <img src="../labs/a2/Splatoon3_illu_01.0.jpg"
+         height="48px" width="48px"/>
+    <!--  Post tuit  -->
+    <form id="textarea">
+            <textarea id="long-text" placeholder="What's happening?"
+                      cols="20" rows="5"></textarea>
+    </form>
+    <!--  Set permission -->
+    <select id="select-one-permission">
+        <!--   Default value  -->
+        <option value="EVERYONE" selected>Everyone can reply</option>
+        <option value="FOLLOWING">People you follow</option>
+        <option  value="MENTIONED">Only people you mention</option>
+    </select>
+    <!--  Buttons  -->
+    <hr>
+    <div>
+        <input type="file"/>
+        <button>Tuit</button>
+    </div>
+    <hr>
+</body>
+</html>
