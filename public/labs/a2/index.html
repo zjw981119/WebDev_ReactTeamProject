@@ -25,6 +25,15 @@
         <li>
             <a href="#embedding-slides">Embedding Google slide</a>
         </li>
+        <li>
+            <a href="#drawing-rectangles">Drawing rectangles</a>
+        </li>
+        <li>
+            <a href="#drawing-circles">Drawing circles</a>
+        </li>
+        <li>
+            <a href="#drawing-polygons">Drawing polygons</a>
+        </li>
     </ul>
 
     <h2>Heading Tags</h2>
@@ -276,7 +285,6 @@
     to get dummy text<br/>
 
     Checkout my <a href="other-page.html">other page</a> <br>
-    Checkout my <a href="svg/index.html">svg page</a>
 
     <!--  declaring a location on the page for href -->
     <a id="embedding-website"></a>
@@ -315,6 +323,39 @@
             webkitallowfullscreen="true">
     </iframe>
 
+
+    <a id="drawing-rectangles"></a>
+    <h2>Drawing rectangles</h2>
+    <a href="#top">Top</a><br>
+
+    <!--  svg: define an area to draw shapes  -->
+    <svg width="300" height="300">
+        <!--  draw rectangle  -->
+        <rect width="300" height="300"
+              style="fill:rgb(0,0,255);
+                  stroke-width:10;
+           stroke:rgb(0,0,0)"/>
+    </svg>
+
+    <a id="drawing-circles"></a>
+    <h2>Drawing circles</h2>
+    <a href="#top">Top</a><br>
+
+    <svg width="300" height="300">
+        <!--   cx,cy circle center  -->
+        <circle cx="150" cy="150" r="100"
+                stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+
+    <a id="drawing-polygons"></a>
+    <h2>Drawing polygons</h2>
+    <a href="#top">Top</a><br>
+
+    <svg width="300" height="200">
+        <!-- polygon tag allows drawing any shape  -->
+        <polygon points="100,10 40,198 190,78 10,78 160,198"
+                 style="fill:lime; stroke:black; stroke-width:5; fill-rule:evenodd;" />
+    </svg>
 
 </body>
 </html>
