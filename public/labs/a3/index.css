@@ -1,0 +1,246 @@
+/*p {*/
+/*    background-color: blue;*/
+/*    color: white;*/
+/*}*/
+
+/* using ID selectors */
+p#id-selector-1 {
+    background-color: red;
+    color: white;
+}
+p#id-selector-2 {
+    background-color: yellow;
+    color: black;
+}
+
+/* using Class selectors */
+.class-selector {
+    background-color: yellow;
+    color: blue;
+}
+
+/* refers to .selector-3 as a descendant of .selector-1   */
+.selector-1 .selector-3 {
+    background-color: red;
+    color: white;
+}
+
+/* refers to .selector-4 as a direct child of .selector-3 */
+/* which is a direct child of .selector-2                 */
+.selector-2 > .selector-3 > .selector-4 {
+    background-color: yellow;
+    color: blue;
+}
+
+/* use string / hexadecimals to represent colors */
+.fg-color-black { color: black; }
+.fg-color-white { color: white; }
+.fg-color-blue { color: #7070ff; }
+.fg-color-red { color: #ff7070; }
+.fg-color-green { color: green; }
+
+.bg-color-yellow {
+    background-color: #ffff07;
+}
+.bg-color-blue {
+    background-color: #7070ff;
+}
+.bg-color-red {
+    background-color: #ff7070;
+}
+.bg-color-green {
+    background-color: green;
+}
+
+/* Borders */
+.border-fat {
+    border-width: 20px 30px 20px 30px; }
+.border-thin {
+    border-width: 4px; }
+.border-solid {
+    border-style: solid; }
+.border-dashed {
+    border-style: dashed; }
+.border-yellow {
+    border-color: #ffff07; }
+.border-red {
+    border-color: #ff7070; }
+.border-blue {
+    border-color: #7070ff; }
+
+/* padding: spaces between the internal element within the container
+   may also change the size of container */
+.padded-top-left {
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+.padded-bottom-right {
+    padding-bottom: 50px;
+    padding-right: 50px;
+}
+
+.padding-fat {
+    padding: 50px;
+}
+
+/* margin: spaces between containers */
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
+.margin-right-left {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.margin-all-around {
+    margin: 30px;
+}
+
+/* configure corners */
+.rounded-corners-top {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.rounded-corners-bottom {
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.rounded-corners-all-around {
+    border-radius: 50px;
+}
+
+
+.rounded-corners-inline {
+    /* top-left, top-right, bottom-right, bottom-left */
+    border-radius: 30px 0px 20px 50px;
+}
+
+/* configure width and height */
+.dimension-portrait {
+    width: 75px;
+    height: 100px;
+}
+
+.dimension-landscape {
+    width: 100px;
+    height: 75px;
+}
+
+.dimension-square {
+    width: 75px;
+    height: 75px;
+}
+
+/* Relative positions */
+.pos-relative-nudge-up-right {
+    position: relative;
+    bottom: 30px;
+    left: 30px;
+}
+
+.pos-relative-nudge-down-right {
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+/* Absolute positions */
+.pos-absolute-10-10 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.pos-absolute-50-50 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.pos-absolute-120-20 {
+    position: absolute;
+    top: 20px;
+    left: 120px;
+}
+
+/* fixed position
+   setting the element relative to the window.
+*/
+.pos-fixed {
+    position: fixed;
+    right: 0px;
+    bottom: 50%;
+}
+
+/*
+    Elements declared later render on top of elements declared earlier(without using z-index)
+    Default value of z-index is auto, which corresponds to 0.
+    Increasing z-index can make elements render later, or on top of, others.
+ */
+.zindex-bring-to-front {
+    z-index: 10;
+}
+
+/* lay out horizontally */
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+    height: 100px;
+}
+
+/*
+    The clear property is used to specify which side of floating elements
+    are not allowed to float.
+*/
+.float-done {
+    clear: both;
+}
+
+/*grid layout*/
+.grid-row {
+    clear: both;
+}
+
+.grid-col-half-page {
+    /* percentage width relative to window */
+    width: 50%;
+    float: left;
+}
+
+.grid-col-third-page {
+    width: 33%;
+    float: left;
+}
+
+.grid-col-two-thirds-page {
+    width: 67%;
+    float: left;
+}
+
+.grid-col-left-sidebar {
+    width: 20%;
+    float: left;
+}
+
+.grid-col-main-content {
+    width: 60%;
+    float: left;
+}
+
+.grid-col-right-sidebar {
+    width: 20%;
+    float: left;
+}
+
+

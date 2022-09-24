@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <style>-->
+    <!--        p {-->
+    <!--            background-color: blue;-->
+    <!--            color: white;-->
+    <!--        }-->
+    <!--    </style>-->
+
+    <!--    The rel attribute specifies the relationship
+        between the current document and the linked document.-->
+    <link href="index.css"
+          rel="stylesheet"/>
+</head>
+<body>
+    <h1>Cascading Style Sheet (CSS)</h1>
+    <h2>Style attribute and tag</h2>
+    <h3>Style attribute</h3>
+    <p style="background-color: blue; color: white">
+        Style attribute allows configuring look
+        and feel right on the element. Although it's
+        very convenient it is considered bad practice
+        and you should avoid using the style attribute
+    </p>
+
+    <h3>Style tag</h3>
+    <p>
+        A slightly better way to configure look and feel
+        is to declare CSS rules in the STYLE tag in the
+        header and then refer to the tag by their name,
+        ID, or class This paragraph's style is set by a
+        rule referring to the P tags
+    </p>
+
+    <h3>Link tag</h3>
+    <p>
+        The best way to apply CSS rules is to declare
+        them in a separate CSS file and load it with
+        the LINK tag. Always use this method.
+    </p>
+
+    <h3>ID selectors</h3>
+    <p id="id-selector-1">
+        Instead of changing the look and
+        feel of all the elements of the
+        same name, e.g., P, we can refer
+        to a specific element by its ID
+    </p>
+    <p id="id-selector-2">
+        Here's another paragraph using a
+        different ID and a different look
+        and feel
+    </p>
+
+    <h3>Class selectors</h3>
+    <p class="class-selector">
+        Instead of using IDs to refer
+        to elements, you can use an
+        element's CLASS attribute</p>
+    <h4 class="class-selector">
+        This heading has same style as
+        paragraph above</h4>
+
+    <div class="selector-1">
+        <h3>Document structure selectors</h3>
+        <div class="selector-2">
+            Selectors can be combined to refer elements in
+            particular places in the document
+            <p class="selector-3">
+                This paragraph's red background is referenced as
+                <br/>.selector-2 .selector3<br/>
+                meaning the descendant of some ancestor.
+                <br/>
+                <span class="selector-4">Whereas this span is a
+             direct child of its parent</span>
+                <br/>
+                You can combine these relationships to create
+                specific styles depending on the document
+                structure
+            </p>
+        </div>
+    </div>
+
+    <h2>Colors</h2>
+    <!--  foreground colors  -->
+    <h3 class="fg-color-blue">Foreground color</h3>
+    <p class="fg-color-red">
+        The text in this paragraph is red but
+        <span class="fg-color-green">this text is green</span>
+    </p>
+    <!-- background colors  -->
+    <h3 class="bg-color-blue fg-color-white">Background color</h3>
+    <p class="bg-color-red fg-color-black">
+        This background of this paragraph is red but
+        <span class="bg-color-green fg-color-white"> the background
+                    of this text is green and the foreground white</span>
+    </p>
+
+    <!--  Borders  -->
+    <h2>Borders</h2>
+    <p class="border-fat border-red border-solid">
+        Solid fat red border</p>
+    <p class="border-thin border-blue border-dashed">
+        Dashed thin blue border</p>
+
+    <!--  Padding  -->
+    <h2>Padding</h2>
+    <div class="padded-top-left border-fat
+                    border-red border-solid
+                    bg-color-yellow">
+        Padded top left
+    </div>
+
+    <div class="padded-bottom-right border-fat
+                    border-blue border-solid
+                    bg-color-yellow">
+        Padded bottom right
+    </div>
+
+    <div class="padding-fat border-fat
+                    border-yellow border-solid
+                    bg-color-blue fg-color-white">
+        Padded all around
+    </div>
+
+    <!--  Margins  -->
+    <h2>Margins</h2>
+    <div class="margin-bottom
+                    padded-top-left
+                    border-fat border-red
+                    border-solid
+                    bg-color-yellow">
+        Margin bottom
+    </div>
+
+    <div class="margin-right-left
+                    padded-bottom-right
+                    border-fat border-blue
+                    border-solid
+                    bg-color-yellow">
+        Margin left right
+    </div>
+
+    <div class="margin-all-around
+                    padding-fat border-fat
+                    border-yellow
+                    border-solid
+                    bg-color-blue
+                    fg-color-white">
+        Margin all around
+    </div>
+
+    <!--  configure corners  -->
+    <h3>Rounded corners</h3>
+    <p class="rounded-corners-top border-thin border-blue border-solid padding-fat">
+        Rounded corners on the top
+    </p>
+    <p class="rounded-corners-bottom border-thin border-blue border-solid padding-fat">
+        Rounded corners at the bottom
+    </p>
+    <p class="rounded-corners-all-around border-thin border-blue border-solid padding-fat">
+        Rounded corners all around
+    </p>
+    <p class="rounded-corners-inline border-thin border-blue border-solid padding-fat">
+        Different rounded corners
+    </p>
+
+    <!-- configure width and height -->
+    <h2>Dimension</h2>
+    <div>
+        <div class="dimension-portrait bg-color-yellow">
+            Portrait
+        </div>
+        <div class="dimension-landscape bg-color-blue
+                       fg-color-white">
+            Landscape
+        </div>
+        <div class="dimension-square bg-color-red">
+            Square
+        </div>
+    </div>
+
+    <!--  Relative position  -->
+    <h2>Position</h2>
+    <h3>Relative</h3>
+    <div>
+        <div class="bg-color-yellow
+                     dimension-portrait">
+            <!--   Set the portrait position   -->
+            <div class="pos-relative-nudge-down-right">
+                Portrait
+            </div>
+        </div>
+        <!--   Set the container position   -->
+        <div class="pos-relative-nudge-up-right
+                     bg-color-blue fg-color-white
+                     dimension-landscape">
+            Landscape
+        </div>
+        <div class="bg-color-red dimension-square">
+            Square
+        </div>
+    </div>
+
+    <!--  Absolute position  -->
+    <h3>Absolute position</h3>
+    <div class="pos-relative">
+        <div class="pos-absolute-10-10
+            bg-color-yellow dimension-portrait">
+            Portrait
+        </div>
+        <div class="pos-absolute-50-50
+                bg-color-blue fg-color-white
+                dimension-landscape">
+            Landscape
+        </div>
+        <div class="pos-absolute-120-20
+                bg-color-red dimension-square">
+            Square
+        </div>
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/>
+
+    <!--Fixed position-->
+    <h3>Fixed position</h3>
+
+    Checkout the blue square that says
+    "Fixed position" stuck all the way
+    on the right and half way down the
+    page. It doesn't scroll with the
+    rest of the page. Its position is
+    "Fixed".
+
+    <div class="pos-fixed
+                dimension-square
+                bg-color-blue
+                fg-color-white">
+        Fixed position
+    </div>
+
+    <h2>Z index</h2>
+    <div class="pos-relative">
+        <div class="pos-absolute-10-10
+            bg-color-yellow
+            dimension-portrait">
+            Portrait
+        </div>
+        <div class="zindex-bring-to-front
+            pos-absolute-50-50
+            bg-color-blue fg-color-white
+            dimension-landscape">
+            Landscape
+        </div>
+        <div class="pos-absolute-120-20
+            bg-color-red dimension-square">
+            Square
+        </div>
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/>
+
+    <!--  lay out content horizontally  -->
+    <h2>Float</h2>
+    <div>
+        <div class="float-left dimension-portrait bg-color-yellow">
+            Yellow
+        </div>
+        <div class="float-left dimension-portrait bg-color-blue fg-color-white">
+            Blue
+        </div>
+        <div class="float-left dimension-portrait bg-color-red">
+            Red
+        </div>
+        <img class="float-right" src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"/>
+        <div class="float-done"></div>
+    </div>
+
+    <!--Grid layout-->
+    <h2>Grid layout</h2>
+
+    <div class="grid-row">
+        <div class="grid-col-half-page bg-color-yellow">
+            <h3>Left half</h3>
+        </div>
+        <div class="grid-col-half-page bg-color-blue
+                  fg-color-white">
+            <h3>Right half</h3>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="grid-col-third-page bg-color-green
+                  fg-color-white">
+            <h3>Left third</h3>
+        </div>
+        <div class="grid-col-two-thirds-page bg-color-red
+                  fg-color-white">
+            <h3>Right two thirds</h3>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="grid-col-left-sidebar bg-color-yellow">
+            <h3>Side bar</h3>
+            <p>This is the left sidebar</p>
+        </div>
+        <div class="grid-col-main-content bg-color-blue
+                  fg-color-white">
+            <h3>Main content</h3>
+            <p>This is the main content. This is the main content.
+                This is the main content. </p>
+        </div>
+        <div class="grid-col-right-sidebar bg-color-green
+                  fg-color-white">
+            <h3>Side bar</h3>
+            <p>This is the right sidebar</p>
+        </div>
+    </div>
+
+</body>
+</html>
