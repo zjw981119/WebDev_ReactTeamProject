@@ -147,7 +147,14 @@ p#id-selector-2 {
     top: 20px;
     left: 20px;
 }
+/*
+set the position as relative, declare the container as an anchor for other elements within it(absolute)
 
+When an element is assigned absolute it is removed from the normal document flow,
+and no space is created for the element in the page layout.
+It is positioned relative to its closest positioned ancestor if any;
+otherwise, it is placed relative to the initial containing block, body.
+*/
 .pos-relative {
     position: relative;
 }
@@ -242,5 +249,294 @@ p#id-selector-2 {
     width: 20%;
     float: left;
 }
+
+/* Rotate 90 degrees clockwise*/
+.rotate-paragraph {
+    width: 250px;
+    height: 250px;
+    transform: rotate(90deg);
+}
+
+/* Rotate 12 degrees clockwise*/
+.rotate-list-clockwise {
+    transform: rotate(12deg);
+    width: 100px;
+    background-color: red;
+    color: white;
+}
+
+/* Rotate 12 degrees counter clockwise*/
+.rotate-list-counter-clockwise {
+    transform: rotate(-12deg);
+    width: 100px;
+    background-color: red;
+    color: white;
+}
+
+/* set different rotate degree for each child of ul*/
+.rotate-list-items li {
+    width: 100px;
+    text-align: right;
+}
+.rotate-list-items li:nth-child(1) {
+    transform: rotate(-10deg);
+    background-color: yellow;
+}
+.rotate-list-items li:nth-child(2) {
+    transform: rotate(2deg);
+    background-color: blue;
+    color: white;
+}
+.rotate-list-items li:nth-child(3) {
+    transform: rotate(10deg);
+    background-color: red;
+}
+
+/* Rotate an image */
+.rotate-image {
+    transform: rotate(-10deg);
+}
+
+/* Rotate a table */
+.rotate-table {
+    position: relative;
+    left: 50px;
+    /*border: solid 1px black;*/
+    transform: rotate(15deg);}
+.rotate-table tr:nth-child(1) {
+    background-color: black;
+    color: white;}
+.rotate-table tr:nth-child(n+2) {
+    background-color: yellow;}
+.rotate-table tr:nth-child(n+5) {
+    background-color: blue;
+    color: white;}
+.rotate-table tr:nth-child(n+8) {
+    background-color: red;}
+.rotate-table tr:nth-child(n+11) {
+    background-color: green;
+    color: white;
+}
+
+/* color gradients
+   up to down
+*/
+.gradients-linear {
+    /* from lawngreen to orange */
+    background: linear-gradient(lawngreen, orange);
+    width: 200px;
+    height: 200px;
+}
+
+/* middle to border */
+.gradients-radial {
+    background: radial-gradient(yellow, red);
+    width: 200px;
+    height: 200px;
+}
+
+/* from top left to right bottom*/
+.gradients-positioned {
+    background:
+            radial-gradient(
+                    at top left, blue, red);
+    width: 200px;
+    height: 200px;
+    color: white;
+}
+
+/* animation */
+.animation-keyframes {
+    position: relative;
+    top: 0px;
+    animation-duration: 7s;
+    animation-name: slidein;
+    /* iterate times */
+    /*animation-iteration-count: infinite;*/
+    /* forward then backward */
+    animation-direction: alternate;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    color: white;
+}
+
+@keyframes slidein {
+    from {
+        position: relative;
+        top: 0px;
+        font-size: 100%;
+        margin-left: 100%;
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        color: black;
+    }
+    50% {
+        position: relative;
+        top: -200px;
+        font-size: 300%;
+        margin-left: 25%;
+        width: 400px;
+        height: 400px;
+        background-color: blue;
+        color: white;
+    }
+
+    to {
+        position: relative;
+        top: 0px;
+        font-size: 100%;
+        margin-left: 0%;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        color: white;
+    }
+}
+
+
+/* boxes */
+.flex-container {
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+}
+.flex-box {
+    border: 5px gray solid;
+    margin: 10px;
+    padding: 10px;
+}
+.flex-box-1 {
+    background-color: yellow;
+}
+.flex-box-2 {
+    background-color: blue;
+    color: white;
+}
+.flex-box-3 {
+    background-color: red;
+    color: white;
+}
+
+/* Aligning flex elements horizontally */
+.flex-container-horizontal {
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    /* By default flex elements are aligned to the left in their container.*/
+    display: flex;
+}
+
+.flex-container-center {
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container-end {
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: end;
+}
+
+.flex-container-space-around {
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-container-space-between {
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-container-vertical {
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: space-evenly;
+    /* align from top */
+    align-items: flex-start;
+}
+
+.flex-container-vertical-center {
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: space-evenly;
+    /* align from center */
+    align-items: center;
+}
+
+/* stretch evenly horizontally and vertically to fill their container */
+.flex-container-stretch {
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    /*justify-content: space-evenly;*/
+    /*align-items: center;*/
+}
+
+.flex-container-stretch > .flex-box {
+    flex-basis: 100%;
+}
+
+/* change styles when screen size changed */
+.media-container {
+    padding: 10px;
+}
+
+/* 0 - 600px */
+@media (min-width: 0px)
+and (max-width: 600px) {
+    .media-container {
+        background-color: yellow;
+    }
+    .media-query {
+        background-color: red;
+        color: white;
+    }
+}
+/* 600 - 1200px */
+@media (min-width: 600px)
+and (max-width: 1200px) {
+    .media-container {
+        background-color: blue;
+        color: white;
+    }
+    .media-query {
+        background-color: yellow;
+        color: black;
+    }
+}
+/* 1200 - 1800px */
+@media (min-width: 1200px)
+and (max-width: 1800px) {
+    .media-container {
+        background-color: red;
+        color: white;
+    }
+    .media-query {
+        background-color: blue;
+        color: white;
+    }
+}
+
+
+
+
 
 
