@@ -1,0 +1,121 @@
+.wd-main-container {
+    width: 598px;
+}
+/* Bookmark */
+.wd-bookmark-container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: rgb(47,51,54) solid 1px;
+}
+.wd-bookmark-container .wd-bookmark-left .wd-bookmark-title{
+    color: white;
+    font-size: 20px;
+}
+
+.wd-bookmark-container .wd-bookmark-left .wd-user-handler{
+    color: lightgray;
+    font-size: 13px;
+    padding-bottom: 12px;
+}
+
+.wd-bookmark-container .wd-bookmark-right{
+    color: rgb(29,161,242);
+}
+
+.wd-post{
+    display: flex;
+    border: rgb(47,51,54) solid 1px;
+}
+.wd-avatar-img{
+    margin-top: 12px;
+    margin-left: 16px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+/*post*/
+.wd-post-body{
+    padding-top: 12px;
+    padding-left: 12px;
+}
+/*author*/
+.wd-post-author{
+    display: flex;
+    justify-content: space-between;
+}
+.wd-post-author .wd-author-right{
+}
+.wd-post-author .wd-author-left{
+    font-size: 15px;
+}
+.wd-post-author .wd-author-left .wd-author-handler{
+    color: lightgray;
+}
+.wd-post-author .wd-author-right{
+    color: lightgray;
+    margin-right: 16px;
+}
+
+.wd-post-content{
+    color: white;
+    font-size: 15px;
+    width: 506px;
+    padding-right: 16px;
+    margin-bottom: 12px;
+}
+
+.wd-post-img{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 504px;
+    height: 264px;
+}
+
+/* article */
+.wd-article-container{
+    width: 504px;
+    border: solid 1px rgb(47, 51, 54);
+    border-radius: 25px;
+}
+.wd-post-article{
+    width: 504px;
+}
+
+.wd-article-title{
+    padding: 12px;
+    color: white;
+    font-size: 15px;
+}
+
+.wd-article-content{
+    padding: 12px;
+    color: lightgray;
+    font-size: 15px;
+}
+
+.wd-post-status{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+}
+
+.wd-status-number{
+}
+.wd-status-link{
+    color: lightgray;
+    background-color: transparent;
+    /* remove link underline */
+    text-decoration: none;
+}
+
+.heart{
+    color: red;
+}
+.wd-status-link .wd-status-number{
+    padding-left: 12px;
+}
