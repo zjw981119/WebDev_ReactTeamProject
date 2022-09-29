@@ -1,0 +1,128 @@
+body {
+    font-family: "Times New Roman";
+    background-color: black;
+    color: white;
+}
+
+.wd-main-container {
+    margin-top: 12px;
+    margin-left: 16px;
+}
+
+.wd-first-row-container{
+    display: flex;
+    justify-content: space-between;
+
+}
+.wd-search-container{
+    margin-left: 16px;
+    border-radius: 25px;
+    background-color: darkgray;
+    width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.wd-search-container .wd-search-icon{
+    margin-right: 12px;
+}
+/* input */
+.wd-search-container .wd-search{
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background-color: darkgray;
+    color: white;
+}
+
+/* Gear Settings */
+.wd-settings-icons{
+    display: flex;
+    align-items: center;
+    font-size:26px;
+    margin-right: 12px;
+}
+.wd-settings-icons .wd-link{
+    color: rgb(29,161,242);
+    background-color: transparent;
+    /* remove link underline */
+    text-decoration: none;
+}
+
+/* navigation tabs */
+.wd-nav-tabs{
+    color: rgb(110,118,125);
+    padding: 0;
+    display: flex;
+}
+
+/* remove bullet buttons */
+.wd-nav-tabs li{
+    font-size: 15px;
+    padding: 16px;
+    list-style-type: none;
+    display: inline-block;
+    /* fulfill the container*/
+    flex:1;
+    text-align:center;
+}
+
+.wd-nav-selected{
+    color: rgb(29,161,242);
+    padding-bottom: 10px;
+    border-bottom: rgb(29,161,242) solid 4px;
+}
+
+/* tuit container*/
+.wd-tuit-container{
+    display: flex;
+    justify-content: space-between;
+    border: solid 2px rgb(47, 51, 54);
+    padding-left: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.wd-tuit-container .wd-suggested-left{
+    width: 85%;
+}
+
+.wd-topic{
+    font-size: 13px;
+    color: rgb(110,118,125);
+}
+
+.wd-tuit-number{
+    font-size: 13px;
+    color: rgb(110,118,125);
+}
+
+
+.wd-tuit-container .wd-suggested-right{
+    color: rgb(110,118,125);
+    margin-right: 16px;
+}
+
+/* image tuit */
+.wd-tuit-container .wd-image-tuit-left{
+    width: 80%;
+}
+
+.wd-tuit-container .wd-image-tuit-left .wd-author{
+    font-size: 13px;
+}
+
+.wd-tuit-container .wd-image-tuit-left .wd-time{
+    font-size: 13px;
+    color: rgb(110,118,125);
+}
+.wd-tuit-container .wd-img{
+    border-radius: 25px;
+    margin-right: 16px;
+    width: 100px;
+    height: 100px;
+}
