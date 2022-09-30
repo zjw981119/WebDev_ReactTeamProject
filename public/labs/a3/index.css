@@ -535,6 +535,19 @@ and (max-width: 1800px) {
     }
 }
 
+/* > 1800px */
+@media (min-width: 1800px)
+{
+    .media-container {
+        background-color: purple;
+        color: white;
+    }
+    .media-query {
+        background-color: darkgreen;
+        color: white;
+    }
+}
+
 
 
 
