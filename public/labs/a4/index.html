@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../../vendors/bootstrap/css/bootstrap.min.css"
+          rel="stylesheet"/>
+    <link href="index.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <h1>Bootstrap</h1>
+    <p>Welcome to Bootstrap!</p>
+
+    <!-- grid layout -->
+    <h2><a href="https://getbootstrap.com/docs/5.1/layout/grid/">Grid system</a></h2>
+    <div class="row">
+        <div class="col bg-danger text-white">
+            <h3>Left half</h3></div>
+        <div class="col bg-primary text-white">
+            <h3>Right half</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-4 bg-warning">
+            <h3>One thirds</h3></div>
+        <div class="col-8 bg-success text-white">
+            <h3>Two thirds</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-2 bg-dark text-white">
+            <h3>Sidebar</h3></div>
+        <div class="col-8 bg-secondary text-white">
+            <h3>Main content</h3></div>
+        <div class="col-2 bg-info">
+            <h3>Sidebar</h3></div>
+    </div>
+
+    <!--  Responsive grid system  -->
+    <h2>3 Responsive grid system</h2>
+    <div class="row">
+        <div class="col-12 col-md-6 col-xl-3 bg-warning">
+            <h3>Column A</h3>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3 bg-primary text-white">
+            <h3>Column B</h3>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3 bg-danger text-white">
+            <h3>Column C</h3>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3 bg-success text-white">
+            <h3>Column D</h3>
+        </div>
+    </div>
+
+    <h2>6 Responsive grid system</h2>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-warning">
+            <h4>1</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-primary text-white">
+            <h4>2</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-danger text-white">
+            <h4>3</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-success text-white">
+            <h4>4</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-warning">
+            <h4>5</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-primary text-white">
+            <h4>6</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-danger text-white">
+            <h4>7</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-success text-white">
+            <h4>8</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-warning">
+            <h4>9</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-primary text-white">
+            <h4>10</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-danger text-white">
+            <h4>11</h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1 bg-success text-white">
+            <h4>12</h4>
+        </div>
+    </div>
+
+    <!-- Display different content based on screen size -->
+    <h2>Hiding and showing responsive content</h2>
+    <div class="d-block d-sm-none fa-2x">XS</div>
+    <div class="d-none d-sm-block d-md-none fa-2x">S</div>
+    <div class="d-none d-md-block d-lg-none fa-2x">M</div>
+    <div class="d-none d-lg-block d-xl-none fa-2x">L</div>
+    <div class="d-none d-xl-block d-xxl-none fa-2x">XL</div>
+    <div class="d-none d-xxl-block fa-2x">XXL</div>
+
+    <!-- Styling tables -->
+    <h2>Tables</h2>
+    <table class="table">
+        <thead>
+        <tr class="table-dark">
+            <th>Quiz</th>
+            <th>Topic</th>
+            <th>Date</th>
+            <th>Grade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-warning">
+            <td>Q1</td>
+            <td>HTML</td>
+            <td>2/3/21</td>
+            <td>85</td>
+        </tr>
+        <tr class="table-danger">
+            <td>Q2</td>
+            <td>CSS</td>
+            <td>2/10/21</td>
+            <td>90</td>
+        </tr>
+        <tr class="table-primary">
+            <td>Q3</td>
+            <td>JavaScript</td>
+            <td>2/17/21</td>
+            <td>90</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr class="table-success">
+            <td colspan="3">Average</td>
+            <td>90</td>
+        </tr>
+        </tfoot>
+    </table>
+
+
+    <!-- Responsive horizontal tables -->
+    <h2>
+        <a href="https://getbootstrap.com/docs/5.1/content/tables/#responsive-tables">
+            Responsive tables</a></h2>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Very</th>
+                <th>long</th>
+                <th>set</th>
+                <th>of</th>
+                <th>columns</th>
+                <th>Very</th>
+                <th>long</th>
+                <th>set</th>
+                <th>of</th>
+                <th>columns</th>
+                <th>Very</th>
+                <th>long</th>
+                <th>set</th>
+                <th>of</th>
+                <th>columns</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Very</td>
+                <td>long</td>
+                <td>set</td>
+                <td>of</td>
+                <td>columns</td>
+                <td>Very</td>
+                <td>long</td>
+                <td>set</td>
+                <td>of</td>
+                <td>columns</td>
+                <td>Very</td>
+                <td>long</td>
+                <td>set</td>
+                <td>of</td>
+                <td>columns</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Styling lists -->
+    <h2>
+        <a href="https://getbootstrap.com/docs/5.1/components/list-group/">
+            Favorite movies</a>
+    </h2>
+    <ul class="list-group">
+        <li class="list-group-item active">Aliens</li>
+        <li class="list-group-item">Terminator</li>
+        <li class="list-group-item">Blade Runner</li>
+        <li class="list-group-item">Lord of the Ring</li>
+        <li class="list-group-item disabled">Star Wars</li>
+    </ul>
+
+    <!-- Styling list of hyperlinks -->
+    <h3>
+        <a href="https://getbootstrap.com/docs/5.1/components/list-group/#links-and-buttons">
+            Favorite books</a>
+    </h3>
+    <div class="list-group">
+        <a href="https://en.wikipedia.org/wiki/Dune_(novel)" class="list-group-item list-group-item-action active">
+            Dune</a>
+        <a href="https://en.wikipedia.org/wiki/The_Lord_of_the_Rings" class="list-group-item list-group-item-action">
+            Lord of the Rings</a>
+        <a href="https://en.wikipedia.org/wiki/The_Forever_War" class="list-group-item list-group-item-action">
+            The Forever War</a>
+        <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(novel)"
+           class="list-group-item list-group-item-action">
+            2001 A Space Odyssey</a>
+        <a href="https://en.wikipedia.org/wiki/Ender%27s_Game" class="list-group-item list-group-item-action disabled"
+           tabindex="-1" aria-disabled="true">Ender's Game</a>
+    </div>
+
+
+    <!-- Basic form styling -->
+    <h2>
+        <a href="https://getbootstrap.com/docs/5.1/forms/form-control/">
+            Forms
+        </a>
+    </h2>
+    <div class="mb-3">
+        <label for="input1"
+               class="form-label">
+            Email address</label>
+        <input type="email"
+               class="form-control"
+               id="input1"
+               placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="textarea1"
+               class="form-label">
+            Example textarea</label>
+        <textarea class="form-control"
+                  id="textarea1"
+                  rows="3"></textarea>
+    </div>
+
+    <!-- Styling dropdowns -->
+    <h3>
+        <a href="https://getbootstrap.com/docs/5.1/forms/select/">
+            Dropdowns</a>
+    </h3>
+    <select class="form-select">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+
+    <!-- Styling checkbox switches -->
+    <h3>
+        <a href="https://getbootstrap.com/docs/5.1/forms/checks-radios/#switches">Switches</a>
+    </h3>
+    <div class="form-check form-switch">
+        <input class="form-check-input"
+               type="checkbox"
+               id="switch1">
+        <label class="form-check-label" for="switch1">
+            Default switch checkbox input</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input"
+               type="checkbox"
+               id="switch2"
+               checked>
+        <label class="form-check-label"
+               for="switch2">
+            Checked switch checkbox input</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input"
+               type="checkbox"
+               id="switch3"
+               disabled>
+        <label class="form-check-label"
+               for="switch3">
+            Disabled switch checkbox input</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input"
+               type="checkbox"
+               id="switch4"
+               checked disabled>
+        <label class="form-check-label"
+               for="switch4">
+            Disabled checked switch checkbox input</label>
+    </div>
+
+
+    <!-- Styling range and sliders -->
+    <h3>
+        <a href="https://getbootstrap.com/docs/5.1/forms/range/#steps">
+            Range
+        </a>
+    </h3>
+    <label for="range1"
+           class="form-label">
+        Example range</label>
+    <input type="range"
+           class="form-range"
+           min="0"
+           max="5"
+           step="0.5"
+           id="range1"/>
+
+
+    <!-- Styling addons -->
+    <h3><a href="https://getbootstrap.com/docs/5.1/forms/input-group/">Addons</a></h3>
+    <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <span class="input-group-text">0.00</span>
+        <input type="text" class="form-control">
+    </div>
+    <div class="input-group">
+        <input type="text" class="form-control">
+        <span class="input-group-text">$</span>
+        <span class="input-group-text">
+    0.00</span>
+    </div>
+
+    <!-- Making forms responsive -->
+    <h3><a href="https://getbootstrap.com/docs/5.1/forms/layout/#horizontal-form">Responsive forms</a></h3>
+    <div class="mb-3 row">
+        <label for="email1"
+               class="col-sm-2 col-form-label">
+            Email</label>
+        <div class="col-sm-10">
+            <input type="text"
+                   class="form-control"
+                   id="email1"
+                   value="email@example.com">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="password1"
+               class="col-sm-2 col-form-label">
+            Password</label>
+        <div class="col-sm-10">
+            <input type="password"
+                   class="form-control"
+                   id="password1">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="textarea2"
+               class="col-sm-2 col-form-label">
+            Bio</label>
+        <div class="col-sm-10">
+        <textarea class="form-control"
+            id="textarea2"
+            rows="3"></textarea>
+        </div>
+    </div>
+
+    <!-- overriding bootstrap style -->
+    <h3><a href="https://getbootstrap.com/docs/5.1/forms/layout/#horizontal-form">Responsive forms</a>
+    </h3>
+    <form>
+        <div class="row mb-3">
+            <label for="r1" class="col-sm-2 col-form-label">
+                Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control"
+                       id="r1"/>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="r2" class="col-sm-2 col-form-label">
+                Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control"
+                       id="r2"/>
+            </div>
+        </div>
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">
+                Radios</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio"
+                           name="gridRadios" id="r3"
+                           value="option1" checked/>
+                    <label class="form-check-label" for="r3">
+                        First radio</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio"
+                           name="gridRadios" id="r4"
+                           value="option2"/>
+                    <label class="form-check-label" for="r4">
+                        Second radio</label>
+                </div>
+                <div class="form-check disabled">
+                    <input class="form-check-input"
+                           type="radio"
+                           name="gridRadios" id="r5"
+                           value="option3" disabled/>
+                    <label class="form-check-label" for="r5">
+                        Third disabled radio</label>
+                </div>
+            </div>
+        </fieldset>
+        <div class="row mb-3">
+            <div class="col-sm-10 offset-sm-2">
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="checkbox" id="r6"/>
+                    <label class="form-check-label" for="r6">
+                        Example checkbox</label>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+
+    <h3>Overriding Bootstrap style</h3>
+    <button class="btn btn-primary">
+        Regular Bootstrap Button
+    </button>
+    <br/>
+    <button class="btn btn-primary override-bs">
+        Overriden Button
+    </button>
+
+</div>
+
+</body>
+</html>
