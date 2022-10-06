@@ -5,6 +5,7 @@
     <title>Title</title>
     <link href="../../vendors/bootstrap/css/bootstrap.min.css"
           rel="stylesheet"/>
+    <link href="../../vendors/fontawesome/css/all.css" rel="stylesheet"/>
     <link href="index.css" rel="stylesheet"/>
 </head>
 <body>
@@ -357,12 +358,12 @@
             Bio</label>
         <div class="col-sm-10">
         <textarea class="form-control"
-            id="textarea2"
-            rows="3"></textarea>
+                  id="textarea2"
+                  rows="3"></textarea>
         </div>
     </div>
 
-    <!-- overriding bootstrap style -->
+    <!-- another form -->
     <h3><a href="https://getbootstrap.com/docs/5.1/forms/layout/#horizontal-form">Responsive forms</a>
     </h3>
     <form>
@@ -384,7 +385,8 @@
         </div>
         <fieldset class="row mb-3">
             <legend class="col-form-label col-sm-2 pt-0">
-                Radios</legend>
+                Radios
+            </legend>
             <div class="col-sm-10">
                 <div class="form-check">
                     <input class="form-check-input" type="radio"
@@ -423,6 +425,7 @@
         <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
 
+    <!-- overriding bootstrap style -->
     <h3>Overriding Bootstrap style</h3>
     <button class="btn btn-primary">
         Regular Bootstrap Button
@@ -431,6 +434,139 @@
     <button class="btn btn-primary override-bs">
         Overriden Button
     </button>
+
+
+    <!-- navigating with tabs -->
+    <h2><a href="https://getbootstrap.com/docs/5.1/components/navs-tabs/">Tabs</a></h2>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1">Disabled</a>
+        </li>
+    </ul>
+
+    <!-- navigating with pills -->
+    <h3>
+        <a href="https://getbootstrap.com/docs/5.1/components/navs-tabs/#pills">
+            Pills
+        </a>
+    </h3>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1">Disabled</a>
+        </li>
+    </ul>
+
+    <!-- navigating with cards -->
+    <!-- cards combine images, titles, paragraphs and buttons -->
+    <h2>
+        <a href="https://getbootstrap.com/docs/5.1/components/card/">
+            Cards
+        </a>
+    </h2>
+    <div class="card" style="width: 18rem;">
+        <img src="Splatoon3.jpg"
+             class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+                Some quick example text to build on the card
+                title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+    <!-- fontawesome icons -->
+    <h2>Simple icons</h2>
+    <i class="fa fa-cog"></i>
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-share"></i>
+    <i class="fa fa-comment"></i><br/>
+    <i class="fa fa-image"></i>
+    <i class="fa fa-chart-bar"></i>
+    <i class="fa fa-calendar"></i>
+    <i class="fa fa-smile"></i>
+
+    <!-- Resizing icons -->
+    <h2>Resizing icons</h2>
+    <i class="fa fa-cog fa-2x"></i>
+    <i class="fa fa-heart fa-2x"></i>
+    <i class="fa fa-share fa-3x"></i>
+    <i class="fa fa-comment fa-3x"></i><br/>
+    <i class="fa fa-image fa-3x"></i>
+    <i class="fa fa-chart-bar fa-4x"></i>
+    <i class="fa fa-calendar" style="font-size: 5em"></i>
+    <i class="fa fa-smile" style="font-size: 3.5em"></i>
+
+    <!-- Coloring icons -->
+    <h2>Coloring icons</h2>
+    <i class="fa fa-cog fa-2x" style="color: tomato"></i>
+    <i class="fa fa-heart fa-2x" style="color: tomato"></i>
+    <i class="fa fa-share fa-3x" style="color: #5ec15b"></i><br/>
+    <i class="fa fa-comment fa-3x" style="color: #19d49e"></i>
+    <i class="fa fa-image fa-3x" style="color: rgb(234,123,12)"></i>
+    <i class="fa fa-chart-bar fa-4x" style="color: rgb(123,234,123)"></i>
+
+    <!-- Brand icons -->
+    <h2>Brand icons</h2>
+    <i class="fab fa-twitter fa-2x"></i><br/>
+    <i class="fab fa-facebook fa-2x"></i><br/>
+    <i class="fab fa-apple fa-2x"></i><br/>
+
+    <!-- Stacking icons -->
+    <h2>Stacking icons</h2>
+    <span class="fa-stack fa-2x">
+    <i class="fas fa-square fa-stack-2x"></i>
+    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+    </span><br/>
+        <span class="fa-stack fa-2x">
+    <i class="fas fa-circle fa-stack-2x"></i>
+    <i class="fas fa-flag fa-stack-1x fa-inverse"></i>
+    </span><br/>
+        <span class="fa-stack fa-2x">
+    <i class="fas fa-camera fa-stack-1x"></i>
+    <i class="fas fa-ban fa-stack-2x" style="color:Tomato"></i>
+    </span><br/>
+
+    <!-- Rotating icons -->
+    <h2>Rotating icons</h2>
+    <div class="fa-4x">
+        <i class="fas fa-snowboarding"></i>
+        <i class="fas fa-snowboarding fa-rotate-90"></i>
+        <i class="fas fa-snowboarding fa-rotate-180"></i><br/>
+        <i class="fas fa-snowboarding fa-rotate-270"></i>
+        <i class="fas fa-snowboarding fa-flip-horizontal"></i>
+        <i class="fas fa-snowboarding fa-flip-vertical"></i><br/>
+        <i class="fas fa-snowboarding fa-flip-both"></i><br/>
+    </div>
+
+    <!-- Animating icons -->
+    <h2>Animating icons</h2>
+    <div class="fa-3x">
+        <i class="fas fa-spinner fa-spin"></i>
+        <i class="fas fa-circle-notch fa-spin"></i>
+        <i class="fas fa-sync fa-spin"></i><br/>
+        <i class="fas fa-cog fa-spin"></i>
+        <i class="fas fa-spinner fa-pulse"></i>
+        <i class="fas fa-stroopwafel fa-spin"></i>
+    </div>
 
 </div>
 
