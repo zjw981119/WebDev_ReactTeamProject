@@ -224,6 +224,32 @@ const init = () => {
     changeStyle.css('color', 'red');
     changeStyle2.css('color', 'blue');
 
+    // get attributes
+    console.log('Get and set attributes');
+    const getIdAttr = $("#get-id-attr");
+    const id = getIdAttr.attr('id');
+    console.log(id);
+
+    // set attributes
+    const setClassAttr = $("#set-class-attr");
+    setClassAttr.attr('class', 'class-0');
+
+    // use addClass to set class attribute
+    const addClass1Example = $("#add-class-1");
+    addClass1Example.addClass('class-1');
+
+    // remove class attribute
+    const removeClass1Example = $("#remove-class-1");
+    removeClass1Example.removeClass('class-2');
+
+    // hide content
+    const hideMe = $("#hide-me");
+    hideMe.hide();
+
+    // show content
+    const showMe = $("#show-me");
+    showMe.show();
+
 
 }
 $(init);
