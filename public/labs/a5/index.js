@@ -1,4 +1,4 @@
-// alert('Hello World!');
+alert('Hello World!');
 console.log('Hello World!');
 
 // print out variables
@@ -45,7 +45,7 @@ let false3 = numberVariable < 100;
 // '==' will attempt to convert and compare operands that are of different types.
 let sortaTrue = '1' == 1
 // '===' strict equality operator
-let notTrue   = '1' === 1
+let notTrue = '1' === 1
 console.log(true1);
 console.log(false1);
 console.log(false2);
@@ -60,11 +60,11 @@ console.log(notTrue);
 // If Else
 console.log('SECTION 2.5')
 console.log('If else');
-if(true1) {
+if (true1) {
     console.log(true);
 }
 
-if(!false1) {
+if (!false1) {
     console.log('!false1');
 } else {
     console.log('false1');
@@ -79,9 +79,11 @@ console.log(greeting)
 // function
 console.log('SECTION 2.6')
 console.log('Legacy ES5 function')
-function add (a, b) {
+
+function add(a, b) {
     return a + b;
 }
+
 const twoPlusFour = add(2, 4);
 console.log(twoPlusFour);
 
@@ -147,7 +149,7 @@ console.log(stringArray1);
 
 // iterate array
 console.log('For loops');
-for (let i=0; i<stringArray1.length; i++) {
+for (let i = 0; i < stringArray1.length; i++) {
     const string1 = stringArray1[i];
     console.log(string1);
 }
@@ -250,6 +252,72 @@ const init = () => {
     const showMe = $("#show-me");
     showMe.show();
 
+    // creating new elements
+    const newLineItem = $("<li>Line item 1</li>");
+    const anotherLineItem = $("<li>Line item 2</li>");
+    const ul = $("#append-new-elements");
+    ul.append(newLineItem);
+    ul.append(anotherLineItem);
+
+    // Removing and emptying content
+    const removeLi = $("#remove-this");
+    const emptyUl = $("#empty-this");
+    removeLi.remove();
+    emptyUl.empty();
+
+    // changing content
+    const changeThisText =
+        $("#change-this-text");
+    const changeThisHtml =
+        $("#change-this-html");
+    changeThisText.html('New text');
+    changeThisHtml.html(`
+       <li>Line item A</li>
+       <li>Line item B</li>
+       <li>Line item C</li>
+    `);
+
+    // Navigating up and down the DOM tree
+    const child2 = $("#child-2");
+    const parent1 = child2.parents("#parent");
+    parent1.css('background-color', 'red')
+        .css('color', 'white');
+
+    const parent = $("#parent");
+    const child = parent.find("#child-2");
+    child.css('background-color', 'blue')
+
+    // Handling click events
+    const handleClick =
+        () => console.log('Handle click');
+    const clickable = $('.clickable');
+    clickable.click(handleClick);
+
+    // Event target
+    const handleEventTarget = (event) => {
+        const target = event.target;
+        console.log(target);
+        $(target)
+            .css('background-color', 'blue')
+            .css('color', 'white');
+    }
+    const eventTarget = $("#event-target");
+    eventTarget.click(handleEventTarget);
+
+    // Hiding and showing content
+    // combine event handler with DOM manipulation
+    let hideBtn, showBtn, hideShowHeader;
+    hideBtn = $('#hide');
+    showBtn = $('#show');
+    hideShowHeader = $('#hide-show');
+    const hideHandler = () => {
+        hideShowHeader.hide();
+    }
+    const showHandler = () => {
+        hideShowHeader.show();
+    }
+    hideBtn.click(hideHandler);
+    showBtn.click(showHandler);
 
 }
 $(init);
