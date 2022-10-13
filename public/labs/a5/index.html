@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- Alert -->
+<h2>Embedded script tag</h2>
+<!--  <script>-->
+<!--    alert('Hello World!');-->
+<!--  </script>-->
+<!-- paste the rest of the exercises here before the script tag shown here below -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="index.js"></script>
+
+<h2>Writing to the DOM</h2>
+<script>
+    document.write('Welcome to JavaScript!')
+</script>
+
+<h2>Calculating an HTML string</h2>
+<!-- template strings -->
+<script>
+    const renderTodos = (todos) => `
+    <ul>
+      ${todos.map(todo =>
+        `<li>${todo}</li>`
+    ).join('')}
+    </ul>`;
+    const todos = ['Pickup kids', 'Feed dogs']
+    let html = renderTodos(todos);
+    document.write(html);
+</script>
+
+<!-- Binding to the DOM -->
+<h2 id="bind-by-id">
+    Binding by ID</h2>
+<h3 class="bind-by-class">
+    Binding 1 by Class</h3>
+<h3 class="bind-by-class">
+    Binding 2 by Class</h3>
+
+<!-- Change style programmatically -->
+<h2 id="change-style">
+    Change style</h2>
+<h3 class="change-style">
+    Change style 1</h3>
+<h3 class="change-style">
+    Change style 2</h3>
+
+
+</body>
+</html>
