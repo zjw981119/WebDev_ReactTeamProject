@@ -1,10 +1,11 @@
-const NavigationSidebar = () => {
+const NavigationSidebar = (active) => {
     return(`
    <div class="list-group">
         <a href="#" class="list-group-item list-group-item-action">
             <i class="fa-solid fa-t"></i>
         </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        <a href="/tuiter-react-web-app/public/tuiter/HomeScreen/index.html" class="list-group-item list-group-item-action 
+            ${active === 'home' ? 'active' : ''}">
             <div class="row">
                 <div class="col-2">
                     <i class="fa-solid fa-house me-2"></i>
@@ -13,10 +14,10 @@ const NavigationSidebar = () => {
                     <span>Home</span>
                 </div>
             </div>
-        </a>
+        </a> 
 
-        <a href="#"
-           class="list-group-item list-group-item-action active">
+        <a href="/tuiter-react-web-app/public/tuiter/jquery-explore/index.html"
+           class="list-group-item list-group-item-action ${active === 'explore' ? 'active' : ''}">
             <div class="row">
                 <div class="col-2">
                     <i class="fa-solid fa-hashtag me-2"></i>
@@ -50,7 +51,7 @@ const NavigationSidebar = () => {
             </div>
         </a>
 
-        <a href="#"
+        <a href="/tuiter-react-web-app/public/tuiter/bookmarks/index.html""
            class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-2">
