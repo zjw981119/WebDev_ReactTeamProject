@@ -44,7 +44,7 @@ const ExploreComponent = () => {
             </ul>
            <!-- image container -->
             <div class="position-relative">
-                <img class="border border-secondary" src="/public/images/starship.webp" width="100%" >
+                <img class="border border-secondary" src="../../images/starship.webp" width="100%" >
                 <!-- image text -->
                 <div class="position-absolute bottom-0 start-0 text-light mb-2">
                     <div class="ps-3 fs-2">
