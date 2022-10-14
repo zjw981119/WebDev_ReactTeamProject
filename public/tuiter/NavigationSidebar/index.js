@@ -51,7 +51,7 @@ const NavigationSidebar = (active) => {
             </div>
         </a>
 
-        <a href="/tuiter/bookmarks/index.html"
+        <a href="../bookmarks/index.html"
            class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-2">
