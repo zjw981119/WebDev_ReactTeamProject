@@ -4,7 +4,7 @@ const PostItem = (post) => {
         <div class="row">
             <!-- left-part avatar -->
             <div class="col-1">
-                <img class="rounded-circle" src=${post.avatar} width="40px">
+                <img class="rounded-circle" src=${post.avatar} width="40px"/>
             </div>
             <!-- right-part post -->
             <div class="col-11">
