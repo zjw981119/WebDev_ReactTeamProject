@@ -13,7 +13,7 @@ function App() {
                 {/*declare paths and map them to corresponding component */}
                 <Routes>
                     {/*declare the Lab component as the default landing screen */}
-                    <Route index
+                    <Route path="/*"
                            element={<Labs/>}/>
                     <Route path="/hello"
                            element={<HelloWorld/>}/>
