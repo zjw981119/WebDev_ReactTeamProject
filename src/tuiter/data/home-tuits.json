@@ -1,0 +1,45 @@
+[
+  {
+    "_id": "0",
+    "topic": "Space",
+    "userName": "SpaceX",
+    "handle": "@spacex",
+    "title": "100s of SpaceX Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
+    "time": "2h",
+    "avatar": "spacex.jpeg",
+    "liked": true,
+    "replies": 123,
+    "retuits": 244,
+    "likes": 1963,
+    "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
+  },
+  {
+    "_id": "1",
+    "topic": "Tesla",
+    "userName": "Tesla",
+    "handle": "@tesla",
+    "title": "Tesla Cybertruck lands on Mars and picks up the Curiosity rover on its 6' bed",
+    "time": "4d",
+    "avatar": "tesla.png",
+    "liked": false,
+    "replies": 123,
+    "retuits": 432,
+    "likes": 2345,
+    "tuit": "Tesla, Inc. is an American multinational automotive and clean energy company headquartered in Austin, Texas. Tesla designs and manufactures electric vehicles, battery energy storage from home to grid-scale, solar panels and solar roof tiles, and related products and services."
+  },
+
+  {
+    "_id": "2",
+    "topic": "Space",
+    "userName": "SpaceX",
+    "handle": "@spacex",
+    "title": "100s of SpaceX Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
+    "time": "2h",
+    "avatar": "spacex.jpeg",
+    "liked": true,
+    "replies": 357,
+    "retuits": 123,
+    "likes": 463,
+    "tuit": "Space Exploration Technologies Corp. is an American spacecraft manufacturer, space launch provider, and a satellite communications corporation headquartered in Hawthorne, California. It was founded in 2002 by Elon Musk, with the goal of reducing space transportation costs to enable the colonization of Mars."
+  }
+]
