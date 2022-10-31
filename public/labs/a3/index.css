@@ -209,9 +209,12 @@ otherwise, it is placed relative to the initial containing block, body.
 /*
     The clear property is used to specify which side of floating elements
     are not allowed to float.
+
+    The clear property specifies what should happen with the element
+    that is next to a floating element.
 */
 .float-done {
-    clear: both;
+    clear: right;
 }
 
 /*grid layout*/

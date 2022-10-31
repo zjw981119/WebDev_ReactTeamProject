@@ -7,13 +7,16 @@ import {Routes, Route} from "react-router";
 import who from "./reducers/who-reducer";
 import exploretTuits from "./reducers/explore-tuits-reducer";
 import homeTuits from "./reducers/home-tuits-reducer";
+import profile from "./reducers/profile-reducer";
 import { configureStore }
     from '@reduxjs/toolkit';
 import {Provider} from "react-redux";
+import ProfileComponent from "./profile";
+import EditProfile from "./profile/edit-profile";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
-    {reducer: {who, exploretTuits, homeTuits}});
+    {reducer: {who, exploretTuits, homeTuits, profile}});
 
 
 function Tuiter() {
@@ -28,9 +31,11 @@ function Tuiter() {
                     <Routes>
                         <Route path="/home" element={<TuitList/>}/>
                         <Route path="/explore" element={<ExploreComponent/>}/>
+                        <Route path="/profile" element={<ProfileComponent/>}/>
+                        <Route path="/edit-profile" element={<EditProfile/>}/>
                     </Routes>
                 </div>
-                <div className="d-sm-none d-md-none d-lg-block col-lg-4 col-xl-4">
+                <div className="d-none d-lg-block col-lg-4 col-xl-4">
                     <WhoToFollowList/>
                 </div>
             </div>
