@@ -1,2 +1,2 @@
 # serve the index.html instead of giving a 404 no matter what URL the browser requests.
-/*    /index.html   200
+/*     /index.html    200
