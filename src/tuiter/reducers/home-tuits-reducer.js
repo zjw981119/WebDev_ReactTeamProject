@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import tuits from '../data/home-tuits.json';
+import {createTuitThunk, deleteTuitThunk, findTuitsThunk, updateTuitThunk} from "../services/tuits-thunks";
+
 
 const currentUser = {
     "userName": "NASA",
@@ -17,9 +18,59 @@ const templateTuit = {
     "likes": 0,
 }
 
+const initialState = {
+    tuits: [],
+    loading: false
+}
+
 const homeTuitsSlice = createSlice({
     name: 'home-tuits',
-    initialState: tuits,
+    initialState,
+    extraReducers: {
+        // when the request is first sent to the server
+        [findTuitsThunk.pending]:
+            (state) => {
+                state.loading = true
+                state.tuits = []
+            },
+        // when the server finally responds
+        [findTuitsThunk.fulfilled]:
+            (state, { payload }) => {
+                state.loading = false
+                state.tuits = payload
+            },
+        // if the server times out or responds with an error
+        [findTuitsThunk.rejected]:
+            (state) => {
+                state.loading = false
+            },
+
+        // wait until server receive delete request,
+        // although this reducer function is definitely not needed
+        [deleteTuitThunk.fulfilled] :
+            (state, { payload }) => {
+                state.loading = false
+                state.tuits = state.tuits
+                    .filter(t => t._id !== payload)
+            },
+
+        [createTuitThunk.fulfilled]:
+            (state, { payload }) => {
+                state.loading = false
+                state.tuits.push(payload)
+            },
+
+        [updateTuitThunk.fulfilled]:
+            (state, { payload }) => {
+                state.loading = false
+                const tuitIndex = state.tuits
+                    .findIndex((t) => t._id === payload._id)
+                state.tuits[tuitIndex] = {
+                    ...state.tuits[tuitIndex],
+                    ...payload
+                }
+            }
+    },
 
     reducers: {
 

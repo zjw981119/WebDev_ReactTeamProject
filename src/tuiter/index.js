@@ -1,12 +1,11 @@
 import NavigationSidebar from "./navigation-sidebar";
-import HomeComponent from "./home/index";
 import TuitList from "./tuits"
 import WhoToFollowList from "./who-to-follow-list";
 import ExploreComponent from "./explore/index";
 import {Routes, Route} from "react-router";
 import who from "./reducers/who-reducer";
 import exploretTuits from "./reducers/explore-tuits-reducer";
-import homeTuits from "./reducers/home-tuits-reducer";
+import homeTuitsData from "./reducers/home-tuits-reducer";
 import profile from "./reducers/profile-reducer";
 import { configureStore }
     from '@reduxjs/toolkit';
@@ -16,7 +15,7 @@ import EditProfile from "./profile/edit-profile";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
-    {reducer: {who, exploretTuits, homeTuits, profile}});
+    {reducer: {who, exploretTuits, homeTuitsData, profile}});
 
 
 function Tuiter() {
