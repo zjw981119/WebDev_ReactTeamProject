@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // use different path according to different machine
 // REACT_APP_API_BASE is saved in .bash_profile in the local computer
-const API_BASE = process.env.REACT_APP_API_BASE;
+const API_BASE = process.env.REACT_APP_API_BASE2;
 const TUITS_API = `${API_BASE}/tuits`;
 
 export const createTuit = async (tuit) => {
