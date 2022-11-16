@@ -1,7 +1,5 @@
 import axios from 'axios';
-// local api
 // const TUITS_API = 'http://localhost:4000/api/tuits';
-// heroku api
 // const TUITS_API = 'https://webdev-tuiter-server.herokuapp.com/api/tuits';
 
 // use different path according to different machine
@@ -18,8 +16,7 @@ export const createTuit = async (tuit) => {
 // find all tuits
 export const findTuits  = async () => {
     const response = await axios.get(TUITS_API);
-    const tuits = response.data;
-    return tuits;
+    return response.data;
 }
 
 // delete tuit by id
