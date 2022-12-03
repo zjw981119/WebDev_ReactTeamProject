@@ -17,23 +17,6 @@ const SearchComponent = () => {
         const response = await dispatch(searchRAWGGamesThunk(GameSearchInput));
         await setgamesArray(response.payload.results);
 
-        for(let index in response.payload.results)
-        {
-            const DetailSearchResponse = await dispatch(findRAWGGameDetailThunk(response.payload.results[index].id));
-            console.log(DetailSearchResponse.payload)
-            const res = DetailSearchResponse.payload;
-            const gameCreateReq =
-                {
-                    "RawgId" : res.id,
-                    "GameName": res.name,
-                    "Description": res.description,
-                    "Metacritic": res.metacritic,
-                    "ReleaseDate": res.released,
-                    "Image": res.background_image
-                }
-            const CreateGameResponse = await dispatch(createGameThunk(gameCreateReq));
-        }
-
     }
 
     useEffect(() => {
@@ -44,6 +27,55 @@ const SearchComponent = () => {
         if(e.keyCode === 13){
             GameSearchInputHandler()
         }
+    }
+
+    async function AddGame(SelectedId)
+    {
+        for(let index in gamesArray)
+        {
+            if(SelectedId === gamesArray[index].id)
+            {
+                const DetailSearchResponse = await dispatch(findRAWGGameDetailThunk(gamesArray[index].id));
+                const res = DetailSearchResponse.payload;
+                let PlatformList = []
+
+                for(let platforms_index in res.platforms)
+                {
+                    PlatformList.push(res.platforms[platforms_index].platform.name);
+                }
+
+                let GenreList = []
+                console.log(res.genres)
+                for(let genres_index in res.genres)
+                {
+                    GenreList.push(res.genres[genres_index].name);
+                }
+
+                let DeveloperList = []
+
+                for(let developers_index in res.developers)
+                {
+                    DeveloperList.push(res.developers[developers_index].name);
+                }
+
+                const gameCreateReq =
+                    {
+                        "RawgId": res.id,
+                        "GameName": res.name,
+                        "Description": res.description,
+                        "Metacritic": res.metacritic,
+                        "ReleaseDate": res.released,
+                        "Image": res.background_image,
+                        "Website" : res.website,
+                        "Platforms" :PlatformList,
+                        "Genres" : GenreList,
+                        "Developers" : DeveloperList
+                    }
+                const CreateGameResponse = await dispatch(createGameThunk(gameCreateReq));
+                return
+            }
+        }
+
     }
 
 
@@ -68,7 +100,7 @@ const SearchComponent = () => {
                 {
                     gamesArray.map(game =>
                         <li className="list-group-item">
-                            <Link to = {{pathname :"/tuiter/game"}} state = {{"RawgId" : game.id}} >
+                            <Link to = {{pathname :"/tuiter/game"}} state = {{"RawgId" : game.id}}  onClick={() => AddGame(game.id)}>
                                 <div className="row">
                                     <div className="col-6 ">
                                         <img width={240} height={140} className="float-end rounded-3" src={game.background_image}/>

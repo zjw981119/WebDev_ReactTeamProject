@@ -10,24 +10,8 @@ const GameComponent = () => {
 
     // extract game
     const profile = useSelector(state => state.profile)
-    let gameLocation = useLocation();
 
     const dispatch = useDispatch();
-
-    const game =
-    {
-        "RawgId": gameLocation.state.RawgId,
-        "GameName": "GTA",
-        "Description": "Good Game",
-        "Platforms": "PS5, PS4",
-        "GameType": "FPS",
-        "Metacritic": 99,
-        "ReleaseDate": "2013-11-01",
-        "Image": "TODO"
-    }
-
-
-    createGameThunk(game);
 
     return (
         <div className="ttr-profile">
@@ -42,8 +26,8 @@ const GameComponent = () => {
                     </div>
                     <div className="col-11">
                         <h5 className="p-2 mb-0 pb-0 fw-bolder">
-                            {/*{profile.username}*/}
-                            {gameLocation.state.RawgId}
+                            {profile.username}
+
                             <i className="fa fa-badge-check text-primary"/>
                         </h5>
                         <span className="ps-2">{profile.tuitCount + ' Tuits'}</span>
