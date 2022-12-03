@@ -6,51 +6,49 @@ import GameArray from "./game.json";
 
 const GameComponent = () => {
 
-
-    const profile = useSelector(state => state.profile)
     let gameLocation = useLocation();
-
-
     let [game, setgame] = useState(GameArray);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log("use effect");
-        ComponentInit()
+        setTimeout(function(){
+            ComponentInit()
+        }, 300);
     }, [])
 
     useEffect(() => {
-        console.log("use effect2");
     }, [game])
 
     async function ComponentInit()
     {
         const RawgId = gameLocation.state.RawgId;
         let response = await dispatch(findGameByIdThunk(RawgId));
+        console.log(RawgId)
+        console.log(response)
         await setgame(response.payload);
     }
 
+
     return (
         <div className="ttr-profile" >
-            <div className="border border-secondary">
-                <div className="row">
-                    <div className="col-1">
-                        <button className="btn btn-light btn-md rounded-pill ms-4 mt-3" >
-                            <Link to="/tuiter/search">
-                                <i className="fa-solid fa-arrow-left fa-lg"/>
-                            </Link>
-                        </button>
-                    </div>
-                </div>
+            <div className="border border-secondary ">
 
+                <div className="btn-padding">
+                    <button className="btn btn-light btn-lg rounded-pill ms-2 mt-3 " >
+                        <Link to="/tuiter/search">
+                            <i className="fa-solid fa-arrow-left fa-lg"/>
+                        </Link>
+                    </button>
+                </div>
+                <div className = "game-title-padding"></div>
                 <div className="col-11">
                     <h3 className="p-2 mb-0 pb-0 fw-bolder">
-                        {/*{profile.username}*/}
                         {game.GameName}
                         <i className="fa fa-badge-check text-primary"/>
                     </h3>
                 </div>
+                <div className = "game-title-padding"></div>
 
                 <div className="mb-5 position-relative">
                     <img className="w-100" src={game.Image} height='300px'/>
@@ -71,15 +69,48 @@ const GameComponent = () => {
                     <p className="pt-2">
                         {game.Description}
                     </p>
+
                     <p>
                         <i className="fa-solid fa-link"/>
-                        <a href={game.Website} title={game.Website} className="text-decoration-none ms-3">Official Website</a>
+                        <a href={game.Website} title={game.Website} className="text-decoration-none ms-3" target="_blank" rel="noopener">Official Website</a>
 
                         <i className="fa-solid fa-cake-candles ms-5 me-3"/>
                         {"Release Date: " + game.ReleaseDate}
 
                     </p>
-                    Metacritic Score:<b></b>
+
+                    <h6> Genres:</h6>
+                        <ul className="">
+                            {
+                                game.Genres.map(genre =>
+                                    <li className="">
+                                        {genre}
+                                    </li>)
+                            }
+                        </ul>
+
+                    <h6> Platforms:</h6>
+                    <ul className="">
+                        {
+                            game.Platforms.map(platform =>
+                                <li className="">
+                                    {platform}
+                                </li>)
+                        }
+                    </ul>
+
+                    <h6> Developers:</h6>
+                    <ul className="">
+                        {
+                            game.Developers.map(developer =>
+                                <li className="">
+                                    {developer}
+                                </li>)
+                        }
+                    </ul>
+
+
+                    <h6> Metacritic Score:</h6><b></b>
                     <b className="ms-2">{game.Metacritic}</b>
 
                 </div>

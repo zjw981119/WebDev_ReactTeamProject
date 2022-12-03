@@ -24,7 +24,12 @@
     bottom: 4px;
 }
 
+.btn-padding {
+    padding-bottom: 40px;
+}
+
+
 .game-title-padding {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 40px;
+    padding-bottom: 20px;
 }
