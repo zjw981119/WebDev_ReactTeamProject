@@ -1,17 +1,23 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link, useLocation} from "react-router-dom";
-import {useSelector} from "react-redux";
-import {createGameThunk} from "../services/game-service/games-thunks";
-import {useDispatch} from "react-redux";
-import {searchRAWGGamesThunk} from "../services/rawg-game-service/rawg-games-thunks";
+import {useSelector, useDispatch} from "react-redux";
+import {findGamesByIdThunk} from "../services/game-service/games-thunks";
 
 const GameComponent = () => {
 
 
-    // extract game
     const profile = useSelector(state => state.profile)
+    let gameLocation = useLocation();
+    const RawgId = gameLocation.state.RawgId;
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
+    // useEffect(() => {
+    //     dispatch(findGamesByIdThunk(RwagId))
+    // }, [])
+
+    const {games, loading} = useSelector(state => state.games)
+    console.log(RawgId);
+    console.log(games.RawgId);
 
     return (
         <div className="ttr-profile">
@@ -26,15 +32,15 @@ const GameComponent = () => {
                     </div>
                     <div className="col-11">
                         <h5 className="p-2 mb-0 pb-0 fw-bolder">
-                            {profile.username}
-
+                            {/*{profile.username}*/}
+                            {games.RawgId}
                             <i className="fa fa-badge-check text-primary"/>
                         </h5>
                         <span className="ps-2">{profile.tuitCount + ' Tuits'}</span>
                     </div>
                 </div>
                 <div className="mb-5 position-relative">
-                    <img className="w-100" src={"/images/" + profile.bannerPicture} height='250px'/>
+                    <img className="w-100" src={"/images/" + games.image} height='250px'/>
                     {/*className="position-relative"*/}
                     <div className="position-absolute top-100 translate-middle" style={{'paddingLeft':'150px'}}>
 
