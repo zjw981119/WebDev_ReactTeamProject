@@ -12,6 +12,8 @@ import { configureStore }
 import {Provider} from "react-redux";
 import ProfileComponent from "./profile";
 import EditProfile from "./profile/edit-profile";
+import Login from "./authentication";
+import Register from "./authentication/register";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
@@ -29,6 +31,8 @@ function Tuiter() {
                      style={{"position": "relative"}}>
                     <Routes>
                         <Route path="/home" element={<TuitList/>}/>
+                        <Route path="/login" element={<Login/>}/>
+                        <Route path="/register" element={<Register/>}/>
                         <Route path="/explore" element={<ExploreComponent/>}/>
                         <Route path="/profile" element={<ProfileComponent/>}/>
                         <Route path="/edit-profile" element={<EditProfile/>}/>

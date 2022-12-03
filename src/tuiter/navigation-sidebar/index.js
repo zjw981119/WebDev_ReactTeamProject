@@ -93,10 +93,21 @@ const NavigationSidebar = () => {
                     ${active === 'profile'?'active':''}`}>
                 <div className="row">
                     <div className="col-2">
-                        <i className="fa-regular fa-user me-2"/>
+                        <i className="fa-regular fa-id-card me-2"/>
                     </div>
                     <div className="col-10 d-none d-xl-block">
                         <span>Profile</span>
+                    </div>
+                </div>
+            </Link>
+            <Link to="/tuiter/login" className={`list-group-item
+                    ${active === 'login'?'active':''}`}>
+                <div className="row">
+                    <div className="col-2">
+                        <i className="fa-regular fa-user me-2"/>
+                    </div>
+                    <div className="col-10 d-none d-xl-block">
+                        <span>Login</span>
                     </div>
                 </div>
             </Link>
