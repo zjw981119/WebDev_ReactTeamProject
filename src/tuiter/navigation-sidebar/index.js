@@ -45,17 +45,17 @@ const NavigationSidebar = () => {
                     </div>
                 </div>
             </Link>
-            <a className={`list-group-item
-                    ${active === 'notifications'?'active':''}`}>
+            <Link to="/tuiter/search" className={`list-group-item
+                    ${active === 'SearchGame'?'active':''}`}>
                 <div className="row">
                     <div className="col-2">
-                        <i className="fa-regular fa-bell me-2"/>
+                        <i className="fa-regular fa-chess-king me-2"/>
                     </div>
                     <div className="col-10 d-none d-xl-block">
-                        <span>Notifications</span>
+                        <span>Search Game</span>
                     </div>
                 </div>
-            </a>
+            </Link>
             <a className={`list-group-item
                     ${active === 'messages'?'active':''}`}>
                 <div className="row">

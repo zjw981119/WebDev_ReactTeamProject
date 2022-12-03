@@ -1,11 +1,11 @@
 import axios from 'axios';
-// const TUITS_API = 'http://localhost:4000/api/tuits';
+const TUITS_API = 'http://localhost:4000/api/tuits';
 // const TUITS_API = 'https://webdev-tuiter-server.herokuapp.com/api/tuits';
 
 // use different path according to different machine
 // REACT_APP_API_BASE is saved in .bash_profile in the local computer
-const API_BASE = process.env.REACT_APP_API_BASE2;
-const TUITS_API = `${API_BASE}/tuits`;
+//const API_BASE = process.env.REACT_APP_API_BASE2;
+//const TUITS_API = `${API_BASE}/tuits`;
 
 export const createTuit = async (tuit) => {
     const response = await axios.post(TUITS_API, tuit);
