@@ -12,15 +12,11 @@ const SearchComponent = () => {
     const dispatch = useDispatch();
 
     async function GameSearchInputHandler() {
-        //console.log(GameSearchInput);
-
         const response = await dispatch(searchRAWGGamesThunk(GameSearchInput));
         await setgamesArray(response.payload.results);
-
     }
 
     useEffect(() => {
-
     }, [gamesArray]);
 
     function handleKeyPress(e) {

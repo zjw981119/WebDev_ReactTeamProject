@@ -1,6 +1,5 @@
 import {createAsyncThunk} from "@reduxjs/toolkit"
 import * as service from "./rawg-games-service"
-import {findRAWGGameDetail, searchRAWGGames} from "./rawg-games-service";
 
 // wrap an asynchronous HTTP function
 export const searchRAWGGamesThunk = createAsyncThunk(

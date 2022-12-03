@@ -1,0 +1,507 @@
+[
+  {
+    "id": 29177,
+    "slug": "detroit-become-human",
+    "name": "Detroit: Become Human",
+    "name_original": "Detroit: Become Human",
+    "description": "<p>In the future world, androids do almost everything that people do - they even start to think and feel. Although no one taught them this.</p>\n<p>The plot of &quot;Become Human&quot; is built around three characters, each with a separate storyline, but they eventually merge into a single picture.</p>\n<p>Connor is a police investigator and android. He has a simple task - to find androids, deviated from the path given by humans. He has a special vision, it allows him to see events as they happened. And the more information he collects, the higher his chances of acting correctly.</p>\n<p>Kara is an android-housekeeper which spontaneously develops self-consciousness. As a result, Kara assumes responsibility for the fate of the little girl whom she worked as a sitter for. She, along with the girl, escapes from the house as a result of a conflict with her father, the owner of Kara.</p>\n<p>Markus is a caretaker android. He also acquired self-consciousness and came to the idea that androids need freedom. He has the ability to grant androids free will and to calculate the consequences of some actions.</p>\n<p>The story develops depending on the decisions taken by the characters. Some decisions have to be made quickly. Sometimes a player can return to the moment of making a choice and replay the situation.</p>",
+    "metacritic": 79,
+    "metacritic_platforms": [
+      {
+        "metascore": 80,
+        "url": "https://www.metacritic.com/game/pc/detroit-become-human",
+        "platform": {
+          "platform": 4,
+          "name": "PC",
+          "slug": "pc"
+        }
+      },
+      {
+        "metascore": 78,
+        "url": "https://www.metacritic.com/game/playstation-4/detroit-become-human",
+        "platform": {
+          "platform": 18,
+          "name": "PlayStation 4",
+          "slug": "playstation4"
+        }
+      }
+    ],
+    "released": "2018-05-25",
+    "tba": false,
+    "updated": "2022-12-02T12:31:04",
+    "background_image": "https://media.rawg.io/media/games/951/951572a3dd1e42544bd39a5d5b42d234.jpg",
+    "background_image_additional": "https://media.rawg.io/media/screenshots/fce/fcef1b586a52133aa8624dea5e9e3358.jpeg",
+    "website": "https://www.quanticdream.com/en/detroit-become-human",
+    "rating": 4.29,
+    "rating_top": 5,
+    "ratings": [
+      {
+        "id": 5,
+        "title": "exceptional",
+        "count": 1233,
+        "percent": 44.97
+      },
+      {
+        "id": 4,
+        "title": "recommended",
+        "count": 1198,
+        "percent": 43.69
+      },
+      {
+        "id": 3,
+        "title": "meh",
+        "count": 247,
+        "percent": 9.01
+      },
+      {
+        "id": 1,
+        "title": "skip",
+        "count": 64,
+        "percent": 2.33
+      }
+    ],
+    "reactions": {
+      "1": 19,
+      "2": 4,
+      "3": 13,
+      "4": 4,
+      "5": 6,
+      "6": 5,
+      "7": 7,
+      "8": 2,
+      "9": 9,
+      "10": 13,
+      "11": 12,
+      "12": 8,
+      "15": 1,
+      "20": 1
+    },
+    "added": 8322,
+    "added_by_status": {
+      "yet": 515,
+      "owned": 4180,
+      "beaten": 2485,
+      "toplay": 801,
+      "dropped": 168,
+      "playing": 173
+    },
+    "playtime": 8,
+    "screenshots_count": 18,
+    "movies_count": 0,
+    "creators_count": 5,
+    "achievements_count": 15,
+    "parent_achievements_count": 2,
+    "reddit_url": "https://www.reddit.com/r/DetroitBecomeHuman/",
+    "reddit_name": "Quantic Dream's Detroit: Become Human",
+    "reddit_description": "This is a subreddit dedicated to Quantic Dream's 2018 game Detroit: Become Human.",
+    "reddit_logo": "",
+    "reddit_count": 9529,
+    "twitch_count": 155,
+    "youtube_count": 1000000,
+    "reviews_text_count": 53,
+    "ratings_count": 2689,
+    "suggestions_count": 479,
+    "alternative_names": [],
+    "metacritic_url": "https://www.metacritic.com/game/playstation-4/detroit-become-human",
+    "parents_count": 0,
+    "additions_count": 0,
+    "game_series_count": 0,
+    "user_game": null,
+    "reviews_count": 2742,
+    "saturated_color": "0f0f0f",
+    "dominant_color": "0f0f0f",
+    "parent_platforms": [
+      {
+        "platform": {
+          "id": 1,
+          "name": "PC",
+          "slug": "pc"
+        }
+      },
+      {
+        "platform": {
+          "id": 2,
+          "name": "PlayStation",
+          "slug": "playstation"
+        }
+      }
+    ],
+    "platforms": [
+      {
+        "platform": {
+          "id": 4,
+          "name": "PC",
+          "slug": "pc",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 503856,
+          "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+        },
+        "released_at": "2018-05-25",
+        "requirements": {
+          "minimum": "Minimum:\nRequires a 64-bit processor and operating system\nOS: Windows 10 (64 bit)\nProcessor: Intel Core i5-2300 @ 2.8 GHz or AMD Ryzen 3 1200 @ 3.1GHz or AMD FX-8350 @ 4.2GHz\nMemory: 8 GB RAM\nGraphics: Nvidia GeForce GTX 780 or AMD HD 7950 with 3GB VRAM minimum (Support of Vulkan 1.1 required)\nStorage: 55 GB available space",
+          "recommended": "Recommended:\nRequires a 64-bit processor and operating system\nOS: Windows 10 (64 bit)\nProcessor: Intel Core i5-6600 @ 3.3 GHz or AMD Ryzen 3 1300 X @ 3.4 GHz\nMemory: 12 GB RAM\nGraphics: Nvidia GeForce GTX 1060 or AMD Radeon RX 580 with 4GB VRAM minimum (Support of Vulkan 1.1 required)\nStorage: 55 GB available space"
+        }
+      },
+      {
+        "platform": {
+          "id": 18,
+          "name": "PlayStation 4",
+          "slug": "playstation4",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 6530,
+          "image_background": "https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"
+        },
+        "released_at": "2018-05-25",
+        "requirements": {}
+      }
+    ],
+    "stores": [
+      {
+        "id": 438987,
+        "url": "",
+        "store": {
+          "id": 1,
+          "name": "Steam",
+          "slug": "steam",
+          "domain": "store.steampowered.com",
+          "games_count": 69655,
+          "image_background": "https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg"
+        }
+      },
+      {
+        "id": 34966,
+        "url": "",
+        "store": {
+          "id": 3,
+          "name": "PlayStation Store",
+          "slug": "playstation-store",
+          "domain": "store.playstation.com",
+          "games_count": 7787,
+          "image_background": "https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg"
+        }
+      },
+      {
+        "id": 303962,
+        "url": "",
+        "store": {
+          "id": 11,
+          "name": "Epic Games",
+          "slug": "epic-games",
+          "domain": "epicgames.com",
+          "games_count": 1173,
+          "image_background": "https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg"
+        }
+      }
+    ],
+    "developers": [
+      {
+        "id": 13214,
+        "name": "Quantic Dream",
+        "slug": "quantic-dream",
+        "games_count": 9,
+        "image_background": "https://media.rawg.io/media/screenshots/08a/08a83a4645f1f98e2205490416674cda.jpg"
+      }
+    ],
+    "genres": [
+      {
+        "id": 4,
+        "name": "Action",
+        "slug": "action",
+        "games_count": 168167,
+        "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Adventure",
+        "slug": "adventure",
+        "games_count": 128587,
+        "image_background": "https://media.rawg.io/media/games/e2d/e2d3f396b16dded0f841c17c9799a882.jpg"
+      }
+    ],
+    "tags": [
+      {
+        "id": 31,
+        "name": "Singleplayer",
+        "slug": "singleplayer",
+        "language": "eng",
+        "games_count": 193456,
+        "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+      },
+      {
+        "id": 40847,
+        "name": "Steam Achievements",
+        "slug": "steam-achievements",
+        "language": "eng",
+        "games_count": 28237,
+        "image_background": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+      },
+      {
+        "id": 13,
+        "name": "Atmospheric",
+        "slug": "atmospheric",
+        "language": "eng",
+        "games_count": 26601,
+        "image_background": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
+      },
+      {
+        "id": 40836,
+        "name": "Full controller support",
+        "slug": "full-controller-support",
+        "language": "eng",
+        "games_count": 13259,
+        "image_background": "https://media.rawg.io/media/games/157/15742f2f67eacff546738e1ab5c19d20.jpg"
+      },
+      {
+        "id": 40849,
+        "name": "Steam Cloud",
+        "slug": "steam-cloud",
+        "language": "eng",
+        "games_count": 12911,
+        "image_background": "https://media.rawg.io/media/games/9dd/9ddabb34840ea9227556670606cf8ea3.jpg"
+      },
+      {
+        "id": 42,
+        "name": "Great Soundtrack",
+        "slug": "great-soundtrack",
+        "language": "eng",
+        "games_count": 3221,
+        "image_background": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
+      },
+      {
+        "id": 118,
+        "name": "Story Rich",
+        "slug": "story-rich",
+        "language": "eng",
+        "games_count": 16869,
+        "image_background": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+      },
+      {
+        "id": 149,
+        "name": "Third Person",
+        "slug": "third-person",
+        "language": "eng",
+        "games_count": 8455,
+        "image_background": "https://media.rawg.io/media/games/8d6/8d69eb6c32ed6acfd75f82d532144993.jpg"
+      },
+      {
+        "id": 32,
+        "name": "Sci-fi",
+        "slug": "sci-fi",
+        "language": "eng",
+        "games_count": 16264,
+        "image_background": "https://media.rawg.io/media/games/b7b/b7b8381707152afc7d91f5d95de70e39.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Exploration",
+        "slug": "exploration",
+        "language": "eng",
+        "games_count": 17860,
+        "image_background": "https://media.rawg.io/media/games/f46/f466571d536f2e3ea9e815ad17177501.jpg"
+      },
+      {
+        "id": 189,
+        "name": "Female Protagonist",
+        "slug": "female-protagonist",
+        "language": "eng",
+        "games_count": 9659,
+        "image_background": "https://media.rawg.io/media/games/3cf/3cff89996570cf29a10eb9cd967dcf73.jpg"
+      },
+      {
+        "id": 34,
+        "name": "Violent",
+        "slug": "violent",
+        "language": "eng",
+        "games_count": 5633,
+        "image_background": "https://media.rawg.io/media/games/5a4/5a44112251d70a25291cc33757220fce.jpg"
+      },
+      {
+        "id": 69,
+        "name": "Action-Adventure",
+        "slug": "action-adventure",
+        "language": "eng",
+        "games_count": 12691,
+        "image_background": "https://media.rawg.io/media/games/d30/d30ef0c7dd4878161b1f781e297ae6a0.jpg"
+      },
+      {
+        "id": 37796,
+        "name": "exclusive",
+        "slug": "exclusive",
+        "language": "eng",
+        "games_count": 4512,
+        "image_background": "https://media.rawg.io/media/games/1f5/1f5ddf7199f2778ff83663b93b5cb330.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Replay Value",
+        "slug": "replay-value",
+        "language": "eng",
+        "games_count": 1190,
+        "image_background": "https://media.rawg.io/media/games/490/49016e06ae2103881ff6373248843069.jpg"
+      },
+      {
+        "id": 145,
+        "name": "Choices Matter",
+        "slug": "choices-matter",
+        "language": "eng",
+        "games_count": 2892,
+        "image_background": "https://media.rawg.io/media/games/260/26023c855f1769a93411d6a7ea084632.jpeg"
+      },
+      {
+        "id": 167,
+        "name": "Futuristic",
+        "slug": "futuristic",
+        "language": "eng",
+        "games_count": 3899,
+        "image_background": "https://media.rawg.io/media/games/8e4/8e4de3f54ac659e08a7ba6a2b731682a.jpg"
+      },
+      {
+        "id": 110,
+        "name": "Cinematic",
+        "slug": "cinematic",
+        "language": "eng",
+        "games_count": 1160,
+        "image_background": "https://media.rawg.io/media/games/5c0/5c0dd63002cb23f804aab327d40ef119.jpg"
+      },
+      {
+        "id": 226,
+        "name": "Cyberpunk",
+        "slug": "cyberpunk",
+        "language": "eng",
+        "games_count": 3813,
+        "image_background": "https://media.rawg.io/media/games/d4b/d4bcd78873edd9992d93aff9cc8db0c8.jpg"
+      },
+      {
+        "id": 218,
+        "name": "Multiple Endings",
+        "slug": "multiple-endings",
+        "language": "eng",
+        "games_count": 6309,
+        "image_background": "https://media.rawg.io/media/games/1aa/1aaf454e0d3809ba1c34df4514492237.jpg"
+      },
+      {
+        "id": 478,
+        "name": "3rd-Person Perspective",
+        "slug": "3rd-person-perspective",
+        "language": "eng",
+        "games_count": 86,
+        "image_background": "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg"
+      },
+      {
+        "id": 197,
+        "name": "Robots",
+        "slug": "robots",
+        "language": "eng",
+        "games_count": 7507,
+        "image_background": "https://media.rawg.io/media/games/979/979155841412068e7adf8c83dee94a4a.jpg"
+      },
+      {
+        "id": 142,
+        "name": "Detective",
+        "slug": "detective",
+        "language": "eng",
+        "games_count": 2426,
+        "image_background": "https://media.rawg.io/media/games/23b/23b42b7a896140f4ce1d0df8c42fa012.jpg"
+      },
+      {
+        "id": 209,
+        "name": "Drama",
+        "slug": "drama",
+        "language": "eng",
+        "games_count": 2339,
+        "image_background": "https://media.rawg.io/media/games/b28/b28a135fa6133e17b228f46902a4fda4.jpg"
+      },
+      {
+        "id": 78,
+        "name": "America",
+        "slug": "america",
+        "language": "eng",
+        "games_count": 388,
+        "image_background": "https://media.rawg.io/media/games/bce/bce62fbc7cf74bf6a1a37340993ec148.jpg"
+      },
+      {
+        "id": 200,
+        "name": "Narration",
+        "slug": "narration",
+        "language": "eng",
+        "games_count": 1281,
+        "image_background": "https://media.rawg.io/media/screenshots/76a/76a4511b693e10e282463b5904a2f450.jpg"
+      },
+      {
+        "id": 577,
+        "name": "Beautiful",
+        "slug": "beautiful",
+        "language": "eng",
+        "games_count": 1789,
+        "image_background": "https://media.rawg.io/media/screenshots/18b/18b81812829bc49465e4a6d97af596c6_RdH7DXE.jpg"
+      },
+      {
+        "id": 572,
+        "name": "Emotional",
+        "slug": "emotional",
+        "language": "eng",
+        "games_count": 1441,
+        "image_background": "https://media.rawg.io/media/games/b28/b28a135fa6133e17b228f46902a4fda4.jpg"
+      },
+      {
+        "id": 309,
+        "name": "Dynamic Narration",
+        "slug": "dynamic-narration",
+        "language": "eng",
+        "games_count": 231,
+        "image_background": "https://media.rawg.io/media/games/c57/c57fb7528b649aa082171637e6190049.jpg"
+      },
+      {
+        "id": 43374,
+        "name": "Remote Play on TV",
+        "slug": "remote-play-on-tv",
+        "language": "eng",
+        "games_count": 285,
+        "image_background": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+      },
+      {
+        "id": 19728,
+        "name": "european",
+        "slug": "european",
+        "language": "eng",
+        "games_count": 12,
+        "image_background": "https://media.rawg.io/media/screenshots/d14/d148f8ffc332b1d0f70be9bad91c2171.jpg"
+      },
+      {
+        "id": 2071,
+        "name": "futurism",
+        "slug": "futurism",
+        "language": "eng",
+        "games_count": 4,
+        "image_background": "https://media.rawg.io/media/games/47c/47c4398d9f910210ecb2114f1f82a2bf.jpg"
+      }
+    ],
+    "publishers": [
+      {
+        "id": 10212,
+        "name": "Sony Computer Entertainment",
+        "slug": "sony-computer-entertainment",
+        "games_count": 493,
+        "image_background": "https://media.rawg.io/media/games/4b6/4b67558bf04c7211aabeff179271bdd8.jpg"
+      },
+      {
+        "id": 10302,
+        "name": "Quantic Dream",
+        "slug": "quantic-dream",
+        "games_count": 6,
+        "image_background": "https://media.rawg.io/media/games/0af/0af85e8edddfa55368e47c539914a220.jpg"
+      }
+    ],
+    "esrb_rating": {
+      "id": 4,
+      "name": "Mature",
+      "slug": "mature"
+    },
+    "clip": null,
+    "description_raw": "In the future world, androids do almost everything that people do - they even start to think and feel. Although no one taught them this.\r\n\r\nThe plot of \"Become Human\" is built around three characters, each with a separate storyline, but they eventually merge into a single picture.\r\n\r\nConnor is a police investigator and android. He has a simple task - to find androids, deviated from the path given by humans. He has a special vision, it allows him to see events as they happened. And the more information he collects, the higher his chances of acting correctly.\r\n\r\nKara is an android-housekeeper which spontaneously develops self-consciousness. As a result, Kara assumes responsibility for the fate of the little girl whom she worked as a sitter for. She, along with the girl, escapes from the house as a result of a conflict with her father, the owner of Kara.\r\n\r\nMarkus is a caretaker android. He also acquired self-consciousness and came to the idea that androids need freedom. He has the ability to grant androids free will and to calculate the consequences of some actions.\r\n\r\nThe story develops depending on the decisions taken by the characters. Some decisions have to be made quickly. Sometimes a player can return to the moment of making a choice and replay the situation."
+  }
+  ]

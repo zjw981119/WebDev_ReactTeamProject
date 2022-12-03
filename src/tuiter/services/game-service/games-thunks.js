@@ -1,6 +1,6 @@
 import {createAsyncThunk} from "@reduxjs/toolkit"
 import * as service from "./games-service"
-import {findGameByRwagId} from "./games-service";
+
 
 // wrap an asynchronous HTTP function
 export const findGamesThunk = createAsyncThunk(
@@ -9,10 +9,10 @@ export const findGamesThunk = createAsyncThunk(
         await service.findGames()
 )
 
-export const findGamesByIdThunk = createAsyncThunk(
-    'tuits/findGameById', async (RwagId) => {
-        // Returned data goes in redux action's payload
-        return await service.findGameByRwagId(RwagId);
+export const findGameByIdThunk = createAsyncThunk(
+    'tuits/findGameByRawgId', async (RawgId) => {
+        const res = await service.findGameByRawgId(RawgId)
+        return res
     }
 )
 

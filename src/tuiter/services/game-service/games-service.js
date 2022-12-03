@@ -12,8 +12,8 @@ export const createGame = async (game) => {
     return response.data;
 }
 
-export const findGameByRwagId  = async (RwagId) => {
-    const req_API = Games_API + "/" + RwagId
+export const findGameByRawgId  = async (RawgId) => {
+    const req_API = Games_API + "/" + RawgId
     const response = await axios.get(req_API);
     return response.data;
 }
