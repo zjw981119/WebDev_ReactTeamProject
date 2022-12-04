@@ -68,7 +68,7 @@ const ReviewsList = ({RawgId}) => {
 
     return (
         <>
-            <ul className="list-group border border-secondary">
+            <ul className="list-group border ">
                 {
                     // if loading flag is true, then show a loading message while data is still
                     // coming back from the server
@@ -82,6 +82,7 @@ const ReviewsList = ({RawgId}) => {
                         <ReviewItem key={review._id} review={review}/>)
                 }
             </ul>
+
             <div
                 style={{
                     display: "flex",

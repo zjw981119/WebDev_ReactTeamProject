@@ -160,7 +160,9 @@ const GameComponent = () => {
                 </div>
             </div>
 
-            <div className="border border-secondary ">
+            <div className = "game-title-padding"></div>
+
+            <div className="border ">
                 <div className = "game-title-padding"></div>
                 <h5> Reviews:</h5>
                 <div className = "game-title-padding"></div>

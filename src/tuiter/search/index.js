@@ -17,6 +17,7 @@ const SearchComponent = () => {
         await setgamesArray(response.payload.results);
     }
 
+    //Pagination
     useEffect(() => {
         setTotalPosts(gamesArray.length)
     }, [gamesArray]);

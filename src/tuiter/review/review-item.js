@@ -37,7 +37,7 @@ const ReviewItem = (
 
 
     return (
-        <li key={review._id} className="list-group-item">
+        <li key={review._id} className="list-group-item border border-secondary">
             <div className="row">
                 {/*left-part avatar*/}
                 <div className="col-1 p-1">
@@ -94,7 +94,7 @@ const ReviewItem = (
                             <div className="circle">
                                 <div className="center text-22">{review.LastingAppealScore}</div>
                             </div>
-                            <div className="la-Score-center text-18">LastAppeal
+                            <div className="la-Score-center text-18">Last Appeal
                                 <div className="Score-center-2">
                                     {review.LastingAppealScore}/10
                                 </div>
@@ -114,9 +114,9 @@ const ReviewItem = (
 
                     <div className="overall-review-padding">
                     </div>
-                    <h6 className="ps-2 pt-2 text-warning text-18">
-                        Overall Rating: {((review.GraphicScore + review.LastingAppealScore + review.GamePlayScore)/3).toFixed(1)}
-                    </h6>
+                    <h5 className="ps-2 pt-2 text-warning text-18">
+                        Overall Rating:  {((review.GraphicScore + review.LastingAppealScore + review.GamePlayScore)/3).toFixed(1)}/10.0
+                    </h5>
 
                 </div>
             </div>

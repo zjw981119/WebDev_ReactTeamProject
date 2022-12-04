@@ -1,6 +1,6 @@
 import NavigationSidebar from "./navigation-sidebar";
 import TuitList from "./tuits"
-import WhoToFollowList from "./who-to-follow-list";
+import recommeded_game from "./recommeded_game";
 import ExploreComponent from "./explore/index";
 import SearchComponent from "./search/index";
 import {Routes, Route} from "react-router";
@@ -16,6 +16,7 @@ import ProfileComponent from "./profile";
 import GameComponent from "./game/index";
 import EditProfile from "./profile/edit-profile";
 import CreateReview from "./review/create-review";
+import Recommended_game from "./recommeded_game";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
@@ -42,7 +43,7 @@ function Tuiter() {
                     </Routes>
                 </div>
                 <div className="d-none d-lg-block col-lg-4 col-xl-4">
-                    <WhoToFollowList/>
+                    <Recommended_game/>
                 </div>
             </div>
         </Provider>

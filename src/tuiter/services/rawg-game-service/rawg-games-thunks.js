@@ -1,5 +1,6 @@
 import {createAsyncThunk} from "@reduxjs/toolkit"
 import * as service from "./rawg-games-service"
+import {findRAWGRecommendedGame} from "./rawg-games-service";
 
 // wrap an asynchronous HTTP function
 export const searchRAWGGamesThunk = createAsyncThunk(
@@ -12,4 +13,10 @@ export const findRAWGGameDetailThunk = createAsyncThunk(
     'RAWGgames/findGameDetail', async (gameId) =>
         // Returned data goes in redux action's payload
         await service.findRAWGGameDetail(gameId)
+)
+
+export const findRAWGRecommendedGameThunk = createAsyncThunk(
+    'RAWGgames/findRAWGRecommendedGame', async (gameId) =>
+        // Returned data goes in redux action's payload
+        await service.findRAWGRecommendedGame()
 )
