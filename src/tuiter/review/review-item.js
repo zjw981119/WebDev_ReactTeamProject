@@ -1,6 +1,8 @@
-import React from "react";
+import React , {useEffect, useState}  from "react";
 import {useDispatch} from "react-redux";
 import {deleteReviewThunk} from "../services/review-service/reviews-thunks";
+import "./index.css";
+
 
 const ReviewItem = (
     {
@@ -11,7 +13,9 @@ const ReviewItem = (
             "time": "",
             "playhours" : "10",
             "avatar": "spacex.jpeg",
-            "score": 9,
+            "GamePlayScore": 9,
+            "LastingAppealScore": 9,
+            "GraphicScore": 9,
             "recommended": true,
             "content": "I enjoy this game a lot",
             "RawgId" : 3489
@@ -30,6 +34,7 @@ const ReviewItem = (
         IsRecommendedImage = "/images/thumbup.png";
         IsRecommended = "Recommended";
     }
+
 
     return (
         <li key={review._id} className="list-group-item">
@@ -52,7 +57,7 @@ const ReviewItem = (
                            onClick={() => deleteReviewHandler(review._id)}/>
                     </div>
 
-                    <div className = "game-title-padding "></div>
+                    <div className = "review-content-padding "></div>
                     <div className="row">
                         <div className="col-1 d-none d-sm-block d-md-block d-lg-block d-xl-block d-xxl-block ps-3">
                             <img className="rounded-circle ps-2" src={IsRecommendedImage} width="50px"/>
@@ -64,20 +69,59 @@ const ReviewItem = (
                             <div >Played {review.playhours} hrs</div>
                         </div>
                     </div>
-                    <div className = "game-title-padding"></div>
+                    <div className = "review-content-padding"></div>
 
-                    <div className="ps-2 pt-2 text-dark">
+                    <div className="ps-2 pt-2 text-dark wrap-text">
                         {review.content}
                     </div>
                     <div className="ps-2 pt-2">
                     </div>
-                    <div className="ps-2 pt-2 text-warning">
-                        User Rating: {review.score}
+
+
+                    <div className = "top-bottom-padding"></div>
+                    <div className="row">
+                        <div className="col-4">
+                            <div className="circle">
+                                <div className="center text-22">{review.GamePlayScore}</div>
+                            </div>
+                            <div className="gp-Score-center text-18">Gameplay
+                                <div className="Score-center-1">
+                                    {review.GamePlayScore}/10
+                                </div>
+                            </div>
+                        </div>
+                        <div  className="col-4">
+                            <div className="circle">
+                                <div className="center text-22">{review.LastingAppealScore}</div>
+                            </div>
+                            <div className="la-Score-center text-18">LastAppeal
+                                <div className="Score-center-2">
+                                    {review.LastingAppealScore}/10
+                                </div>
+                            </div>
+                        </div>
+                        <div  className="col-4">
+                            <div className="circle">
+                                <div className="center text-22">{review.GraphicScore}</div>
+                            </div>
+                            <div className="g-Score-center text-18">Graphic
+                                <div className="Score-center-3">
+                                    {review.GraphicScore}/10
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div className="overall-review-padding">
+                    </div>
+                    <h6 className="ps-2 pt-2 text-warning text-18">
+                        Overall Rating: {((review.GraphicScore + review.LastingAppealScore + review.GamePlayScore)/3).toFixed(1)}
+                    </h6>
 
                 </div>
             </div>
         </li>
+
     );
 };
 export default ReviewItem;

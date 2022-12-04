@@ -5,6 +5,8 @@ import {findGameByIdThunk, getGameTrailerUrlThunk} from "../services/game-servic
 import GameArray from "./game.json";
 import ReviewsList from "../review/index";
 
+import { Pagination } from 'antd';
+
 const GameComponent = () => {
 
     let gameLocation = useLocation();
@@ -48,6 +50,7 @@ const GameComponent = () => {
             console.log("Fail to Init")
         }
     }
+
 
 
     return (
@@ -163,6 +166,8 @@ const GameComponent = () => {
                 <div className = "game-title-padding"></div>
                 <ReviewsList RawgId={gameLocation.state.RawgId}/>
             </div>
+
+
 
         </div>
 
