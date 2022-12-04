@@ -8,16 +8,18 @@ import who from "./reducers/who-reducer";
 import exploretTuits from "./reducers/explore-tuits-reducer";
 import homeTuitsData from "./reducers/home-tuits-reducer";
 import profile from "./reducers/profile-reducer";
+import review from "./reducers/review-reducer";
 import { configureStore }
     from '@reduxjs/toolkit';
 import {Provider} from "react-redux";
 import ProfileComponent from "./profile";
 import GameComponent from "./game/index";
 import EditProfile from "./profile/edit-profile";
+import CreateReview from "./review/create-review";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
-    {reducer: {who, exploretTuits, homeTuitsData, profile}});
+    {reducer: {who, exploretTuits, homeTuitsData, profile, review}});
 
 
 function Tuiter() {
@@ -34,6 +36,7 @@ function Tuiter() {
                         <Route path="/explore" element={<ExploreComponent/>}/>
                         <Route path="/search" element={<SearchComponent/>}/>
                         <Route path="/game" element={<GameComponent/>}/>
+                        <Route path="/create-review" element={<CreateReview/>}/>
                         <Route path="/profile" element={<ProfileComponent/>}/>
                         <Route path="/edit-profile" element={<EditProfile/>}/>
                     </Routes>

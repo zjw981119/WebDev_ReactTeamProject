@@ -1,5 +1,6 @@
 import axios from 'axios';
 const Games_API = 'http://localhost:4000/api/games';
+const Youtube_API_key = "AIzaSyBgU76k8BjLF-R94jVnUGbGKLNaAgPKnDo";
 // const TUITS_API = 'https://webdev-tuiter-server.herokuapp.com/api/tuits';
 
 // use different path according to different machine
@@ -16,6 +17,15 @@ export const findGameByRawgId  = async (RawgId) => {
     const req_API = Games_API + "/" + RawgId
     const response = await axios.get(req_API);
     return response.data;
+}
+
+export const getGameTrailerUrl  = async (GameName) => {
+    const keyword = GameName + " Trailer";
+    const req_API = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + keyword + "&key=" + Youtube_API_key;
+    const response = await axios.get(req_API);
+    const videoId = response.data.items[0].id.videoId;
+    const trailer_url = "https://www.youtube.com/embed/" + videoId
+    return trailer_url;
 }
 
 

@@ -1,5 +1,6 @@
 import {createAsyncThunk} from "@reduxjs/toolkit"
 import * as service from "./games-service"
+import {getGameTrailerUrl} from "./games-service";
 
 
 // wrap an asynchronous HTTP function
@@ -12,6 +13,13 @@ export const findGamesThunk = createAsyncThunk(
 export const findGameByIdThunk = createAsyncThunk(
     'tuits/findGameByRawgId', async (RawgId) => {
         const res = await service.findGameByRawgId(RawgId)
+        return res
+    }
+)
+
+export const getGameTrailerUrlThunk = createAsyncThunk(
+    'tuits/getGameTrailerUrl', async ( GameName) => {
+        const res = await service.getGameTrailerUrl(GameName)
         return res
     }
 )

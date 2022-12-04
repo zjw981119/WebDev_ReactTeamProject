@@ -24,26 +24,12 @@
     bottom: 4px;
 }
 
-.btn-padding {
-    padding-bottom: 40px;
-}
-
-
 .game-title-padding {
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-.video-center {
-    alignment: center;
-}
-
-.recommended-padding {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 
 .left-padding{
     padding-left: 20px;
 }
-
