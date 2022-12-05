@@ -131,14 +131,16 @@ const SearchComponent = () => {
             <div className="row">
                 <div className="col-11">
                     <div className="position-relative">
-                        <i className="fa-solid fa-magnifying-glass ps-3 pt-2 position-absolute" style={{"color": "gray"}}></i>
+                        <Link>
+                        <i className="fa-solid fa-magnifying-glass ps-3 pt-2 position-absolute" style={{"color": "gray"}} onClick={GameSearchInputHandler}></i>
+                        </Link>
                         <input className="form-control rounded-pill ps-5 border border-secondary"
                                placeholder="Search Game"  value = {GameSearchInput}
                                onChange={(event) => setGameSearchInput(event.target.value)} onKeyDown={handleKeyPress}/>
                     </div>
                 </div>
                 <div className="col-1 d-flex align-items-center">
-                    <i className="fa-solid fa-magnifying-glass ps-3 pt-2 position-absolute" style={{"color": "deepskyblue"}} onClick={GameSearchInputHandler}></i>
+
                 </div>
             </div>
             <div className="search-bar-padding">

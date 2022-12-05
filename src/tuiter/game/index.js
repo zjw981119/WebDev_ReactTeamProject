@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {findGameByIdThunk, getGameTrailerUrlThunk} from "../services/game-service/games-thunks";
 import GameArray from "./game.json";
 import ReviewsList from "../review/index";
+import Collapsible from 'react-collapsible';
 
 import { Pagination } from 'antd';
 
@@ -87,29 +88,28 @@ const GameComponent = () => {
                 </div>
 
 
-                <div className="p-2">
-                    <h6 className="fw-bolder pb-0 mb-0">
-                        Description:
-                    </h6>
-                    <p className="pt-2">
-                        {game.Description}
-                    </p>
+                <div className="p-3">
+                    <div className="bg-color-blue border-secondary">
+                        <Collapsible trigger="Description:"  className="fw-bolder pb-0 mb-0" open={true}>
+                            <p className="p-2 collapsible">
+                                {game.Description}
+                            </p>
 
+                            <p>
+                                <i className="fa-solid fa-link"/>
+                                <a href={game.Website} title={game.Website} className="text-decoration-none ms-3" target="_blank" rel="noopener">Official Website</a>
 
-                    <p>
-                        <i className="fa-solid fa-link"/>
-                        <a href={game.Website} title={game.Website} className="text-decoration-none ms-3" target="_blank" rel="noopener">Official Website</a>
+                                <i className="fa-solid fa-cake-candles ms-5 me-3"/>
+                                {"Release Date: " + game.ReleaseDate}
 
-                        <i className="fa-solid fa-cake-candles ms-5 me-3"/>
-                        {"Release Date: " + game.ReleaseDate}
-
-                    </p>
+                            </p>
+                        </Collapsible>
+                    </div>
 
                     <div className = "game-title-padding"></div>
 
-                    <div className="mb-5 position-relative">
-
-                            <h6>Trailer:</h6>
+                    <div className="bg-color-blue border-secondary">
+                        <Collapsible trigger="Trailer:"  className="fw-bolder pb-0 mb-0" open={true}>
                             <iframe className="w-100"
                                     height="400"
                                     src={videoUrl}
@@ -117,56 +117,77 @@ const GameComponent = () => {
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen>
                             </iframe>
-
+                        </Collapsible>
                     </div>
 
+                    <div className = "game-title-padding"></div>
 
-                    <h6> Genres:</h6>
+                    <div className="bg-color-blue border-secondary">
+                        <Collapsible trigger="Genres" className="fw-bolder pb-0 mb-0" open={true}>
+                            <ul className="">
+                                {
+                                    game.Genres.map(genre =>
+                                        <li className="">
+                                            {genre}
+                                        </li>)
+                                }
+                            </ul>
+                        </Collapsible>
+                    </div>
+
+                    <div className = "game-title-padding"></div>
+
+                    <div className="bg-color-blue border-secondary">
+                        <Collapsible trigger="Platforms:" className="fw-bolder pb-0 mb-0" open={true}>
                         <ul className="">
                             {
-                                game.Genres.map(genre =>
+                                game.Platforms.map(platform =>
                                     <li className="">
-                                        {genre}
+                                        {platform}
                                     </li>)
                             }
                         </ul>
+                        </Collapsible>
+                    </div>
 
-                    <h6> Platforms:</h6>
-                    <ul className="">
-                        {
-                            game.Platforms.map(platform =>
-                                <li className="">
-                                    {platform}
-                                </li>)
-                        }
-                    </ul>
-
-                    <h6> Developers:</h6>
-                    <ul className="">
-                        {
-                            game.Developers.map(developer =>
-                                <li className="">
-                                    {developer}
-                                </li>)
-                        }
-                    </ul>
-
-
-                    <h6> Metacritic Score:</h6><b></b>
-                    <b className="ms-2">{game.Metacritic}</b>
                     <div className = "game-title-padding"></div>
 
+
+                    <div className="bg-color-blue border-secondary">
+                        <Collapsible trigger="Developers:" className=" fw-bolder pb-0 mb-0" open={true}>
+                        <ul className="">
+                            {
+                                game.Developers.map(developer =>
+                                    <li className="">
+                                        {developer}
+                                    </li>)
+                            }
+                        </ul>
+                        </Collapsible>
+                    </div>
+
+                    <div className = "game-title-padding"></div>
+
+                    <div className="bg-color-blue border-secondary">
+                        <Collapsible trigger="Metacritic Score:" className="fw-bolder pb-0 mb-0" open={true}>
+                        <b></b>
+                        <b className="ms-2">{game.Metacritic}</b>
+                        <div className = "game-title-padding"></div>
+                        </Collapsible>
+                    </div>
 
                 </div>
             </div>
 
             <div className = "game-title-padding"></div>
 
-            <div className="border ">
-                <div className = "game-title-padding"></div>
-                <h5> Reviews:</h5>
-                <div className = "game-title-padding"></div>
-                <ReviewsList RawgId={gameLocation.state.RawgId}/>
+            <div className="border p-2">
+                <div className="bg-color-blue">
+                    <Collapsible trigger="Reviews" className="h6 fw-bolder pb-0 mb-0" open={true}>
+                    <div className = "game-title-padding"></div>
+                    <ReviewsList RawgId={gameLocation.state.RawgId}/>
+                    </Collapsible>
+                </div>
             </div>
 
 

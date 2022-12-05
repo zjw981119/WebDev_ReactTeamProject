@@ -35,6 +35,8 @@ const ReviewItem = (
         IsRecommended = "Recommended";
     }
 
+    const overall_score = ((review.GraphicScore + review.LastingAppealScore + review.GamePlayScore)/3).toFixed(1);
+
 
     return (
         <li key={review._id} className="list-group-item border border-secondary">
@@ -80,42 +82,59 @@ const ReviewItem = (
 
                     <div className = "top-bottom-padding"></div>
                     <div className="row">
+
                         <div className="col-4">
-                            <div className="circle">
+                            <div className= {review.GamePlayScore >= 8 ? 'text-success circle' : review.GamePlayScore >= 5
+                                ?  'text-warning circle' : 'text-danger circle'}>
                                 <div className="center text-22">{review.GamePlayScore}</div>
                             </div>
-                            <div className="gp-Score-center text-18">Gameplay
-                                <div className="Score-center-1">
+                            <div className= {review.GamePlayScore >= 8 ? 'text-success gp-Score-center text-18' : review.GamePlayScore >= 5
+                                ?  'text-warning gp-Score-center text-18' : 'text-danger gp-Score-center text-18'}>Gameplay
+                                <div className= {review.GamePlayScore >= 8 ? 'text-success score-center-1' : review.GamePlayScore >= 5
+                                    ?  'text-warning score-center-1' : 'text-danger score-center-1'}>
                                     {review.GamePlayScore}/10
                                 </div>
                             </div>
                         </div>
+
+
                         <div  className="col-4">
-                            <div className="circle">
+                            <div className= {review.LastingAppealScore >= 8 ? 'text-success circle' : review.LastingAppealScore >= 5
+                                ?  'text-warning circle' : 'text-danger circle'}>
                                 <div className="center text-22">{review.LastingAppealScore}</div>
                             </div>
-                            <div className="la-Score-center text-18">Last Appeal
-                                <div className="Score-center-2">
+                            <div className= {review.LastingAppealScore >= 8 ? 'text-success la-Score-center text-18' : review.LastingAppealScore >= 5
+                                ?  'text-warning la-Score-center text-18' : 'text-danger la-Score-center text-18'}>Last Appeal
+                                <div className= {review.LastingAppealScore >= 8 ? 'text-success score-center-2' : review.LastingAppealScore >= 5
+                                    ?  'text-warning score-center-2' : 'text-danger score-center-2'}>
                                     {review.LastingAppealScore}/10
                                 </div>
                             </div>
                         </div>
+
+
                         <div  className="col-4">
-                            <div className="circle">
+                            <div className= {review.GraphicScore >= 8 ? 'text-success circle' : review.GraphicScore >= 5
+                                ?  'text-warning circle' : 'text-danger circle'}>
                                 <div className="center text-22">{review.GraphicScore}</div>
                             </div>
-                            <div className="g-Score-center text-18">Graphic
-                                <div className="Score-center-3">
+                            <div className= {review.GraphicScore >= 8 ? 'text-success g-Score-center text-18' : review.GraphicScore >= 5
+                                    ?  'text-warning g-Score-center text-18' : 'text-danger g-Score-center text-18'}>Graphic
+                                <div className= {review.GraphicScore >= 8 ? 'text-success score-center-3' : review.GraphicScore >= 5
+                                    ?  'text-warning score-center-3' : 'text-danger score-center-3'}>
                                     {review.GraphicScore}/10
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
 
                     <div className="overall-review-padding">
                     </div>
-                    <h5 className="ps-2 pt-2 text-warning text-18">
-                        Overall Rating:  {((review.GraphicScore + review.LastingAppealScore + review.GamePlayScore)/3).toFixed(1)}/10.0
+                    <h5 className = {overall_score >= 8 ? 'text-success ps-2 pt-2 text-18' : overall_score >= 5
+                                                                    ?  'text-warning ps-2 pt-2 text-18' : 'text-danger ps-2 pt-2 text-18'}>
+                        Overall Rating:  {overall_score}/10.0
                     </h5>
 
                 </div>
