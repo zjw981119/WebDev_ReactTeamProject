@@ -13,10 +13,11 @@ const GameComponent = () => {
     let gameLocation = useLocation();
     let [game, setgame] = useState(GameArray);
     let [videoUrl, setvideoUrl] = useState('');
-    let [musicUrl, setmusicUrl] = useState('https://open.spotify.com/');
+    let [musicId , setmusicId] = useState('');
 
     const dispatch = useDispatch();
 
+    //Initialize with timmer to get the game info from server
     useEffect(() => {
         setTimeout(function(){
             try {
@@ -25,7 +26,12 @@ const GameComponent = () => {
             catch{
 
             }
-        }, 500);
+        }, 700);
+    }, [])
+
+    //Initialize Music use Effect
+    useEffect(() => {
+        InitMusic()
     }, [])
 
     useEffect(() => {
@@ -34,6 +40,8 @@ const GameComponent = () => {
     useEffect(() => {
     }, [videoUrl])
 
+
+    //Function to get the game info from server
     async function ComponentInit()
     {
         try{
@@ -44,16 +52,25 @@ const GameComponent = () => {
 
             //TODO Comment backup
             const GameName = gameLocation.state.GameName;
-            let TrailerVideoResponse = await dispatch(getGameTrailerUrlThunk(GameName))
-            await setvideoUrl(TrailerVideoResponse.payload);
-
-            //TODO Spotify game music
-            let MusicAPIResponse = await dispatch(getGameMusicUrlThunk(GameName))
-            await setmusicUrl(MusicAPIResponse.payload);
+            // let TrailerVideoResponse = await dispatch(getGameTrailerUrlThunk(GameName))
+            // await setvideoUrl(TrailerVideoResponse.payload);
 
         }
         catch{
             console.log("Fail to Init")
+        }
+    }
+
+    //function to initialize music
+    async function InitMusic()
+    {
+        try {
+            const GameName = gameLocation.state.GameName;
+            let MusicAPIResponse = await dispatch(getGameMusicUrlThunk(GameName))
+            await setmusicId(MusicAPIResponse.payload);
+        }
+        catch (e) {
+            console.log("Fail to Load Music or music cannot be found")
         }
     }
 
@@ -79,10 +96,10 @@ const GameComponent = () => {
 
                 <div className = "game-title-padding"></div>
                 <div className="col-11">
-                    <h3 className="p-2 mb-0 pb-0 fw-bolder">
+                    {game.GameName ? <h3 className="p-2 mb-0 pb-0 fw-bolder">
                         {game.GameName}
                         <i className="fa fa-badge-check text-primary"/>
-                    </h3>
+                    </h3> : <h3 className="p-2 mb-0 pb-0 fw-bolder"></h3>}
                 </div>
                 <div className = "game-title-padding"></div>
 
@@ -117,13 +134,14 @@ const GameComponent = () => {
 
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="Trailer:"  className="fw-bolder pb-0 mb-0" open={true}>
-                            <iframe className="w-100"
+                            {musicId ?<iframe className="w-100"
                                     height="400"
                                     src={videoUrl}
                                     title="Trailer"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen>
-                            </iframe>
+                            </iframe> : <p>N/A</p>
+                            }
                         </Collapsible>
                     </div>
 
@@ -131,7 +149,8 @@ const GameComponent = () => {
 
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="Game Music:"  className="fw-bolder pb-0 mb-0" open={true}>
-                            <Spotify link={ musicUrl } height={100} />
+                            {musicId ? <Spotify link={"https://open.spotify.com/playlist/" + musicId } height={100}></Spotify> : <p>N/A</p>
+                            }
                         </Collapsible>
                     </div>
 
@@ -139,14 +158,14 @@ const GameComponent = () => {
 
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="Genres" className="fw-bolder pb-0 mb-0" open={true}>
-                            <ul className="">
+                            {game.Genres ? <ul className="">
                                 {
                                     game.Genres.map(genre =>
                                         <li className="">
                                             {genre}
                                         </li>)
                                 }
-                            </ul>
+                            </ul> : <p>Loading...</p>}
                         </Collapsible>
                     </div>
 
@@ -154,14 +173,14 @@ const GameComponent = () => {
 
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="Platforms:" className="fw-bolder pb-0 mb-0" open={true}>
-                        <ul className="">
+                            {game.Platforms ?<ul className="">
                             {
                                 game.Platforms.map(platform =>
                                     <li className="">
                                         {platform}
                                     </li>)
                             }
-                        </ul>
+                            </ul> : <p>Loading...</p>}
                         </Collapsible>
                     </div>
 
@@ -170,14 +189,14 @@ const GameComponent = () => {
 
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="Developers:" className=" fw-bolder pb-0 mb-0" open={true}>
-                        <ul className="">
+                            {game.Developers ?<ul className="">
                             {
                                 game.Developers.map(developer =>
                                     <li className="">
                                         {developer}
                                     </li>)
                             }
-                        </ul>
+                            </ul>: <p>Loading...</p>}
                         </Collapsible>
                     </div>
 
@@ -186,7 +205,9 @@ const GameComponent = () => {
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="Metacritic Score:" className="fw-bolder pb-0 mb-0" open={true}>
                         <b></b>
-                        <b className="ms-2">{game.Metacritic}</b>
+                            {game.Metacritic ?
+                            <b className="ms-2">{game.Metacritic}</b>
+                            : <b>N/A</b>}
                         <div className = "game-title-padding"></div>
                         </Collapsible>
                     </div>

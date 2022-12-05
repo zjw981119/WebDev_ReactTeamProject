@@ -35,22 +35,26 @@ export const getGameTrailerUrl  = async (GameName) => {
     }
 }
 
+
 export const getGameMusicUrl  = async (GameName) => {
     let keyword = GameName;
     if(keyword.includes(':') && keyword.indexOf(':') > keyword.length/2)
     {
         keyword = keyword.substring(0, keyword.indexOf(':'))
     }
-    const req_API = "https://api.spotify.com/v1/search?q=" + keyword + "&type=playlist&limit=1&access_token=" + Spotify_API_key;
-    const response = await axios.get(req_API);
-    try {
-        const music_uri = response.data.playlists.items[0].external_urls.spotify;
-        console.log(music_uri)
-        return music_uri;
-    }
-    catch (e) {
-        console.log("music playlists cannot be found");
-    }
+
+    const req_fast_API = "https://spotify23.p.rapidapi.com/search/?q=" + keyword+"&type=multi&offset=0&limit=10&numberOfTopResults=5";
+
+    const res = await axios.get(req_fast_API, {
+        headers: {
+            'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
+            'X-RapidAPI-Key': '6b661fe439msh3a879a9b179992bp107604jsn3cc592bd533e'
+        }
+    });
+
+    const SpotifyMusicId = res.data.playlists.items[0].data.uri.split(':')[2];
+    return SpotifyMusicId
+
 }
 
 
