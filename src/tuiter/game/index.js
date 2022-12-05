@@ -22,6 +22,7 @@ const GameComponent = () => {
         setTimeout(function(){
             try {
                 ComponentInit()
+                InitMusic()
             }
             catch{
 
@@ -52,8 +53,8 @@ const GameComponent = () => {
 
             //TODO Comment backup
             const GameName = gameLocation.state.GameName;
-            // let TrailerVideoResponse = await dispatch(getGameTrailerUrlThunk(GameName))
-            // await setvideoUrl(TrailerVideoResponse.payload);
+            let TrailerVideoResponse = await dispatch(getGameTrailerUrlThunk(GameName))
+            await setvideoUrl(TrailerVideoResponse.payload);
 
         }
         catch{
@@ -133,8 +134,8 @@ const GameComponent = () => {
                     <div className = "game-title-padding"></div>
 
                     <div className="bg-color-blue border-secondary">
-                        <Collapsible trigger="Trailer:"  className="fw-bolder pb-0 mb-0" open={true}>
-                            {musicId ?<iframe className="w-100"
+                        <Collapsible trigger="Related Video:"  className="fw-bolder pb-0 mb-0" open={true}>
+                            {videoUrl ?<iframe className="w-100"
                                     height="400"
                                     src={videoUrl}
                                     title="Trailer"
@@ -149,7 +150,7 @@ const GameComponent = () => {
 
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="Game Music:"  className="fw-bolder pb-0 mb-0" open={true}>
-                            {musicId ? <Spotify link={"https://open.spotify.com/playlist/" + musicId } height={100}></Spotify> : <p>N/A</p>
+                            {musicId ? <Spotify link={"https://open.spotify.com/playlist/" + musicId } height={300}></Spotify> : <p>N/A</p>
                             }
                         </Collapsible>
                     </div>

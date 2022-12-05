@@ -1,7 +1,7 @@
 import axios from 'axios';
 const Games_API = 'http://localhost:4000/api/games';
-const Youtube_API_key = "AIzaSyBgU76k8BjLF-R94jVnUGbGKLNaAgPKnDo";
-const Spotify_API_key = "BQCoN3ubiXXQ9sbVCbkQklvEVzA_OGQPMgeiCpE73RnN2UkYgK4JzfJliPxl9rFLhOLfG_MmcRwuY5EPVt-ZjQsHNQuwTB9ZLQu6quXduUVxiBjz4eOjxTHx0eX4R_c_3C1491aeYFyXpfeaDFtxG3VWULdriW4alhRjhc7sRnztl7jZ0LNc_NuqrnA2DUQpXDMQUYQ_okE"
+const RapidAPI_Key = '6b661fe439msh3a879a9b179992bp107604jsn3cc592bd533e'
+
 // const TUITS_API = 'https://webdev-tuiter-server.herokuapp.com/api/tuits';
 
 // use different path according to different machine
@@ -24,11 +24,17 @@ export const getGameTrailerUrl  = async (GameName) => {
     const keyword = GameName + " Trailer";
 
     try {
-        const req_API = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + keyword + "&key=" + Youtube_API_key;
-        const response = await axios.get(req_API);
-        const videoId = response.data.items[0].id.videoId;
+        const req_fast_API = "https://youtube-v2.p.rapidapi.com/search/?query=" + keyword+"&lang=en&order_by=this_month&country=us";
+        const response = await axios.get(req_fast_API, {
+            headers: {
+                'X-RapidAPI-Host': 'youtube-v2.p.rapidapi.com',
+                'X-RapidAPI-Key': RapidAPI_Key
+            }
+        });
+        const videoId = response.data.videos[0].video_id;
         const trailer_url = "https://www.youtube.com/embed/" + videoId
         return trailer_url;
+
     }
     catch (e) {
         console.log("trailer video cannot be found");
@@ -48,7 +54,7 @@ export const getGameMusicUrl  = async (GameName) => {
     const res = await axios.get(req_fast_API, {
         headers: {
             'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
-            'X-RapidAPI-Key': '6b661fe439msh3a879a9b179992bp107604jsn3cc592bd533e'
+            'X-RapidAPI-Key': RapidAPI_Key
         }
     });
 
