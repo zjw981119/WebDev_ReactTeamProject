@@ -5,8 +5,8 @@ import {findGameByIdThunk, getGameTrailerUrlThunk, getGameMusicUrlThunk} from ".
 import GameArray from "./game.json";
 import ReviewsList from "../review/index";
 import Collapsible from 'react-collapsible';
-
 import Spotify from "react-spotify-embed";
+
 
 const GameComponent = () => {
 
@@ -27,7 +27,7 @@ const GameComponent = () => {
             catch{
 
             }
-        }, 700);
+        }, 500);
     }, [])
 
     //Initialize Music use Effect
@@ -78,7 +78,9 @@ const GameComponent = () => {
 
 
     return (
+
         <div className="ttr-profile" >
+
             <div className="border border-secondary ">
 
                 <div className="btn-padding">
@@ -228,9 +230,7 @@ const GameComponent = () => {
             </div>
 
 
-
         </div>
-
 
     );
 

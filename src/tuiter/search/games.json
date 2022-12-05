@@ -1,5 +1,1273 @@
 [
   {
+    "id": 799265,
+    "slug": "the-last-of-us-part-i",
+    "name": "The Last of Us Part I",
+    "name_original": "The Last of Us Part I",
+    "description": "<p>Revisit the game that set a new bar for single-player narrative storytelling with The Last of Us™ and explore a ravaged and hardened world, where every action has a brutal consequence for Joel and Ellie.</p>",
+    "metacritic": 89,
+    "metacritic_platforms": [
+      {
+        "metascore": 89,
+        "url": "https://www.metacritic.com/game/playstation-5/the-last-of-us-part-i",
+        "platform": {
+          "platform": 187,
+          "name": "PlayStation 5",
+          "slug": "playstation5"
+        }
+      }
+    ],
+    "released": "2022-09-02",
+    "tba": false,
+    "updated": "2022-12-05T17:14:09",
+    "background_image": "https://media.rawg.io/media/games/71d/71df9e759b2246f9769126c98ac997fc.jpg",
+    "background_image_additional": "https://media.rawg.io/media/screenshots/ba2/ba2f7e998444d79b37fd352ab92d6b65.jpg",
+    "website": "",
+    "rating": 4.4,
+    "rating_top": 5,
+    "ratings": [
+      {
+        "id": 5,
+        "title": "exceptional",
+        "count": 25,
+        "percent": 71.43
+      },
+      {
+        "id": 4,
+        "title": "recommended",
+        "count": 5,
+        "percent": 14.29
+      },
+      {
+        "id": 1,
+        "title": "skip",
+        "count": 3,
+        "percent": 8.57
+      },
+      {
+        "id": 3,
+        "title": "meh",
+        "count": 2,
+        "percent": 5.71
+      }
+    ],
+    "reactions": {},
+    "added": 324,
+    "added_by_status": {
+      "yet": 56,
+      "owned": 48,
+      "beaten": 34,
+      "toplay": 175,
+      "dropped": 4,
+      "playing": 7
+    },
+    "playtime": 0,
+    "screenshots_count": 11,
+    "movies_count": 0,
+    "creators_count": 8,
+    "achievements_count": 0,
+    "parent_achievements_count": 0,
+    "reddit_url": "",
+    "reddit_name": "",
+    "reddit_description": "",
+    "reddit_logo": "",
+    "reddit_count": 0,
+    "twitch_count": 4,
+    "youtube_count": 0,
+    "reviews_text_count": 1,
+    "ratings_count": 34,
+    "suggestions_count": 541,
+    "alternative_names": [
+      "The Last Of Us Remake"
+    ],
+    "metacritic_url": "https://www.metacritic.com/game/playstation-5/the-last-of-us-part-i",
+    "parents_count": 1,
+    "additions_count": 0,
+    "game_series_count": 0,
+    "user_game": null,
+    "reviews_count": 35,
+    "saturated_color": "0f0f0f",
+    "dominant_color": "0f0f0f",
+    "parent_platforms": [
+      {
+        "platform": {
+          "id": 1,
+          "name": "PC",
+          "slug": "pc"
+        }
+      },
+      {
+        "platform": {
+          "id": 2,
+          "name": "PlayStation",
+          "slug": "playstation"
+        }
+      }
+    ],
+    "platforms": [
+      {
+        "platform": {
+          "id": 187,
+          "name": "PlayStation 5",
+          "slug": "playstation5",
+          "image": null,
+          "year_end": null,
+          "year_start": 2020,
+          "games_count": 740,
+          "image_background": "https://media.rawg.io/media/games/5ec/5ecac5cb026ec26a56efcc546364e348.jpg"
+        },
+        "released_at": "2022-09-02",
+        "requirements": {}
+      },
+      {
+        "platform": {
+          "id": 4,
+          "name": "PC",
+          "slug": "pc",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 503853,
+          "image_background": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"
+        },
+        "released_at": "2022-09-02",
+        "requirements": {}
+      }
+    ],
+    "stores": [
+      {
+        "id": 796550,
+        "url": "",
+        "store": {
+          "id": 3,
+          "name": "PlayStation Store",
+          "slug": "playstation-store",
+          "domain": "store.playstation.com",
+          "games_count": 7787,
+          "image_background": "https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg"
+        }
+      }
+    ],
+    "developers": [
+      {
+        "id": 13071,
+        "name": "Naughty Dog",
+        "slug": "naughty-dog",
+        "games_count": 26,
+        "image_background": "https://media.rawg.io/media/games/709/709bf81f874ce5d25d625b37b014cb63.jpg"
+      }
+    ],
+    "genres": [
+      {
+        "id": 4,
+        "name": "Action",
+        "slug": "action",
+        "games_count": 168162,
+        "image_background": "https://media.rawg.io/media/games/120/1201a40e4364557b124392ee50317b99.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Shooter",
+        "slug": "shooter",
+        "games_count": 59038,
+        "image_background": "https://media.rawg.io/media/games/be0/be01c3d7d8795a45615da139322ca080.jpg"
+      }
+    ],
+    "tags": [
+      {
+        "id": 31,
+        "name": "Singleplayer",
+        "slug": "singleplayer",
+        "language": "eng",
+        "games_count": 193456,
+        "image_background": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
+      },
+      {
+        "id": 13,
+        "name": "Atmospheric",
+        "slug": "atmospheric",
+        "language": "eng",
+        "games_count": 26601,
+        "image_background": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
+      },
+      {
+        "id": 42,
+        "name": "Great Soundtrack",
+        "slug": "great-soundtrack",
+        "language": "eng",
+        "games_count": 3221,
+        "image_background": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
+      },
+      {
+        "id": 118,
+        "name": "Story Rich",
+        "slug": "story-rich",
+        "language": "eng",
+        "games_count": 16869,
+        "image_background": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+      },
+      {
+        "id": 26,
+        "name": "Gore",
+        "slug": "gore",
+        "language": "eng",
+        "games_count": 4811,
+        "image_background": "https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"
+      },
+      {
+        "id": 34,
+        "name": "Violent",
+        "slug": "violent",
+        "language": "eng",
+        "games_count": 5633,
+        "image_background": "https://media.rawg.io/media/games/5a4/5a44112251d70a25291cc33757220fce.jpg"
+      },
+      {
+        "id": 150,
+        "name": "Third-Person Shooter",
+        "slug": "third-person-shooter",
+        "language": "eng",
+        "games_count": 2680,
+        "image_background": "https://media.rawg.io/media/games/5c0/5c0dd63002cb23f804aab327d40ef119.jpg"
+      },
+      {
+        "id": 63,
+        "name": "Zombies",
+        "slug": "zombies",
+        "language": "eng",
+        "games_count": 9448,
+        "image_background": "https://media.rawg.io/media/games/198/1988a337305e008b41d7f536ce9b73f6.jpg"
+      },
+      {
+        "id": 43,
+        "name": "Post-apocalyptic",
+        "slug": "post-apocalyptic",
+        "language": "eng",
+        "games_count": 3032,
+        "image_background": "https://media.rawg.io/media/games/283/283e7e600366b0da7021883d27159b27.jpg"
+      },
+      {
+        "id": 77,
+        "name": "Realistic",
+        "slug": "realistic",
+        "language": "eng",
+        "games_count": 3191,
+        "image_background": "https://media.rawg.io/media/games/27b/27b02ffaab6b250cc31bf43baca1fc34.jpg"
+      }
+    ],
+    "publishers": [
+      {
+        "id": 10212,
+        "name": "Sony Computer Entertainment",
+        "slug": "sony-computer-entertainment",
+        "games_count": 493,
+        "image_background": "https://media.rawg.io/media/games/4b6/4b67558bf04c7211aabeff179271bdd8.jpg"
+      }
+    ],
+    "esrb_rating": {
+      "id": 4,
+      "name": "Mature",
+      "slug": "mature"
+    },
+    "clip": null,
+    "description_raw": "Revisit the game that set a new bar for single-player narrative storytelling with The Last of Us™ and explore a ravaged and hardened world, where every action has a brutal consequence for Joel and Ellie."
+  },
+
+
+
+
+  {
+    "id": 51325,
+    "slug": "the-last-of-us-part-2",
+    "name": "The Last of Us Part II",
+    "name_original": "The Last of Us Part II",
+    "description": "<p>The Last of Us Part II is the sequel to the post-apocalyptic zombie game The Last of Us.</p>\n<p>Plot</p>\n<p>The game follows Ellie, the girl who was the secondary protagonist and the player character&#39;s companion in The Last of Us. The game is set five years after the ending of the original. Both Ellie (who is by 19 now) and Joel survived and live in Jackson, Wyoming, where Ellie is dating another girl, Dina. However, the characters have to deal with the evil cult called the Seraphites, who try to sacrifice their former members. A matter of revenge forces Ellie and her friends to undertake a trip to Seattle, Washington, to kill their enemies. The major theme of the plot is Ellie&#39;s dealing with her hate issues.</p>\n<p>Gameplay</p>\n<p>Unlike in the original game, the player controls Ellie instead of Joel, who now becomes her AI-controlled companion. The game features improved controls that include new options such as crawling, dodging, and a jump button. A new AI system allows the human adversaries to communicate share information with each other. The game also introduces multiplayer.</p>",
+    "metacritic": 93,
+    "metacritic_platforms": [
+      {
+        "metascore": 93,
+        "url": "https://www.metacritic.com/game/playstation-4/the-last-of-us-part-ii",
+        "platform": {
+          "platform": 18,
+          "name": "PlayStation 4",
+          "slug": "playstation4"
+        }
+      }
+    ],
+    "released": "2020-06-19",
+    "tba": false,
+    "updated": "2022-12-05T16:13:39",
+    "background_image": "https://media.rawg.io/media/games/909/909974d1c7863c2027241e265fe7011f.jpg",
+    "background_image_additional": "https://media.rawg.io/media/screenshots/75b/75b04439f728fa38cc16e59515a4d66d.jpg",
+    "website": "https://www.thelastofus.playstation.com/",
+    "rating": 4.41,
+    "rating_top": 5,
+    "ratings": [
+      {
+        "id": 5,
+        "title": "exceptional",
+        "count": 1080,
+        "percent": 70.4
+      },
+      {
+        "id": 4,
+        "title": "recommended",
+        "count": 236,
+        "percent": 15.38
+      },
+      {
+        "id": 1,
+        "title": "skip",
+        "count": 116,
+        "percent": 7.56
+      },
+      {
+        "id": 3,
+        "title": "meh",
+        "count": 102,
+        "percent": 6.65
+      }
+    ],
+    "reactions": {
+      "1": 28,
+      "2": 4,
+      "3": 11,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "9": 4,
+      "10": 14,
+      "11": 5,
+      "12": 14,
+      "14": 7,
+      "15": 5,
+      "16": 3,
+      "17": 1,
+      "18": 2,
+      "19": 4,
+      "20": 3,
+      "21": 5
+    },
+    "added": 6030,
+    "added_by_status": {
+      "yet": 327,
+      "owned": 2842,
+      "beaten": 1392,
+      "toplay": 1288,
+      "dropped": 58,
+      "playing": 123
+    },
+    "playtime": 0,
+    "screenshots_count": 29,
+    "movies_count": 0,
+    "creators_count": 7,
+    "achievements_count": 100,
+    "parent_achievements_count": 25,
+    "reddit_url": "https://www.reddit.com/r/thelastofus/",
+    "reddit_name": "The Last of Us | Reddit",
+    "reddit_description": "Welcome to the largest community for fans of The Last of Us Part I and Part II. Endure and survive! For the ideal browsing experience, use old.reddit.com for this subreddit. Please read our rules before submitting content!",
+    "reddit_logo": "https://b.thumbs.redditmedia.com/Hh_pMPm2WIiixvxm.png",
+    "reddit_count": 10718,
+    "twitch_count": 168,
+    "youtube_count": 1000000,
+    "reviews_text_count": 70,
+    "ratings_count": 1464,
+    "suggestions_count": 591,
+    "alternative_names": [
+      "TLoU2",
+      "The Last of Us 2",
+      "The Last of Us part 2"
+    ],
+    "metacritic_url": "https://www.metacritic.com/game/playstation-4/the-last-of-us-part-ii",
+    "parents_count": 0,
+    "additions_count": 0,
+    "game_series_count": 1,
+    "user_game": null,
+    "reviews_count": 1534,
+    "saturated_color": "0f0f0f",
+    "dominant_color": "0f0f0f",
+    "parent_platforms": [
+      {
+        "platform": {
+          "id": 2,
+          "name": "PlayStation",
+          "slug": "playstation"
+        }
+      }
+    ],
+    "platforms": [
+      {
+        "platform": {
+          "id": 18,
+          "name": "PlayStation 4",
+          "slug": "playstation4",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 6530,
+          "image_background": "https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"
+        },
+        "released_at": "2020-06-19",
+        "requirements": {}
+      },
+      {
+        "platform": {
+          "id": 187,
+          "name": "PlayStation 5",
+          "slug": "playstation5",
+          "image": null,
+          "year_end": null,
+          "year_start": 2020,
+          "games_count": 742,
+          "image_background": "https://media.rawg.io/media/games/b34/b3419c2706f8f8dbe40d08e23642ad06.jpg"
+        },
+        "released_at": "2020-06-19",
+        "requirements": {}
+      }
+    ],
+    "stores": [
+      {
+        "id": 365563,
+        "url": "",
+        "store": {
+          "id": 3,
+          "name": "PlayStation Store",
+          "slug": "playstation-store",
+          "domain": "store.playstation.com",
+          "games_count": 7787,
+          "image_background": "https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg"
+        }
+      }
+    ],
+    "developers": [
+      {
+        "id": 13071,
+        "name": "Naughty Dog",
+        "slug": "naughty-dog",
+        "games_count": 26,
+        "image_background": "https://media.rawg.io/media/games/709/709bf81f874ce5d25d625b37b014cb63.jpg"
+      }
+    ],
+    "genres": [
+      {
+        "id": 4,
+        "name": "Action",
+        "slug": "action",
+        "games_count": 168167,
+        "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Shooter",
+        "slug": "shooter",
+        "games_count": 59038,
+        "image_background": "https://media.rawg.io/media/games/be0/be01c3d7d8795a45615da139322ca080.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Adventure",
+        "slug": "adventure",
+        "games_count": 128587,
+        "image_background": "https://media.rawg.io/media/games/e2d/e2d3f396b16dded0f841c17c9799a882.jpg"
+      }
+    ],
+    "tags": [
+      {
+        "id": 31,
+        "name": "Singleplayer",
+        "slug": "singleplayer",
+        "language": "eng",
+        "games_count": 193456,
+        "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+      },
+      {
+        "id": 13,
+        "name": "Atmospheric",
+        "slug": "atmospheric",
+        "language": "eng",
+        "games_count": 26601,
+        "image_background": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
+      },
+      {
+        "id": 1,
+        "name": "Survival",
+        "slug": "survival",
+        "language": "eng",
+        "games_count": 6663,
+        "image_background": "https://media.rawg.io/media/games/1bd/1bd2657b81eb0c99338120ad444b24ff.jpg"
+      },
+      {
+        "id": 34,
+        "name": "Violent",
+        "slug": "violent",
+        "language": "eng",
+        "games_count": 5633,
+        "image_background": "https://media.rawg.io/media/games/5a4/5a44112251d70a25291cc33757220fce.jpg"
+      },
+      {
+        "id": 15,
+        "name": "Stealth",
+        "slug": "stealth",
+        "language": "eng",
+        "games_count": 5469,
+        "image_background": "https://media.rawg.io/media/games/310/3106b0e012271c5ffb16497b070be739.jpg"
+      },
+      {
+        "id": 69,
+        "name": "Action-Adventure",
+        "slug": "action-adventure",
+        "language": "eng",
+        "games_count": 12691,
+        "image_background": "https://media.rawg.io/media/games/d30/d30ef0c7dd4878161b1f781e297ae6a0.jpg"
+      },
+      {
+        "id": 37796,
+        "name": "exclusive",
+        "slug": "exclusive",
+        "language": "eng",
+        "games_count": 4512,
+        "image_background": "https://media.rawg.io/media/games/1f5/1f5ddf7199f2778ff83663b93b5cb330.jpg"
+      },
+      {
+        "id": 478,
+        "name": "3rd-Person Perspective",
+        "slug": "3rd-person-perspective",
+        "language": "eng",
+        "games_count": 86,
+        "image_background": "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg"
+      },
+      {
+        "id": 270,
+        "name": "Blood",
+        "slug": "blood",
+        "language": "eng",
+        "games_count": 1896,
+        "image_background": "https://media.rawg.io/media/games/a79/a79d2fc90c4dbf07a8580b19600fd61d.jpg"
+      },
+      {
+        "id": 78,
+        "name": "America",
+        "slug": "america",
+        "language": "eng",
+        "games_count": 388,
+        "image_background": "https://media.rawg.io/media/games/bce/bce62fbc7cf74bf6a1a37340993ec148.jpg"
+      },
+      {
+        "id": 42410,
+        "name": "LGBTQ+",
+        "slug": "lgbtq-2",
+        "language": "eng",
+        "games_count": 994,
+        "image_background": "https://media.rawg.io/media/games/96f/96f0c07b6c156f05cb76b2ffba32bffc.jpg"
+      },
+      {
+        "id": 467,
+        "name": "Role Playing Game",
+        "slug": "role-playing-game",
+        "language": "eng",
+        "games_count": 17,
+        "image_background": "https://media.rawg.io/media/games/35b/35b2ac9fb20b846488e6b95de02bee61.jpg"
+      }
+    ],
+    "publishers": [
+      {
+        "id": 11687,
+        "name": "Sony Interactive Entertainment",
+        "slug": "sony-interactive-entertainment",
+        "games_count": 305,
+        "image_background": "https://media.rawg.io/media/games/450/4501d8493e6ed172bd4982a16b56e580.jpg"
+      }
+    ],
+    "esrb_rating": {
+      "id": 4,
+      "name": "Mature",
+      "slug": "mature"
+    },
+    "clip": null,
+    "description_raw": "The Last of Us Part II is the sequel to the post-apocalyptic zombie game The Last of Us.\n\nPlot\n\nThe game follows Ellie, the girl who was the secondary protagonist and the player character's companion in The Last of Us. The game is set five years after the ending of the original. Both Ellie (who is by 19 now) and Joel survived and live in Jackson, Wyoming, where Ellie is dating another girl, Dina. However, the characters have to deal with the evil cult called the Seraphites, who try to sacrifice their former members. A matter of revenge forces Ellie and her friends to undertake a trip to Seattle, Washington, to kill their enemies. The major theme of the plot is Ellie's dealing with her hate issues.\n\nGameplay\n\nUnlike in the original game, the player controls Ellie instead of Joel, who now becomes her AI-controlled companion. The game features improved controls that include new options such as crawling, dodging, and a jump button. A new AI system allows the human adversaries to communicate share information with each other. The game also introduces multiplayer."
+  },
+
+  {
+    "id": 452642,
+    "slug": "horizon-zero-dawn-2",
+    "name": "Horizon Forbidden West",
+    "name_original": "Horizon Forbidden West",
+    "description": "<p>Explore distant lands, fight bigger and more awe-inspiring machines, and encounter astonishing new tribes as you return to the far-future, post-apocalyptic world of Horizon.</p>\n<p>The land is dying. Vicious storms and an unstoppable blight ravage the scattered remnants of humanity, while fearsome new machines prowl their borders. Life on Earth is hurtling towards another extinction, and no one knows why.</p>\n<p>It&#39;s up to Aloy to uncover the secrets behind these threats and restore order and balance to the world. Along the way, she must reunite with old friends, forge alliances with warring new factions and unravel the legacy of the ancient past – all the while trying to stay one step ahead of a seemingly undefeatable new enemy.</p>",
+    "metacritic": 86,
+    "metacritic_platforms": [
+      {
+        "metascore": 83,
+        "url": "https://www.metacritic.com/game/playstation-4/horizon-forbidden-west",
+        "platform": {
+          "platform": 18,
+          "name": "PlayStation 4",
+          "slug": "playstation4"
+        }
+      },
+      {
+        "metascore": 88,
+        "url": "https://www.metacritic.com/game/playstation-5/horizon-forbidden-west",
+        "platform": {
+          "platform": 187,
+          "name": "PlayStation 5",
+          "slug": "playstation5"
+        }
+      }
+    ],
+    "released": "2022-02-18",
+    "tba": false,
+    "updated": "2022-12-05T16:08:20",
+    "background_image": "https://media.rawg.io/media/games/bf7/bf73b105ccbba42107986bbcd96fcada.jpg",
+    "background_image_additional": "https://media.rawg.io/media/screenshots/7d9/7d99aac3687c0ca8fcaebb15616c1d23.jpg",
+    "website": "",
+    "rating": 4.31,
+    "rating_top": 5,
+    "ratings": [
+      {
+        "id": 5,
+        "title": "exceptional",
+        "count": 110,
+        "percent": 58.51
+      },
+      {
+        "id": 4,
+        "title": "recommended",
+        "count": 46,
+        "percent": 24.47
+      },
+      {
+        "id": 3,
+        "title": "meh",
+        "count": 22,
+        "percent": 11.7
+      },
+      {
+        "id": 1,
+        "title": "skip",
+        "count": 10,
+        "percent": 5.32
+      }
+    ],
+    "reactions": {
+      "1": 1,
+      "3": 2,
+      "12": 1,
+      "19": 1,
+      "20": 1
+    },
+    "added": 1756,
+    "added_by_status": {
+      "yet": 160,
+      "owned": 777,
+      "beaten": 163,
+      "toplay": 560,
+      "dropped": 27,
+      "playing": 69
+    },
+    "playtime": 0,
+    "screenshots_count": 22,
+    "movies_count": 0,
+    "creators_count": 6,
+    "achievements_count": 44,
+    "parent_achievements_count": 22,
+    "reddit_url": "",
+    "reddit_name": "",
+    "reddit_description": "",
+    "reddit_logo": "",
+    "reddit_count": 0,
+    "twitch_count": 166,
+    "youtube_count": 1000000,
+    "reviews_text_count": 4,
+    "ratings_count": 184,
+    "suggestions_count": 464,
+    "alternative_names": [
+      "Horizon Zero Dawn 2: Forbidden West"
+    ],
+    "metacritic_url": "https://www.metacritic.com/game/playstation-5/horizon-forbidden-west",
+    "parents_count": 0,
+    "additions_count": 0,
+    "game_series_count": 2,
+    "user_game": null,
+    "reviews_count": 188,
+    "saturated_color": "0f0f0f",
+    "dominant_color": "0f0f0f",
+    "parent_platforms": [
+      {
+        "platform": {
+          "id": 2,
+          "name": "PlayStation",
+          "slug": "playstation"
+        }
+      }
+    ],
+    "platforms": [
+      {
+        "platform": {
+          "id": 18,
+          "name": "PlayStation 4",
+          "slug": "playstation4",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 6530,
+          "image_background": "https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"
+        },
+        "released_at": "2022-02-18",
+        "requirements": {}
+      },
+      {
+        "platform": {
+          "id": 187,
+          "name": "PlayStation 5",
+          "slug": "playstation5",
+          "image": null,
+          "year_end": null,
+          "year_start": 2020,
+          "games_count": 742,
+          "image_background": "https://media.rawg.io/media/games/b34/b3419c2706f8f8dbe40d08e23642ad06.jpg"
+        },
+        "released_at": "2022-02-18",
+        "requirements": {}
+      }
+    ],
+    "stores": [
+      {
+        "id": 645951,
+        "url": "",
+        "store": {
+          "id": 3,
+          "name": "PlayStation Store",
+          "slug": "playstation-store",
+          "domain": "store.playstation.com",
+          "games_count": 7787,
+          "image_background": "https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg"
+        }
+      }
+    ],
+    "developers": [
+      {
+        "id": 17202,
+        "name": "Guerrilla Games",
+        "slug": "guerrilla-games",
+        "games_count": 16,
+        "image_background": "https://media.rawg.io/media/games/bf7/bf73b105ccbba42107986bbcd96fcada.jpg"
+      }
+    ],
+    "genres": [
+      {
+        "id": 4,
+        "name": "Action",
+        "slug": "action",
+        "games_count": 168167,
+        "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Adventure",
+        "slug": "adventure",
+        "games_count": 128586,
+        "image_background": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
+      },
+      {
+        "id": 5,
+        "name": "RPG",
+        "slug": "role-playing-games-rpg",
+        "games_count": 51116,
+        "image_background": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+      }
+    ],
+    "tags": [
+      {
+        "id": 31,
+        "name": "Singleplayer",
+        "slug": "singleplayer",
+        "language": "eng",
+        "games_count": 193456,
+        "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+      },
+      {
+        "id": 13,
+        "name": "Atmospheric",
+        "slug": "atmospheric",
+        "language": "eng",
+        "games_count": 26601,
+        "image_background": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
+      },
+      {
+        "id": 24,
+        "name": "RPG",
+        "slug": "rpg",
+        "language": "eng",
+        "games_count": 15924,
+        "image_background": "https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg"
+      },
+      {
+        "id": 118,
+        "name": "Story Rich",
+        "slug": "story-rich",
+        "language": "eng",
+        "games_count": 16869,
+        "image_background": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+      },
+      {
+        "id": 36,
+        "name": "Open World",
+        "slug": "open-world",
+        "language": "eng",
+        "games_count": 5803,
+        "image_background": "https://media.rawg.io/media/games/16b/16b1b7b36e2042d1128d5a3e852b3b2f.jpg"
+      },
+      {
+        "id": 149,
+        "name": "Third Person",
+        "slug": "third-person",
+        "language": "eng",
+        "games_count": 8455,
+        "image_background": "https://media.rawg.io/media/games/8d6/8d69eb6c32ed6acfd75f82d532144993.jpg"
+      },
+      {
+        "id": 32,
+        "name": "Sci-fi",
+        "slug": "sci-fi",
+        "language": "eng",
+        "games_count": 16264,
+        "image_background": "https://media.rawg.io/media/games/b7b/b7b8381707152afc7d91f5d95de70e39.jpg"
+      },
+      {
+        "id": 189,
+        "name": "Female Protagonist",
+        "slug": "female-protagonist",
+        "language": "eng",
+        "games_count": 9659,
+        "image_background": "https://media.rawg.io/media/games/3cf/3cff89996570cf29a10eb9cd967dcf73.jpg"
+      },
+      {
+        "id": 37796,
+        "name": "exclusive",
+        "slug": "exclusive",
+        "language": "eng",
+        "games_count": 4512,
+        "image_background": "https://media.rawg.io/media/games/1f5/1f5ddf7199f2778ff83663b93b5cb330.jpg"
+      },
+      {
+        "id": 43,
+        "name": "Post-apocalyptic",
+        "slug": "post-apocalyptic",
+        "language": "eng",
+        "games_count": 3032,
+        "image_background": "https://media.rawg.io/media/games/283/283e7e600366b0da7021883d27159b27.jpg"
+      },
+      {
+        "id": 197,
+        "name": "Robots",
+        "slug": "robots",
+        "language": "eng",
+        "games_count": 7507,
+        "image_background": "https://media.rawg.io/media/games/979/979155841412068e7adf8c83dee94a4a.jpg"
+      },
+      {
+        "id": 577,
+        "name": "Beautiful",
+        "slug": "beautiful",
+        "language": "eng",
+        "games_count": 1789,
+        "image_background": "https://media.rawg.io/media/screenshots/18b/18b81812829bc49465e4a6d97af596c6_RdH7DXE.jpg"
+      },
+      {
+        "id": 181,
+        "name": "Hunting",
+        "slug": "hunting",
+        "language": "eng",
+        "games_count": 803,
+        "image_background": "https://media.rawg.io/media/games/f79/f79662d3267e50434ab6c674d47aa1f1.jpg"
+      },
+      {
+        "id": 993,
+        "name": "Archery",
+        "slug": "archery",
+        "language": "eng",
+        "games_count": 743,
+        "image_background": "https://media.rawg.io/media/screenshots/bc3/bc30db7f42db8550ed9c845693270a18.jpg"
+      }
+    ],
+    "publishers": [
+      {
+        "id": 10212,
+        "name": "Sony Computer Entertainment",
+        "slug": "sony-computer-entertainment",
+        "games_count": 493,
+        "image_background": "https://media.rawg.io/media/games/4b6/4b67558bf04c7211aabeff179271bdd8.jpg"
+      },
+      {
+        "id": 11687,
+        "name": "Sony Interactive Entertainment",
+        "slug": "sony-interactive-entertainment",
+        "games_count": 305,
+        "image_background": "https://media.rawg.io/media/games/450/4501d8493e6ed172bd4982a16b56e580.jpg"
+      }
+    ],
+    "esrb_rating": {
+      "id": 3,
+      "name": "Teen",
+      "slug": "teen"
+    },
+    "clip": null,
+    "description_raw": "Explore distant lands, fight bigger and more awe-inspiring machines, and encounter astonishing new tribes as you return to the far-future, post-apocalyptic world of Horizon.\r\n\r\nThe land is dying. Vicious storms and an unstoppable blight ravage the scattered remnants of humanity, while fearsome new machines prowl their borders. Life on Earth is hurtling towards another extinction, and no one knows why.\r\n\r\nIt's up to Aloy to uncover the secrets behind these threats and restore order and balance to the world. Along the way, she must reunite with old friends, forge alliances with warring new factions and unravel the legacy of the ancient past – all the while trying to stay one step ahead of a seemingly undefeatable new enemy."
+  },
+
+
+
+
+{
+  "id": 23599,
+  "slug": "world-of-warcraft",
+  "name": "World of Warcraft",
+  "name_original": "World of Warcraft",
+  "description": "<p>You were meant for more. You were meant for epic adventure. Maybe even greatness. To charge your enemies without fear. To live boldly and run with comrades you never knew you had. To experience the impossible. Descend into World of Warcraft and join millions of mighty heroes in an online world of myth, magic and limitless adventure. An infinity of experiences await.</p>\n<h3>Create Your Hero</h3>\n<p>Build your own unique hero from one of thirteen player races and ten different classes. Then rise to epic heights of power as you challenge the deadliest evils and claim the greatest rewards in the land.</p>\n<h3>Form Powerful Alliances</h3>\n<p>Play solo or enlist your friends to join forces with you as you negotiate the vast, battle-scarred landscape of a world at war.</p>\n<h3>Embark on Epic Quests</h3>\n<p>Engage in thousands of custom quests – with more being added all the time. Confront Illidan the Betrayer, shatter the Lich King’s undead armies and much, much more.</p>\n<h3>Explore the Ever-Changing World of Azeroth</h3>\n<p>World of Warcraft is constantly updated with new adventures to undertake, lands to explore, and monsters to vanquish. For a change of pace, join the party at a seasonal event like Brewfest or Hallow’s End!</p>\n<h3>Engage in Player-vs-Player Combat</h3>\n<p>Take part in the war between the Alliance and the Horde, the two factions who battle for control of Azeroth. From Arenas and Battlegrounds to large-scale PvP zones and open world combat, there’s always glory to be won.</p>\n<h3>Battle to Level 100</h3>\n<p>Ascend to new heights of power as you explore the verdant reaches of the Jade Forest, dodge the boiling vents of Gorgrond, and journey to Tanaan Jungle to battle Supreme Lord Kazzak.</p>",
+  "metacritic": 93,
+  "metacritic_platforms": [
+    {
+      "metascore": 93,
+      "url": "https://www.metacritic.com/game/pc/world-of-warcraft",
+      "platform": {
+        "platform": 4,
+        "name": "PC",
+        "slug": "pc"
+      }
+    }
+  ],
+  "released": "2004-11-23",
+  "tba": false,
+  "updated": "2022-12-03T09:55:33",
+  "background_image": "https://media.rawg.io/media/games/0d9/0d930ea604ee240c5af30c58f73ddf48.jpg",
+  "background_image_additional": "https://media.rawg.io/media/screenshots/568/568e257647e24c75f951446adfd1d7cd.jpg",
+  "website": "http://www.blizzard.com/wow/",
+  "rating": 4.31,
+  "rating_top": 5,
+  "ratings": [
+    {
+      "id": 5,
+      "title": "exceptional",
+      "count": 336,
+      "percent": 54.55
+    },
+    {
+      "id": 4,
+      "title": "recommended",
+      "count": 190,
+      "percent": 30.84
+    },
+    {
+      "id": 3,
+      "title": "meh",
+      "count": 61,
+      "percent": 9.9
+    },
+    {
+      "id": 1,
+      "title": "skip",
+      "count": 29,
+      "percent": 4.71
+    }
+  ],
+  "reactions": {
+    "1": 2,
+    "3": 3,
+    "4": 6,
+    "5": 1,
+    "8": 4
+  },
+  "added": 1114,
+  "added_by_status": {
+    "yet": 21,
+    "owned": 330,
+    "beaten": 326,
+    "toplay": 25,
+    "dropped": 333,
+    "playing": 79
+  },
+  "playtime": 129,
+  "screenshots_count": 424,
+  "movies_count": 0,
+  "creators_count": 4,
+  "achievements_count": 0,
+  "parent_achievements_count": 0,
+  "reddit_url": "https://www.reddit.com/r/wow/",
+  "reddit_name": "World of Warcraft",
+  "reddit_description": "World of Warcraft on Reddit!",
+  "reddit_logo": "https://b.thumbs.redditmedia.com/qYmIsa_SvPizDRFjFNmNJ67WIynb21szZepBZIY8W2g.png",
+  "reddit_count": 12123,
+  "twitch_count": 181,
+  "youtube_count": 1000000,
+  "reviews_text_count": 5,
+  "ratings_count": 611,
+  "suggestions_count": 547,
+  "alternative_names": [
+    "WOW",
+    "WoW"
+  ],
+  "metacritic_url": "https://www.metacritic.com/game/pc/world-of-warcraft",
+  "parents_count": 1,
+  "additions_count": 8,
+  "game_series_count": 15,
+  "user_game": null,
+  "reviews_count": 616,
+  "saturated_color": "0f0f0f",
+  "dominant_color": "0f0f0f",
+  "parent_platforms": [
+    {
+      "platform": {
+        "id": 1,
+        "name": "PC",
+        "slug": "pc"
+      }
+    },
+    {
+      "platform": {
+        "id": 5,
+        "name": "Apple Macintosh",
+        "slug": "mac"
+      }
+    }
+  ],
+  "platforms": [
+    {
+      "platform": {
+        "id": 4,
+        "name": "PC",
+        "slug": "pc",
+        "image": null,
+        "year_end": null,
+        "year_start": null,
+        "games_count": 503856,
+        "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+      },
+      "released_at": "2004-11-23",
+      "requirements": {}
+    },
+    {
+      "platform": {
+        "id": 5,
+        "name": "macOS",
+        "slug": "macos",
+        "image": null,
+        "year_end": null,
+        "year_start": null,
+        "games_count": 101428,
+        "image_background": "https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"
+      },
+      "released_at": "2004-11-23",
+      "requirements": {}
+    }
+  ],
+  "stores": [],
+  "developers": [],
+  "genres": [
+    {
+      "id": 5,
+      "name": "RPG",
+      "slug": "role-playing-games-rpg",
+      "games_count": 51116,
+      "image_background": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+    },
+    {
+      "id": 59,
+      "name": "Massively Multiplayer",
+      "slug": "massively-multiplayer",
+      "games_count": 3078,
+      "image_background": "https://media.rawg.io/media/games/174/1743b3dd185bda4a7be349347d4064df.jpg"
+    }
+  ],
+  "tags": [
+    {
+      "id": 7,
+      "name": "Multiplayer",
+      "slug": "multiplayer",
+      "language": "eng",
+      "games_count": 34039,
+      "image_background": "https://media.rawg.io/media/games/b7b/b7b8381707152afc7d91f5d95de70e39.jpg"
+    },
+    {
+      "id": 64,
+      "name": "Fantasy",
+      "slug": "fantasy",
+      "language": "eng",
+      "games_count": 22740,
+      "image_background": "https://media.rawg.io/media/games/4e6/4e6e8e7f50c237d76f38f3c885dae3d2.jpg"
+    },
+    {
+      "id": 397,
+      "name": "Online multiplayer",
+      "slug": "online-multiplayer",
+      "language": "eng",
+      "games_count": 3809,
+      "image_background": "https://media.rawg.io/media/games/93e/93ee6101e1c943732f06080dddb0fe4c.jpg"
+    }
+  ],
+  "publishers": [
+    {
+      "id": 11237,
+      "name": "Blizzard Entertainment",
+      "slug": "blizzard-entertainment",
+      "games_count": 44,
+      "image_background": "https://media.rawg.io/media/games/fb2/fb2a6a5c396ab1b7226de29e41a6ae63.jpg"
+    }
+  ],
+  "esrb_rating": {
+    "id": 3,
+    "name": "Teen",
+    "slug": "teen"
+  },
+  "clip": null,
+  "description_raw": "You were meant for more. You were meant for epic adventure. Maybe even greatness. To charge your enemies without fear. To live boldly and run with comrades you never knew you had. To experience the impossible. Descend into World of Warcraft and join millions of mighty heroes in an online world of myth, magic and limitless adventure. An infinity of experiences await.\n\n### Create Your Hero\n\nBuild your own unique hero from one of thirteen player races and ten different classes. Then rise to epic heights of power as you challenge the deadliest evils and claim the greatest rewards in the land.\n\n### Form Powerful Alliances\n\nPlay solo or enlist your friends to join forces with you as you negotiate the vast, battle-scarred landscape of a world at war.\n\n### Embark on Epic Quests\n\nEngage in thousands of custom quests – with more being added all the time. Confront Illidan the Betrayer, shatter the Lich King’s undead armies and much, much more.\n\n### Explore the Ever-Changing World of Azeroth\n\nWorld of Warcraft is constantly updated with new adventures to undertake, lands to explore, and monsters to vanquish. For a change of pace, join the party at a seasonal event like Brewfest or Hallow’s End!\n\n### Engage in Player-vs-Player Combat\n\nTake part in the war between the Alliance and the Horde, the two factions who battle for control of Azeroth. From Arenas and Battlegrounds to large-scale PvP zones and open world combat, there’s always glory to be won.\n\n### Battle to Level 100\n\nAscend to new heights of power as you explore the verdant reaches of the Jade Forest, dodge the boiling vents of Gorgrond, and journey to Tanaan Jungle to battle Supreme Lord Kazzak."
+},
+
+
+  {
+    "id": 481913,
+    "slug": "black-myth-wu-kong",
+    "name": "Black Myth: Wu Kong",
+    "name_original": "Black Myth: Wu Kong",
+    "description": "<p>This is a Action-Adventure video game. Check out our 13-minute gameplay trailer here. The gameplay footage is recorded directly from a pre-alpha game build work in progress. Hope you enjoy it.</p>",
+    "metacritic": null,
+    "metacritic_platforms": [],
+    "released": null,
+    "tba": true,
+    "updated": "2020-08-20T11:05:46",
+    "background_image": "https://media.rawg.io/media/games/779/77988e89f7862afeede524420aa251b0.jpg",
+    "background_image_additional": "https://media.rawg.io/media/screenshots/37f/37f21bd85d5afeb74eb2d443cf83c070.jpg",
+    "website": "http://www.heishenhua.com/",
+    "rating": 0.0,
+    "rating_top": 0,
+    "ratings": [],
+    "reactions": null,
+    "added": 129,
+    "added_by_status": {
+      "yet": 15,
+      "owned": 9,
+      "toplay": 105
+    },
+    "playtime": 0,
+    "screenshots_count": 3,
+    "movies_count": 0,
+    "creators_count": 0,
+    "achievements_count": 0,
+    "parent_achievements_count": 0,
+    "reddit_url": "",
+    "reddit_name": "",
+    "reddit_description": "",
+    "reddit_logo": "",
+    "reddit_count": 0,
+    "twitch_count": 12,
+    "youtube_count": 0,
+    "reviews_text_count": 0,
+    "ratings_count": 0,
+    "suggestions_count": 201,
+    "alternative_names": [],
+    "metacritic_url": "",
+    "parents_count": 0,
+    "additions_count": 0,
+    "game_series_count": 0,
+    "user_game": null,
+    "reviews_count": 0,
+    "community_rating": 0,
+    "saturated_color": "0f0f0f",
+    "dominant_color": "0f0f0f",
+    "parent_platforms": [
+      {
+        "platform": {
+          "id": 1,
+          "name": "PC",
+          "slug": "pc"
+        }
+      },
+      {
+        "platform": {
+          "id": 2,
+          "name": "PlayStation",
+          "slug": "playstation"
+        }
+      },
+      {
+        "platform": {
+          "id": 3,
+          "name": "Xbox",
+          "slug": "xbox"
+        }
+      }
+    ],
+    "platforms": [
+      {
+        "platform": {
+          "id": 4,
+          "name": "PC",
+          "slug": "pc",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 503855,
+          "image_background": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+        },
+        "released_at": null,
+        "requirements": {}
+      },
+      {
+        "platform": {
+          "id": 186,
+          "name": "Xbox Series S/X",
+          "slug": "xbox-series-x",
+          "image": null,
+          "year_end": null,
+          "year_start": 2020,
+          "games_count": 668,
+          "image_background": "https://media.rawg.io/media/games/1f4/1f47a270b8f241e4676b14d39ec620f7.jpg"
+        },
+        "released_at": null,
+        "requirements": {}
+      },
+      {
+        "platform": {
+          "id": 187,
+          "name": "PlayStation 5",
+          "slug": "playstation5",
+          "image": null,
+          "year_end": null,
+          "year_start": 2020,
+          "games_count": 742,
+          "image_background": "https://media.rawg.io/media/games/b34/b3419c2706f8f8dbe40d08e23642ad06.jpg"
+        },
+        "released_at": null,
+        "requirements": {}
+      }
+    ],
+    "stores": [],
+    "developers": [
+      {
+        "id": 7780,
+        "name": "Game Science",
+        "slug": "game-science",
+        "games_count": 2,
+        "image_background": "https://media.rawg.io/media/screenshots/eb1/eb1bcc8802d706696f47f42f011244b1.jpg"
+      }
+    ],
+    "genres": [
+      {
+        "id": 4,
+        "name": "Action",
+        "slug": "action",
+        "games_count": 168167,
+        "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+      }
+    ],
+    "tags": [],
+    "publishers": [],
+    "esrb_rating": null,
+    "clip": null,
+    "description_raw": "This is a Action-Adventure video game. Check out our 13-minute gameplay trailer here. The gameplay footage is recorded directly from a pre-alpha game build work in progress. Hope you enjoy it."
+  },
+
+
+  {
   "id": 29177,
   "slug": "detroit-become-human",
   "name": "Detroit: Become Human",
@@ -3446,6 +4714,633 @@
     "esrb_rating": null,
     "clip": null,
     "description_raw": "Please note this is the Standard Edition. Be aware there is also a Deluxe Edition available, so please ensure your selection before purchasing.\r\n[Launch Edition Bonus]\r\nCharacter Unlock Keys – Demon Slayer Academy Giyu Tomioka, Demon Slayer Academy Shinobu Kocho\r\n[Digital Standard Edition Content]\r\n· Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles Game\r\n· Digital Version Bonus: Character Unlock Key – Demon Slayer Academy Tanjiro Kamado\r\n*Character Unlock Keys allow immediate access to play as the indicated characters in Versus mode.\r\n[Product Description]\r\nBecome the blade that destroys demons!\r\nIn solo play mode, walk the path of Tanjiro Kamado whose family is slaughtered and sister transformed into a demon. Experience the story depicted in the anime \"\"Demon Slayer: Kimetsu no Yaiba\"\" as Tanjiro fights to restore Nezuko's humanity and battle the demon threat!\r\nPlay Versus mode, which allows up to 2 players to battle in offline or online 2v2 battles with any combination of characters, including Tanjiro Kamado and Nezuko Kamado! With simple controls and exhilarating gameplay, rise up to become the strongest of the Demon Slayers!\r\n*A paid subscription to Xbox Live Gold is required to play Versus mode online.\r\n*The latest patch is required to access online play.\r\n*The content/specs may change without warning.\r\n*The Digital Version Bonuses are permanent bonuses.\r\n*The bonuses may be offered at a later time."
+  },
+
+
+  {
+    "id": 282825,
+    "slug": "pokemon-2019",
+    "name": "Pokémon Sword and Shield",
+    "name_original": "Pokémon Sword and Shield",
+    "description": "<p>Pokémon Sword and Pokémon Shield will be set in Galar, an expansive region with many environments—idyllic countryside, contemporary cities, thick forests, and craggy, snow-covered mountains. The people and Pokémon live together in this region, and they’ve worked together to develop the industries here.</p>\n<p>The adventure begins in Pokémon Sword and Pokémon Shield when players choose one of three new Pokémon—Grookey, Scorbunny, or Sobble. Grookey, a Grass-type Chimp Pokémon, is mischievous and full of boundless curiosity. Bursting with energy, Scorbunny, a Fire-type Rabbit Pokémon, is always running about. The stealthy Sobble, a Water-type Water Lizard Pokémon, shoots out attacks as it hides itself in water.</p>\n<p>You’ll visit the various Gyms in the Galar region, aiming for the enviable and admirable title of Champion!</p>",
+    "metacritic": 80,
+    "metacritic_platforms": [
+      {
+        "metascore": 80,
+        "url": "https://www.metacritic.com/game/switch/pokemon-sword",
+        "platform": {
+          "platform": 7,
+          "name": "Nintendo Switch",
+          "slug": "nintendo-switch"
+        }
+      }
+    ],
+    "released": "2019-11-15",
+    "tba": false,
+    "updated": "2022-11-28T16:42:04",
+    "background_image": "https://media.rawg.io/media/games/82f/82f7b1424c5ee7eebee83faf694889c5.jpg",
+    "background_image_additional": "https://media.rawg.io/media/screenshots/1eb/1ebdaa2c34191583d762397fd537cbc7.jpg",
+    "website": "https://swordshield.pokemon.com/",
+    "rating": 3.72,
+    "rating_top": 4,
+    "ratings": [
+      {
+        "id": 4,
+        "title": "recommended",
+        "count": 238,
+        "percent": 55.35
+      },
+      {
+        "id": 3,
+        "title": "meh",
+        "count": 101,
+        "percent": 23.49
+      },
+      {
+        "id": 5,
+        "title": "exceptional",
+        "count": 63,
+        "percent": 14.65
+      },
+      {
+        "id": 1,
+        "title": "skip",
+        "count": 28,
+        "percent": 6.51
+      }
+    ],
+    "reactions": {
+      "3": 3,
+      "7": 2,
+      "8": 2,
+      "9": 1,
+      "12": 1,
+      "13": 1,
+      "14": 2,
+      "15": 2,
+      "16": 2,
+      "19": 1
+    },
+    "added": 1041,
+    "added_by_status": {
+      "yet": 55,
+      "owned": 128,
+      "beaten": 461,
+      "toplay": 199,
+      "dropped": 77,
+      "playing": 121
+    },
+    "playtime": 0,
+    "screenshots_count": 42,
+    "movies_count": 0,
+    "creators_count": 11,
+    "achievements_count": 0,
+    "parent_achievements_count": 0,
+    "reddit_url": "https://www.reddit.com/r/PokemonSwordShield/",
+    "reddit_name": "r/PokemonSwordShield",
+    "reddit_description": "The subreddit dedicated to the Nintendo Switch games Pokémon Sword and Shield!",
+    "reddit_logo": "",
+    "reddit_count": 4222,
+    "twitch_count": 0,
+    "youtube_count": 1000000,
+    "reviews_text_count": 12,
+    "ratings_count": 418,
+    "suggestions_count": 382,
+    "alternative_names": [
+      "Pokemon Shield",
+      "Pokemon Sword",
+      "Pokémon Shield",
+      "Pokémon Sword"
+    ],
+    "metacritic_url": "https://www.metacritic.com/game/switch/pokemon-sword",
+    "parents_count": 0,
+    "additions_count": 2,
+    "game_series_count": 0,
+    "user_game": null,
+    "reviews_count": 430,
+    "saturated_color": "0f0f0f",
+    "dominant_color": "0f0f0f",
+    "parent_platforms": [
+      {
+        "platform": {
+          "id": 7,
+          "name": "Nintendo",
+          "slug": "nintendo"
+        }
+      }
+    ],
+    "platforms": [
+      {
+        "platform": {
+          "id": 7,
+          "name": "Nintendo Switch",
+          "slug": "nintendo-switch",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 5087,
+          "image_background": "https://media.rawg.io/media/games/7c4/7c448374df84b607f67ce9182a3a3ca7.jpg"
+        },
+        "released_at": "2019-11-15",
+        "requirements": {}
+      }
+    ],
+    "stores": [
+      {
+        "id": 324803,
+        "url": "",
+        "store": {
+          "id": 6,
+          "name": "Nintendo Store",
+          "slug": "nintendo",
+          "domain": "nintendo.com",
+          "games_count": 8878,
+          "image_background": "https://media.rawg.io/media/games/73e/73eecb8909e0c39fb246f457b5d6cbbe.jpg"
+        }
+      }
+    ],
+    "developers": [
+      {
+        "id": 8230,
+        "name": "Game Freak",
+        "slug": "game-freak",
+        "games_count": 53,
+        "image_background": "https://media.rawg.io/media/screenshots/6fe/6fee3969b73bfccd935517c0c15826d8.jpg"
+      }
+    ],
+    "genres": [
+      {
+        "id": 3,
+        "name": "Adventure",
+        "slug": "adventure",
+        "games_count": 128586,
+        "image_background": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
+      },
+      {
+        "id": 5,
+        "name": "RPG",
+        "slug": "role-playing-games-rpg",
+        "games_count": 51116,
+        "image_background": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+      }
+    ],
+    "tags": [
+      {
+        "id": 468,
+        "name": "role-playing",
+        "slug": "role-playing",
+        "language": "eng",
+        "games_count": 1401,
+        "image_background": "https://media.rawg.io/media/games/9f1/9f1891779cb20f44de93cef33b067e50.jpg"
+      },
+      {
+        "id": 37796,
+        "name": "exclusive",
+        "slug": "exclusive",
+        "language": "eng",
+        "games_count": 4512,
+        "image_background": "https://media.rawg.io/media/games/1f5/1f5ddf7199f2778ff83663b93b5cb330.jpg"
+      },
+      {
+        "id": 37797,
+        "name": "true exclusive",
+        "slug": "true-exclusive",
+        "language": "eng",
+        "games_count": 3995,
+        "image_background": "https://media.rawg.io/media/screenshots/bb7/bb71799efe642c69f28c92c835a1257d.jpg"
+      }
+    ],
+    "publishers": [
+      {
+        "id": 10681,
+        "name": "Nintendo",
+        "slug": "nintendo",
+        "games_count": 1221,
+        "image_background": "https://media.rawg.io/media/screenshots/19b/19b2867fa37100443f73312a9de80760.jpg"
+      }
+    ],
+    "esrb_rating": {
+      "id": 1,
+      "name": "Everyone",
+      "slug": "everyone"
+    },
+    "clip": null,
+    "description_raw": "Pokémon Sword and Pokémon Shield will be set in Galar, an expansive region with many environments—idyllic countryside, contemporary cities, thick forests, and craggy, snow-covered mountains. The people and Pokémon live together in this region, and they’ve worked together to develop the industries here.\n\nThe adventure begins in Pokémon Sword and Pokémon Shield when players choose one of three new Pokémon—Grookey, Scorbunny, or Sobble. Grookey, a Grass-type Chimp Pokémon, is mischievous and full of boundless curiosity. Bursting with energy, Scorbunny, a Fire-type Rabbit Pokémon, is always running about. The stealthy Sobble, a Water-type Water Lizard Pokémon, shoots out attacks as it hides itself in water.\n\nYou’ll visit the various Gyms in the Galar region, aiming for the enviable and admirable title of Champion!"
+  },
+
+
+  {
+    "id": 494393,
+    "slug": "monster-hunter-rise",
+    "name": "Monster Hunter Rise",
+    "name_original": "Monster Hunter Rise",
+    "description": "<p>Set in the ninja-inspired land of Kamura Village, explore lush ecosystems and battle fearsome monsters to become the ultimate hunter. It’s been half a century since the last calamity struck, but a terrifying new monster has reared its head and threatens to plunge the land into chaos once again.<br />\nHunt solo or in a party with friends to earn rewards that you can use to craft a huge variety of weapons and armor. Brand new gameplay systems such as the high-flying ‘Wire Action’ and your canine companion ‘Palamute’ will add exciting new layers to the already robust combat that Monster Hunter is known for.</p>",
+    "metacritic": 88,
+    "metacritic_platforms": [
+      {
+        "metascore": 87,
+        "url": "https://www.metacritic.com/game/pc/monster-hunter-rise",
+        "platform": {
+          "platform": 4,
+          "name": "PC",
+          "slug": "pc"
+        }
+      },
+      {
+        "metascore": 88,
+        "url": "https://www.metacritic.com/game/switch/monster-hunter-rise",
+        "platform": {
+          "platform": 7,
+          "name": "Nintendo Switch",
+          "slug": "nintendo-switch"
+        }
+      }
+    ],
+    "released": "2021-03-26",
+    "tba": false,
+    "updated": "2022-11-11T11:32:09",
+    "background_image": "https://media.rawg.io/media/games/dbb/dbba6100aae179b5f24052c9141d426d.jpg",
+    "background_image_additional": "https://media.rawg.io/media/screenshots/bfd/bfd2effb4293b71322b6fbacad6cfd75.jpg",
+    "website": "https://www.monsterhunter.com/rise/us/",
+    "rating": 4.32,
+    "rating_top": 5,
+    "ratings": [
+      {
+        "id": 5,
+        "title": "exceptional",
+        "count": 47,
+        "percent": 51.65
+      },
+      {
+        "id": 4,
+        "title": "recommended",
+        "count": 32,
+        "percent": 35.16
+      },
+      {
+        "id": 3,
+        "title": "meh",
+        "count": 9,
+        "percent": 9.89
+      },
+      {
+        "id": 1,
+        "title": "skip",
+        "count": 3,
+        "percent": 3.3
+      }
+    ],
+    "reactions": {
+      "6": 1
+    },
+    "added": 840,
+    "added_by_status": {
+      "yet": 58,
+      "owned": 517,
+      "beaten": 50,
+      "toplay": 132,
+      "dropped": 29,
+      "playing": 54
+    },
+    "playtime": 15,
+    "screenshots_count": 6,
+    "movies_count": 0,
+    "creators_count": 7,
+    "achievements_count": 100,
+    "parent_achievements_count": 100,
+    "reddit_url": "https://www.reddit.com/r/MHRise/",
+    "reddit_name": "Monster Hunter: Rise",
+    "reddit_description": "Welcome to the Monster Hunter Rise reddit community!",
+    "reddit_logo": "",
+    "reddit_count": 775,
+    "twitch_count": 150,
+    "youtube_count": 1000000,
+    "reviews_text_count": 5,
+    "ratings_count": 86,
+    "suggestions_count": 361,
+    "alternative_names": [],
+    "metacritic_url": "https://www.metacritic.com/game/switch/monster-hunter-rise",
+    "parents_count": 0,
+    "additions_count": 1,
+    "game_series_count": 14,
+    "user_game": null,
+    "reviews_count": 91,
+    "saturated_color": "0f0f0f",
+    "dominant_color": "0f0f0f",
+    "parent_platforms": [
+      {
+        "platform": {
+          "id": 1,
+          "name": "PC",
+          "slug": "pc"
+        }
+      },
+      {
+        "platform": {
+          "id": 7,
+          "name": "Nintendo",
+          "slug": "nintendo"
+        }
+      }
+    ],
+    "platforms": [
+      {
+        "platform": {
+          "id": 7,
+          "name": "Nintendo Switch",
+          "slug": "nintendo-switch",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 5087,
+          "image_background": "https://media.rawg.io/media/games/7c4/7c448374df84b607f67ce9182a3a3ca7.jpg"
+        },
+        "released_at": "2021-03-26",
+        "requirements": {}
+      },
+      {
+        "platform": {
+          "id": 4,
+          "name": "PC",
+          "slug": "pc",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 503855,
+          "image_background": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+        },
+        "released_at": "2022-01-12",
+        "requirements": {
+          "minimum": "Minimum:\nRequires a 64-bit processor and operating system\nOS: Windows 10 （64-bit）\nProcessor: Intel® Core™ i3-4130 or Core™ i5-3470 or AMD FX™-6100\nMemory: 8 GB RAM\nGraphics: NVIDIA® GeForce® GT 1030 (DDR4) or AMD Radeon™ RX 550\nDirectX: Version 12\nNetwork: Broadband Internet connection\nStorage: 23 GB available space\nAdditional Notes: 1080p/30fps when graphics settings are set to &quot;Low&quot;. System requirements subject to change during game development.",
+          "recommended": "Recommended:\nRequires a 64-bit processor and operating system\nOS: Windows 10 （64-bit）\nProcessor: Intel® Core™ i5-4460 or AMD FX™-8300\nMemory: 8 GB RAM\nGraphics: NVIDIA® GeForce® GTX 1060 (VRAM 3GB) or AMD Radeon™ RX 570 (VRAM 4GB)\nDirectX: Version 12\nNetwork: Broadband Internet connection\nStorage: 23 GB available space\nAdditional Notes: 1080p/30fps when graphics settings are set to &quot;Average&quot;. System requirements subject to change during game development."
+        }
+      }
+    ],
+    "stores": [
+      {
+        "id": 486049,
+        "url": "",
+        "store": {
+          "id": 6,
+          "name": "Nintendo Store",
+          "slug": "nintendo",
+          "domain": "nintendo.com",
+          "games_count": 8878,
+          "image_background": "https://media.rawg.io/media/games/73e/73eecb8909e0c39fb246f457b5d6cbbe.jpg"
+        }
+      },
+      {
+        "id": 666448,
+        "url": "",
+        "store": {
+          "id": 1,
+          "name": "Steam",
+          "slug": "steam",
+          "domain": "store.steampowered.com",
+          "games_count": 69655,
+          "image_background": "https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg"
+        }
+      }
+    ],
+    "developers": [
+      {
+        "id": 3678,
+        "name": "Capcom",
+        "slug": "capcom",
+        "games_count": 425,
+        "image_background": "https://media.rawg.io/media/games/09e/09e34396a92952c57b1bfb1decfddfa3.jpg"
+      }
+    ],
+    "genres": [
+      {
+        "id": 4,
+        "name": "Action",
+        "slug": "action",
+        "games_count": 168167,
+        "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+      },
+      {
+        "id": 5,
+        "name": "RPG",
+        "slug": "role-playing-games-rpg",
+        "games_count": 51116,
+        "image_background": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+      }
+    ],
+    "tags": [
+      {
+        "id": 31,
+        "name": "Singleplayer",
+        "slug": "singleplayer",
+        "language": "eng",
+        "games_count": 193456,
+        "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+      },
+      {
+        "id": 40847,
+        "name": "Steam Achievements",
+        "slug": "steam-achievements",
+        "language": "eng",
+        "games_count": 28237,
+        "image_background": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Multiplayer",
+        "slug": "multiplayer",
+        "language": "eng",
+        "games_count": 34039,
+        "image_background": "https://media.rawg.io/media/games/b7b/b7b8381707152afc7d91f5d95de70e39.jpg"
+      },
+      {
+        "id": 13,
+        "name": "Atmospheric",
+        "slug": "atmospheric",
+        "language": "eng",
+        "games_count": 26601,
+        "image_background": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
+      },
+      {
+        "id": 40836,
+        "name": "Full controller support",
+        "slug": "full-controller-support",
+        "language": "eng",
+        "games_count": 13259,
+        "image_background": "https://media.rawg.io/media/games/157/15742f2f67eacff546738e1ab5c19d20.jpg"
+      },
+      {
+        "id": 40849,
+        "name": "Steam Cloud",
+        "slug": "steam-cloud",
+        "language": "eng",
+        "games_count": 12911,
+        "image_background": "https://media.rawg.io/media/games/9dd/9ddabb34840ea9227556670606cf8ea3.jpg"
+      },
+      {
+        "id": 24,
+        "name": "RPG",
+        "slug": "rpg",
+        "language": "eng",
+        "games_count": 15924,
+        "image_background": "https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg"
+      },
+      {
+        "id": 18,
+        "name": "Co-op",
+        "slug": "co-op",
+        "language": "eng",
+        "games_count": 9264,
+        "image_background": "https://media.rawg.io/media/games/46d/46d98e6910fbc0706e2948a7cc9b10c5.jpg"
+      },
+      {
+        "id": 118,
+        "name": "Story Rich",
+        "slug": "story-rich",
+        "language": "eng",
+        "games_count": 16869,
+        "image_background": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+      },
+      {
+        "id": 411,
+        "name": "cooperative",
+        "slug": "cooperative",
+        "language": "eng",
+        "games_count": 3753,
+        "image_background": "https://media.rawg.io/media/games/4a0/4a0a1316102366260e6f38fd2a9cfdce.jpg"
+      },
+      {
+        "id": 149,
+        "name": "Third Person",
+        "slug": "third-person",
+        "language": "eng",
+        "games_count": 8455,
+        "image_background": "https://media.rawg.io/media/games/8d6/8d69eb6c32ed6acfd75f82d532144993.jpg"
+      },
+      {
+        "id": 9,
+        "name": "Online Co-Op",
+        "slug": "online-co-op",
+        "language": "eng",
+        "games_count": 3980,
+        "image_background": "https://media.rawg.io/media/games/476/476178ef18ab0534771d099f51cdc694.jpg"
+      },
+      {
+        "id": 64,
+        "name": "Fantasy",
+        "slug": "fantasy",
+        "language": "eng",
+        "games_count": 22740,
+        "image_background": "https://media.rawg.io/media/games/4e6/4e6e8e7f50c237d76f38f3c885dae3d2.jpg"
+      },
+      {
+        "id": 97,
+        "name": "Action RPG",
+        "slug": "action-rpg",
+        "language": "eng",
+        "games_count": 5411,
+        "image_background": "https://media.rawg.io/media/games/f99/f9979698c43fd84c3ab69280576dd3af.jpg"
+      },
+      {
+        "id": 134,
+        "name": "Anime",
+        "slug": "anime",
+        "language": "eng",
+        "games_count": 10123,
+        "image_background": "https://media.rawg.io/media/games/9fb/9fbf956a16249def7625ab5dc3d09515.jpg"
+      },
+      {
+        "id": 121,
+        "name": "Character Customization",
+        "slug": "character-customization",
+        "language": "eng",
+        "games_count": 3062,
+        "image_background": "https://media.rawg.io/media/games/21c/21cc15d233117c6809ec86870559e105.jpg"
+      },
+      {
+        "id": 571,
+        "name": "3D",
+        "slug": "3d",
+        "language": "eng",
+        "games_count": 73491,
+        "image_background": "https://media.rawg.io/media/games/73e/73efc5c0ac6f354271dae610276f617c.jpg"
+      },
+      {
+        "id": 40937,
+        "name": "Steam Trading Cards",
+        "slug": "steam-trading-cards-2",
+        "language": "eng",
+        "games_count": 353,
+        "image_background": "https://media.rawg.io/media/games/742/7424c1f7d0a8da9ae29cd866f985698b.jpg"
+      },
+      {
+        "id": 171,
+        "name": "PvE",
+        "slug": "pve",
+        "language": "eng",
+        "games_count": 2505,
+        "image_background": "https://media.rawg.io/media/games/d22/d22ea1bfb636fbf1a9c235cc304312a8.jpg"
+      },
+      {
+        "id": 215,
+        "name": "Dragons",
+        "slug": "dragons",
+        "language": "eng",
+        "games_count": 2324,
+        "image_background": "https://media.rawg.io/media/games/260/26023c855f1769a93411d6a7ea084632.jpeg"
+      },
+      {
+        "id": 186,
+        "name": "Ninja",
+        "slug": "ninja",
+        "language": "eng",
+        "games_count": 2211,
+        "image_background": "https://media.rawg.io/media/games/a8a/a8a624bbf3e96658fca79a7700de55d7.jpg"
+      },
+      {
+        "id": 181,
+        "name": "Hunting",
+        "slug": "hunting",
+        "language": "eng",
+        "games_count": 803,
+        "image_background": "https://media.rawg.io/media/games/f79/f79662d3267e50434ab6c674d47aa1f1.jpg"
+      },
+      {
+        "id": 774,
+        "name": "nature",
+        "slug": "nature",
+        "language": "eng",
+        "games_count": 4309,
+        "image_background": "https://media.rawg.io/media/games/aeb/aeb33772a46dfe88fa9bd2f93068c91c.jpg"
+      },
+      {
+        "id": 326,
+        "name": "Investigation",
+        "slug": "investigation",
+        "language": "eng",
+        "games_count": 1480,
+        "image_background": "https://media.rawg.io/media/games/0af/0af85e8edddfa55368e47c539914a220.jpg"
+      },
+      {
+        "id": 342,
+        "name": "Conversation",
+        "slug": "conversation",
+        "language": "eng",
+        "games_count": 1238,
+        "image_background": "https://media.rawg.io/media/games/427/42775acebd4e82e8465e41c8912ba2c5.jpg"
+      }
+    ],
+    "publishers": [
+      {
+        "id": 2150,
+        "name": "Capcom",
+        "slug": "capcom",
+        "games_count": 588,
+        "image_background": "https://media.rawg.io/media/games/053/053fc543bf488349610f1ae2d0c1b51b.jpg"
+      }
+    ],
+    "esrb_rating": null,
+    "clip": null,
+    "description_raw": "Set in the ninja-inspired land of Kamura Village, explore lush ecosystems and battle fearsome monsters to become the ultimate hunter. It’s been half a century since the last calamity struck, but a terrifying new monster has reared its head and threatens to plunge the land into chaos once again.\r\nHunt solo or in a party with friends to earn rewards that you can use to craft a huge variety of weapons and armor. Brand new gameplay systems such as the high-flying ‘Wire Action’ and your canine companion ‘Palamute’ will add exciting new layers to the already robust combat that Monster Hunter is known for."
   }
 
 

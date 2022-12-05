@@ -23,6 +23,7 @@
     "react-scripts": "^5.0.1",
     "react-spotify-embed": "^1.0.4",
     "react-spotify-web-playback": "^0.10.0",
+    "react-tsparticles": "^2.5.3",
     "redux": "^4.2.0",
     "spotify-web-api-node": "^5.0.2",
     "web-vitals": "^2.1.4"
