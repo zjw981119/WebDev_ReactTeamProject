@@ -1,6 +1,7 @@
 import axios from 'axios';
 const Games_API = 'http://localhost:4000/api/games';
 const Youtube_API_key = "AIzaSyBgU76k8BjLF-R94jVnUGbGKLNaAgPKnDo";
+const Spotify_API_key = "BQCoN3ubiXXQ9sbVCbkQklvEVzA_OGQPMgeiCpE73RnN2UkYgK4JzfJliPxl9rFLhOLfG_MmcRwuY5EPVt-ZjQsHNQuwTB9ZLQu6quXduUVxiBjz4eOjxTHx0eX4R_c_3C1491aeYFyXpfeaDFtxG3VWULdriW4alhRjhc7sRnztl7jZ0LNc_NuqrnA2DUQpXDMQUYQ_okE"
 // const TUITS_API = 'https://webdev-tuiter-server.herokuapp.com/api/tuits';
 
 // use different path according to different machine
@@ -21,11 +22,35 @@ export const findGameByRawgId  = async (RawgId) => {
 
 export const getGameTrailerUrl  = async (GameName) => {
     const keyword = GameName + " Trailer";
-    const req_API = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + keyword + "&key=" + Youtube_API_key;
+
+    try {
+        const req_API = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + keyword + "&key=" + Youtube_API_key;
+        const response = await axios.get(req_API);
+        const videoId = response.data.items[0].id.videoId;
+        const trailer_url = "https://www.youtube.com/embed/" + videoId
+        return trailer_url;
+    }
+    catch (e) {
+        console.log("trailer video cannot be found");
+    }
+}
+
+export const getGameMusicUrl  = async (GameName) => {
+    let keyword = GameName;
+    if(keyword.includes(':') && keyword.indexOf(':') > keyword.length/2)
+    {
+        keyword = keyword.substring(0, keyword.indexOf(':'))
+    }
+    const req_API = "https://api.spotify.com/v1/search?q=" + keyword + "&type=playlist&limit=1&access_token=" + Spotify_API_key;
     const response = await axios.get(req_API);
-    const videoId = response.data.items[0].id.videoId;
-    const trailer_url = "https://www.youtube.com/embed/" + videoId
-    return trailer_url;
+    try {
+        const music_uri = response.data.playlists.items[0].external_urls.spotify;
+        console.log(music_uri)
+        return music_uri;
+    }
+    catch (e) {
+        console.log("music playlists cannot be found");
+    }
 }
 
 

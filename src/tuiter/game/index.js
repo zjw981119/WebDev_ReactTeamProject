@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {findGameByIdThunk, getGameTrailerUrlThunk} from "../services/game-service/games-thunks";
+import {findGameByIdThunk, getGameTrailerUrlThunk, getGameMusicUrlThunk} from "../services/game-service/games-thunks";
 import GameArray from "./game.json";
 import ReviewsList from "../review/index";
 import Collapsible from 'react-collapsible';
 
-import { Pagination } from 'antd';
+import Spotify from "react-spotify-embed";
 
 const GameComponent = () => {
 
     let gameLocation = useLocation();
     let [game, setgame] = useState(GameArray);
     let [videoUrl, setvideoUrl] = useState('');
+    let [musicUrl, setmusicUrl] = useState('https://open.spotify.com/');
 
     const dispatch = useDispatch();
 
@@ -42,9 +43,13 @@ const GameComponent = () => {
             await setgame(response.payload);
 
             //TODO Comment backup
-            // const GameName = gameLocation.state.GameName;
-            // let TrailerVideoResponse = await dispatch(getGameTrailerUrlThunk(GameName))
-            // await setvideoUrl(TrailerVideoResponse.payload);
+            const GameName = gameLocation.state.GameName;
+            let TrailerVideoResponse = await dispatch(getGameTrailerUrlThunk(GameName))
+            await setvideoUrl(TrailerVideoResponse.payload);
+
+            //TODO Spotify game music
+            let MusicAPIResponse = await dispatch(getGameMusicUrlThunk(GameName))
+            await setmusicUrl(MusicAPIResponse.payload);
 
         }
         catch{
@@ -70,6 +75,8 @@ const GameComponent = () => {
                         Review this Game
                     </Link>
                 </div>
+
+
                 <div className = "game-title-padding"></div>
                 <div className="col-11">
                     <h3 className="p-2 mb-0 pb-0 fw-bolder">
@@ -117,6 +124,14 @@ const GameComponent = () => {
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen>
                             </iframe>
+                        </Collapsible>
+                    </div>
+
+                    <div className = "game-title-padding"></div>
+
+                    <div className="bg-color-blue border-secondary">
+                        <Collapsible trigger="Game Music:"  className="fw-bolder pb-0 mb-0" open={true}>
+                            <Spotify link={ musicUrl } height={100} />
                         </Collapsible>
                     </div>
 
