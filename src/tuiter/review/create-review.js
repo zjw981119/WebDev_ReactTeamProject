@@ -3,7 +3,7 @@ import {Link, useLocation, useNavigate  } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {createReviewThunk} from "../services/review-service/reviews-thunks";
 import * as security_service from "../services/security-service";
-
+import "./index.css"
 
 const CreateReview = () => {
 
@@ -23,7 +23,7 @@ const CreateReview = () => {
 
     const navigate = useNavigate();
 
-    //TODO SETUP UserName and UserId
+
     useEffect(() => {
             async function fetchUser() {
 
@@ -70,7 +70,6 @@ const CreateReview = () => {
     const PostReviewHandler = () => {
         const date = new Date();
         dispatch(createReviewThunk({
-            "gameName": GameName,
             "userId": userId,
             "userName": username,
             "time": date.toLocaleDateString()+ " " + date.toLocaleTimeString(),
@@ -103,9 +102,13 @@ const CreateReview = () => {
                              src={"/images/spacex.jpeg"}/>
                     </div>
 
+
                 </div>
 
+
             </div>
+
+            <h6 className="p-3 mb-2 fw-bolder">Hi {username}! Thank you for sharing your game experience with {GameName}.</h6>
             <form className="p-2">
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="username">Your Review</label>
