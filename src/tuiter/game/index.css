@@ -1,0 +1,65 @@
+.wd-tabs li {
+    display: inline;
+}
+
+.wd-tabs {
+    padding-left: 0;
+}
+
+.wd-selected {
+    border-bottom: 2px blue solid;
+    padding-bottom: 20px;
+}
+
+.wd-nudge-up {
+    bottom: 18px;
+    left: 25px;
+}
+
+.wd-bottom-2 {
+    bottom: 2px;
+}
+
+.wd-bottom-4 {
+    bottom: 4px;
+}
+
+.btn-padding {
+    padding-bottom: 40px;
+}
+
+
+.game-title-padding {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.video-center {
+    alignment: center;
+}
+
+.recommended-padding {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.left-padding{
+    padding-left: 20px;
+}
+
+.collapsible {
+    float: left;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+

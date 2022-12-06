@@ -11,7 +11,6 @@ const HomeTuitsList = () => {
     }, [])
     // grab tuits and loading flag from reducer
     const {tuits, loading} = useSelector(state => state.homeTuitsData)
-    console.log(tuits);
     const dispatch = useDispatch();
 
 
