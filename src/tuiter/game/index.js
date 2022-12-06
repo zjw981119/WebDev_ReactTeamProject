@@ -15,6 +15,7 @@ const GameComponent = () => {
     let [videoUrl, setvideoUrl] = useState('');
     let [musicId , setmusicId] = useState('');
 
+    const RawgId = Number(gameLocation.pathname.split(':')[1]);
     const dispatch = useDispatch();
 
     //Initialize with timmer to get the game info from server
@@ -43,8 +44,8 @@ const GameComponent = () => {
     async function ComponentInit()
     {
         try{
-
-            const RawgId = gameLocation.state.RawgId;
+            console.log(RawgId)
+            // const RawgId = gameLocation.state.RawgId;
             let response = await dispatch(findGameByIdThunk(RawgId));
             await setgame(response.payload);
 
@@ -104,7 +105,7 @@ const GameComponent = () => {
                 <div className = "game-title-padding"></div>
 
                 <div className="mb-5 position-relative">
-                    <img className="w-100" src={game.Image} height='320px'/>
+                    <img className="w-100" src={game.Image} height='350px'/>
                     {/*className="position-relative"*/}
                     <div className="position-absolute top-100 translate-middle" style={{'paddingLeft':'150px'}}>
 
@@ -221,7 +222,7 @@ const GameComponent = () => {
                 <div className="bg-color-blue">
                     <Collapsible trigger="Reviews" className="h6 fw-bolder pb-0 mb-0" open={true}>
                     <div className = "game-title-padding"></div>
-                    <ReviewsList RawgId={gameLocation.state.RawgId}/>
+                    <ReviewsList RawgId={RawgId}/>
                     </Collapsible>
                 </div>
             </div>

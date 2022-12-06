@@ -48,6 +48,10 @@ export const getGameMusicUrl  = async (GameName) => {
     {
         keyword = keyword.substring(0, keyword.indexOf(':'))
     }
+    else if(keyword.includes('-'))
+    {
+        keyword = keyword.substring(0, keyword.indexOf('-'))
+    }
 
     const req_fast_API = "https://spotify23.p.rapidapi.com/search/?q=" + keyword+"&type=multi&offset=0&limit=10&numberOfTopResults=5";
 
