@@ -87,7 +87,7 @@ const CreateReview = () => {
     return (
         <div className="ttr-edit-profile">
             <div className="border border-secondary border-bottom-0" style={{"marginBottom": "60px"}}>
-                <Link to={{pathname :"/tuiter/game"}} state = {{"RawgId" : RawgId, "GameName" : GameName}}  className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
+                <Link to={{pathname :"/tuiter/game/:" + RawgId}} state = {{"RawgId" : RawgId, "GameName" : GameName}}  className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
                     <i className="fa-solid fa-xmark"/>
                 </Link>
 
@@ -198,7 +198,7 @@ const CreateReview = () => {
                     </select>
                 </div>
 
-                <Link to={{pathname :"/tuiter/game"}} state = {{"RawgId" : RawgId, "GameName" : GameName}}  className="btn btn-light rounded-pill fa-pull-middle fw-bolder mt-1 mb-2 me-2"
+                <Link to={{pathname :"/tuiter/game/:" + RawgId}} state = {{"RawgId" : RawgId, "GameName" : GameName}}  className="btn btn-light rounded-pill fa-pull-middle fw-bolder mt-1 mb-2 me-2"
                       onClick={PostReviewHandler}>
                     Post Your Review
                 </Link>

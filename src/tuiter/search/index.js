@@ -151,7 +151,7 @@ const SearchComponent = () => {
                 {
                     gamesArray.slice(firstPost, lastPost + 1).map(game =>
                         <li className="list-group-item border-secondary">
-                            <Link to = {{pathname :"/tuiter/game"}} state = {{"RawgId" : game.id, "GameName" : game.name}} onClick={() => AddGame(game.id)}>
+                            <Link to = {{pathname :"/tuiter/game/:" + game.id}} state = {{"GameName" : game.name}} onClick={() => AddGame(game.id)}>
                                 <div className="row">
                                     <div className="col-6 d-none d-sm-block d-md-block d-lg-block d-xl-block d-xxl-block">
                                         <img width={200} height={140} className=" rounded-3" src={game.background_image}/>
