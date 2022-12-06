@@ -17,6 +17,8 @@ import GameComponent from "./game/index";
 import EditProfile from "./profile/edit-profile";
 import CreateReview from "./review/create-review";
 import Recommended_game from "./recommeded_game";
+import Login from "./authentication";
+import Register from "./authentication/register";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
@@ -34,6 +36,8 @@ function Tuiter() {
                      style={{"position": "relative"}}>
                     <Routes>
                         <Route path="/home" element={<TuitList/>}/>
+                        <Route path="/login" element={<Login/>}/>
+                        <Route path="/register" element={<Register/>}/>
                         <Route path="/explore" element={<ExploreComponent/>}/>
                         <Route path="/search" element={<SearchComponent/>}/>
                         <Route path="/game" element={<GameComponent/>}/>
