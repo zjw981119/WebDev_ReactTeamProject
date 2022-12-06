@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useNavigate  } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {createReviewThunk} from "../services/review-service/reviews-thunks";
+import * as security_service from "../services/security-service";
+
 
 const CreateReview = () => {
-
-    //TODO SETUP UserName and UserId
 
     let ReviewLocation = useLocation();
     const Image = ReviewLocation.state.Image;
@@ -18,8 +18,28 @@ const CreateReview = () => {
     const [content, setcontent] = useState('');
     const [recommended, setrecommended] = useState(true);
     const [playhours, setplayhours] = useState(0);
+    const [username, setusername] = useState('');
+    const [userId, setuserId] = useState('');
 
-    //TODO socre and recommended not updated by selection]
+    const navigate = useNavigate();
+
+    //TODO SETUP UserName and UserId
+    useEffect(() => {
+            async function fetchUser() {
+
+                try {
+                    const user = await security_service.profile();
+                    console.log(user)
+                    await setusername(user.username);
+                    await setuserId(user._id);
+                } catch (e) {
+                    navigate("../login");
+                }
+            }
+        fetchUser();
+        }, []
+    );
+
 
    async function handleRecommendedChange(e)
    {
@@ -51,8 +71,8 @@ const CreateReview = () => {
         const date = new Date();
         dispatch(createReviewThunk({
             "gameName": GameName,
-            "userId": 1234,
-            "userName": "TODO",
+            "userId": userId,
+            "userName": username,
             "time": date.toLocaleDateString()+ " " + date.toLocaleTimeString(),
             "playhours" : playhours,
             "avatar": "spacex.jpeg",

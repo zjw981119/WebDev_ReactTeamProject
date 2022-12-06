@@ -27,13 +27,10 @@ const GameComponent = () => {
             catch{
 
             }
-        }, 500);
+        }, 600);
     }, [])
 
-    //Initialize Music use Effect
-    useEffect(() => {
-        InitMusic()
-    }, [])
+
 
     useEffect(() => {
     }, [game])
@@ -107,7 +104,7 @@ const GameComponent = () => {
                 <div className = "game-title-padding"></div>
 
                 <div className="mb-5 position-relative">
-                    <img className="w-100" src={game.Image} height='300px'/>
+                    <img className="w-100" src={game.Image} height='320px'/>
                     {/*className="position-relative"*/}
                     <div className="position-absolute top-100 translate-middle" style={{'paddingLeft':'150px'}}>
 
