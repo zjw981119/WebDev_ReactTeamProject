@@ -33,6 +33,7 @@ import fireworkParticleConfig from "./particle-effect/Firework-Particle-Config";
 import trailParticleConfig from "./particle-effect/Trail-Particle-Config";
 import ClosedParticleConfig from "./particle-effect/Closed-Particle-Config";
 import ExplosionParticleConfig from "./particle-effect/Explosion-Particle-Config"
+import AboutUsComponent from "./about-us/about-us";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
@@ -84,6 +85,7 @@ function Tuiter() {
                         <Route path="/search" element={<SearchComponent/>}/>
                         <Route path="/game/:RawgId" element={<GameComponent/>}/>
                         <Route path="/create-review" element={<CreateReview/>}/>
+                        <Route path="/aboutus" element={<AboutUsComponent/>}/>
                         <Route path="/profile" element={<ProfileComponent/>}/>
                         <Route path="/edit-profile" element={<EditProfile/>}/>
                     </Routes>

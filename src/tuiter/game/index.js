@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {findGameByIdThunk, getGameTrailerUrlThunk, getGameMusicUrlThunk} from "../services/game-service/games-thunks";
 import GameArray from "./game.json";
 import ReviewsList from "../review/index";
 import Collapsible from 'react-collapsible';
