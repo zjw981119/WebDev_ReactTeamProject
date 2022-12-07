@@ -94,7 +94,7 @@ function Tuiter() {
             </div>
 
             {/*floating menu*/}
-            <Fab alwaysShowTitle={true} icon="ℹ️">
+            <Fab alwaysShowTitle={true} icon="⚙️">
                 <Action text="Snow" onClick={() => setbackgroundParticle(snowParticleConfig)}>
                     ❄️
                 </Action>

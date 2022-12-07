@@ -6,6 +6,7 @@ import {useDispatch} from "react-redux";
 import {searchRAWGGamesThunk, findRAWGGameDetailThunk} from "../services/rawg-game-service/rawg-games-thunks";
 import {createGameThunk} from "../services/game-service/games-thunks";
 import {Pagination} from "antd";
+import {AddGame} from "../services/rawg-game-service/rawg-games-service";
 const SearchComponent = () => {
     let [GameSearchInput, setGameSearchInput] = useState('');
     let [gamesArray, setgamesArray] = useState(GameJsonArray);
@@ -26,58 +27,6 @@ const SearchComponent = () => {
         if(e.keyCode === 13){
             GameSearchInputHandler()
         }
-    }
-
-    async function AddGame(SelectedId)
-    {
-        for(let index in gamesArray)
-        {
-            if(SelectedId === gamesArray[index].id)
-            {
-                const DetailSearchResponse = await dispatch(findRAWGGameDetailThunk(gamesArray[index].id));
-                const res = DetailSearchResponse.payload;
-                let PlatformList = []
-
-                for(let platforms_index in res.platforms)
-                {
-                    PlatformList.push(res.platforms[platforms_index].platform.name);
-                }
-
-                let GenreList = []
-                for(let genres_index in res.genres)
-                {
-                    GenreList.push(res.genres[genres_index].name);
-                }
-
-                let DeveloperList = []
-
-                for(let developers_index in res.developers)
-                {
-                    DeveloperList.push(res.developers[developers_index].name);
-                }
-
-                let description =  res.description;
-                const regex = /(<([^>]+)>)/gi;
-                description = description.replace(regex, " ");
-
-                const gameCreateReq =
-                    {
-                        "RawgId": res.id,
-                        "GameName": res.name,
-                        "Description": description,
-                        "Metacritic": res.metacritic,
-                        "ReleaseDate": res.released,
-                        "Image": res.background_image,
-                        "Website" : res.website,
-                        "Platforms" :PlatformList,
-                        "Genres" : GenreList,
-                        "Developers" : DeveloperList
-                    }
-                const CreateGameResponse = await dispatch(createGameThunk(gameCreateReq));
-                return
-            }
-        }
-
     }
 
 
@@ -151,7 +100,7 @@ const SearchComponent = () => {
                 {
                     gamesArray.slice(firstPost, lastPost + 1).map(game =>
                         <li className="list-group-item border-secondary">
-                            <Link to = {{pathname :"/tuiter/game/:" + game.id}} state = {{"GameName" : game.name}} onClick={() => AddGame(game.id)}>
+                            <Link className="text-decoration-none" to = {{pathname :"/tuiter/game/:" + game.id}} state = {{"GameName" : game.name}} onClick={() => AddGame(game.id)}>
                                 <div className="row">
                                     <div className="col-6 d-none d-sm-block d-md-block d-lg-block d-xl-block d-xxl-block">
                                         <img width={200} height={140} className=" rounded-3" src={game.background_image}/>
@@ -159,8 +108,8 @@ const SearchComponent = () => {
 
                                     <div className="col-6">
                                         <h5 className="game-title-padding">{game.name}</h5>
-                                        <div className="">Release Date: {game.released}</div>
-                                        <div className="">metacritic Score: {game.metacritic}</div>
+                                        <div className="">Release Date:  {game.released ? game.released : "N/A"}</div>
+                                        <div className="">metacritic Score:  {game.metacritic ? game.metacritic : "N/A"} </div>
                                     </div>
                                 </div>
                             </Link>
