@@ -79,9 +79,9 @@ const GameComponent = () => {
 
     return (
 
-        <div className="ttr-profile" >
+        <div className="ttr-profile list-group" >
 
-            <div className="border border-secondary ">
+            <div className="border border-secondary list-group-item">
 
                 <div className="btn-padding">
                     <button className="btn btn-light btn-lg rounded-pill ms-2 mt-3 " >

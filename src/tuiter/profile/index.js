@@ -10,8 +10,8 @@ const Profile = () => {
     // extract profile
     const profile = useSelector(state => state.profile)
     return (
-        <div className="ttr-profile">
-            <div className="border border-secondary">
+        <div className="ttr-profile list-group">
+            <div className="border border-secondary list-group-item">
                 <div className="row">
                     <div className="col-1">
                         <button className="btn btn-light btn-sm rounded-pill ms-3 mt-3">

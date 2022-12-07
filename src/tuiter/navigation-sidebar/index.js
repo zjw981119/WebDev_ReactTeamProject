@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 // use this to parse URL
 import {useLocation} from "react-router";
 
-
 // Convert all parameters into an object deconstructor
 // and provide initial default values.
 const NavigationSidebar = () => {

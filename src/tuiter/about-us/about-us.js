@@ -5,9 +5,9 @@ const AboutUsComponent = () => {
 
     return (
 
-        <div className="ttr-profile" >
+        <div className="ttr-profile list-group" >
 
-            <div className="border border-secondary ">
+            <div className="border border-secondary list-group-item">
 
                 <div className="btn-padding">
                     <button className="btn btn-light btn-lg rounded-pill ms-2 mt-3 " >
@@ -32,10 +32,10 @@ const AboutUsComponent = () => {
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="About this Application"  className="fw-bolder pb-0 mb-0" open={true}>
                             <p className="p-2 collapsible">
-                                This is an Full-stack game-related social media web application. User need to sign up and login to their account for using this application.
-                                User can search the game their interested and find the detail information about it. Also, user can review the game
+                                This is an Full-stack game-related social media web application. User needs to sign up and login to their account for using this application.
+                                User can search the game they are interested in and find the detail information about it such as game description, trailer, music, genres, developers. Also, user can review the game
                                 by providing their comment, feedback and rating to the game. In addition, user could post about what they are doing, what they thought and which game they are playing recently. This is not
-                                limited to game, user can basically everything they like. What's more, user can add their personal info to the profile page including their username, password, bio, birthday, avator, etc.
+                                limited to only game, user can basically post everything they like. What's more, user can add their personal info to the profile page including their username, password, bio, birthday, Avator, etc.
                                 User can also check their game review history in their profile page.
                             </p>
 
@@ -45,7 +45,7 @@ const AboutUsComponent = () => {
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="About us"  className="fw-bolder pb-0 mb-0" open={true}>
                             <p className="p-2 collapsible">
-                                We are Computer Science Student from Northeastern University Khory College Computer Science. This is our final project of CS5610 Web development course which instructed by
+                                We are Computer Science Students from the Northeastern University's Khory College of Computer Science. This is our final project of CS5610 Web development course which instructed by
                                 Dr. JOSE ANNUNZIATO.
                             </p>
 

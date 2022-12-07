@@ -23,8 +23,8 @@ const EditProfile = () => {
     }
 
     return (
-        <div className="ttr-edit-profile">
-            <div className="border border-secondary border-bottom-0" style={{"marginBottom": "60px"}}>
+        <div className="ttr-edit-profile list-group">
+            <div className="border border-secondary border-bottom-0 list-group-item" style={{"marginBottom": "60px"}}>
                 <Link to="/tuiter/profile" className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
                     <i className="fa-solid fa-xmark"/>
                 </Link>
@@ -55,8 +55,8 @@ const EditProfile = () => {
                     </button>
                 </div>
             </div>
-            <form className="p-2">
-                <div className="border border-secondary rounded-3 p-2 mb-3">
+            <form className="p-2 list-group-item">
+                <div className="border border-secondary rounded-3 p-2 mb-3 ">
                     <label htmlFor="username">Username</label>
                     <input id="username" title="Username"
                            className="p-0 form-control border-0 p-2"
