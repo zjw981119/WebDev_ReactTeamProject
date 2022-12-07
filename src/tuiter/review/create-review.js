@@ -29,7 +29,6 @@ const CreateReview = () => {
 
                 try {
                     const user = await security_service.profile();
-                    console.log(user)
                     await setusername(user.username);
                     await setuserId(user._id);
                 } catch (e) {

@@ -6,6 +6,7 @@ import GameArray from "./game.json";
 import ReviewsList from "../review/index";
 import Collapsible from 'react-collapsible';
 import Spotify from "react-spotify-embed";
+import {findGameByRawgId, getGameMusicUrl, getGameTrailerUrl} from "../services/game-service/games-service";
 
 
 const GameComponent = () => {
@@ -17,6 +18,11 @@ const GameComponent = () => {
 
     const RawgId = Number(gameLocation.pathname.split(':')[1]);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        ComponentInit()
+        InitMusic()
+    }, [RawgId])
 
     //Initialize with timmer to get the game info from server
     useEffect(() => {
@@ -44,15 +50,12 @@ const GameComponent = () => {
     async function ComponentInit()
     {
         try{
-            console.log(RawgId)
-            // const RawgId = gameLocation.state.RawgId;
-            let response = await dispatch(findGameByIdThunk(RawgId));
-            await setgame(response.payload);
+            let response = await findGameByRawgId(RawgId);
+            await setgame(response);
 
-            //TODO Comment backup
             const GameName = gameLocation.state.GameName;
-            let TrailerVideoResponse = await dispatch(getGameTrailerUrlThunk(GameName))
-            await setvideoUrl(TrailerVideoResponse.payload);
+            let TrailerVideoResponse = await getGameTrailerUrl(GameName)
+            setvideoUrl(TrailerVideoResponse);
 
         }
         catch{
@@ -65,8 +68,8 @@ const GameComponent = () => {
     {
         try {
             const GameName = gameLocation.state.GameName;
-            let MusicAPIResponse = await dispatch(getGameMusicUrlThunk(GameName))
-            await setmusicId(MusicAPIResponse.payload);
+            let MusicAPIResponse = await getGameMusicUrl(GameName);
+            setmusicId(MusicAPIResponse);
         }
         catch (e) {
             console.log("Fail to Load Music or music cannot be found")
