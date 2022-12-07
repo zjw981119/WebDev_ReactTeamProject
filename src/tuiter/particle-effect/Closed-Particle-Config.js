@@ -4,7 +4,7 @@ const ClosedParticleConfig =
         autoPlay: false,
         background: {
             color: {
-                value: "#000"
+                "value": "#000000"
             },
             image: "",
             position: "",

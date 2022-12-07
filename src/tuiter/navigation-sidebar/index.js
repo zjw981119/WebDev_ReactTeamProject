@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 // use this to parse URL
 import {useLocation} from "react-router";
 
-
 // Convert all parameters into an object deconstructor
 // and provide initial default values.
 const NavigationSidebar = () => {
@@ -13,7 +12,7 @@ const NavigationSidebar = () => {
     const active = paths[2];
     return (
         <div className="list-group">
-            <a className="list-group-item">Tuiter</a>
+            <div  className="list-group-item"><img className="w-100" src="/images/GEN.png"/></div>
             <Link to="/tuiter/home" className={`list-group-item ${active === 'home'?'active':''}`}>
                 <div className="row">
                     <div className="col-2">
@@ -52,7 +51,7 @@ const NavigationSidebar = () => {
                         <i className="fa-regular fa-chess-king me-2"/>
                     </div>
                     <div className="col-10 d-none d-xl-block">
-                        <span>Search Game</span>
+                        <span>Search Games</span>
                     </div>
                 </div>
             </Link>
@@ -111,17 +110,17 @@ const NavigationSidebar = () => {
                     </div>
                 </div>
             </Link>
-            <a className={`list-group-item
+            <Link to="/tuiter/aboutus" className={`list-group-item
                     ${active === 'more'?'active':''}`}>
                 <div className="row">
                     <div className="col-2">
                         <i className="fa-solid fa-ellipsis me-2"/>
                     </div>
                     <div className="col-10 d-none d-xl-block">
-                        <span>More</span>
+                        <span>About Us</span>
                     </div>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 

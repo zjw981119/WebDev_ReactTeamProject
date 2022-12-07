@@ -3,13 +3,13 @@ const snowParticleConfig =
         autoPlay: true,
         background: {
             color: {
-                value: "#0d47a1"
+                value: "#000000"
             },
             image: "",
             position: "",
             repeat: "",
             size: "",
-            opacity: 0
+            opacity: 1
         },
         backgroundMask: {
             composite: "destination-out",
@@ -17,7 +17,7 @@ const snowParticleConfig =
                 color: {
                     value: "#fff"
                 },
-                opacity: 0
+                opacity: 1
             },
             enable: false
         },

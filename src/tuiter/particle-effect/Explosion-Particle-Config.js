@@ -3,7 +3,7 @@ const ExplosionParticleConfig =
     autoPlay: true,
         background: {
     color: {
-        value: ""
+        "value": "#000000"
     },
     image: "",
         position: "",
