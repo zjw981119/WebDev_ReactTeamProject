@@ -55,7 +55,7 @@ export const findNewsByKeyWord  = async (keyword) => {
     const options = {
         method: 'GET',
         url: 'https://real-time-news-data.p.rapidapi.com/search',
-        params: {query: keyword , country: 'US', lang: 'en', time_published: '1d'},
+        params: {query: keyword +" video game" , country: 'US', lang: 'en', time_published: '1d'},
         headers: {
             'X-RapidAPI-Key': API_Key,
             'X-RapidAPI-Host': 'real-time-news-data.p.rapidapi.com'

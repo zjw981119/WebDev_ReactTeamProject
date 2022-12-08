@@ -6,6 +6,7 @@ import Collapsible from 'react-collapsible';
 import Spotify from "react-spotify-embed";
 import {findGameByRawgId, getGameMusicUrl, getGameTrailerUrl} from "../services/game-service/games-service";
 import * as service from "../services/review-service/reviews-service";
+import * as secureService from "../services/security-service";
 
 
 const GameComponent = () => {
@@ -77,9 +78,11 @@ const GameComponent = () => {
             setmusicId(MusicAPIResponse);
         }
         catch (e) {
+            console.log(e)
             console.log("Fail to Load Music or music cannot be found")
         }
     }
+
 
 
 
@@ -104,16 +107,28 @@ const GameComponent = () => {
 
 
                 <div className = "game-title-padding"></div>
+
                 <div className="col-11">
                     {game.GameName ? <h3 className="p-2 mb-0 pb-0 fw-bolder">
                         {game.GameName}
                         <i className="fa fa-badge-check text-primary"/>
                     </h3> : <h3 className="p-2 mb-0 pb-0 fw-bolder"></h3>}
+
+                    <div className = "game-title-padding"></div>
+
+                    {/*{TODO replace the url with this game page after deployed}*/}
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&source=WebDev"
+                       onClick="window.open(this.href, 'mywin',
+                'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img
+                        src="/images/LinkedIN.gif" alt="" width="54" height="20"/>
+                    </a>
+
+
                 </div>
                 <div className = "game-title-padding"></div>
 
                 <div className="mb-5 position-relative">
-                    <img className="w-100" src={game.Image} height='350px'/>
+                    <img className="w-100" src={game.Image ? game.Image : "https://i2.wp.com/codemyui.com/wp-content/uploads/2017/09/rotate-pulsating-loading-animation.gif"} height='350px'/>
                     {/*className="position-relative"*/}
                     <div className="position-absolute top-100 translate-middle" style={{'paddingLeft':'150px'}}>
 
@@ -158,7 +173,7 @@ const GameComponent = () => {
 
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="Game Music:"  className="fw-bolder pb-0 mb-0" open={true}>
-                            {musicId ? <Spotify link={"https://open.spotify.com/playlist/" + musicId } height={300}></Spotify> : <p>N/A</p>
+                            {musicId ? <Spotify link={"https://open.spotify.com/playlist/" + musicId } height={380} ></Spotify> : <p>N/A</p>
                             }
                         </Collapsible>
                     </div>
@@ -230,7 +245,7 @@ const GameComponent = () => {
                 <div className="bg-color-blue">
                     <Collapsible trigger="Reviews" className="h6 fw-bolder pb-0 mb-0" open={true}>
                     <div className = "game-title-padding"></div>
-                    <ReviewsList reviews={reviews} refreshReview={refreshReview}/>
+                    <ReviewsList reviews={reviews} refreshReview={refreshReview} />
                     </Collapsible>
                 </div>
             </div>

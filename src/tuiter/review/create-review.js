@@ -4,6 +4,8 @@ import {useDispatch} from "react-redux";
 import * as security_service from "../services/security-service";
 import "./index.css"
 import {createReview} from "../services/review-service/reviews-service";
+import * as secureService from "../services/security-service";
+import * as tuitService from "../services/tuits-service";
 
 const CreateReview = () => {
 
@@ -21,23 +23,31 @@ const CreateReview = () => {
     const [username, setusername] = useState('');
     const [userId, setuserId] = useState('');
 
+
     const navigate = useNavigate();
 
-
+    // retrieve the currently logged in user
     useEffect(() => {
             async function fetchUser() {
 
-                try {
-                    const user = await security_service.profile();
-                    await setusername(user.username);
-                    await setuserId(user._id);
-                } catch (e) {
-                    navigate("../login");
+
+                const user = await security_service.profile();
+                if (Object.keys(user).length === 0)
+                {
+                    navigate('/tuiter/login');
                 }
+
+                await setusername(user.username);
+                await setuserId(user._id);
+                // } catch (e) {
+                //     navigate("../login");
+                // }
             }
         fetchUser();
         }, []
     );
+
+
 
 
    async function handleRecommendedChange(e)

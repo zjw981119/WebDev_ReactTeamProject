@@ -137,7 +137,7 @@ const ExploreComponent = () => {
             <div className="position-relative mb-2">
                 {
                     newsArray ?
-                    <img src={newsArray[Math.floor(Math.random() * (newsArray.length > 8 ? 8 : newsArray.length - 1)) + 1].photo_url} height={360} className="w-100"/> :
+                    <img src={newsArray[Math.floor(Math.random() * (newsArray.length > 10 ? 10 : newsArray.length - 1)) + 1].photo_url} height={360} className="w-100"/> :
                     <img src="https://www.spieltimes.com/wp-content/uploads/2021/08/Unreal-Engine-5.png" height={360} className="w-100"/>
                 }
             </div>
