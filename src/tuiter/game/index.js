@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {findGameByIdThunk, getGameTrailerUrlThunk, getGameMusicUrlThunk} from "../services/game-service/games-thunks";
 import GameArray from "./game.json";
 import ReviewsList from "../review/index";
 import Collapsible from 'react-collapsible';
@@ -80,9 +79,9 @@ const GameComponent = () => {
 
     return (
 
-        <div className="ttr-profile" >
+        <div className="ttr-profile list-group" >
 
-            <div className="border border-secondary ">
+            <div className="border border-secondary list-group-item">
 
                 <div className="btn-padding">
                     <button className="btn btn-light btn-lg rounded-pill ms-2 mt-3 " >
