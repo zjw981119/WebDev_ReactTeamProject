@@ -3,19 +3,42 @@ import {Link} from "react-router-dom";
 import "./index.css";
 import GameJsonArray from "./games.json";
 import {useDispatch} from "react-redux";
-import {searchRAWGGamesThunk, findRAWGGameDetailThunk} from "../services/rawg-game-service/rawg-games-thunks";
+import {
+    searchRAWGGamesThunk,
+    findRAWGGameDetailThunk,
+    findTrendingGameThunk, findTopGameThunk
+} from "../services/rawg-game-service/rawg-games-thunks";
 import {createGameThunk} from "../services/game-service/games-thunks";
 import {Pagination} from "antd";
 import {AddGame} from "../services/rawg-game-service/rawg-games-service";
 const SearchComponent = () => {
     let [GameSearchInput, setGameSearchInput] = useState('');
     let [gamesArray, setgamesArray] = useState(GameJsonArray);
+    const InitialGameArray = GameJsonArray;
+    let [TabIndex, setTabIndex] = useState(0);
 
     const dispatch = useDispatch();
 
     async function GameSearchInputHandler() {
         const response = await dispatch(searchRAWGGamesThunk(GameSearchInput));
         await setgamesArray(response.payload.results);
+    }
+
+    async function TrendingGameHandler() {
+        const response = await dispatch(findTrendingGameThunk());
+        await setgamesArray(response.payload.results);
+        await setTabIndex(1);
+    }
+
+    async function TopGameHandler() {
+        const response = await dispatch(findTopGameThunk());
+        await setgamesArray(response.payload.results);
+        await setTabIndex(2);
+    }
+
+    async function ForYouGameHandler() {
+        await setgamesArray(InitialGameArray);
+        await setTabIndex(0);
     }
 
     //Pagination
@@ -36,7 +59,6 @@ const SearchComponent = () => {
     const [totalPosts, setTotalPosts] = useState()
     const [lastPost, setLastPost] = useState(postsPerPage - 1)
     const [firstPost, setFirstPost] = useState(0)
-    const [serverCall, setServerCall] = useState(false)
 
     const [pageAtServerCall, setPageAtServerCall] = useState([])
 
@@ -60,11 +82,6 @@ const SearchComponent = () => {
         const indexOfFirstPost = indexOfLastPost - postsPerPage + 1
         const index = pageAtServerCall.indexOf(pageNumber)
 
-        pageAtServerCall.map((pageAtServerCall) => {
-            if (pageNumber === pageAtServerCall) {
-                setServerCall(true)
-            }
-        })
 
         if (index !== -1) {
             pageAtServerCall.splice(index, 1)
@@ -92,14 +109,26 @@ const SearchComponent = () => {
 
                 </div>
             </div>
-            <div className="search-bar-padding">
+            {/*<div className="search-bar-padding">*/}
 
-            </div>
+            {/*</div>*/}
+
+            <ul className="nav nav-pills mt-2 mb-2">
+                <li className="nav-item">
+                    <button className={` nav-link ${TabIndex === 0 ?'active':''}`} onClick={ForYouGameHandler}>For You</button>
+                </li>
+                <li className="nav-item">
+                    <button className={`nav-link ${TabIndex === 1 ?'active':''}`} onClick={TrendingGameHandler}>Trending {new Date().getFullYear()}</button>
+                </li>
+                <li className="nav-item">
+                    <button className={` nav-link ${TabIndex === 2 ?'active':''}`} onClick={TopGameHandler}>Top 100 Games </button>
+                </li>
+            </ul>
 
             <ul className="list-group border border-secondary">
                 {
                     gamesArray.slice(firstPost, lastPost + 1).map(game =>
-                        <li className="list-group-item border-secondary">
+                        <li className="list-group-item border-secondary" key={game.id}>
                             <Link className="text-decoration-none" to = {{pathname :"/tuiter/game/:" + game.id}} state = {{"GameName" : game.name}} onClick={() => AddGame(game.id)}>
                                 <div className="row">
                                     <div className="col-6 d-none d-sm-block d-md-block d-lg-block d-xl-block d-xxl-block">

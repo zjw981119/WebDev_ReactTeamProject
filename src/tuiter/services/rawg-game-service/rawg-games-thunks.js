@@ -20,3 +20,15 @@ export const findRAWGRecommendedGameThunk = createAsyncThunk(
         // Returned data goes in redux action's payload
         await service.findRAWGRecommendedGame()
 )
+
+export const findTopGameThunk = createAsyncThunk(
+    'RAWGgames/findTopGame', async (gameId) =>
+        // Returned data goes in redux action's payload
+        await service.findTopRatingRAWGGame()
+)
+
+export const findTrendingGameThunk = createAsyncThunk(
+    'RAWGgames/findTrendingGame', async (gameId) =>
+        // Returned data goes in redux action's payload
+        await service.findTrendingRAWGGame()
+)

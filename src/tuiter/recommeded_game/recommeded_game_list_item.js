@@ -17,7 +17,7 @@ const Recommended_game_list_item = (
 
 
     return(
-        <li className="list-group-item">
+        <li className="list-group-item" key={gameSummary.id}>
             <Link className="text-decoration-none" to = {{pathname :"/tuiter/game/:" + gameSummary.id}} state = {{"GameName" : gameSummary.name}} onClick={() => AddGame(gameSummary.id)}>
                 <div className="row">
                         <div className="col-2">

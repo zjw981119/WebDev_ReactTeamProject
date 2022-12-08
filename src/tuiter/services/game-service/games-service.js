@@ -68,22 +68,4 @@ export const getGameMusicUrl  = async (GameName) => {
 }
 
 
-// find all games
-export const findGames  = async () => {
-    const response = await axios.get(Games_API);
-    return response.data;
-}
-
-// delete game by id
-export const deleteGame = async (gid) => {
-    const response = await axios.delete(`${Games_API}/${gid}`)
-    return response.data;
-}
-
-export const updateGame = async (game) => {
-    await axios.put(`${Games_API}/${game._id}`, game);
-    return game;
-}
-
-
 
