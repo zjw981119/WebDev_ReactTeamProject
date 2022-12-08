@@ -1,5 +1,4 @@
 import NavigationSidebar from "./navigation-sidebar";
-import TuitList from "./tuits"
 import ExploreComponent from "./explore/index";
 import SearchComponent from "./search/index";
 import {Routes, Route} from "react-router";
@@ -13,6 +12,7 @@ import GameComponent from "./game/index";
 import EditProfile from "./profile/edit-profile";
 import CreateReview from "./review/create-review";
 import Recommended_game from "./recommeded_game";
+import Home from "./home";
 import Login from "./authentication";
 import Register from "./authentication/register";
 
@@ -31,6 +31,7 @@ import ClosedParticleConfig from "./particle-effect/Closed-Particle-Config";
 import ExplosionParticleConfig from "./particle-effect/Explosion-Particle-Config"
 import AboutUsComponent from "./about-us/about-us";
 import Linkedin from "./about-us/linkedin";
+
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
@@ -169,7 +170,7 @@ function Tuiter() {
                 <div className="col-10 col-md-10 col-lg-7 col-xl-6"
                      style={{"position": "relative"}}>
                     <Routes>
-                        <Route path="/home" element={<TuitList/>}/>
+                        <Route path="/home" element={<Home/>}/>
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/register" element={<Register/>}/>
                         <Route path="/explore" element={<ExploreComponent/>}/>
