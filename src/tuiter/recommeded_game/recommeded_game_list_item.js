@@ -1,9 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
-import {findRAWGGameDetailThunk} from "../services/rawg-game-service/rawg-games-thunks";
-import {createGameThunk} from "../services/game-service/games-thunks";
-import {useDispatch} from "react-redux";
-import GameArray from "../game/game.json";
 import {AddGame} from "../services/rawg-game-service/rawg-games-service";
 const Recommended_game_list_item = (
     {
@@ -12,12 +8,8 @@ const Recommended_game_list_item = (
 
 ) => {
 
-    const dispatch = useDispatch();
-
-
-
     return(
-        <li className="list-group-item">
+        <li className="list-group-item" key={gameSummary.id}>
             <Link className="text-decoration-none" to = {{pathname :"/tuiter/game/:" + gameSummary.id}} state = {{"GameName" : gameSummary.name}} onClick={() => AddGame(gameSummary.id)}>
                 <div className="row">
                         <div className="col-2">

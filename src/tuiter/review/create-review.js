@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
 import {Link, useLocation, useNavigate  } from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {createReviewThunk} from "../services/review-service/reviews-thunks";
 import * as security_service from "../services/security-service";
 import "./index.css"
+import {createReview} from "../services/review-service/reviews-service";
 
 const CreateReview = () => {
 
@@ -68,7 +68,7 @@ const CreateReview = () => {
     const dispatch = useDispatch();
     const PostReviewHandler = () => {
         const date = new Date();
-        dispatch(createReviewThunk({
+        createReview({
             "userId": userId,
             "userName": username,
             "time": date.toLocaleDateString()+ " " + date.toLocaleTimeString(),
@@ -80,7 +80,7 @@ const CreateReview = () => {
             "recommended": recommended,
             "content": content,
             "RawgId" : RawgId
-        }))
+        })
     }
 
     return (

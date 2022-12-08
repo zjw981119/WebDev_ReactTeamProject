@@ -1,8 +1,7 @@
 import axios from 'axios';
-import {findRAWGGameDetailThunk} from "./rawg-games-thunks";
 import {createGame} from "../game-service/games-service";
 const rawg_search_API = 'https://api.rawg.io/api/games?key=7292389b6f3b4ef5a8dbfac340a07684&search=';
-const key = "7292389b6f3b4ef5a8dbfac340a07684";
+const key = "b640803dd45b4af69427cc78f96539a0";
 const rawg_detail_API = 'https://api.rawg.io/api/games/';
 const rawg_recommended_API = 'https://api.rawg.io/api/games?key=';
 
@@ -47,6 +46,34 @@ export const findRAWGRecommendedGame  = async () => {
     const response = await axios.get(request);
     return response.data;
 }
+
+
+export const findTopRatingRAWGGame  = async () => {
+    const date = new Date();
+
+    const endDate = date.getFullYear() + "-12" + "-30"
+    const request = rawg_recommended_API + key + "&dates=2001-01-01" +  "," + endDate + "&page_size=100&ordering=-added";
+    const response = await axios.get(request);
+    return response.data;
+}
+
+export const findTrendingRAWGGame  = async () => {
+    const date = new Date();
+    let StartMonth = date.getMonth()
+    if(StartMonth < 10)
+    {
+        StartMonth = "0" + StartMonth;
+    }
+
+    const endDate = date.getFullYear() + "-" + StartMonth + "-30"
+    const request = rawg_recommended_API + key + "&dates=" + (date.getFullYear() - 1) + "-" + StartMonth +  "-01" +  "," + endDate + "&page_size=60&ordering=-added";
+    const response = await axios.get(request);
+    return response.data;
+}
+
+
+
+
 
 export const AddGame  = async (SelectedId) =>
 {

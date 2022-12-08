@@ -1,30 +1,12 @@
-import React , {useEffect, useState}  from "react";
 import {useDispatch} from "react-redux";
-import {deleteReviewThunk} from "../services/review-service/reviews-thunks";
 import "./index.css";
+import {deleteReview} from "../services/review-service/reviews-service";
 
 
-const ReviewItem = (
-    {
-        review = {
-            "gameName": "Space",
-            "userId": "SpaceX",
-            "userName": "SpaceX",
-            "time": "",
-            "playhours" : "10",
-            "avatar": "spacex.jpeg",
-            "GamePlayScore": 9,
-            "LastingAppealScore": 9,
-            "GraphicScore": 9,
-            "recommended": true,
-            "content": "I enjoy this game a lot",
-            "RawgId" : 3489
-        }
-    }
-) => {
+const ReviewItem = ({review, refreshReview}) => {
     const dispatch = useDispatch();
     const deleteReviewHandler = (ReviewId) => {
-        dispatch(deleteReviewThunk(ReviewId));
+        deleteReview(ReviewId).then(refreshReview);
     }
 
     let IsRecommendedImage = "/images/thumbdown.png";

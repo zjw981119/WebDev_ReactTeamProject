@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {Link, useLocation} from "react-router-dom";
-import {useDispatch} from "react-redux";
 import GameArray from "./game.json";
 import ReviewsList from "../review/index";
 import Collapsible from 'react-collapsible';
 import Spotify from "react-spotify-embed";
 import {findGameByRawgId, getGameMusicUrl, getGameTrailerUrl} from "../services/game-service/games-service";
+import * as service from "../services/review-service/reviews-service";
 
 
 const GameComponent = () => {
@@ -14,9 +14,9 @@ const GameComponent = () => {
     let [game, setgame] = useState(GameArray);
     let [videoUrl, setvideoUrl] = useState('');
     let [musicId , setmusicId] = useState('');
+    let [reviews , setreviews] = useState([]);
 
     const RawgId = Number(gameLocation.pathname.split(':')[1]);
-    const dispatch = useDispatch();
 
     useEffect(() => {
         ComponentInit()
@@ -56,10 +56,16 @@ const GameComponent = () => {
             let TrailerVideoResponse = await getGameTrailerUrl(GameName)
             setvideoUrl(TrailerVideoResponse);
 
+            setreviews(await service.findReviewByRawgId(RawgId));
+
         }
         catch{
             console.log("Fail to Init")
         }
+    }
+
+    const refreshReview  = () => {
+        service.findReviewByRawgId(RawgId).then(reviews => setreviews( reviews));
     }
 
     //function to initialize music
@@ -224,7 +230,7 @@ const GameComponent = () => {
                 <div className="bg-color-blue">
                     <Collapsible trigger="Reviews" className="h6 fw-bolder pb-0 mb-0" open={true}>
                     <div className = "game-title-padding"></div>
-                    <ReviewsList RawgId={RawgId}/>
+                    <ReviewsList reviews={reviews} refreshReview={refreshReview}/>
                     </Collapsible>
                 </div>
             </div>

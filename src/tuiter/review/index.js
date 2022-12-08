@@ -1,19 +1,9 @@
 import React, {useEffect, useState} from "react";
 import ReviewItem from "./review-item";
-import {useDispatch, useSelector} from "react-redux";
-import {findReviewByRawgIdThunk} from "../services/review-service/reviews-thunks";
-import review from "../reducers/review-reducer";
-
 import { Pagination } from 'antd';
 
-const ReviewsList = ({RawgId}) => {
 
-    const {reviews, loading} = useSelector(state => state.review)
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(findReviewByRawgIdThunk(RawgId))
-    }, [])
+const ReviewsList = ({reviews, refreshReview}) => {
 
     useEffect(() => {
         setTotalPosts(reviews.length)
@@ -26,7 +16,6 @@ const ReviewsList = ({RawgId}) => {
     const [totalPosts, setTotalPosts] = useState()
     const [lastPost, setLastPost] = useState(postsPerPage - 1)
     const [firstPost, setFirstPost] = useState(0)
-    const [serverCall, setServerCall] = useState(false)
 
     const [pageAtServerCall, setPageAtServerCall] = useState([])
 
@@ -50,11 +39,6 @@ const ReviewsList = ({RawgId}) => {
         const indexOfFirstPost = indexOfLastPost - postsPerPage + 1
         const index = pageAtServerCall.indexOf(pageNumber)
 
-        pageAtServerCall.map((pageAtServerCall) => {
-            if (pageNumber === pageAtServerCall) {
-                setServerCall(true)
-            }
-        })
 
         if (index !== -1) {
             pageAtServerCall.splice(index, 1)
@@ -70,16 +54,8 @@ const ReviewsList = ({RawgId}) => {
         <>
             <ul className="list-group border ">
                 {
-                    // if loading flag is true, then show a loading message while data is still
-                    // coming back from the server
-                    loading &&
-                    <li className="list-group-item border-secondary">
-                        Loading...
-                    </li>
-                }
-                {
                     reviews.slice(firstPost,lastPost +1).map(review =>
-                        <ReviewItem key={review._id} review={review}/>)
+                        <ReviewItem key={review._id} review={review} refreshReview = {refreshReview}/>)
                 }
             </ul>
 

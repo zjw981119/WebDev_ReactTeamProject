@@ -5,7 +5,6 @@ import {Routes, Route} from "react-router";
 import who from "./reducers/who-reducer";
 import exploretTuits from "./reducers/explore-tuits-reducer";
 import profile from "./reducers/profile-reducer";
-import review from "./reducers/review-reducer";
 import { configureStore }
     from '@reduxjs/toolkit';
 import {Provider} from "react-redux";
@@ -37,7 +36,7 @@ import Linkedin from "./about-us/linkedin";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
-    {reducer: {who, exploretTuits, profile, review}});
+    {reducer: {who, exploretTuits, profile}});
 
 
 
