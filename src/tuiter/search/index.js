@@ -3,14 +3,14 @@ import {Link} from "react-router-dom";
 import "./index.css";
 import GameJsonArray from "./games.json";
 import {useDispatch} from "react-redux";
-import {
-    searchRAWGGamesThunk,
-    findRAWGGameDetailThunk,
-    findTrendingGameThunk, findTopGameThunk
-} from "../services/rawg-game-service/rawg-games-thunks";
-import {createGameThunk} from "../services/game-service/games-thunks";
 import {Pagination} from "antd";
-import {AddGame} from "../services/rawg-game-service/rawg-games-service";
+import {
+    AddGame,
+    findTopRatingRAWGGame,
+    findTrendingRAWGGame,
+    searchRAWGGames
+} from "../services/rawg-game-service/rawg-games-service";
+
 const SearchComponent = () => {
     let [GameSearchInput, setGameSearchInput] = useState('');
     let [gamesArray, setgamesArray] = useState(GameJsonArray);
@@ -20,19 +20,21 @@ const SearchComponent = () => {
     const dispatch = useDispatch();
 
     async function GameSearchInputHandler() {
-        const response = await dispatch(searchRAWGGamesThunk(GameSearchInput));
-        await setgamesArray(response.payload.results);
+
+        const response = await searchRAWGGames(GameSearchInput);
+        await setgamesArray(response.results);
     }
 
+
     async function TrendingGameHandler() {
-        const response = await dispatch(findTrendingGameThunk());
-        await setgamesArray(response.payload.results);
+        const response = await findTrendingRAWGGame();
+        await setgamesArray(response.results);
         await setTabIndex(1);
     }
 
     async function TopGameHandler() {
-        const response = await dispatch(findTopGameThunk());
-        await setgamesArray(response.payload.results);
+        const response = await findTopRatingRAWGGame();
+        await setgamesArray(response.results);
         await setTabIndex(2);
     }
 
@@ -55,7 +57,7 @@ const SearchComponent = () => {
 
     //Pageination
 
-    const [postsPerPage] = useState(5);
+    const [postsPerPage] = useState(6);
     const [totalPosts, setTotalPosts] = useState()
     const [lastPost, setLastPost] = useState(postsPerPage - 1)
     const [firstPost, setFirstPost] = useState(0)
@@ -121,7 +123,7 @@ const SearchComponent = () => {
                     <button className={`nav-link ${TabIndex === 1 ?'active':''}`} onClick={TrendingGameHandler}>Trending {new Date().getFullYear()}</button>
                 </li>
                 <li className="nav-item">
-                    <button className={` nav-link ${TabIndex === 2 ?'active':''}`} onClick={TopGameHandler}>Top 100 Games </button>
+                    <button className={` nav-link ${TabIndex === 2 ?'active':''}`} onClick={TopGameHandler}>Top Games </button>
                 </li>
             </ul>
 

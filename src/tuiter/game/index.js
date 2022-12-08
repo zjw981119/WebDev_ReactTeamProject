@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {Link, useLocation} from "react-router-dom";
-import {useDispatch} from "react-redux";
 import GameArray from "./game.json";
 import ReviewsList from "../review/index";
 import Collapsible from 'react-collapsible';

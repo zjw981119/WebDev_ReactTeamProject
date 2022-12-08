@@ -50,3 +50,19 @@ export const findGameDeals  = async () => {
 
     return await response.data;
 }
+
+export const findNewsByKeyWord  = async (keyword) => {
+    const options = {
+        method: 'GET',
+        url: 'https://real-time-news-data.p.rapidapi.com/search',
+        params: {query: keyword , country: 'US', lang: 'en', time_published: '1d'},
+        headers: {
+            'X-RapidAPI-Key': API_Key,
+            'X-RapidAPI-Host': 'real-time-news-data.p.rapidapi.com'
+        }
+    };
+
+    const response = await axios.request(options)
+
+    return await response.data;
+}

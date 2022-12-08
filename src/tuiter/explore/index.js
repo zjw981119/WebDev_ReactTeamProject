@@ -1,18 +1,23 @@
 import React, {useEffect, useState} from "react";
 import "./index.css";
-import {findGameDeals, findGameNews, findGameTrendingNews} from "../services/news-service/news-service";
+import {
+    findGameDeals,
+    findGameNews,
+    findGameTrendingNews,
+    findNewsByKeyWord
+} from "../services/news-service/news-service";
 import PostSummaryItem from "../post-summary-list/post-summary-item";
 import {Pagination} from "antd";
+import {Link} from "react-router-dom";
+
 
 
 const ExploreComponent = () => {
 
+    let [Input, setInput] = useState('');
     let [newsArray, setnewsArray] = useState('');
     let [TabIndex, setTabIndex] = useState(0);
 
-    async function TagSearchInputHandler() {
-        //TODO
-    }
 
     async function TrendingNewsHandler() {
         const response = await findGameTrendingNews();
@@ -42,6 +47,11 @@ const ExploreComponent = () => {
         setTotalPosts(newsArray.length)
     }, [newsArray]);
 
+    async function TagSearchInputHandler() {
+        const response = await findNewsByKeyWord(Input);
+        await setnewsArray(response.data);
+    }
+
     function handleKeyPress(e) {
         if(e.keyCode === 13){
             TagSearchInputHandler()
@@ -50,11 +60,10 @@ const ExploreComponent = () => {
 
 
     //Pageination
-    const [postsPerPage] = useState(5);
+    const [postsPerPage] = useState(10);
     const [totalPosts, setTotalPosts] = useState()
     const [lastPost, setLastPost] = useState(postsPerPage - 1)
     const [firstPost, setFirstPost] = useState(0)
-    // const [serverCall, setServerCall] = useState(false)
 
     const [pageAtServerCall, setPageAtServerCall] = useState([])
 
@@ -94,9 +103,12 @@ const ExploreComponent = () => {
 
                 <div className="col-11">
                     <div className="position-relative">
-                        <i className="fa-solid fa-magnifying-glass ps-3 pt-2 position-absolute" style={{"color": "gray"}}></i>
+                        <Link>
+                            <i className="fa-solid fa-magnifying-glass ps-3 pt-2 position-absolute" style={{"color": "gray"}} onClick={TagSearchInputHandler}></i>
+                        </Link>
                         <input className="form-control rounded-pill ps-5 border border-secondary"
-                               placeholder="Search Tag"/>
+                               placeholder="Search News"  value = {Input}
+                               onChange={(event) => setInput(event.target.value)} onKeyDown={handleKeyPress}/>
                     </div>
                 </div>
 
@@ -125,7 +137,7 @@ const ExploreComponent = () => {
             <div className="position-relative mb-2">
                 {
                     newsArray ?
-                    <img src={newsArray[Math.floor(Math.random() * (newsArray.length > 10 ? 10 : newsArray.length - 1)) + 1].photo_url} height={360} className="w-100"/> :
+                    <img src={newsArray[Math.floor(Math.random() * (newsArray.length > 8 ? 8 : newsArray.length - 1)) + 1].photo_url} height={360} className="w-100"/> :
                     <img src="https://www.spieltimes.com/wp-content/uploads/2021/08/Unreal-Engine-5.png" height={360} className="w-100"/>
                 }
             </div>
@@ -154,6 +166,7 @@ const ExploreComponent = () => {
                             onChange={pageChangeHandler}
                 />
             </div>
+
 
         </>
     );

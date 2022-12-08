@@ -1,5 +1,5 @@
 export default [
-    {   avatarIcon: '../../images/java.png',
+    {   avatarIcon: '../../images/chris.png',
         userName: 'Java', handle: 'Java', },
     {   avatarIcon: '../../images/relativity.png',
         userName: 'Relativity Space',

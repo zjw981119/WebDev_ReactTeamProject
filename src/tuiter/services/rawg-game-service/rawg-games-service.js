@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {findRAWGGameDetailThunk} from "./rawg-games-thunks";
 import {createGame} from "../game-service/games-service";
 const rawg_search_API = 'https://api.rawg.io/api/games?key=7292389b6f3b4ef5a8dbfac340a07684&search=';
 const key = "b640803dd45b4af69427cc78f96539a0";
