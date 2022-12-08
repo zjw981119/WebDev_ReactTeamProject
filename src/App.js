@@ -15,7 +15,9 @@ function App() {
                 <Routes>
                     {/*declare the Lab component as the default landing screen */}
                     <Route path="/*"
-                           element={<Tuiter/>}/>
+                           element={<Labs/>}/>
+                    <Route path="/hello"
+                           element={<HelloWorld/>}/>
                     <Route path="/tuiter/*" element={<Tuiter/>}/>
                 </Routes>
             </div>

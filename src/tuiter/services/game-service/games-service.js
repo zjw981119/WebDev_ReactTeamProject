@@ -29,7 +29,7 @@ export const getGameTrailerUrl  = async (GameName) => {
 
     try {
         const req_fast_API = "https://youtube-v2.p.rapidapi.com/search/?query=" + keyword+"&lang=en&order_by=this_month&country=us";
-        const response = await api.get(req_fast_API, {
+        const response = await axios.get(req_fast_API, {
             headers: {
                 'X-RapidAPI-Host': 'youtube-v2.p.rapidapi.com',
                 'X-RapidAPI-Key': RapidAPI_Key
@@ -59,7 +59,7 @@ export const getGameMusicUrl  = async (GameName) => {
 
     const req_fast_API = "https://spotify23.p.rapidapi.com/search/?q=" + keyword+"&type=multi&offset=0&limit=10&numberOfTopResults=5";
 
-    const res = await api.get(req_fast_API, {
+    const res = await axios.get(req_fast_API, {
         headers: {
             'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
             'X-RapidAPI-Key': RapidAPI_Key

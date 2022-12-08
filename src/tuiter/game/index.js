@@ -115,40 +115,6 @@ const GameComponent = () => {
 
                     <div className = "game-title-padding"></div>
 
-                    {/*{TODO replace the url with this game page after deployed}*/}
-                    <div className="row">
-                        <div className="col-5">
-
-                            <p>Share to your social media:</p>
-                        </div>
-                        <div className="col-2">
-
-                            <iframe className="twitter-btn-padding"
-                                    src="https://www.facebook.com/plugins/share_button.php?href=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
-                                    width="66" height="20"
-                                    allowTransparency="true"></iframe>
-                        </div>
-
-                        <div className="col-2">
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&source=WebDev"
-                               target="_blank" rel="noopener"><img
-                                src="https://th.bing.com/th/id/R.974d87a2520493d5c4a249d7fe169b5c?rik=Q%2bU8dRSd9bc9mg&riu=http%3a%2f%2fclients.sosimplecms.com%2fimages%2fshared%2flinkedin.png&ehk=9MDD6yV6bPdOu2xhFjxktAqLM7h2BX5ljRPHwJymi54%3d&risl=&pid=ImgRaw&r=0"
-                                alt="" width="50" height="20" className="share-btn twitter-btn-padding"/>
-                            </a>
-                        </div>
-
-                        <div className="col-2">
-                            <a href="http://www.twitter.com/intent/tweet?url=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&source=WebDev"
-                               target="_blank" rel="noopener"><img
-                                src="https://www.thehouseshop.com/property-blog/images/twitter-share-btn.png"
-                                alt="" width="56" height="22" className="share-btn twitter-btn-padding"/>
-                            </a>
-                        </div>
-
-
-
-                    </div>
-
 
 
                 </div>
@@ -160,6 +126,40 @@ const GameComponent = () => {
                     <div className="position-absolute top-100 translate-middle" style={{'paddingLeft':'150px'}}>
 
                     </div>
+                </div>
+
+                {/*{TODO replace the url with this game page after deployed}*/}
+                <div className="row">
+                    <div className="col-5">
+
+                        <p>Share to your social media:</p>
+                    </div>
+                    <div className="col-2">
+
+                        <iframe className="twitter-btn-padding"
+                                src="https://www.facebook.com/plugins/share_button.php?href=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
+                                width="66" height="20"
+                                allowTransparency="true"></iframe>
+                    </div>
+
+                    <div className="col-2">
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&source=WebDev"
+                           target="_blank" rel="noopener"><img
+                            src="https://th.bing.com/th/id/R.974d87a2520493d5c4a249d7fe169b5c?rik=Q%2bU8dRSd9bc9mg&riu=http%3a%2f%2fclients.sosimplecms.com%2fimages%2fshared%2flinkedin.png&ehk=9MDD6yV6bPdOu2xhFjxktAqLM7h2BX5ljRPHwJymi54%3d&risl=&pid=ImgRaw&r=0"
+                            alt="" width="50" height="20" className="share-btn twitter-btn-padding"/>
+                        </a>
+                    </div>
+
+                    <div className="col-2">
+                        <a href="http://www.twitter.com/intent/tweet?url=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&source=WebDev"
+                           target="_blank" rel="noopener"><img
+                            src="https://www.thehouseshop.com/property-blog/images/twitter-share-btn.png"
+                            alt="" width="56" height="22" className="share-btn twitter-btn-padding"/>
+                        </a>
+                    </div>
+
+
+
                 </div>
 
 
