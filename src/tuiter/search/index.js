@@ -5,7 +5,7 @@ import GameJsonArray from "./games.json";
 import {useDispatch} from "react-redux";
 import {Pagination} from "antd";
 import {
-    AddGame,
+    AddGame, findPCRAWGGamebyPlatformId,
     findTopRatingRAWGGame,
     findTrendingRAWGGame,
     searchRAWGGames
@@ -42,6 +42,33 @@ const SearchComponent = () => {
         await setgamesArray(InitialGameArray);
         await setTabIndex(0);
     }
+
+    async function PCGameHandler() {
+        const response = await findPCRAWGGamebyPlatformId(1);
+        await setgamesArray(response.results);
+        await setTabIndex(3);
+    }
+
+    async function PS5GameHandler() {
+        const response = await findPCRAWGGamebyPlatformId(187);
+        await setgamesArray(response.results);
+        await setTabIndex(4);
+    }
+
+
+    async function XBOXGameHandler() {
+        const response = await findPCRAWGGamebyPlatformId(186);
+        await setgamesArray(response.results);
+        await setTabIndex(5);
+    }
+
+    async function SwitchGameHandler() {
+        const response = await findPCRAWGGamebyPlatformId(7);
+        await setgamesArray(response.results);
+        await setTabIndex(6);
+    }
+
+
 
     //Pagination
     useEffect(() => {
@@ -120,10 +147,22 @@ const SearchComponent = () => {
                     <button className={` nav-link ${TabIndex === 0 ?'active':''}`} onClick={ForYouGameHandler}>For You</button>
                 </li>
                 <li className="nav-item">
-                    <button className={`nav-link ${TabIndex === 1 ?'active':''}`} onClick={TrendingGameHandler}>Trending {new Date().getFullYear()}</button>
+                    <button className={`nav-link ${TabIndex === 1 ?'active':''}`} onClick={TrendingGameHandler}>Trending</button>
                 </li>
                 <li className="nav-item">
-                    <button className={` nav-link ${TabIndex === 2 ?'active':''}`} onClick={TopGameHandler}>Top Games </button>
+                    <button className={` nav-link ${TabIndex === 2 ?'active':''}`} onClick={TopGameHandler}>Top 40 </button>
+                </li>
+                <li className="nav-item">
+                    <button className={` nav-link ${TabIndex === 3 ?'active':''}`} onClick={PCGameHandler}>PC </button>
+                </li>
+                <li className="nav-item">
+                    <button className={` nav-link ${TabIndex === 4 ?'active':''}`} onClick={PS5GameHandler}>PS5</button>
+                </li>
+                <li className="nav-item">
+                    <button className={` nav-link ${TabIndex === 5 ?'active':''}`} onClick={XBOXGameHandler}>XBOX X </button>
+                </li>
+                <li className="nav-item">
+                    <button className={` nav-link ${TabIndex === 6 ?'active':''}`} onClick={SwitchGameHandler}>Nintendo Switch</button>
                 </li>
             </ul>
 

@@ -1,13 +1,28 @@
 import {useDispatch} from "react-redux";
 import "./index.css";
 import {deleteReview} from "../services/review-service/reviews-service";
+import {useEffect, useState} from "react";
+import * as secureService from "../services/security-service";
 
 
 const ReviewItem = ({review, refreshReview}) => {
-    const dispatch = useDispatch();
     const deleteReviewHandler = (ReviewId) => {
         deleteReview(ReviewId).then(refreshReview);
     }
+
+    let [canDeleteTuit, setcanDeleteTuit] = useState(false);
+
+    useEffect(() => {
+        async function checkProfile() {
+            await secureService.profile().then(user => setcanDeleteTuit(Object.keys(user).length !== 0 &&
+                (user.accountType === 'TUITER-ADMIN' || review.userName === user.username)))
+
+        }
+
+        checkProfile();
+    }, []);
+
+
 
     let IsRecommendedImage = "/images/thumbdown.png";
     let IsRecommended = "Not Recommended";
@@ -37,8 +52,10 @@ const ReviewItem = ({review, refreshReview}) => {
                                 <div className="text-dark">{'posted: ' + review.time}</div>
                             </div>
                         </div>
+                        {canDeleteTuit &&
                         <i className="bi bi-x-lg"
                            onClick={() => deleteReviewHandler(review._id)}/>
+                        }
                     </div>
 
                     <div className = "review-content-padding "></div>

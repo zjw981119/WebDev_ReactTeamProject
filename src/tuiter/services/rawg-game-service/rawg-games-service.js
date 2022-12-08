@@ -71,6 +71,20 @@ export const findTrendingRAWGGame  = async () => {
     return response.data;
 }
 
+export const findPCRAWGGamebyPlatformId  = async (platformId) => {
+    const date = new Date();
+    let StartMonth = date.getMonth()
+    if(StartMonth < 10)
+    {
+        StartMonth = "0" + StartMonth;
+    }
+
+    const endDate = date.getFullYear() + "-" + StartMonth + "-30"
+    const request = rawg_recommended_API + key + "&dates=" + (date.getFullYear() - 1) + "-" + StartMonth +  "-01" +  "," + endDate + "&page_size=60&ordering=-added&platforms=" + platformId;
+    const response = await axios.get(request);
+    return response.data;
+}
+
 
 
 
