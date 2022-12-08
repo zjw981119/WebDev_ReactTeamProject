@@ -1,37 +1,34 @@
-import React, {useEffect} from "react";
+import React from "react";
+import * as tuitService from "../services/tuits-service";
+import * as likesService from "../services/likes-service";
 import TuitItem from "./tuit-item";
-import {useDispatch, useSelector} from "react-redux";
-import WhatsHappening from "../home/whats-happening";
-import {findTuitsThunk} from "../services/tuits-thunks";
-import homeTuitsData from "../reducers/home-tuits-reducer";
 
-const HomeTuitsList = () => {
-    useEffect(() => {
-        dispatch(findTuitsThunk())
-    }, [])
-    // grab tuits and loading flag from reducer
-    const {tuits, loading} = useSelector(state => state.homeTuitsData)
-    const dispatch = useDispatch();
+const Tuits = ({tuits = [], profile, refreshTuits}) => {
+    const likeTuit = (tuit) =>
+        likesService
+            .userLikesTuit("me", tuit._id)
+            .then(refreshTuits)
+            .catch((e) => alert(e));
 
+    const deleteTuit = (tid) =>
+        tuitService
+            .deleteTuit(tid)
+            .then(refreshTuits);
 
     return (
-        <>
-            <WhatsHappening/>
+        <div>
             <ul className="list-group border border-secondary">
                 {
-                    // if loading flag is true, then show a loading message while data is still
-                    // coming back from the server
-                    loading &&
-                    <li className="list-group-item">
-                        Loading...
-                    </li>
-                }
-                {
                     tuits.map(tuit =>
-                        <TuitItem key={tuit._id} tuit={tuit}/>)
+                        <TuitItem key={tuit._id}
+                                  tuit={tuit}
+                                  profile={profile}
+                                  deleteTuit={deleteTuit}
+                                  likeTuit={likeTuit}/>)
                 }
             </ul>
-        </>
+        </div>
     );
 };
-export default HomeTuitsList;
+
+export default Tuits;

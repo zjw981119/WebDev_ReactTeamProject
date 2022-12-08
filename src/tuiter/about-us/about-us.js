@@ -58,7 +58,7 @@ const AboutUsComponent = () => {
                                 This web application is designed by:
                                 <ul>
                                     <li>
-                                        Jingwei Zhang
+                                        Jinwei Zhang
                                     </li>
                                     <li>
                                         Zuocheng Wang
@@ -76,7 +76,7 @@ const AboutUsComponent = () => {
                     <div className="bg-color-blue border-secondary">
                         <Collapsible trigger="Contact Us"  className="fw-bolder pb-0 mb-0" open={true}>
                             <div className="p-2 collapsible">
-                                Jingwei Zhang: zhang.jingwei@northeastern.edu
+                                Jinwei Zhang: zhang.jinw@northeastern.edu
                             </div>
                             <div className="p-2 collapsible">
                                 Zuocheng Wang: wang.zuo@northeastern.edu
