@@ -9,14 +9,18 @@ const RapidAPI_Key = '6b661fe439msh3a879a9b179992bp107604jsn3cc592bd533e'
 //const API_BASE = process.env.REACT_APP_API_BASE2;
 //const TUITS_API = `${API_BASE}/tuits`;
 
+const api = axios.create({
+    withCredentials: true
+});
+
 export const createGame = async (game) => {
-    const response = await axios.post(Games_API, game);
+    const response = await api.post(Games_API, game);
     return response.data;
 }
 
 export const findGameByRawgId  = async (RawgId) => {
     const req_API = Games_API + "/" + RawgId
-    const response = await axios.get(req_API);
+    const response = await api.get(req_API);
     return response.data;
 }
 
@@ -25,7 +29,7 @@ export const getGameTrailerUrl  = async (GameName) => {
 
     try {
         const req_fast_API = "https://youtube-v2.p.rapidapi.com/search/?query=" + keyword+"&lang=en&order_by=this_month&country=us";
-        const response = await axios.get(req_fast_API, {
+        const response = await api.get(req_fast_API, {
             headers: {
                 'X-RapidAPI-Host': 'youtube-v2.p.rapidapi.com',
                 'X-RapidAPI-Key': RapidAPI_Key
@@ -55,7 +59,7 @@ export const getGameMusicUrl  = async (GameName) => {
 
     const req_fast_API = "https://spotify23.p.rapidapi.com/search/?q=" + keyword+"&type=multi&offset=0&limit=10&numberOfTopResults=5";
 
-    const res = await axios.get(req_fast_API, {
+    const res = await api.get(req_fast_API, {
         headers: {
             'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
             'X-RapidAPI-Key': RapidAPI_Key

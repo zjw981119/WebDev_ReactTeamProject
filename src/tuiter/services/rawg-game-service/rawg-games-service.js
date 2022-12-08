@@ -6,17 +6,21 @@ const rawg_detail_API = 'https://api.rawg.io/api/games/';
 const rawg_recommended_API = 'https://api.rawg.io/api/games?key=';
 
 
+const api = axios.create({
+    withCredentials: true
+});
+
 // find all games based on input
 export const searchRAWGGames  = async (searchInput) => {
     const searchRequest = rawg_search_API + searchInput;
-    const response = await axios.get(searchRequest);
+    const response = await api.get(searchRequest);
     return response.data;
 }
 
 // get game detail information
 export const findRAWGGameDetail  = async (gameId) => {
     const request = rawg_detail_API + gameId + '?key=' + key;
-    const response = await axios.get(request);
+    const response = await api.get(request);
     return response.data;
 }
 
@@ -43,7 +47,7 @@ export const findRAWGRecommendedGame  = async () => {
     const startDate = Startyear + "-" + Startmonth  + "-01"
     const endDate = (Startyear + 1) + "-" + Endmonth  + "-30"
     const request = rawg_recommended_API + key + "&dates="+startDate + "," + endDate + "&ordering=-rating";
-    const response = await axios.get(request);
+    const response = await api.get(request);
     return response.data;
 }
 
@@ -53,7 +57,7 @@ export const findTopRatingRAWGGame  = async () => {
 
     const endDate = date.getFullYear() + "-12" + "-30"
     const request = rawg_recommended_API + key + "&dates=2001-01-01" +  "," + endDate + "&page_size=100&ordering=-added";
-    const response = await axios.get(request);
+    const response = await api.get(request);
     return response.data;
 }
 
@@ -67,7 +71,7 @@ export const findTrendingRAWGGame  = async () => {
 
     const endDate = date.getFullYear() + "-" + StartMonth + "-30"
     const request = rawg_recommended_API + key + "&dates=" + (date.getFullYear() - 1) + "-" + StartMonth +  "-01" +  "," + endDate + "&page_size=60&ordering=-added";
-    const response = await axios.get(request);
+    const response = await api.get(request);
     return response.data;
 }
 
@@ -81,7 +85,7 @@ export const findPCRAWGGamebyPlatformId  = async (platformId) => {
 
     const endDate = date.getFullYear() + "-" + StartMonth + "-30"
     const request = rawg_recommended_API + key + "&dates=" + (date.getFullYear() - 1) + "-" + StartMonth +  "-01" +  "," + endDate + "&page_size=60&ordering=-added&platforms=" + platformId;
-    const response = await axios.get(request);
+    const response = await api.get(request);
     return response.data;
 }
 

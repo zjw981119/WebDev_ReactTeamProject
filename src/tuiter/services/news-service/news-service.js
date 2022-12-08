@@ -2,6 +2,10 @@ import axios from 'axios';
 
 const API_Key = '6b661fe439msh3a879a9b179992bp107604jsn3cc592bd533e'
 
+const api = axios.create({
+    withCredentials: true
+});
+
 export const findGameNews  = async () => {
 
     const options = {
@@ -14,7 +18,7 @@ export const findGameNews  = async () => {
         }
     };
 
-    const response = await axios.request(options)
+    const response = await api.request(options)
     return response.data;
 }
 
@@ -30,7 +34,7 @@ export const findGameTrendingNews  = async () => {
         }
     };
 
-    const response = await axios.request(options)
+    const response = await api.request(options)
     return await response.data;
 }
 
@@ -46,7 +50,7 @@ export const findGameDeals  = async () => {
         }
     };
 
-    const response = await axios.request(options)
+    const response = await api.request(options)
 
     return await response.data;
 }
@@ -62,7 +66,7 @@ export const findNewsByKeyWord  = async (keyword) => {
         }
     };
 
-    const response = await axios.request(options)
+    const response = await api.request(options)
 
     return await response.data;
 }
