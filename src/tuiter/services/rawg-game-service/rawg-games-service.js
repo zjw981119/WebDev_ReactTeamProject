@@ -6,6 +6,10 @@ const rawg_detail_API = 'https://api.rawg.io/api/games/';
 const rawg_recommended_API = 'https://api.rawg.io/api/games?key=';
 
 
+const api = axios.create({
+    withCredentials: true
+});
+
 // find all games based on input
 export const searchRAWGGames  = async (searchInput) => {
     const searchRequest = rawg_search_API + searchInput;
@@ -44,6 +48,7 @@ export const findRAWGRecommendedGame  = async () => {
     const endDate = (Startyear + 1) + "-" + Endmonth  + "-30"
     const request = rawg_recommended_API + key + "&dates="+startDate + "," + endDate + "&ordering=-rating";
     const response = await axios.get(request);
+    console.log(response)
     return response.data;
 }
 

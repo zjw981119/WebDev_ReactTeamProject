@@ -25,13 +25,18 @@
 }
 
 .btn-padding {
-    padding-bottom: 40px;
+    padding-bottom: 15px;
+}
+
+.twitter-btn-padding{
+    padding-left: 3px;
 }
 
 
+
 .game-title-padding {
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 18px;
 }
 
 .video-center {
@@ -62,4 +67,13 @@
     transition: max-height 0.2s ease-out;
     background-color: #f1f1f1;
 }
+
+.share-btn{
+
+    width : 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
 
