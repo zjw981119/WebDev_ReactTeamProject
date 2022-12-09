@@ -13,6 +13,7 @@ const CreateReview = () => {
     const Image = ReviewLocation.state.Image;
     const RawgId = ReviewLocation.state.RawgId;
     const GameName = ReviewLocation.state.GameName;
+    const Game = ReviewLocation.state.game;
 
     const [GamePlayScore, setGamePlayScore] = useState(0);
     const [LastingAppealScore, setLastingAppealScore] = useState(0);
@@ -82,7 +83,7 @@ const CreateReview = () => {
             "GraphicScore": GraphicScore,
             "recommended": recommended,
             "content": content,
-            "RawgId" : RawgId
+            "GameComponent" : Game._id
         }, User._id)
     }
 

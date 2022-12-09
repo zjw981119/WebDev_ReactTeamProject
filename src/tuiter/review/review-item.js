@@ -1,5 +1,5 @@
 import "./index.css";
-import {deleteReview, findUserByPostedBy} from "../services/review-service/reviews-service";
+import {deleteReview} from "../services/review-service/reviews-service";
 import {useEffect, useState} from "react";
 import * as secureService from "../services/security-service";
 
@@ -12,7 +12,6 @@ const ReviewItem = ({review, refreshReview}) => {
 
 
     const [canDeleteReview, setcanDeleteReview] = useState(false);
-    const [CurrUser, setCurrUser] = useState();
 
 
 
@@ -20,11 +19,9 @@ const ReviewItem = ({review, refreshReview}) => {
 
 
         async function checkProfile() {
-            const reviewOwner = await findUserByPostedBy(review.postedBy);
-            await setCurrUser(reviewOwner);
 
             const loginUser = await secureService.profile()
-            if (Object.keys(loginUser).length !== 0 && (loginUser.accountType === 'TUITER-ADMIN' || reviewOwner.username === loginUser.username))
+            if (Object.keys(loginUser).length !== 0 && (loginUser.accountType === 'TUITER-ADMIN' || review.postedBy.username === loginUser.username))
             {
                 await setcanDeleteReview(true)
             }
@@ -52,7 +49,7 @@ const ReviewItem = ({review, refreshReview}) => {
             <div className="row">
                 {/*left-part avatar*/}
                 <div className="col-1 p-1">
-                    {CurrUser ? <img className="rounded-circle" src={"/images/" + CurrUser.username + ".png"} width="50px"/> : <p>Loading</p>}
+                    {review.postedBy.username ? <img className="rounded-circle" src={"/images/" + review.postedBy.username + ".png"} width="50px"/> : <p>Loading</p>}
                 </div>
                 {/* right-part post */}
                 <div className="col-11">
@@ -60,7 +57,7 @@ const ReviewItem = ({review, refreshReview}) => {
                     <div className="d-flex justify-content-between ps-3">
                         <div>
                             <div>
-                                {CurrUser ? <span className="fw-bolder">{CurrUser.username}</span>: <p>Loading</p>}
+                                <span className="fw-bolder">{review.postedBy.username}</span>
                                 <div className="text-dark">{'posted: ' + review.time}</div>
                             </div>
                         </div>
