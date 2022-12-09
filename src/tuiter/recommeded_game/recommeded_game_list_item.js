@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {AddGame} from "../services/rawg-game-service/rawg-games-service";
+
 const Recommended_game_list_item = (
     {
         gameSummary = { name: 'GTA', id: 3489 ,released: '2022-11-01', background_image: '' }
@@ -9,11 +10,11 @@ const Recommended_game_list_item = (
 ) => {
 
     return(
-        <li className="list-group-item" key={gameSummary.id}>
+        <li className="list-group-item">
             <Link className="text-decoration-none" to = {{pathname :"/tuiter/game/:" + gameSummary.id}} state = {{"GameName" : gameSummary.name}} onClick={() => AddGame(gameSummary.id)}>
                 <div className="row">
                         <div className="col-2">
-                            <img className height={48} width={90} src={gameSummary.background_image}/>
+                            <img height={48} width={90} src={gameSummary.background_image}/>
                         </div>
 
                         <div className="col-2 ps-3">

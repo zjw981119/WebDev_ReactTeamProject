@@ -41,7 +41,7 @@ export const getGameTrailerUrl  = async (GameName) => {
 
     }
     catch (e) {
-        console.log("trailer video cannot be found");
+        console.log("trailer video is loading or cannot be found");
     }
 }
 
@@ -67,6 +67,7 @@ export const getGameMusicUrl  = async (GameName) => {
     });
 
     const SpotifyMusicId = res.data.playlists.items[0].data.uri.split(':')[2];
+
     return SpotifyMusicId
 
 }

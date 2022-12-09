@@ -17,6 +17,11 @@ const GameComponent = () => {
     let [musicId , setmusicId] = useState('');
     let [reviews , setreviews] = useState([]);
 
+    //TODO replace Url before deploy
+    let [fbShareUrl, setfbShareUrl] = useState('');
+    let [linkedinShareUrl, setlinkedinShareUrl] = useState('');
+    let [twitterShareUrl, settwitterShareUrl] = useState('');
+
     const RawgId = Number(gameLocation.pathname.split(':')[1]);
 
     useEffect(() => {
@@ -58,6 +63,10 @@ const GameComponent = () => {
             setvideoUrl(TrailerVideoResponse);
 
             setreviews(await service.findReviewByRawgId(RawgId));
+
+            setfbShareUrl("https://www.facebook.com/plugins/share_button.php?href=" + gameLocation.pathname + "&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId")
+            setlinkedinShareUrl("https://www.linkedin.com/shareArticle?mini=true&url=" + gameLocation.pathname)
+            settwitterShareUrl("http://www.twitter.com/intent/tweet?url=" + gameLocation.pathname)
 
         }
         catch{
@@ -117,16 +126,16 @@ const GameComponent = () => {
 
                     {/*{TODO replace the url with this game page after deployed}*/}
                     <div className="row">
-                        <div className="col-5">
+                        {/*<div className="col-3">*/}
 
-                            <p>Share to your social media:</p>
-                        </div>
+                        {/*    <p>Share to social media:</p>*/}
+                        {/*</div>*/}
                         <div className="col-2">
 
                             <iframe className="twitter-btn-padding"
                                     src="https://www.facebook.com/plugins/share_button.php?href=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
-                                    width="66" height="20"
-                                    allowTransparency="true"></iframe>
+                                    width="70" height="20"
+                                    allowtransparency="true"></iframe>
                         </div>
 
                         <div className="col-2">
@@ -141,7 +150,7 @@ const GameComponent = () => {
                             <a href="http://www.twitter.com/intent/tweet?url=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&source=WebDev"
                                target="_blank" rel="noopener"><img
                                 src="https://www.thehouseshop.com/property-blog/images/twitter-share-btn.png"
-                                alt="" width="56" height="22" className="share-btn twitter-btn-padding"/>
+                                alt="" width="70" height="22" className="share-btn twitter-btn-padding"/>
                             </a>
                         </div>
 
@@ -213,7 +222,7 @@ const GameComponent = () => {
                             {game.Genres ? <ul className="">
                                 {
                                     game.Genres.map(genre =>
-                                        <li className="">
+                                        <li >
                                             {genre}
                                         </li>)
                                 }

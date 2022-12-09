@@ -20,8 +20,8 @@ const CreateReview = () => {
     const [content, setcontent] = useState('');
     const [recommended, setrecommended] = useState(true);
     const [playhours, setplayhours] = useState(0);
-    const [username, setusername] = useState('');
-    const [userId, setuserId] = useState('');
+    const [User, SetUser] = useState();
+
 
 
     const navigate = useNavigate();
@@ -36,12 +36,9 @@ const CreateReview = () => {
                 {
                     navigate('/tuiter/login');
                 }
+                await SetUser(user);
 
-                await setusername(user.username);
-                await setuserId(user._id);
-                // } catch (e) {
-                //     navigate("../login");
-                // }
+
             }
         fetchUser();
         }, []
@@ -75,22 +72,18 @@ const CreateReview = () => {
     }
 
 
-    const dispatch = useDispatch();
     const PostReviewHandler = () => {
         const date = new Date();
         createReview({
-            "userId": userId,
-            "userName": username,
             "time": date.toLocaleDateString()+ " " + date.toLocaleTimeString(),
             "playhours" : playhours,
-            "avatar": "spacex.jpeg",
             "GamePlayScore": GamePlayScore,
             "LastingAppealScore": LastingAppealScore,
             "GraphicScore": GraphicScore,
             "recommended": recommended,
             "content": content,
             "RawgId" : RawgId
-        })
+        }, User._id)
     }
 
     return (
@@ -117,7 +110,7 @@ const CreateReview = () => {
 
             </div>
 
-            <h6 className="p-3 mb-2 fw-bolder">Hi {username}! Thank you for sharing your game experience with {GameName}.</h6>
+            {User ? <h6 className="p-3 mb-2 fw-bolder">Hi {User.username}! Thank you for sharing your game experience with {GameName}.</h6> : <h6>Loading </h6>}
             <form className="p-2">
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="username">Your Review</label>
