@@ -48,7 +48,6 @@ export const findRAWGRecommendedGame  = async () => {
     const endDate = (Startyear + 1) + "-" + Endmonth  + "-30"
     const request = rawg_recommended_API + key + "&dates="+startDate + "," + endDate + "&ordering=-rating";
     const response = await axios.get(request);
-    console.log(response)
     return response.data;
 }
 

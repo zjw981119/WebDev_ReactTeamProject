@@ -19,7 +19,7 @@ const Recommended_game = () => {
             <li className="list-group-item fs-5" > New Games</li>
             {
                 RecommendedGamesArray.slice(0, 6).map(Recommended_game =>
-                    <Recommended_game_list_item gameSummary={Recommended_game}/>)
+                    <Recommended_game_list_item gameSummary={Recommended_game} key={Recommended_game.id}/>)
             }
         </ul>
     );

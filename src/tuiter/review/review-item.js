@@ -1,6 +1,5 @@
-import {useDispatch} from "react-redux";
 import "./index.css";
-import {deleteReview} from "../services/review-service/reviews-service";
+import {deleteReview, findUserByPostedBy} from "../services/review-service/reviews-service";
 import {useEffect, useState} from "react";
 import * as secureService from "../services/security-service";
 
@@ -10,12 +9,25 @@ const ReviewItem = ({review, refreshReview}) => {
         deleteReview(ReviewId).then(refreshReview);
     }
 
-    let [canDeleteTuit, setcanDeleteTuit] = useState(false);
+
+
+    const [canDeleteReview, setcanDeleteReview] = useState(false);
+    const [CurrUser, setCurrUser] = useState();
+
+
 
     useEffect(() => {
+
+
         async function checkProfile() {
-            await secureService.profile().then(user => setcanDeleteTuit(Object.keys(user).length !== 0 &&
-                (user.accountType === 'TUITER-ADMIN' || review.userName === user.username)))
+            const reviewOwner = await findUserByPostedBy(review.postedBy);
+            await setCurrUser(reviewOwner);
+
+            const loginUser = await secureService.profile()
+            if (Object.keys(loginUser).length !== 0 && (loginUser.accountType === 'TUITER-ADMIN' || reviewOwner.username === loginUser.username))
+            {
+                await setcanDeleteReview(true)
+            }
 
         }
 
@@ -40,7 +52,7 @@ const ReviewItem = ({review, refreshReview}) => {
             <div className="row">
                 {/*left-part avatar*/}
                 <div className="col-1 p-1">
-                    <img className="rounded-circle" src={"/images/" + review.avatar} width="50px"/>
+                    {CurrUser ? <img className="rounded-circle" src={"/images/" + CurrUser.username + ".png"} width="50px"/> : <p>Loading</p>}
                 </div>
                 {/* right-part post */}
                 <div className="col-11">
@@ -48,11 +60,11 @@ const ReviewItem = ({review, refreshReview}) => {
                     <div className="d-flex justify-content-between ps-3">
                         <div>
                             <div>
-                                <span className="fw-bolder">{review.userName}</span>
+                                {CurrUser ? <span className="fw-bolder">{CurrUser.username}</span>: <p>Loading</p>}
                                 <div className="text-dark">{'posted: ' + review.time}</div>
                             </div>
                         </div>
-                        {canDeleteTuit &&
+                        {canDeleteReview &&
                         <i className="bi bi-x-lg"
                            onClick={() => deleteReviewHandler(review._id)}/>
                         }

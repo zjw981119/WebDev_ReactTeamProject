@@ -1,5 +1,6 @@
 import axios from 'axios';
 const Reviews_API = 'http://localhost:4000/api/reviews';
+const Base_API = 'http://localhost:4000/api';
 
 // const TUITS_API = 'https://webdev-tuiter-server.herokuapp.com/api/tuits';
 
@@ -12,13 +13,19 @@ const api = axios.create({
     withCredentials: true
 });
 
-export const createReview = async (review) => {
-    const response = await api.post(Reviews_API, review);
+export const createReview = async (review, UserId) => {
+    const response = await api.post(Reviews_API + "/" + UserId, review);
     return response.data;
 }
 
-export const findReviewByUserId  = async (UserId) => {
-    const req_API = Reviews_API + "/users/" + UserId
+export const findAllReviewsByUserId  = async (UserId) => {
+    const req_API = Base_API + "reviews/users/" + UserId
+    const response = await api.get(req_API);
+    return response.data;
+}
+
+export const findUserByPostedBy  = async (UserId) => {
+    const req_API = Base_API + "/users/" + UserId
     const response = await api.get(req_API);
     return response.data;
 }
