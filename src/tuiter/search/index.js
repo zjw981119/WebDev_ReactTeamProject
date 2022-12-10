@@ -159,10 +159,10 @@ const SearchComponent = () => {
                     <button className={` nav-link ${TabIndex === 4 ?'active':''}`} onClick={PS5GameHandler}>PS5</button>
                 </li>
                 <li className="nav-item">
-                    <button className={` nav-link ${TabIndex === 5 ?'active':''}`} onClick={XBOXGameHandler}>XBOX X </button>
+                    <button className={` nav-link ${TabIndex === 5 ?'active':''}`} onClick={XBOXGameHandler}>Xbox </button>
                 </li>
                 <li className="nav-item">
-                    <button className={` nav-link ${TabIndex === 6 ?'active':''}`} onClick={SwitchGameHandler}>Nintendo Switch</button>
+                    <button className={` nav-link ${TabIndex === 6 ?'active':''}`} onClick={SwitchGameHandler}>Switch</button>
                 </li>
             </ul>
 

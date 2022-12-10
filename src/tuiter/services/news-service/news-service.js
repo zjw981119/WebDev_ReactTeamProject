@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API_Key = '6b661fe439msh3a879a9b179992bp107604jsn3cc592bd533e'
 
+
 export const findGameNews  = async () => {
 
     const options = {

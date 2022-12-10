@@ -6,7 +6,8 @@ import Collapsible from 'react-collapsible';
 import Spotify from "react-spotify-embed";
 import {findGameByRawgId, getGameMusicUrl, getGameTrailerUrl} from "../services/game-service/games-service";
 import * as service from "../services/review-service/reviews-service";
-import * as secureService from "../services/security-service";
+import "./index.css"
+import {findReviewByRawgId} from "../services/review-service/reviews-service";
 
 
 const GameComponent = () => {
@@ -16,6 +17,11 @@ const GameComponent = () => {
     let [videoUrl, setvideoUrl] = useState('');
     let [musicId , setmusicId] = useState('');
     let [reviews , setreviews] = useState([]);
+
+    //TODO replace Url before deploy
+    let [fbShareUrl, setfbShareUrl] = useState('');
+    let [linkedinShareUrl, setlinkedinShareUrl] = useState('');
+    let [twitterShareUrl, settwitterShareUrl] = useState('');
 
     const RawgId = Number(gameLocation.pathname.split(':')[1]);
 
@@ -46,18 +52,23 @@ const GameComponent = () => {
     }, [videoUrl])
 
 
+
     //Function to get the game info from server
     async function ComponentInit()
     {
         try{
-            let response = await findGameByRawgId(RawgId);
-            await setgame(response);
+            let GameFound = await findGameByRawgId(RawgId);
+            await setgame(GameFound);
 
             const GameName = gameLocation.state.GameName;
             let TrailerVideoResponse = await getGameTrailerUrl(GameName)
             setvideoUrl(TrailerVideoResponse);
 
             setreviews(await service.findReviewByRawgId(RawgId));
+
+            setfbShareUrl("https://www.facebook.com/plugins/share_button.php?href=" + gameLocation.pathname + "&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId")
+            setlinkedinShareUrl("https://www.linkedin.com/shareArticle?mini=true&url=" + gameLocation.pathname)
+            settwitterShareUrl("http://www.twitter.com/intent/tweet?url=" + gameLocation.pathname)
 
         }
         catch{
@@ -99,14 +110,13 @@ const GameComponent = () => {
                         </Link>
                     </button>
 
-                    <Link to = {{pathname :"/tuiter/create-review"}} state = {{"RawgId" : game.RawgId, "GameName" : game.GameName, "Image" : game.Image}}
+                    <Link to = {{pathname :"/tuiter/create-review"}} state = {{"RawgId" : game.RawgId, "GameName" : game.GameName, "Image" : game.Image, "game" : game}}
                           className="mt-2 me-2 btn btn-large btn-light border border-secondary fw-bolder rounded-pill fa-pull-right">
                         Review this Game
                     </Link>
                 </div>
 
 
-                <div className = "game-title-padding"></div>
 
                 <div className="col-11">
                     {game.GameName ? <h3 className="p-2 mb-0 pb-0 fw-bolder">
@@ -117,15 +127,43 @@ const GameComponent = () => {
                     <div className = "game-title-padding"></div>
 
                     {/*{TODO replace the url with this game page after deployed}*/}
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&source=WebDev"
-                       onClick="window.open(this.href, 'mywin',
-                'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><img
-                        src="/images/LinkedIN.gif" alt="" width="54" height="20"/>
-                    </a>
+                    <div className="row">
+                        {/*<div className="col-3">*/}
+
+                        {/*    <p>Share to social media:</p>*/}
+                        {/*</div>*/}
+                        <div className="col-2">
+
+                            <iframe className="twitter-btn-padding"
+                                    src="https://www.facebook.com/plugins/share_button.php?href=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId"
+                                    width="70" height="20"
+                                    allowtransparency="true"></iframe>
+                        </div>
+
+                        <div className="col-2">
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&source=WebDev"
+                               target="_blank" rel="noopener"><img
+                                src="https://th.bing.com/th/id/R.974d87a2520493d5c4a249d7fe169b5c?rik=Q%2bU8dRSd9bc9mg&riu=http%3a%2f%2fclients.sosimplecms.com%2fimages%2fshared%2flinkedin.png&ehk=9MDD6yV6bPdOu2xhFjxktAqLM7h2BX5ljRPHwJymi54%3d&risl=&pid=ImgRaw&r=0"
+                                alt="" width="50" height="20" className="share-btn twitter-btn-padding"/>
+                            </a>
+                        </div>
+
+                        <div className="col-2">
+                            <a href="http://www.twitter.com/intent/tweet?url=https://a9--astonishing-cuchufli-7c4d4d.netlify.app/&source=WebDev"
+                               target="_blank" rel="noopener"><img
+                                src="https://www.thehouseshop.com/property-blog/images/twitter-share-btn.png"
+                                alt="" width="70" height="22" className="share-btn twitter-btn-padding"/>
+                            </a>
+                        </div>
+
+
+
+                    </div>
+
 
 
                 </div>
-                <div className = "game-title-padding"></div>
+
 
                 <div className="mb-5 position-relative">
                     <img className="w-100" src={game.Image ? game.Image : "https://i2.wp.com/codemyui.com/wp-content/uploads/2017/09/rotate-pulsating-loading-animation.gif"} height='350px'/>
@@ -134,6 +172,7 @@ const GameComponent = () => {
 
                     </div>
                 </div>
+
 
 
                 <div className="p-3">
@@ -185,7 +224,7 @@ const GameComponent = () => {
                             {game.Genres ? <ul className="">
                                 {
                                     game.Genres.map(genre =>
-                                        <li className="">
+                                        <li >
                                             {genre}
                                         </li>)
                                 }

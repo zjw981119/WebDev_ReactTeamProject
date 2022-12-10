@@ -6,6 +6,10 @@ const rawg_detail_API = 'https://api.rawg.io/api/games/';
 const rawg_recommended_API = 'https://api.rawg.io/api/games?key=';
 
 
+const api = axios.create({
+    withCredentials: true
+});
+
 // find all games based on input
 export const searchRAWGGames  = async (searchInput) => {
     const searchRequest = rawg_search_API + searchInput;

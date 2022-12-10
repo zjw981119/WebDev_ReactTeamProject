@@ -20,8 +20,8 @@ const Linkedin = () => {
 
                         <div className="col-8">
                             <div className="fw-bold"></div>
-                            <div>Jingwei Zhang</div>
-                            <div>Software Development, Machine Learning </div>
+                            <div>Jinwei Zhang</div>
+                            <div>Software Development, AI, Machine Learning </div>
                         </div>
                     </div>
                 </a>
@@ -61,7 +61,7 @@ const Linkedin = () => {
                                     <div className="col-8">
                                 <div className="fw-bold"></div>
                             <div>Pengbo Wang </div>
-                                        <div>Software Development, Machine Learning</div>
+                                        <div>Software Development, AI,  Machine Learning</div>
                         </div>
                     </div>
                 </a>

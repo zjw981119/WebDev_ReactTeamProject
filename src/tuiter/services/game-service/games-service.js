@@ -9,14 +9,18 @@ const RapidAPI_Key = '6b661fe439msh3a879a9b179992bp107604jsn3cc592bd533e'
 //const API_BASE = process.env.REACT_APP_API_BASE2;
 //const TUITS_API = `${API_BASE}/tuits`;
 
+const api = axios.create({
+    withCredentials: true
+});
+
 export const createGame = async (game) => {
-    const response = await axios.post(Games_API, game);
+    const response = await api.post(Games_API, game);
     return response.data;
 }
 
 export const findGameByRawgId  = async (RawgId) => {
     const req_API = Games_API + "/" + RawgId
-    const response = await axios.get(req_API);
+    const response = await api.get(req_API);
     return response.data;
 }
 
@@ -37,7 +41,7 @@ export const getGameTrailerUrl  = async (GameName) => {
 
     }
     catch (e) {
-        console.log("trailer video cannot be found");
+        console.log("trailer video is loading or cannot be found");
     }
 }
 
@@ -63,6 +67,7 @@ export const getGameMusicUrl  = async (GameName) => {
     });
 
     const SpotifyMusicId = res.data.playlists.items[0].data.uri.split(':')[2];
+
     return SpotifyMusicId
 
 }
