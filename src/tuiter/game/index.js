@@ -7,6 +7,7 @@ import Spotify from "react-spotify-embed";
 import {findGameByRawgId, getGameMusicUrl, getGameTrailerUrl} from "../services/game-service/games-service";
 import * as service from "../services/review-service/reviews-service";
 import "./index.css"
+import {findReviewByRawgId} from "../services/review-service/reviews-service";
 
 
 const GameComponent = () => {
@@ -51,12 +52,13 @@ const GameComponent = () => {
     }, [videoUrl])
 
 
+
     //Function to get the game info from server
     async function ComponentInit()
     {
         try{
-            let response = await findGameByRawgId(RawgId);
-            await setgame(response);
+            let GameFound = await findGameByRawgId(RawgId);
+            await setgame(GameFound);
 
             const GameName = gameLocation.state.GameName;
             let TrailerVideoResponse = await getGameTrailerUrl(GameName)

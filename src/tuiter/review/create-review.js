@@ -83,7 +83,8 @@ const CreateReview = () => {
             "GraphicScore": GraphicScore,
             "recommended": recommended,
             "content": content,
-            "GameComponent" : Game._id
+            "GameComponent" : Game._id,
+            "RawgId": RawgId
         }, User._id)
     }
 
