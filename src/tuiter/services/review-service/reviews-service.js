@@ -24,11 +24,6 @@ export const findAllReviewsByUserId  = async (UserId) => {
     return response.data;
 }
 
-export const findUserByPostedBy  = async (UserId) => {
-    const req_API = Base_API + "/users/" + UserId
-    const response = await api.get(req_API);
-    return response.data;
-}
 
 export const findReviewByRawgId  = async (RawgId) => {
     const req_API = Reviews_API + "/Rawg/" + RawgId

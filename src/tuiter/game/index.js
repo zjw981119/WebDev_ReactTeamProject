@@ -7,6 +7,7 @@ import Spotify from "react-spotify-embed";
 import {findGameByRawgId, getGameMusicUrl, getGameTrailerUrl} from "../services/game-service/games-service";
 import * as service from "../services/review-service/reviews-service";
 import "./index.css"
+import {findReviewByRawgId} from "../services/review-service/reviews-service";
 
 
 const GameComponent = () => {
@@ -51,12 +52,13 @@ const GameComponent = () => {
     }, [videoUrl])
 
 
+
     //Function to get the game info from server
     async function ComponentInit()
     {
         try{
-            let response = await findGameByRawgId(RawgId);
-            await setgame(response);
+            let GameFound = await findGameByRawgId(RawgId);
+            await setgame(GameFound);
 
             const GameName = gameLocation.state.GameName;
             let TrailerVideoResponse = await getGameTrailerUrl(GameName)
@@ -108,7 +110,7 @@ const GameComponent = () => {
                         </Link>
                     </button>
 
-                    <Link to = {{pathname :"/tuiter/create-review"}} state = {{"RawgId" : game.RawgId, "GameName" : game.GameName, "Image" : game.Image}}
+                    <Link to = {{pathname :"/tuiter/create-review"}} state = {{"RawgId" : game.RawgId, "GameName" : game.GameName, "Image" : game.Image, "game" : game}}
                           className="mt-2 me-2 btn btn-large btn-light border border-secondary fw-bolder rounded-pill fa-pull-right">
                         Review this Game
                     </Link>
