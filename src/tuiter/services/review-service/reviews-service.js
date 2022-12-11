@@ -38,6 +38,12 @@ export const findReviews  = async () => {
     return response.data;
 }
 
+export const findAllReviewedGames = () =>
+    api.get(`${Reviews_API}/games`)
+        .then(response => response.data)
+
+
+
 // delete game by id
 export const deleteReview = async (rid) => {
     const response = await api.delete(`${Reviews_API}/${rid}`)
