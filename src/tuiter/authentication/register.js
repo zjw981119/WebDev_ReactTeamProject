@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import * as usersService from "../services/security-service";
+import * as usersService from "../services/user-service";
 
 const Signup = () => {
     const [newUser, setNewUser] = useState({});

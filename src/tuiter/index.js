@@ -12,7 +12,7 @@ import ProfileComponent from "./profile";
 import GameComponent from "./game/index";
 import EditProfile from "./profile/edit-profile";
 import CreateReview from "./review/create-review";
-import Recommended_game from "./recommeded_game";
+import RecommendedGame from "./recommeded_game";
 import Home from "./home";
 import Login from "./authentication";
 import Register from "./authentication/register";
@@ -169,10 +169,12 @@ function Tuiter() {
                     loaded={particlesLoaded}
                     options={backgroundParticle}
                 />
-
+                {/*left part navigation*/}
                 <div className="col-2 col-md-2 col-lg-1 col-xl-2">
                     <NavigationSidebar/>
                 </div>
+
+                {/*middle part main content*/}
                 <div className="col-10 col-md-10 col-lg-7 col-xl-6"
                      style={{"position": "relative"}}>
                     <Routes>
@@ -198,20 +200,22 @@ function Tuiter() {
                         <Route path="/edit-profile" element={<EditProfile/>}/>
                     </Routes>
                 </div>
+
+                {/*right part game recommendation list*/}
                 <div className="d-none d-lg-block col-lg-4 col-xl-4">
                     <Routes>
-                        <Route path="/" element={<Recommended_game/>}/>
-                        <Route path="/home" element={<Recommended_game/>}/>
-                        <Route path="/login" element={<Recommended_game/>}/>
-                        <Route path="/register" element={<Recommended_game/>}/>
-                        <Route path="/profile" element={<Recommended_game/>}/>
-                        <Route path="/explore" element={<Recommended_game/>}/>
-                        <Route path="/search" element={<Recommended_game/>}/>
-                        <Route path="/game/:RawgId" element={<Recommended_game/>}/>
-                        <Route path="/create-review" element={<Recommended_game/>}/>
+                        <Route path="/" element={<RecommendedGame/>}/>
+                        <Route path="/home" element={<RecommendedGame/>}/>
+                        <Route path="/login" element={<RecommendedGame/>}/>
+                        <Route path="/register" element={<RecommendedGame/>}/>
+                        <Route path="/profile" element={<RecommendedGame/>}/>
+                        <Route path="/explore" element={<RecommendedGame/>}/>
+                        <Route path="/search" element={<RecommendedGame/>}/>
+                        <Route path="/game/:RawgId" element={<RecommendedGame/>}/>
+                        <Route path="/create-review" element={<RecommendedGame/>}/>
                         <Route path="/aboutus" element={<Linkedin/>}/>
-                        <Route path="/profile/*" element={<Recommended_game/>}/>
-                        <Route path="/edit-profile" element={<Recommended_game/>}/>
+                        <Route path="/profile/*" element={<RecommendedGame/>}/>
+                        <Route path="/edit-profile" element={<RecommendedGame/>}/>
                     </Routes>
                 </div>
             </div>

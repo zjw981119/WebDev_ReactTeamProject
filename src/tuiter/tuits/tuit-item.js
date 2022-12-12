@@ -1,5 +1,6 @@
 import React from "react";
 import TuitStatus from "./tuit-status";
+import {Link} from "react-router-dom";
 
 const TuitItem = ({tuit, profile, deleteTuit, likeTuit}) => {
     // TUITER-ADMIN can delete anything
@@ -13,10 +14,11 @@ const TuitItem = ({tuit, profile, deleteTuit, likeTuit}) => {
             <div className="row">
                 {/*left-part avatar*/}
                 <div className="col-1">
-                    <img className="rounded-circle"
-                         src={`${tuit.postedBy.avatar}`}
-                         width="40px"
-                    />
+                    <Link to={`/tuiter/profile/${tuit.postedBy._id}`}>
+                        <img className="rounded-circle"
+                             src={`/images/${tuit.postedBy.username}.png`}
+                             width="40px"/>
+                    </Link>
                 </div>
                 {/* right-part post */}
                 <div className="col-11">

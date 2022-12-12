@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import * as tuitService from "../services/tuits-service";
-import * as secureService from "../services/security-service";
-import {Button} from "antd";
+import * as secureService from "../services/user-service";
+import {Button, message} from "antd";
 const WhatsHappening = ({isLoggedIn, profile, refreshTuits}) => {
     const navigate = useNavigate();
     const [whatsHappening, setWhatsHappening] = useState('');
@@ -14,7 +14,8 @@ const WhatsHappening = ({isLoggedIn, profile, refreshTuits}) => {
             // create tuit
             tuitService
                 .createTuit(profile._id, {tuit: whatsHappening})
-                .then(refreshTuits);
+                .then(refreshTuits)
+                .then(message.success("Post Successfully!"));
         }
     }
     //user logout
