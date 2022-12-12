@@ -1,5 +1,4 @@
-import Labs from "./labs/index";
-import HelloWorld from "./labs/a6/hello-world";
+
 import Tuiter from "./tuiter/index";
 // navigation in Web application
 import {BrowserRouter, Navigate} from "react-router-dom";
