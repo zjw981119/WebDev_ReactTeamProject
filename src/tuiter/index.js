@@ -9,6 +9,9 @@ import { configureStore }
     from '@reduxjs/toolkit';
 import {Provider} from "react-redux";
 import ProfileComponent from "./profile";
+import {UserTuits} from "./profile/modules/tuits";
+import {UserReviewedGames} from "./profile/modules/reviewedGames";
+import {UserLikes} from "./profile/modules/likes";
 import GameComponent from "./game/index";
 import EditProfile from "./profile/edit-profile";
 import CreateReview from "./review/create-review";
@@ -33,15 +36,7 @@ import ExplosionParticleConfig from "./particle-effect/Explosion-Particle-Config
 import AboutUsComponent from "./about-us/about-us";
 import Linkedin from "./about-us/linkedin";
 import {Navigate} from 'react-router-dom';
-import {Tuits} from "./profile/modules/tuits";
-import {TuitsReplies} from "./profile/modules/tuitsReplies";
-import {Media} from "./profile/modules/media";
-import {Likes} from "./profile/modules/likes";
-import {Dislikes} from "./profile/modules/dislikes";
-import UserHomePage from "./user-profile";
-import {UserTuits} from "./user-profile/modules/tuits";
-import {UserReviewedGames} from "./user-profile/modules/reviewedGames";
-import {UserLikes} from "./user-profile/modules/likes";
+
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
@@ -191,21 +186,11 @@ function Tuiter() {
                         <Route path="/game/:RawgId" element={<GameComponent/>}/>
                         <Route path="/create-review" element={<CreateReview/>}/>
                         <Route path="/aboutus" element={<AboutUsComponent/>}/>
-                        <Route path="/profile" element={<ProfileComponent/>}>
-
+                        <Route path="/profile/:uid" element={<ProfileComponent/>}>
                             <Route path={''} index element={<Navigate to={'tuits'}/>}/>
-                            <Route path={'tuits'} element={<Tuits />}/>
-                            <Route path={'tuits-replies'} element={<TuitsReplies />}/>
-                            <Route path={'media'} element={<Media />}/>
-                            <Route path={'likes'} element={<Likes />}/>
-                            <Route path={'dislikes'} element={<Dislikes />}/>
-
-                        </Route>
-                        <Route element={<UserHomePage/>} path="/user-profile/:uid">
-                            <Route path={''} index element={<Navigate to={'tuits'}/>}/>
-                            <Route path={'tuits'} element={<UserTuits/>}/>
-                            <Route path={'reviewed-games'} element={<UserReviewedGames/>}/>
-                            <Route path={'likes'} element={<UserLikes/>}/>
+                            <Route path={'tuits'} element={<UserTuits />}/>
+                            <Route path={'reviewed-games'} element={<UserReviewedGames />}/>
+                            <Route path={'likes'} element={<UserLikes />}/>
                         </Route>
                         <Route path="/edit-profile" element={<EditProfile/>}/>
                     </Routes>

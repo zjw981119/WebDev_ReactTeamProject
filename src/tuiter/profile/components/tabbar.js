@@ -1,36 +1,25 @@
-import {Button, Space} from "antd";
 import {useLocation, useNavigate} from "react-router-dom";
-import {useProfile} from "../../user-profile/hooks";
+import {useParams} from "react-router";
 
 export const Tabbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const {profile} = useProfile();
+  const {uid} = useParams();
   const bars = [
     {
-      path: '/tuiter/profile/tuits',
+      path: `/tuiter/profile/${uid}/tuits`,
       name: 'Tuits'
     },
     {
-      path: '/tuiter/profile/tuits-replies',
+      path: `/tuiter/profile/${uid}/reviewed-games`,
       name: 'Reviewd Games'
     },
-    // {
-    //   path: '/tuiter/profile/media',
-    //   name: 'Media'
-    // },
     {
-      path: '/tuiter/profile/likes',
+      path: `/tuiter/profile/${uid}/likes`,
       name: 'Likes'
     },
-    // {
-    //   path: '/tuiter/profile/dislikes',
-    //   name: 'Displikes'
-    // }
+
   ];
-  if (!profile) {
-    return <></>
-  }
   return (
     <ul className={'nav nav-pills d-flex justify-content-between'}>
       {bars.map(bar => {

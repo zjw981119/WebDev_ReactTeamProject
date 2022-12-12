@@ -1,13 +1,15 @@
-import {useProfile} from "../../../user-profile/hooks";
 import {useEffect, useState} from "react";
-import {getAllTuits} from "../../../services/user-service";
-import MyTuits from '../../../tuits'
-export const Tuits = () => {
-  const {profile} = useProfile();
+import {getAllTuits, getUserProfile} from "../../../services/user-service";
+import MyTuits from "../../../tuits";
+import {useParams} from "react-router";
+
+export const UserTuits = () => {
+  const {uid} = useParams();
   const [tuits, setTuits] = useState([]);
+  const profileUser = getUserProfile(uid);
   const fetchTuits = async () => {
-    if (profile) {
-      getAllTuits(profile._id)
+    if (uid) {
+      getAllTuits(uid)
         .then(data => {
           setTuits(data);
         })
@@ -15,13 +17,11 @@ export const Tuits = () => {
   }
   useEffect(() => {
     fetchTuits()
-  }, [profile]);
-  if (!profile) {
-    return <></>
-  }
+  }, [uid]);
+
   return (
     <div>
-     <MyTuits refreshTuits={fetchTuits} tuits={tuits} profile={profile}/>
+      <MyTuits refreshTuits={fetchTuits} tuits={tuits} profile={profileUser}/>
     </div>
   )
 }

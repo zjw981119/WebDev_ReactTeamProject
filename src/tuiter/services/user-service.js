@@ -37,6 +37,7 @@ export const getAllTuits = (uid) =>
     api.get(`${BASE_URL}/api/users/${uid}/tuits`)
       .then(response => response.data)
 
-export const getUserProfile = (uid) => {
-    return api.get(`${BASE_URL}/api/users/${uid}/profile`).then(res => res.data)
-}
+export const getUserProfile = (uid) =>
+    api.get(`${USER_API}/${uid}`)
+        .then(res => res.data)
+

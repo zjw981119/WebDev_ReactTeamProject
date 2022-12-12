@@ -16,7 +16,7 @@ const TuitItem = ({tuit, profile, deleteTuit, likeTuit}) => {
             <div className="row">
                 {/*left-part avatar*/}
                 <div className="col-1">
-                    <Link to={`/tuiter/user-profile/${tuit.postedBy._id}`}>
+                    <Link to={`/tuiter/profile/${tuit.postedBy._id}`}>
                         <img className="rounded-circle"
                              src={`/images/${tuit.postedBy.username}.png`}
                              width="40px"/>
@@ -28,7 +28,7 @@ const TuitItem = ({tuit, profile, deleteTuit, likeTuit}) => {
                     <div className="d-flex justify-content-between ps-2">
                         <div>
                             <div>
-                                <Link className="text-decoration-none" to={`/tuiter/user-profile/${tuit.postedBy._id}`}>
+                                <Link className="text-decoration-none" to={`/tuiter/profile/${tuit.postedBy._id}`}>
                                     <span className="fw-bolder">{tuit.postedBy.username}</span>
                                 </Link>
                                 <span className="text-secondary">{' ' + tuit.postedBy.username}</span>
