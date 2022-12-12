@@ -25,3 +25,12 @@ export const logout = () =>
 export const profile = () =>
     api.post(`${SECURITY_API}/profile`)
         .then(response => response.data);
+
+export const updateProfile = (uid, data) =>
+    api.put(`${BASE_URL}/api/users/${uid}`, data)
+
+
+export const getAllTuits = (uid) =>
+    api.get(`${BASE_URL}/api/users/${uid}/tuits`)
+      .then(response => response.data)
+

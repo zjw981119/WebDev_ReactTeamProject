@@ -1,79 +1,113 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
-import {updateProfile} from "../reducers/profile-reducer";
-
+import {updateProfile, updateUserData} from "../reducers/profile-reducer";
+function imgFileToSrc(imageFile) {
+    return new Promise((resolve, reject) => {
+        const fr = new FileReader();
+        fr.onload = function () {
+            resolve(fr.result);
+        }
+        fr.readAsDataURL(imageFile);
+    });
+}
 const EditProfile = () => {
-    const profile = useSelector(state => state.profile);
+    const profile = useSelector(state => state.profile.profile);
     const [userName, setUserName] = useState(profile.username);
     const [bio, setBio] = useState(profile.bio);
     const [location, setLocation] = useState(profile.location);
-    const [website, setWebsite] = useState(profile.website);
     const [birthday, setBirthday] = useState(profile.dateOfBirth);
-
+    const [phone, setPhone] = useState(profile.phone);
+    const [banner, setBanner] = useState('');
+    const [avatar, setAvatar] = useState('');
     const dispatch = useDispatch();
     const saveChangeHandler = () => {
-        dispatch(updateProfile({
-            "username": userName,
-            "bio": bio,
-            "location": location,
-            "website": website,
-            "dateOfBirth": birthday
-        }))
+        // dispatch(updateProfile({
+        //     "username": userName,
+        //     "bio": bio,
+        //     "location": location,
+        //     "website": website,
+        //     "dateOfBirth": birthday
+        // }))
+        const data = {
+            username: userName,
+            biography: bio,
+            location,
+            phone,
+            dateOfBirth: birthday,
+            avatar,
+            bannerPicture: banner
+        }
+        dispatch(updateUserData(profile._id, data))
     }
 
+    if (!profile) {
+        return <></>
+    }
     return (
         <div className="ttr-edit-profile list-group">
             <div className="border border-secondary border-bottom-0 list-group-item" style={{"marginBottom": "60px"}}>
                 <Link to="/tuiter/profile" className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
                     <i className="fa-solid fa-xmark"/>
                 </Link>
-                <Link to="/tuiter/profile" className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2"
+                <button  className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2"
                       onClick={saveChangeHandler}>
                     Save
-                </Link>
+                </button>
                 <h5 className="p-3 mb-0 fw-bolder">Edit profile</h5>
                 <div className="position-relative">
-                    <img className="w-100" src={"/images/" + profile.bannerPicture} height='250px' style={{"filter": "brightness(50%)"}}/>
+                    <img className="w-100" src={profile.bannerPicture ? profile.bannerPicture : banner} height='250px' style={{"filter": "brightness(50%)"}}/>
                     {/* upload new banner image button */}
-                    <button className="position-absolute end-50 top-50 translate-middle btn btn-light btn-sm rounded-pill">
+                    <label className="position-absolute end-50 top-50 translate-middle btn btn-light btn-sm rounded-pill">
                         <i className="fa-solid fa-camera fa-lg"/>
-                    </button>
+                        <input accept={'image/*'} onChange={e => {
+                            imgFileToSrc(e.target.files[0])
+                              .then(src => {
+                                setBanner(src);
+                              })
+                        }} id={'file1'} hidden type={'file'}/>
+                    </label>
                     {/* cancel uploading banner image button */}
-                    <button className="position-absolute start-50 top-50 translate-middle btn btn-light btn-sm rounded-pill ms-5" >
+                    <label onClick={() => setBanner('')} className="position-absolute start-50 top-50 translate-middle btn btn-light btn-sm rounded-pill ms-5" >
                         <i className="fa-solid fa-xmark fa-lg"/>
-                    </button>
+                    </label>
 
                     <div className="position-absolute top-100 translate-middle" style={{'paddingLeft': '150px'}}>
                         <img className="rounded-circle"
-                             style={{"width": "100px", "filter": "brightness(50%)"}}
-                             src={"/images/" + profile.avatar}/>
+                             style={{"width": "100px", height: '100px', "filter": "brightness(50%)"}}
+                             src={`/images/${profile.username}.png`}/>
                     </div>
                     {/* upload new avatar button */}
-                    <button className="position-absolute start-0 top-100 translate-middle btn btn-light btn-sm rounded-pill" style={{'marginLeft': '75px'}}>
+                    <label className="position-absolute start-0 top-100 translate-middle btn btn-light btn-sm rounded-pill" style={{'marginLeft': '75px'}}>
                         <i className="fa-solid fa-camera fa-lg"/>
-                    </button>
+                        <input accept={'image/*'} onChange={e => {
+                            imgFileToSrc(e.target.files[0])
+                              .then(src => {
+                                  setAvatar(src);
+                              })
+                        }} hidden type={'file'}/>
+                    </label>
                 </div>
             </div>
             <form className="p-2 list-group-item">
-                <div className="border border-secondary rounded-3 p-2 mb-3 ">
-                    <label htmlFor="username">Username</label>
-                    <input id="username" title="Username"
-                           className="p-0 form-control border-0 p-2"
-                           placeholder="Update username" value={userName}
-                           onChange={(event) => setUserName(event.target.value)}
-                    />
-                </div>
-                <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label htmlFor="bio">Bio</label>
-                    <textarea
-                        id="bio"
-                        className="p-0 form-control border-0 p-2"
-                        placeholder="Update bio"
-                        value={bio}
-                        onChange={(event) => setBio(event.target.value)}
-                    />
-                </div>
+                {/*<div className="border border-secondary rounded-3 p-2 mb-3 ">*/}
+                {/*    <label htmlFor="username">Username</label>*/}
+                {/*    <input id="username" title="Username"*/}
+                {/*           className="p-0 form-control border-0 p-2"*/}
+                {/*           placeholder="Update username" value={userName}*/}
+                {/*           onChange={(event) => setUserName(event.target.value)}*/}
+                {/*    />*/}
+                {/*</div>*/}
+                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
+                {/*    <label htmlFor="bio">Bio</label>*/}
+                {/*    <textarea*/}
+                {/*        id="bio"*/}
+                {/*        className="p-0 form-control border-0 p-2"*/}
+                {/*        placeholder="Update bio"*/}
+                {/*        value={bio}*/}
+                {/*        onChange={(event) => setBio(event.target.value)}*/}
+                {/*    />*/}
+                {/*</div>*/}
 
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="location">Location</label>
@@ -86,12 +120,12 @@ const EditProfile = () => {
                 </div>
 
                 <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label htmlFor="website">Website</label>
+                    <label htmlFor="website">Phone</label>
                     <input id="website"
                            className="p-0 form-control border-0 p-2"
-                           placeholder="Update website"
-                           value={website}
-                           onChange={(event) => setWebsite(event.target.value)}
+                           placeholder="Update phone"
+                           value={phone}
+                           onChange={(event) => setPhone(event.target.value)}
                     />
                 </div>
                 <div className="border border-secondary rounded-3 p-2 mb-3">

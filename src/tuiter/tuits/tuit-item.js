@@ -14,7 +14,7 @@ const TuitItem = ({tuit, profile, deleteTuit, likeTuit}) => {
                 {/*left-part avatar*/}
                 <div className="col-1">
                     <img className="rounded-circle"
-                         src={`/images/${tuit.postedBy.username}.png`}
+                         src={`${tuit.postedBy.avatar}`}
                          width="40px"
                     />
                 </div>
