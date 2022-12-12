@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import WhatsHappening from "./whats-happening";
-import * as secureService from "../services/security-service";
+import * as userService from "../services/user-service";
 import * as tuitService from "../services/tuits-service";
 import Tuits from "../tuits";
 import * as gameService from "../services/review-service/reviews-service";
@@ -11,28 +11,17 @@ import UserItem from "./user-item";
 const HomeTuitsList = () => {
     const [module, setModule] = useState('tuits');
     const [tuits, setTuits] = useState([]);
+    const [users, setUsers] = useState([]);
     const [games, setGames] = useState([]);
     const [profile, setProfile] = useState({});
     const [isLoggedIn, setUserStat] = useState(false);
 
-    const userArr = [
-        {
-            "_id": "1",
-            "username": "alice",
-            "accountType": "PERSONAL",
-        },
-        {
-            "_id": "2",
-            "username": "tuiterAdmin",
-            "accountType": "TUITER-ADMIN",
-        },
-        {
-            "_id": "3",
-            "username": "gameAdmin",
-            "accountType": "GAME-ADMIN",
-        },
-    ]
     // retrieve all tuits
+    const findAllUsers = () =>
+        userService.findAllUsersWithoutMe(profile._id)
+            .then(users => setUsers(users));
+
+    // retrieve all users
     const findTuits = () =>
         tuitService.findAllTuits()
             .then(tuits => setTuits(tuits));
@@ -41,10 +30,12 @@ const HomeTuitsList = () => {
     const findGames = () => {
         gameService.findAllReviewedGames()
             .then(games => setGames(games));
-        // const res = await findAllReviewedGames();
-        // console.log(res);
     }
 
+    const authorityClickHandler = () => {
+        setModule("authority");
+        findAllUsers();
+    }
 
     const tuitsClickHandler = () => {
         setModule("tuits");
@@ -58,13 +49,12 @@ const HomeTuitsList = () => {
 
     useEffect(() => {
         findTuits();
-        findGames();
     }, []);
 
     // retrieve the currently logged in user
     useEffect(() => {
         async function getProfile() {
-            const user = await secureService.profile();
+            const user = await userService.profile();
             if (Object.keys(user).length === 0) setUserStat(false);
             else setUserStat(true);
             //console.log("user", user)
@@ -99,7 +89,7 @@ const HomeTuitsList = () => {
                         profile.accountType === 'TUITER-ADMIN' &&
                         <li className="nav-item">
                             <button className={`nav-link ${module === 'authority' ? 'active' : ''}`}
-                                    onClick={() => setModule('authority')}>
+                                    onClick={authorityClickHandler}>
                                 Authority
                             </button>
                         </li>
@@ -129,8 +119,10 @@ const HomeTuitsList = () => {
                 module === 'authority' &&
                 <ul className="list-group border border-secondary">
                     {
-                        userArr.map(user =>
-                            <UserItem user={user}/>
+                        users.map(user =>
+                            <UserItem user={user}
+                            refreshUsers={findAllUsers}
+                            />
                         )
                     }
                 </ul>

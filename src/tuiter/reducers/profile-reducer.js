@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import profile from "../data/profile.json";
-import * as secureService from "../services/security-service";
+import * as secureService from "../services/user-service";
 import {message} from "antd";
 
 const profileSlice = createSlice({

@@ -35,7 +35,7 @@ const NavigationSidebar = () => {
             </Link>
 
             <Link to="/tuiter/search" className={`list-group-item
-                    ${active === 'SearchGame'?'active':''}`}>
+                    ${active === 'search'?'active':''}`}>
                 <div className="row">
                     <div className="col-2">
                         <i className="fa-regular fa-chess-king me-2"/>

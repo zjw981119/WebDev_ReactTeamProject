@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import * as secureService from "./services/security-service";
+import * as secureService from "./services/user-service";
 
 export const useProfile = () => {
   const [profile, setProfile] = useState();

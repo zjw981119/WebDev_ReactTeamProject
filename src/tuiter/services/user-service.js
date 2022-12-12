@@ -1,7 +1,7 @@
 import axios from "axios";
- const BASE_URL = "http://localhost:4000";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 //const BASE_URL = process.env.REACT_APP_BASE_URL;
-
+const USER_API = `${BASE_URL}/api/users`;
 const SECURITY_API = `${BASE_URL}/api/auth`;
 
 // creates an axios instance configured to include cookie headers
@@ -27,8 +27,11 @@ export const profile = () =>
         .then(response => response.data);
 
 export const updateProfile = (uid, data) =>
-    api.put(`${BASE_URL}/api/users/${uid}`, data)
+    api.put(`${USER_API}/${uid}`, data)
 
+export const findAllUsersWithoutMe = (uid) =>
+    api.get(`${USER_API}/${uid}/excluded`)
+        .then(response => response.data);
 
 export const getAllTuits = (uid) =>
     api.get(`${BASE_URL}/api/users/${uid}/tuits`)

@@ -1,7 +1,7 @@
 import "./index.css";
 import {deleteReview} from "../services/review-service/reviews-service";
 import {useEffect, useState} from "react";
-import * as secureService from "../services/security-service";
+import * as secureService from "../services/user-service";
 import {Link} from "react-router-dom";
 
 

@@ -5,7 +5,7 @@ import {Tabbar} from "./components/tabbar";
 import {useProfile} from "../hooks";
 import {Avatar} from 'antd';
 import {refreshProfile} from "../reducers/profile-reducer";
-import * as security_service from "../services/security-service";
+import * as security_service from "../services/user-service";
 const Profile = () => {
     // const location = useLocation();
     // const [profile, setProfile] = useState({});

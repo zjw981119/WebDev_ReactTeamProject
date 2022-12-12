@@ -8,6 +8,10 @@ const api = axios.create({
     withCredentials: true
 });
 
+export const findAllTuitsPostedByUser = (uid) =>
+    api.get(`${BASE_URL}/api/users/${uid}/tuits`)
+        .then(response => response.data)
+
 export const findAllTuits = () =>
     api.get(TUITS_API)
         .then(response => response.data);

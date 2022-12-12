@@ -1,6 +1,6 @@
 import {useProfile} from "../../../hooks";
 import {useEffect, useState} from "react";
-import {getAllTuits} from "../../../services/security-service";
+import {getAllTuits} from "../../../services/user-service";
 import MyTuits from '../../../tuits'
 export const Tuits = () => {
   const {profile} = useProfile();
