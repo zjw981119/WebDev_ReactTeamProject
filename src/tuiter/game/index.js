@@ -103,17 +103,21 @@ const GameComponent = () => {
 
             <div className="border border-secondary list-group-item">
 
-                <div className="btn-padding">
-                    <button className="btn btn-light btn-lg rounded-pill ms-2 mt-3 " >
-                        <Link to="/tuiter/search">
-                            <i className="fa-solid fa-arrow-left fa-lg"/>
-                        </Link>
-                    </button>
+                <div className="">
+                    <div className="">
+                        <button className=" btn btn-light btn-lg rounded-pill ms-2 mt-3 " >
+                            <Link to="/tuiter/search">
+                                <i className="fa-solid fa-arrow-left fa-lg"/>
+                            </Link>
+                        </button>
 
-                    <Link to = {{pathname :"/tuiter/create-review"}} state = {{"RawgId" : game.RawgId, "GameName" : game.GameName, "Image" : game.Image, "game" : game}}
-                          className="mt-2 me-2 btn btn-large btn-light border border-secondary fw-bolder rounded-pill fa-pull-right">
-                        Review this Game
-                    </Link>
+                        <button className=" mt-3 me-2 btn btn-large btn-light border border-secondary fw-bolder rounded-pill fa-pull-right" >
+                        <Link to = {{pathname :"/tuiter/create-review"}} state = {{"RawgId" : game.RawgId, "GameName" : game.GameName, "Image" : game.Image, "game" : game}}
+                              className="text-decoration-none">
+                            Review this Game
+                        </Link>
+                        </button>
+                    </div>
                 </div>
 
 

@@ -42,7 +42,7 @@ const Profile = () => {
             <div className="border border-secondary list-group-item">
                 <div className="mb-5 position-relative">
 
-                    <img className="w-100" src={profile.bannerPicture} height='250px'/>
+                    <img className="w-100" src="https://th.bing.com/th/id/OIP.b2-Z2RfU6u2Fghz13FPcTAHaEK?pid=ImgDet&rs=1" height='250px'/>
                         {/*className="position-relative"*/}
                     <div className="position-absolute top-100 translate-middle" style={{'paddingLeft':'150px'}}>
                         {/*className="position-absolute top-0 start-50 translate-middle"*/}

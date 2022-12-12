@@ -176,7 +176,8 @@ function Tuiter() {
                 <div className="col-10 col-md-10 col-lg-7 col-xl-6"
                      style={{"position": "relative"}}>
                     <Routes>
-                        <Route path="/home" element={<Home/>}/>
+                        <Route path="/" element={<Home/>} />
+                        <Route path="/home" element={<Home/>} />
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/register" element={<Register/>}/>
                         <Route path="/explore" element={<ExploreComponent/>}/>
@@ -199,15 +200,17 @@ function Tuiter() {
                 </div>
                 <div className="d-none d-lg-block col-lg-4 col-xl-4">
                     <Routes>
+                        <Route path="/" element={<Recommended_game/>}/>
                         <Route path="/home" element={<Recommended_game/>}/>
                         <Route path="/login" element={<Recommended_game/>}/>
                         <Route path="/register" element={<Recommended_game/>}/>
+                        <Route path="/profile" element={<Recommended_game/>}/>
                         <Route path="/explore" element={<Recommended_game/>}/>
                         <Route path="/search" element={<Recommended_game/>}/>
                         <Route path="/game/:RawgId" element={<Recommended_game/>}/>
                         <Route path="/create-review" element={<Recommended_game/>}/>
                         <Route path="/aboutus" element={<Linkedin/>}/>
-                        <Route path="/profile" element={<Recommended_game/>}/>
+                        <Route path="/profile/*" element={<Recommended_game/>}/>
                         <Route path="/edit-profile" element={<Recommended_game/>}/>
                     </Routes>
                 </div>
