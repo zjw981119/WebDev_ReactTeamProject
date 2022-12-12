@@ -2,13 +2,13 @@ import "./index.css";
 import {deleteReview} from "../services/review-service/reviews-service";
 import {useEffect, useState} from "react";
 import * as secureService from "../services/security-service";
+import {Link} from "react-router-dom";
 
 
 const ReviewItem = ({review, refreshReview}) => {
     const deleteReviewHandler = (ReviewId) => {
         deleteReview(ReviewId).then(refreshReview);
     }
-
 
 
     const [canDeleteReview, setcanDeleteReview] = useState(false);
@@ -46,10 +46,15 @@ const ReviewItem = ({review, refreshReview}) => {
 
     return (
         <li key={review._id} className="list-group-item border border-secondary">
+            {'_id' in review.GameComponent && (
+              <Link to={`/tuiter/game/:${review.GameComponent.RawgId}`}>
+                  <h4>Game: {review.GameComponent.GameName}</h4>
+              </Link>
+            )}
             <div className="row">
                 {/*left-part avatar*/}
                 <div className="col-1 p-1">
-                    {review.postedBy.username ? <img className="rounded-circle" src={"/images/" + review.postedBy.username + ".png"} width="50px"/> : <p>Loading</p>}
+                    {review.postedBy.username ? <img className="rounded-circle" src={review.postedBy.avatar} width="50px"/> : <p>Loading</p>}
                 </div>
                 {/* right-part post */}
                 <div className="col-11">

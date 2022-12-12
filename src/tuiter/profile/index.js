@@ -1,14 +1,23 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
-
-
+import React, {useEffect, useState} from "react";
+import {Link, Outlet} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {Tabbar} from "./components/tabbar";
+import {useProfile} from "../hooks";
+import {Avatar} from 'antd';
+import {refreshProfile} from "../reducers/profile-reducer";
 const Profile = () => {
     // const location = useLocation();
     // const [profile, setProfile] = useState({});
+    const profile = useSelector(state => state.profile.profile);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(refreshProfile());
+    }, []);
 
     // extract profile
-    const profile = useSelector(state => state.profile)
+    if (!profile) {
+        return <></>
+    }
     return (
         <div className="ttr-profile list-group">
             <div className="border border-secondary list-group-item">
@@ -23,17 +32,23 @@ const Profile = () => {
                             {profile.username}
                             <i className="fa fa-badge-check text-primary"/>
                         </h5>
-                        <span className="ps-2">{profile.tuitCount + ' Tuits'}</span>
+
                     </div>
                 </div>
                 <div className="mb-5 position-relative">
-                    <img className="w-100" src={"/images/" + profile.bannerPicture} height='250px'/>
+
+                    <img className="w-100" src={profile.bannerPicture} height='250px'/>
                         {/*className="position-relative"*/}
                     <div className="position-absolute top-100 translate-middle" style={{'paddingLeft':'150px'}}>
                         {/*className="position-absolute top-0 start-50 translate-middle"*/}
-                        <img className="rounded-circle"
-                             style={{'width' : '100px'}}
-                             src={"/images/" + profile.avatar}/>
+                        {/*<img className="rounded-circle"*/}
+                        {/*     style={{'width' : '100px'}}*/}
+                        {/*     src={"/images/" + profile.avatar}/>*/}
+                        {!profile.avatar && <Avatar style={{width: '100px', height: '100px'}} icon={<i className="bi bi-person-circle" style={{fontSize: '80px'}}></i>}/>}
+                        {profile.avatar && (
+                          <Avatar style={{width: '100px', height: '100px'}}
+                                  src={ profile.avatar}/>
+                        )}
                     </div>
                     <Link to="/tuiter/edit-profile"
                           className="mt-2 me-2 btn btn-large btn-light border border-secondary fw-bolder rounded-pill fa-pull-right">
@@ -44,30 +59,32 @@ const Profile = () => {
                 <div className="p-2">
                     <h5 className="fw-bolder pb-0 mb-0">
                         {profile.username}
-                        {/*<i className="fa fa-badge-check text-primary"/>*/}
                     </h5>
                     <h6 className="pt-0 text-secondary">
-                        {profile.handle}
+                        {profile.email}
                     </h6>
                     <p className="pt-2">
                         {profile.bio}
                     </p>
                     <p>
                         <i className="fa-solid fa-link"/>
-                        <a href={profile.website} title={profile.website} className="text-decoration-none ms-2">Website</a>
+                        {profile.phone || 'N/A'}
                         <i className="fa-solid fa-location-dot ms-3 me-2"/>
-                        {profile.location}
+                        {profile.location || 'N/A'}
                         <i className="fa-solid fa-cake-candles ms-3 me-2"/>
-                        {"Born " + profile.dateOfBirth}
+                        Born {profile.dateOfBirth ? new Date(profile.dateOfBirth).toDateString() : 'N/A'}
                         <i className="far fa-calendar ms-3 me-2"/>
-                        {"Joined " + profile.dateJoined}
+                        Joined {new Date(profile.joined).toDateString()}
                     </p>
-                    <b>{profile.followingCount}</b> Following
-                    <b className="ms-4">{profile.followersCount}</b> Followers
+                    {/*<b>{profile.followingCount}</b> Following*/}
+                    {/*<b className="ms-4">{profile.followersCount}</b> Followers*/}
 
                 </div>
+                <Tabbar />
             </div>
-
+            <div className={'mt-2'}>
+                <Outlet />
+            </div>
         </div>
     );
 

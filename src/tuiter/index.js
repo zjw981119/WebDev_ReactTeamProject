@@ -32,7 +32,12 @@ import ClosedParticleConfig from "./particle-effect/Closed-Particle-Config";
 import ExplosionParticleConfig from "./particle-effect/Explosion-Particle-Config"
 import AboutUsComponent from "./about-us/about-us";
 import Linkedin from "./about-us/linkedin";
-
+import {Navigate} from 'react-router-dom';
+import {Tuits} from "./profile/modules/tuits";
+import {TuitsReplies} from "./profile/modules/tuitsReplies";
+import {Media} from "./profile/modules/media";
+import {Likes} from "./profile/modules/likes";
+import {Dislikes} from "./profile/modules/dislikes";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
@@ -179,7 +184,16 @@ function Tuiter() {
                         <Route path="/game/:RawgId" element={<GameComponent/>}/>
                         <Route path="/create-review" element={<CreateReview/>}/>
                         <Route path="/aboutus" element={<AboutUsComponent/>}/>
-                        <Route path="/profile" element={<ProfileComponent/>}/>
+                        <Route path="/profile" element={<ProfileComponent/>}>
+
+                            <Route path={''} index element={<Navigate to={'tuits'}/>}/>
+                            <Route path={'tuits'} element={<Tuits />}/>
+                            <Route path={'tuits-replies'} element={<TuitsReplies />}/>
+                            <Route path={'media'} element={<Media />}/>
+                            <Route path={'likes'} element={<Likes />}/>
+                            <Route path={'dislikes'} element={<Dislikes />}/>
+
+                        </Route>
                         <Route path="/edit-profile" element={<EditProfile/>}/>
                     </Routes>
                 </div>
