@@ -67,7 +67,7 @@ const Profile = () => {
                         {profile.bio}
                     </p>
                     <p>
-                        <i className="fa-solid fa-link"/>
+                        <i className="fa-solid fa-phone me-2"/>
                         {profile.phone || 'N/A'}
                         <i className="fa-solid fa-location-dot ms-3 me-2"/>
                         {profile.location || 'N/A'}
