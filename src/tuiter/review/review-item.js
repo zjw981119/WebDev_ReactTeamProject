@@ -46,7 +46,7 @@ const ReviewItem = ({review, refreshReview}) => {
 
     return (
         <li key={review._id} className="list-group-item border border-secondary">
-            {'_id' in review.GameComponent && (
+            {review.GameComponent._id && (
               <Link to={`/tuiter/game/:${review.GameComponent.RawgId}`}>
                   <h4>Game: {review.GameComponent.GameName}</h4>
               </Link>

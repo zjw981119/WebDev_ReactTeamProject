@@ -56,7 +56,7 @@ const EditProfile = () => {
                 </button>
                 <h5 className="p-3 mb-0 fw-bolder">Edit profile</h5>
                 <div className="position-relative">
-                    <img className="w-100" src={profile.bannerPicture ? profile.bannerPicture : banner} height='250px' style={{"filter": "brightness(50%)"}}/>
+                    <img className="w-100" src="https://th.bing.com/th/id/OIP.b2-Z2RfU6u2Fghz13FPcTAHaEK?pid=ImgDet&rs=1" height='250px' style={{"filter": "brightness(50%)"}}/>
                     {/* upload new banner image button */}
                     <label className="position-absolute end-50 top-50 translate-middle btn btn-light btn-sm rounded-pill">
                         <i className="fa-solid fa-camera fa-lg"/>

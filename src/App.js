@@ -2,7 +2,7 @@ import Labs from "./labs/index";
 import HelloWorld from "./labs/a6/hello-world";
 import Tuiter from "./tuiter/index";
 // navigation in Web application
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Navigate} from "react-router-dom";
 import {Routes, Route} from "react-router";
 
 
@@ -13,12 +13,9 @@ function App() {
             <div className="container">
                 {/*declare paths and map them to corresponding component */}
                 <Routes>
-                    {/*declare the Lab component as the default landing screen */}
-                    <Route path="/*"
-                           element={<Labs/>}/>
-                    <Route path="/hello"
-                           element={<HelloWorld/>}/>
+
                     <Route path="/tuiter/*" element={<Tuiter/>}/>
+                    <Route path="/" element={<Navigate to="/tuiter" replace/>} />
                 </Routes>
             </div>
         </BrowserRouter>
