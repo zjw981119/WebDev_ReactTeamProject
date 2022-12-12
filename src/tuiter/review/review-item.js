@@ -21,7 +21,9 @@ const ReviewItem = ({review, refreshReview}) => {
         async function checkProfile() {
 
             const loginUser = await secureService.profile()
-            if (Object.keys(loginUser).length !== 0 && (loginUser.accountType === 'TUITER-ADMIN' || review.postedBy.username === loginUser.username))
+            if (Object.keys(loginUser).length !== 0 && (loginUser.accountType === 'TUITER-ADMIN'
+                                                        || loginUser.accountType === 'GAME-ADMIN'
+                                                        || review.postedBy.username === loginUser.username))
             {
                 await setcanDeleteReview(true)
             }
