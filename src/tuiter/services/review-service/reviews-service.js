@@ -55,3 +55,6 @@ export const updateReview = async (game) => {
     return game;
 }
 
+export const getReviewedGames = async (uid) => {
+    return api.get(Reviews_API + `/users/${uid}`).then(response => response.data)
+}

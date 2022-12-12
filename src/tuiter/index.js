@@ -32,7 +32,12 @@ import ClosedParticleConfig from "./particle-effect/Closed-Particle-Config";
 import ExplosionParticleConfig from "./particle-effect/Explosion-Particle-Config"
 import AboutUsComponent from "./about-us/about-us";
 import Linkedin from "./about-us/linkedin";
-
+import {Navigate} from 'react-router-dom';
+import {Tuits} from "./profile/modules/tuits";
+import {TuitsReplies} from "./profile/modules/tuitsReplies";
+import {Media} from "./profile/modules/media";
+import {Likes} from "./profile/modules/likes";
+import {Dislikes} from "./profile/modules/dislikes";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
@@ -173,7 +178,8 @@ function Tuiter() {
                 <div className="col-10 col-md-10 col-lg-7 col-xl-6"
                      style={{"position": "relative"}}>
                     <Routes>
-                        <Route path="/home" element={<Home/>}/>
+                        <Route path="/" element={<Home/>} />
+                        <Route path="/home" element={<Home/>} />
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/register" element={<Register/>}/>
                         <Route path="/explore" element={<ExploreComponent/>}/>
@@ -181,14 +187,36 @@ function Tuiter() {
                         <Route path="/game/:RawgId" element={<GameComponent/>}/>
                         <Route path="/create-review" element={<CreateReview/>}/>
                         <Route path="/aboutus" element={<AboutUsComponent/>}/>
-                        <Route path="/profile" element={<ProfileComponent/>}/>
+                        <Route path="/profile" element={<ProfileComponent/>}>
+
+                            <Route path={''} index element={<Navigate to={'tuits'}/>}/>
+                            <Route path={'tuits'} element={<Tuits />}/>
+                            <Route path={'tuits-replies'} element={<TuitsReplies />}/>
+                            <Route path={'media'} element={<Media />}/>
+                            <Route path={'likes'} element={<Likes />}/>
+                            <Route path={'dislikes'} element={<Dislikes />}/>
+
+                        </Route>
                         <Route path="/edit-profile" element={<EditProfile/>}/>
                     </Routes>
                 </div>
 
                 {/*right part game recommendation list*/}
                 <div className="d-none d-lg-block col-lg-4 col-xl-4">
-                    <Recommended_game/>
+                    <Routes>
+                        <Route path="/" element={<Recommended_game/>}/>
+                        <Route path="/home" element={<Recommended_game/>}/>
+                        <Route path="/login" element={<Recommended_game/>}/>
+                        <Route path="/register" element={<Recommended_game/>}/>
+                        <Route path="/profile" element={<Recommended_game/>}/>
+                        <Route path="/explore" element={<Recommended_game/>}/>
+                        <Route path="/search" element={<Recommended_game/>}/>
+                        <Route path="/game/:RawgId" element={<Recommended_game/>}/>
+                        <Route path="/create-review" element={<Recommended_game/>}/>
+                        <Route path="/aboutus" element={<Linkedin/>}/>
+                        <Route path="/profile/*" element={<Recommended_game/>}/>
+                        <Route path="/edit-profile" element={<Recommended_game/>}/>
+                    </Routes>
                 </div>
             </div>
 
