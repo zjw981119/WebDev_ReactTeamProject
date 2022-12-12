@@ -75,7 +75,7 @@ const EditProfile = () => {
                     <div className="position-absolute top-100 translate-middle" style={{'paddingLeft': '150px'}}>
                         <img className="rounded-circle"
                              style={{"width": "100px", height: '100px', "filter": "brightness(50%)"}}
-                             src={profile.avatar ? profile.avatar : avatar}/>
+                             src={`/images/${profile.username}.png`}/>
                     </div>
                     {/* upload new avatar button */}
                     <label className="position-absolute start-0 top-100 translate-middle btn btn-light btn-sm rounded-pill" style={{'marginLeft': '75px'}}>
@@ -90,24 +90,24 @@ const EditProfile = () => {
                 </div>
             </div>
             <form className="p-2 list-group-item">
-                <div className="border border-secondary rounded-3 p-2 mb-3 ">
-                    <label htmlFor="username">Username</label>
-                    <input id="username" title="Username"
-                           className="p-0 form-control border-0 p-2"
-                           placeholder="Update username" value={userName}
-                           onChange={(event) => setUserName(event.target.value)}
-                    />
-                </div>
-                <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label htmlFor="bio">Bio</label>
-                    <textarea
-                        id="bio"
-                        className="p-0 form-control border-0 p-2"
-                        placeholder="Update bio"
-                        value={bio}
-                        onChange={(event) => setBio(event.target.value)}
-                    />
-                </div>
+                {/*<div className="border border-secondary rounded-3 p-2 mb-3 ">*/}
+                {/*    <label htmlFor="username">Username</label>*/}
+                {/*    <input id="username" title="Username"*/}
+                {/*           className="p-0 form-control border-0 p-2"*/}
+                {/*           placeholder="Update username" value={userName}*/}
+                {/*           onChange={(event) => setUserName(event.target.value)}*/}
+                {/*    />*/}
+                {/*</div>*/}
+                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
+                {/*    <label htmlFor="bio">Bio</label>*/}
+                {/*    <textarea*/}
+                {/*        id="bio"*/}
+                {/*        className="p-0 form-control border-0 p-2"*/}
+                {/*        placeholder="Update bio"*/}
+                {/*        value={bio}*/}
+                {/*        onChange={(event) => setBio(event.target.value)}*/}
+                {/*    />*/}
+                {/*</div>*/}
 
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="location">Location</label>
