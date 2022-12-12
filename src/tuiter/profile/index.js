@@ -2,13 +2,19 @@ import React, {useEffect, useState} from "react";
 import {Link, Outlet, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {Tabbar} from "./components/tabbar";
-import {useProfile} from "../hooks";
+import {useProfile, useUserProfile} from "../user-profile/hooks";
 import {Avatar} from 'antd';
 import {refreshProfile} from "../reducers/profile-reducer";
 import * as security_service from "../services/user-service";
+import * as userService from "../services/user-service";
+import {useParams} from "react-router";
 const Profile = () => {
     // const location = useLocation();
-    // const [profile, setProfile] = useState({});
+    const {uid} = useParams();
+    const navigate = useNavigate();
+    const {profile} = useUserProfile(uid);
+    const [profile, setProfile] = useState({});
+    const [isLoggedIn, setUserStat] = useState(false);
     const profile = useSelector(state => state.profile.profile);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -37,6 +43,20 @@ const Profile = () => {
     if (!profile) {
         return <></>
     }
+
+    // retrieve the currently logged in user
+    useEffect(() => {
+        async function getProfile() {
+            const user = await userService.profile();
+            if (Object.keys(user).length === 0) setUserStat(false);
+            else setUserStat(true);
+            //console.log("user", user)
+            setProfile(user);
+        }
+
+        getProfile();
+    }, []);
+
     return (
         <div className="ttr-profile list-group">
             <div className="border border-secondary list-group-item">

@@ -1,4 +1,4 @@
-import {useProfile} from "../../../hooks";
+import {useProfile} from "../../../user-profile/hooks";
 import {useEffect, useState} from "react";
 import {getAllTuits} from "../../../services/user-service";
 import MyTuits from '../../../tuits'

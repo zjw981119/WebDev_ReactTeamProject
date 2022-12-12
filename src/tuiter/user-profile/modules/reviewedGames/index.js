@@ -1,20 +1,23 @@
-import {useProfile} from "../../../user-profile/hooks";
+import {useProfile, useUserProfile} from "../../hooks";
 import {useEffect, useState} from "react";
 import {getReviewedGames} from "../../../services/review-service/reviews-service";
 import ReviewsList from "../../../review";
+import {useParams} from "react-router";
 
-export const TuitsReplies = () => {
-  const {profile} = useProfile();
+export const UserReviewedGames = () => {
+  const {uid} = useParams();
+  const {profile} = useUserProfile(uid);
   const [games, setGames] = useState([]);
+  const {profile: currentUser} = useProfile();
   const fetchGames = async () => {
-    if (profile) {
-      const games = await getReviewedGames(profile._id);
+    if (uid) {
+      const games = await getReviewedGames(uid);
       setGames(games);
     }
   }
   useEffect(() => {
     fetchGames();
-  }, [profile]);
+  }, [uid]);
   return (
     <div>
       <ReviewsList reviews={games} refreshReview={fetchGames}/>

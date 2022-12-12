@@ -38,6 +38,10 @@ import {TuitsReplies} from "./profile/modules/tuitsReplies";
 import {Media} from "./profile/modules/media";
 import {Likes} from "./profile/modules/likes";
 import {Dislikes} from "./profile/modules/dislikes";
+import UserHomePage from "./user-profile";
+import {UserTuits} from "./user-profile/modules/tuits";
+import {UserReviewedGames} from "./user-profile/modules/reviewedGames";
+import {UserLikes} from "./user-profile/modules/likes";
 
 // since whoReducer is just value, need a key to extract global value
 const store = configureStore(
@@ -197,6 +201,12 @@ function Tuiter() {
                             <Route path={'dislikes'} element={<Dislikes />}/>
 
                         </Route>
+                        <Route element={<UserHomePage/>} path="/user-profile/:uid">
+                            <Route path={''} index element={<Navigate to={'tuits'}/>}/>
+                            <Route path={'tuits'} element={<UserTuits/>}/>
+                            <Route path={'reviewed-games'} element={<UserReviewedGames/>}/>
+                            <Route path={'likes'} element={<UserLikes/>}/>
+                        </Route>
                         <Route path="/edit-profile" element={<EditProfile/>}/>
                     </Routes>
                 </div>
@@ -216,6 +226,7 @@ function Tuiter() {
                         <Route path="/aboutus" element={<Linkedin/>}/>
                         <Route path="/profile/*" element={<RecommendedGame/>}/>
                         <Route path="/edit-profile" element={<RecommendedGame/>}/>
+                        <Route path="/user-profile/*" element={<RecommendedGame/>}/>
                     </Routes>
                 </div>
             </div>
