@@ -1,16 +1,7 @@
 import {useEffect, useState} from "react";
 import  "./index.css"
 
-const PostSummaryItem = (
-    {
-        news = {
-            "link": "",
-            "published_datetime_utc": "2h",
-            "title": "Tesla Cybertruck lands on Mars and picks up the Curiosity rover on its 6' bed",
-            "photo_url": "tesla.png"
-        }
-    }
-) => {
+const PostSummaryItem = ({news}) => {
 
     let [date, setdate] = useState(news.published_datetime_utc);
 

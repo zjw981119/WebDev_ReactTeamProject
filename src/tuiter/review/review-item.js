@@ -63,10 +63,9 @@ const ReviewItem = ({review, refreshReview}) => {
                     <div className="d-flex justify-content-between ps-3">
                         <div>
                             <div>
-                                <span
-                                    onClick={() => navigate(`/tuiter/user-profile/${review.postedBy._id}`)}
-                                    className="fw-bolder">{review.postedBy.username}
-                                </span>
+                                <Link to={`/tuiter/profile/${review.postedBy._id}`}
+                                    className="fw-bolder text-decoration-none">{review.postedBy.username}
+                                </Link>
                                 <div className="text-dark">{'posted: ' + review.time}</div>
                             </div>
                         </div>

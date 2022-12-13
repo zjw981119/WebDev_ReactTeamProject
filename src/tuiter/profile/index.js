@@ -9,7 +9,6 @@ import {useParams} from "react-router";
 const Profile = () => {
     // const location = useLocation();
     const {uid} = useParams();
-    console.log(uid);
     const [profileUser, setProfileUser] = useState({});
     const [loggedInUser, setLoggedInUser] = useState({});
     // check whether user logged-in
@@ -44,7 +43,7 @@ const Profile = () => {
         }
 
         getProfileUser();
-    }, []);
+    }, [uid]);
 
     const shouldDisplay = isLoggedIn && profileUser._id === loggedInUser._id;
 
@@ -81,7 +80,7 @@ const Profile = () => {
                     </h5>
                     {
                         shouldDisplay &&
-                        <h6 className="pt-0 text-secondary">
+                        <h6 className="pt-0 text-light">
                             {profileUser.email}
                         </h6>
                     }
@@ -90,17 +89,17 @@ const Profile = () => {
                     </p>
                     <div>
                         <div>
+                            <span>
+                                <i className="fa-solid fa-location-dot me-2"/>
+                                {profileUser.location || 'N/A'}
+                            </span>
                             {
                                 shouldDisplay &&
                                 <span>
-                                    <i className="fa-solid fa-phone me-2"/>
+                                    <i className="fa-solid fa-phone ms-3 me-2"/>
                                     {profileUser.phone || 'N/A'}
                                 </span>
                             }
-                            <span>
-                                <i className="fa-solid fa-location-dot ms-3 me-2"/>
-                                {profileUser.location || 'N/A'}
-                            </span>
                         </div>
                         <div>
                             <span>

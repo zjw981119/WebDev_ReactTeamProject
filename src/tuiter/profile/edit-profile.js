@@ -15,11 +15,11 @@ function imgFileToSrc(imageFile) {
 }
 const EditProfile = () => {
     const [profile, setProfile] = useState({});
-    const [email, setEmail] = useState(profile.email);
-    const [bio, setBio] = useState(profile.bio);
-    const [location, setLocation] = useState(profile.location);
-    const [birthday, setBirthday] = useState(profile.dateOfBirth);
-    const [phone, setPhone] = useState(profile.phone);
+    const [email, setEmail] = useState('');
+    const [bio, setBio] = useState('');
+    const [location, setLocation] = useState('');
+    const [birthday, setBirthday] = useState('');
+    const [phone, setPhone] = useState('');
     const [banner, setBanner] = useState('');
     const [avatar, setAvatar] = useState('');
 
@@ -28,6 +28,10 @@ const EditProfile = () => {
         async function getProfile() {
             const user = await userService.profile();
             setProfile(user);
+            // TODO set properties
+            setEmail(user.email);
+
+
         }
         getProfile();
     }, []);
@@ -116,7 +120,7 @@ const EditProfile = () => {
                     <input id="location"
                            className="p-0 form-control border-0 p-2"
                            placeholder="Update Location"
-                           value={profile.location}
+                           value={location}
                            onChange={(event) => setLocation(event.target.value)}
                     />
                 </div>
@@ -148,64 +152,13 @@ const EditProfile = () => {
                            style={{"colorScheme": "white"}}
                            type="date"
                            placeholder="Update birthday"
-                           value={birthday}
+                           value={profile.birthday}
                            onChange={(event) => setBirthday(event.target.value)}
                     />
                 </div>
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    <label htmlFor="email">Email</label>*/}
-                {/*    <input id="email" placeholder="alan@cam.ac.uk"*/}
-                {/*           className="p-0 form-control border-0"*/}
-                {/*           type="email"/>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    <label htmlFor="password">Reset password</label>*/}
-                {/*    <input id="password"*/}
-                {/*           className="p-0 form-control border-0"*/}
-                {/*           type="password"/>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    <label for="photo">Profile photo</label>*/}
-                {/*    <input id="photo"*/}
-                {/*           className="p-0 form-control border-0"*/}
-                {/*           type="file"/>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    <label for="header">Header image</label>*/}
-                {/*    <input id="header"*/}
-                {/*           className="p-0 form-control border-0"*/}
-                {/*           type="file"/>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    <label for="account">Select account</label>*/}
-                {/*    <select*/}
-                {/*        className="p-0 form-control border-0"*/}
-                {/*        id="account">*/}
-                {/*        <option>Personal account</option>*/}
-                {/*        <option selected>Academic account</option>*/}
-                {/*    </select>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    Marital status*/}
-                {/*    <input id="married"*/}
-                {/*           type="radio" name="marital"/>*/}
-                {/*    <label for="married">Married</label>*/}
-                {/*    <input id="single" type="radio"*/}
-                {/*           checked name="marital"/>*/}
-                {/*    <label for="single">Single</label>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    Topics of interest*/}
-                {/*    <input id="space" type="checkbox"*/}
-                {/*           checked name="topics"/>*/}
-                {/*    <label for="space">Space</label>*/}
-                {/*    <input id="energy" type="checkbox" checked*/}
-                {/*           name="topics"/>*/}
-                {/*    <label for="energy">Energy</label>*/}
-                {/*    <input id="politics" type="checkbox"*/}
-                {/*           name="topics"/>*/}
-                {/*    <label for="politics">Politics</label>*/}
-                {/*</div>*/}
+
+
+
             </form>
         </div>
     );

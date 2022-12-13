@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 // use this to parse URL
 import {useLocation} from "react-router";
 import * as userService from "../services/user-service";
@@ -11,31 +11,23 @@ const NavigationSidebar = () => {
     const {pathname} = useLocation();
     const paths = pathname.split('/')
     const active = paths[2];
-    const navigate = useNavigate()
     const [loggedInUser, setLoggedInUser] = useState({});
-    let IsLoggedIn = false
+    const [isLoggedIn, setLoginStatus] = useState({});
     useEffect(() => {
         async function getLoggedInUser() {
             const user = await userService.profile();
             setLoggedInUser(user)
-            if (Object.keys(user).length !== 0) {
-                IsLoggedIn = true;
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            if(Object.keys(user).length === 0){
+                setLoginStatus(false);
+            } else {
+                setLoginStatus(true);
             }
-            //console.log("user", user)
-
         }
 
         getLoggedInUser();
-    }, []);
+    }, [pathname]);
 
-    const profileClickHandler = () => {
-        if (!IsLoggedIn)
-        {
-            navigate('/tuiter/login');
-        } else {
-            navigate(`/tuiter/profile/${loggedInUser._id}`);
-        }
-    }
     return (
         <div className="list-group">
             <div  className="list-group-item"><img className="w-100" src="/images/GEN.png"/></div>
@@ -72,11 +64,8 @@ const NavigationSidebar = () => {
                 </div>
             </Link>
 
-
-
-            <div className={`list-group-item
-                    ${active === 'profile'?'active':''}`}
-            onClick={profileClickHandler}>
+            <Link to={isLoggedIn ? `/tuiter/profile/${loggedInUser._id}` : '/tuiter/login'} className={`list-group-item
+                    ${active === 'profile'?'active':''}`}>
                 <div className="row">
                     <div className="col-2">
                         <i className="fa-regular fa-id-card me-2"/>
@@ -85,7 +74,7 @@ const NavigationSidebar = () => {
                         <span>Profile</span>
                     </div>
                 </div>
-            </div>
+            </Link>
 
             <Link to="/tuiter/login" className={`list-group-item
                     ${active === 'login'?'active':''}`}>
