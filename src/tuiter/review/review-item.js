@@ -2,7 +2,7 @@ import "./index.css";
 import {deleteReview} from "../services/review-service/reviews-service";
 import {useEffect, useState} from "react";
 import * as secureService from "../services/user-service";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 
 const ReviewItem = ({review, refreshReview}) => {
@@ -10,6 +10,7 @@ const ReviewItem = ({review, refreshReview}) => {
         deleteReview(ReviewId).then(refreshReview);
     }
 
+    const navigate = useNavigate();
 
     const [canDeleteReview, setcanDeleteReview] = useState(false);
 
@@ -62,7 +63,9 @@ const ReviewItem = ({review, refreshReview}) => {
                     <div className="d-flex justify-content-between ps-3">
                         <div>
                             <div>
-                                <span className="fw-bolder">{review.postedBy.username}</span>
+                                <Link to={`/tuiter/profile/${review.postedBy._id}`}
+                                    className="fw-bolder text-decoration-none">{review.postedBy.username}
+                                </Link>
                                 <div className="text-dark">{'posted: ' + review.time}</div>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ import GameItem from "./game-item";
 import UserItem from "./user-item";
 
 
-const HomeTuitsList = () => {
+const Home = () => {
     const [module, setModule] = useState('tuits');
     const [tuits, setTuits] = useState([]);
     const [users, setUsers] = useState([]);
@@ -141,4 +141,4 @@ const HomeTuitsList = () => {
         </>
     );
 };
-export default HomeTuitsList;
+export default Home;

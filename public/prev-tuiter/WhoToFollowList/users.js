@@ -9,5 +9,5 @@ export default [
         handle: 'virgingalactic', },
     {   avatarIcon: '../../images/nasa.png',
         userName: 'NASA', handle: 'NASA', },
-    {   avatarIcon: '../../images/tesla.png',
+    {   avatarIcon: '../../images/pengbo.png',
         userName: 'Tesla', handle: 'Tesla', }, ];

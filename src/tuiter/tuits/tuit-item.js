@@ -1,10 +1,12 @@
 import React from "react";
 import TuitStatus from "./tuit-status";
 import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const TuitItem = ({tuit, profile, deleteTuit, likeTuit}) => {
     // TUITER-ADMIN can delete anything
     // other users can only delete the tuits of their own
+    const navigate = useNavigate();
     const canDeleteTuit = Object.keys(profile).length !== 0 &&
         (profile.accountType === 'TUITER-ADMIN' || tuit.postedBy.username === profile.username);
     // convert ISO date string into local time string
@@ -26,7 +28,9 @@ const TuitItem = ({tuit, profile, deleteTuit, likeTuit}) => {
                     <div className="d-flex justify-content-between ps-2">
                         <div>
                             <div>
-                                <span className="fw-bolder">{tuit.postedBy.username}</span>
+                                <Link className="text-decoration-none" to={`/tuiter/profile/${tuit.postedBy._id}`}>
+                                    <span className="fw-bolder">{tuit.postedBy.username}</span>
+                                </Link>
                                 <span className="text-secondary">{' ' + tuit.postedBy.username}</span>
                                 <span className="text-secondary">{' - ' + formattedDate}</span>
                             </div>

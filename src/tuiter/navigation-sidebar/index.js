@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 // use this to parse URL
 import {useLocation} from "react-router";
+import * as userService from "../services/user-service";
 
 // Convert all parameters into an object deconstructor
 // and provide initial default values.
@@ -10,6 +11,23 @@ const NavigationSidebar = () => {
     const {pathname} = useLocation();
     const paths = pathname.split('/')
     const active = paths[2];
+    const [loggedInUser, setLoggedInUser] = useState({});
+    const [isLoggedIn, setLoginStatus] = useState({});
+    useEffect(() => {
+        async function getLoggedInUser() {
+            const user = await userService.profile();
+            setLoggedInUser(user)
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            if(Object.keys(user).length === 0){
+                setLoginStatus(false);
+            } else {
+                setLoginStatus(true);
+            }
+        }
+
+        getLoggedInUser();
+    }, [pathname]);
+
     return (
         <div className="list-group">
             <div  className="list-group-item"><img className="w-100" src="/images/GEN.png"/></div>
@@ -46,9 +64,7 @@ const NavigationSidebar = () => {
                 </div>
             </Link>
 
-
-
-            <Link to="/tuiter/profile" className={`list-group-item
+            <Link to={isLoggedIn ? `/tuiter/profile/${loggedInUser._id}` : '/tuiter/login'} className={`list-group-item
                     ${active === 'profile'?'active':''}`}>
                 <div className="row">
                     <div className="col-2">
@@ -59,6 +75,7 @@ const NavigationSidebar = () => {
                     </div>
                 </div>
             </Link>
+
             <Link to="/tuiter/login" className={`list-group-item
                     ${active === 'login'?'active':''}`}>
                 <div className="row">
