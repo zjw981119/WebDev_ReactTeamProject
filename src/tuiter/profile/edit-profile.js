@@ -26,7 +26,6 @@ const EditProfile = () => {
         async function getProfile() {
             const user = await userService.profile();
             setProfile(user);
-            // TODO set properties
             setLocation(user.location);
             setPhone(user.phone);
             setEmail(user.email);

@@ -1,23 +1,30 @@
 import {useEffect, useState} from "react";
-import {getAllTuits, getUserProfile} from "../../../services/user-service";
 import MyTuits from "../../../tuits";
 import {useParams} from "react-router";
+import {findAllTuitsPostedByUser} from "../../../services/tuits-service";
+import * as userService from "../../../services/user-service";
+import {ObjectID} from "bson";
 
 export const UserTuits = () => {
   const {uid} = useParams();
   const [tuits, setTuits] = useState([]);
-  const profileUser = getUserProfile(uid);
+  const profileUser = userService.getUserProfile(uid);
+
   const fetchTuits = async () => {
     if (uid) {
-      getAllTuits(uid)
+      const user = await userService.profile();
+      const reviewerId = Object.keys(user).length !== 0 ? user._id : new ObjectID();
+      findAllTuitsPostedByUser(reviewerId, uid)
         .then(data => {
           setTuits(data);
         })
     }
   }
+
   useEffect(() => {
     fetchTuits()
   }, [uid]);
+
 
   return (
     <div>
