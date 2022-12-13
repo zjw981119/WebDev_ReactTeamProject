@@ -1,8 +1,7 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
 // use this to parse URL
 import {useLocation} from "react-router";
-import {useEffect} from "@types/react";
 import * as userService from "../services/user-service";
 
 // Convert all parameters into an object deconstructor
@@ -12,20 +11,30 @@ const NavigationSidebar = () => {
     const {pathname} = useLocation();
     const paths = pathname.split('/')
     const active = paths[2];
+    const navigate = useNavigate()
+    const [loggedInUser, setLoggedInUser] = useState({});
+    let IsLoggedIn = false
     useEffect(() => {
         async function getLoggedInUser() {
             const user = await userService.profile();
-            if (Object.keys(user).length === 0) setUserStat(false);
-            else setUserStat(true);
+            setLoggedInUser(user)
+            if (Object.keys(user).length !== 0) {
+                IsLoggedIn = true;
+            }
             //console.log("user", user)
-            setLoggedInUser(user);
+
         }
 
         getLoggedInUser();
     }, []);
 
     const profileClickHandler = () => {
-
+        if (!IsLoggedIn)
+        {
+            navigate('/tuiter/login');
+        } else {
+            navigate(`/tuiter/profile/${loggedInUser._id}`);
+        }
     }
     return (
         <div className="list-group">
@@ -65,7 +74,7 @@ const NavigationSidebar = () => {
 
 
 
-            <Link to="/tuiter/profile" className={`list-group-item
+            <div className={`list-group-item
                     ${active === 'profile'?'active':''}`}
             onClick={profileClickHandler}>
                 <div className="row">
@@ -76,7 +85,8 @@ const NavigationSidebar = () => {
                         <span>Profile</span>
                     </div>
                 </div>
-            </Link>
+            </div>
+
             <Link to="/tuiter/login" className={`list-group-item
                     ${active === 'login'?'active':''}`}>
                 <div className="row">
