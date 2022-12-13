@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 
 import * as userService from "../services/user-service";
 import {message} from "antd";
-import {refreshProfile} from "../reducers/profile-reducer";
 function imgFileToSrc(imageFile) {
     return new Promise((resolve, reject) => {
         const fr = new FileReader();
@@ -16,7 +15,6 @@ function imgFileToSrc(imageFile) {
 const EditProfile = () => {
     const [profile, setProfile] = useState({});
     const [email, setEmail] = useState('');
-    const [bio, setBio] = useState('');
     const [location, setLocation] = useState('');
     const [birthday, setBirthday] = useState('');
     const [phone, setPhone] = useState('');
@@ -29,22 +27,20 @@ const EditProfile = () => {
             const user = await userService.profile();
             setProfile(user);
             // TODO set properties
+            setLocation(user.location);
+            setPhone(user.phone);
             setEmail(user.email);
-
-
+            setBirthday(user.birthday);
         }
         getProfile();
     }, []);
 
     const saveChangeHandler = () => {
         const data = {
-            biography: bio,
-            email,
-            location,
-            phone,
-            dateOfBirth: birthday,
-            avatar,
-            bannerPicture: banner
+            "location": location,
+            "phone": phone,
+            "email": email,
+            "dateOfBirth": birthday,
         }
         userService.updateProfile(profile._id, data)
             .then(message.success("Update successfully!"))
@@ -56,10 +52,10 @@ const EditProfile = () => {
                 <Link to={`/tuiter/profile/${profile._id}`} className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
                     <i className="fa-solid fa-xmark"/>
                 </Link>
-                <button  className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2"
+                <Link to={`/tuiter/profile/${profile._id}`} className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2"
                       onClick={saveChangeHandler}>
                     Save
-                </button>
+                </Link>
                 <h5 className="p-3 mb-0 fw-bolder">Edit profile</h5>
                 <div className="position-relative">
                     <img className="w-100" src="https://th.bing.com/th/id/OIP.b2-Z2RfU6u2Fghz13FPcTAHaEK?pid=ImgDet&rs=1" height='250px' style={{"filter": "brightness(50%)"}}/>
@@ -130,7 +126,7 @@ const EditProfile = () => {
                     <input id="phoneNum"
                            className="p-0 form-control border-0 p-2"
                            placeholder="Update phone"
-                           value={profile.phone}
+                           value={phone}
                            onChange={(event) => setPhone(event.target.value)}
                     />
                 </div>
@@ -140,7 +136,7 @@ const EditProfile = () => {
                     <input id="Email"
                            className="p-0 form-control border-0 p-2"
                            placeholder="Update phone"
-                           value={profile.email}
+                           value={email}
                            onChange={(event) => setEmail(event.target.value)}
                     />
                 </div>
@@ -152,12 +148,10 @@ const EditProfile = () => {
                            style={{"colorScheme": "white"}}
                            type="date"
                            placeholder="Update birthday"
-                           value={profile.birthday}
+                           value={birthday}
                            onChange={(event) => setBirthday(event.target.value)}
                     />
                 </div>
-
-
 
             </form>
         </div>
