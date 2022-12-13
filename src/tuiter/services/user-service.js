@@ -33,10 +33,6 @@ export const findAllUsersWithoutMe = (uid) =>
     api.get(`${USER_API}/${uid}/excluded`)
         .then(response => response.data);
 
-export const getAllTuits = (uid) =>
-    api.get(`${BASE_URL}/api/users/${uid}/tuits`)
-      .then(response => response.data)
-
 export const getUserProfile = (uid) =>
     api.get(`${USER_API}/${uid}`)
         .then(res => res.data)

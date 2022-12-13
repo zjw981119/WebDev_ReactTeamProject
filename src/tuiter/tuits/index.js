@@ -11,7 +11,7 @@ const Tuits = ({tuits = [], profile, refreshTuits}) => {
         likesService
             .userLikesTuit("me", tuit._id)
             .then(refreshTuits)
-            .catch((e) => alert(e));
+            .catch((e) => navigate("/tuiter/login"));
 
     const deleteTuit = (tid) =>
         tuitService
