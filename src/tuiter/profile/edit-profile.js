@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
-import {useSelector, useDispatch} from "react-redux";
-import {updateProfile, updateUserData} from "../reducers/profile-reducer";
+
+import * as userService from "../services/user-service";
+import {message} from "antd";
+import {refreshProfile} from "../reducers/profile-reducer";
 function imgFileToSrc(imageFile) {
     return new Promise((resolve, reject) => {
         const fr = new FileReader();
@@ -12,42 +14,42 @@ function imgFileToSrc(imageFile) {
     });
 }
 const EditProfile = () => {
-    const profile = useSelector(state => state.profile.profile);
-    const [userName, setUserName] = useState(profile.username);
+    const [profile, setProfile] = useState({});
+    const [email, setEmail] = useState(profile.email);
     const [bio, setBio] = useState(profile.bio);
     const [location, setLocation] = useState(profile.location);
     const [birthday, setBirthday] = useState(profile.dateOfBirth);
     const [phone, setPhone] = useState(profile.phone);
     const [banner, setBanner] = useState('');
     const [avatar, setAvatar] = useState('');
-    const dispatch = useDispatch();
+
+    // retrieve the currently logged in user
+    useEffect(() => {
+        async function getProfile() {
+            const user = await userService.profile();
+            setProfile(user);
+        }
+        getProfile();
+    }, []);
+
     const saveChangeHandler = () => {
-        // dispatch(updateProfile({
-        //     "username": userName,
-        //     "bio": bio,
-        //     "location": location,
-        //     "website": website,
-        //     "dateOfBirth": birthday
-        // }))
         const data = {
-            username: userName,
             biography: bio,
+            email,
             location,
             phone,
             dateOfBirth: birthday,
             avatar,
             bannerPicture: banner
         }
-        dispatch(updateUserData(profile._id, data))
+        userService.updateProfile(profile._id, data)
+            .then(message.success("Update successfully!"))
     }
 
-    if (!profile) {
-        return <></>
-    }
     return (
         <div className="ttr-edit-profile list-group">
             <div className="border border-secondary border-bottom-0 list-group-item" style={{"marginBottom": "60px"}}>
-                <Link to="/tuiter/profile" className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
+                <Link to={`/tuiter/profile/${profile._id}`} className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
                     <i className="fa-solid fa-xmark"/>
                 </Link>
                 <button  className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2"
@@ -114,20 +116,31 @@ const EditProfile = () => {
                     <input id="location"
                            className="p-0 form-control border-0 p-2"
                            placeholder="Update Location"
-                           value={location}
+                           value={profile.location}
                            onChange={(event) => setLocation(event.target.value)}
                     />
                 </div>
 
                 <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label htmlFor="website">Phone</label>
-                    <input id="website"
+                    <label htmlFor="phoneNum">Phone</label>
+                    <input id="phoneNum"
                            className="p-0 form-control border-0 p-2"
                            placeholder="Update phone"
-                           value={phone}
+                           value={profile.phone}
                            onChange={(event) => setPhone(event.target.value)}
                     />
                 </div>
+
+                <div className="border border-secondary rounded-3 p-2 mb-3">
+                    <label htmlFor="Email">Email</label>
+                    <input id="Email"
+                           className="p-0 form-control border-0 p-2"
+                           placeholder="Update phone"
+                           value={profile.email}
+                           onChange={(event) => setEmail(event.target.value)}
+                    />
+                </div>
+
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="date-of-birth">Date of birth</label>
                     <input id="date-of-birth"

@@ -2,6 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 // use this to parse URL
 import {useLocation} from "react-router";
+import {useEffect} from "@types/react";
+import * as userService from "../services/user-service";
 
 // Convert all parameters into an object deconstructor
 // and provide initial default values.
@@ -10,6 +12,21 @@ const NavigationSidebar = () => {
     const {pathname} = useLocation();
     const paths = pathname.split('/')
     const active = paths[2];
+    useEffect(() => {
+        async function getLoggedInUser() {
+            const user = await userService.profile();
+            if (Object.keys(user).length === 0) setUserStat(false);
+            else setUserStat(true);
+            //console.log("user", user)
+            setLoggedInUser(user);
+        }
+
+        getLoggedInUser();
+    }, []);
+
+    const profileClickHandler = () => {
+
+    }
     return (
         <div className="list-group">
             <div  className="list-group-item"><img className="w-100" src="/images/GEN.png"/></div>
@@ -49,7 +66,8 @@ const NavigationSidebar = () => {
 
 
             <Link to="/tuiter/profile" className={`list-group-item
-                    ${active === 'profile'?'active':''}`}>
+                    ${active === 'profile'?'active':''}`}
+            onClick={profileClickHandler}>
                 <div className="row">
                     <div className="col-2">
                         <i className="fa-regular fa-id-card me-2"/>

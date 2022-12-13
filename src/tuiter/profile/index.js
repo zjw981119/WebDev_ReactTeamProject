@@ -5,17 +5,15 @@ import {Avatar} from 'antd';
 
 import * as userService from "../services/user-service";
 import {useParams} from "react-router";
-import {refreshProfile} from "../reducers/profile-reducer";
-import {useDispatch} from "react-redux";
 
 const Profile = () => {
     // const location = useLocation();
     const {uid} = useParams();
-    const {profileUser, setProfileUser} = useState({});
-    const [loggedInUser, setLogggedInUser] = useState({});
+    console.log(uid);
+    const [profileUser, setProfileUser] = useState({});
+    const [loggedInUser, setLoggedInUser] = useState({});
     // check whether user logged-in
     const [isLoggedIn, setUserStat] = useState(false);
-    const dispatch = useDispatch();
 
     // const profile = useSelector(state => state.profile.profile);
     // const dispatch = useDispatch();
@@ -27,11 +25,10 @@ const Profile = () => {
     useEffect(() => {
         async function getLoggedInUser() {
             const user = await userService.profile();
-            console.log(user)
             if (Object.keys(user).length === 0) setUserStat(false);
             else setUserStat(true);
             //console.log("user", user)
-            setLogggedInUser(user);
+            setLoggedInUser(user);
         }
 
         getLoggedInUser();
@@ -65,8 +62,8 @@ const Profile = () => {
                         {/*<img className="rounded-circle"*/}
                         {/*     style={{'width' : '100px'}}*/}
                         {/*     src={"/images/" + profile.avatar}/>*/}
-                        {/*<Avatar style={{width: '100px', height: '100px'}}*/}
-                        {/*        src={`/images/${profileUser.username}.png`}/>*/}
+                        <Avatar style={{width: '100px', height: '100px'}}
+                                src={`/images/${profileUser.username}.png`}/>
                     </div>
                     {
                         shouldDisplay &&
@@ -122,7 +119,7 @@ const Profile = () => {
                 </div>
                 <Tabbar/>
             </div>
-            <div className={'mt-2'}>
+            <div className='mt-2'>
                 <Outlet/>
             </div>
         </div>
