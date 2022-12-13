@@ -12,7 +12,6 @@ function App() {
             <div className="container">
                 {/*declare paths and map them to corresponding component */}
                 <Routes>
-
                     <Route path="/tuiter/*" element={<Tuiter/>}/>
                     <Route path="/" element={<Navigate to="/tuiter" replace/>} />
                 </Routes>

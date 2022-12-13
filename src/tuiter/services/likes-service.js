@@ -21,10 +21,11 @@ export const userLikesTuit = (uid, tid) =>
 
 /**
  * Retrieve all tuits liked by user.
- * @param {string} uid Represents the login user
+ * @param reviewerId userId who reviewed the results
+ * @param ownerId userId who liked the tuits
  */
-export const findAllTuitsLikedByUser = (uid) =>
-    api.get(`${USERS_API}/${uid}/likes`)
+export const findAllTuitsLikedByUser = (reviewerId, ownerId) =>
+    api.get(`${USERS_API}/reviewer/${reviewerId}/owner/${ownerId}/likes`)
         .then(response => response.data);
 
 /**

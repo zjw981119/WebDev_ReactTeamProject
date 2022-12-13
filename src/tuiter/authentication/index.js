@@ -1,6 +1,6 @@
 import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
-import * as service from "../services/security-service";
+import * as service from "../services/user-service";
 
 
 export const Login = () => {

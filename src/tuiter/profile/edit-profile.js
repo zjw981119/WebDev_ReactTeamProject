@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
-import {useSelector, useDispatch} from "react-redux";
-import {updateProfile, updateUserData} from "../reducers/profile-reducer";
+
+import * as userService from "../services/user-service";
+import {message} from "antd";
 function imgFileToSrc(imageFile) {
     return new Promise((resolve, reject) => {
         const fr = new FileReader();
@@ -12,48 +13,48 @@ function imgFileToSrc(imageFile) {
     });
 }
 const EditProfile = () => {
-    const profile = useSelector(state => state.profile.profile);
-    const [userName, setUserName] = useState(profile.username);
-    const [bio, setBio] = useState(profile.bio);
-    const [location, setLocation] = useState(profile.location);
-    const [birthday, setBirthday] = useState(profile.dateOfBirth);
-    const [phone, setPhone] = useState(profile.phone);
+    const [profile, setProfile] = useState({});
+    const [email, setEmail] = useState('');
+    const [location, setLocation] = useState('');
+    const [birthday, setBirthday] = useState('');
+    const [phone, setPhone] = useState('');
     const [banner, setBanner] = useState('');
     const [avatar, setAvatar] = useState('');
-    const dispatch = useDispatch();
-    const saveChangeHandler = () => {
-        // dispatch(updateProfile({
-        //     "username": userName,
-        //     "bio": bio,
-        //     "location": location,
-        //     "website": website,
-        //     "dateOfBirth": birthday
-        // }))
-        const data = {
-            username: userName,
-            biography: bio,
-            location,
-            phone,
-            dateOfBirth: birthday,
-            avatar,
-            bannerPicture: banner
+
+    // retrieve the currently logged in user
+    useEffect(() => {
+        async function getProfile() {
+            const user = await userService.profile();
+            setProfile(user);
+            setLocation(user.location);
+            setPhone(user.phone);
+            setEmail(user.email);
+            setBirthday(user.birthday);
         }
-        dispatch(updateUserData(profile._id, data))
+        getProfile();
+    }, []);
+
+    const saveChangeHandler = () => {
+        const data = {
+            "location": location,
+            "phone": phone,
+            "email": email,
+            "dateOfBirth": birthday,
+        }
+        userService.updateProfile(profile._id, data)
+            .then(message.success("Update successfully!"))
     }
 
-    if (!profile) {
-        return <></>
-    }
     return (
         <div className="ttr-edit-profile list-group">
             <div className="border border-secondary border-bottom-0 list-group-item" style={{"marginBottom": "60px"}}>
-                <Link to="/tuiter/profile" className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
+                <Link to={`/tuiter/profile/${profile._id}`} className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
                     <i className="fa-solid fa-xmark"/>
                 </Link>
-                <button  className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2"
+                <Link to={`/tuiter/profile/${profile._id}`} className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2"
                       onClick={saveChangeHandler}>
                     Save
-                </button>
+                </Link>
                 <h5 className="p-3 mb-0 fw-bolder">Edit profile</h5>
                 <div className="position-relative">
                     <img className="w-100" src="https://th.bing.com/th/id/OIP.b2-Z2RfU6u2Fghz13FPcTAHaEK?pid=ImgDet&rs=1" height='250px' style={{"filter": "brightness(50%)"}}/>
@@ -120,14 +121,25 @@ const EditProfile = () => {
                 </div>
 
                 <div className="border border-secondary rounded-3 p-2 mb-3">
-                    <label htmlFor="website">Phone</label>
-                    <input id="website"
+                    <label htmlFor="phoneNum">Phone</label>
+                    <input id="phoneNum"
                            className="p-0 form-control border-0 p-2"
                            placeholder="Update phone"
                            value={phone}
                            onChange={(event) => setPhone(event.target.value)}
                     />
                 </div>
+
+                <div className="border border-secondary rounded-3 p-2 mb-3">
+                    <label htmlFor="Email">Email</label>
+                    <input id="Email"
+                           className="p-0 form-control border-0 p-2"
+                           placeholder="Update phone"
+                           value={email}
+                           onChange={(event) => setEmail(event.target.value)}
+                    />
+                </div>
+
                 <div className="border border-secondary rounded-3 p-2 mb-3">
                     <label htmlFor="date-of-birth">Date of birth</label>
                     <input id="date-of-birth"
@@ -139,60 +151,7 @@ const EditProfile = () => {
                            onChange={(event) => setBirthday(event.target.value)}
                     />
                 </div>
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    <label htmlFor="email">Email</label>*/}
-                {/*    <input id="email" placeholder="alan@cam.ac.uk"*/}
-                {/*           className="p-0 form-control border-0"*/}
-                {/*           type="email"/>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    <label htmlFor="password">Reset password</label>*/}
-                {/*    <input id="password"*/}
-                {/*           className="p-0 form-control border-0"*/}
-                {/*           type="password"/>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    <label for="photo">Profile photo</label>*/}
-                {/*    <input id="photo"*/}
-                {/*           className="p-0 form-control border-0"*/}
-                {/*           type="file"/>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    <label for="header">Header image</label>*/}
-                {/*    <input id="header"*/}
-                {/*           className="p-0 form-control border-0"*/}
-                {/*           type="file"/>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    <label for="account">Select account</label>*/}
-                {/*    <select*/}
-                {/*        className="p-0 form-control border-0"*/}
-                {/*        id="account">*/}
-                {/*        <option>Personal account</option>*/}
-                {/*        <option selected>Academic account</option>*/}
-                {/*    </select>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    Marital status*/}
-                {/*    <input id="married"*/}
-                {/*           type="radio" name="marital"/>*/}
-                {/*    <label for="married">Married</label>*/}
-                {/*    <input id="single" type="radio"*/}
-                {/*           checked name="marital"/>*/}
-                {/*    <label for="single">Single</label>*/}
-                {/*</div>*/}
-                {/*<div className="border border-secondary rounded-3 p-2 mb-3">*/}
-                {/*    Topics of interest*/}
-                {/*    <input id="space" type="checkbox"*/}
-                {/*           checked name="topics"/>*/}
-                {/*    <label for="space">Space</label>*/}
-                {/*    <input id="energy" type="checkbox" checked*/}
-                {/*           name="topics"/>*/}
-                {/*    <label for="energy">Energy</label>*/}
-                {/*    <input id="politics" type="checkbox"*/}
-                {/*           name="topics"/>*/}
-                {/*    <label for="politics">Politics</label>*/}
-                {/*</div>*/}
+
             </form>
         </div>
     );
