@@ -80,7 +80,7 @@ const Profile = () => {
                     </h5>
                     {
                         shouldDisplay &&
-                        <h6 className="pt-0 text-light">
+                        <h6 className="pt-0 text-secondary">
                             {profileUser.email}
                         </h6>
                     }
