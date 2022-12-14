@@ -70,7 +70,7 @@ const GameComponent = () => {
         }
         catch{
             console.log("Fail to Init")
-        }
+        }``
     }
 
     const refreshReview  = () => {
@@ -134,21 +134,21 @@ const GameComponent = () => {
                         {/*    <p>Share to social media:</p>*/}
                         {/*</div>*/}
 
-                        <div className="col-2">
-                            <a href={linkedinShareUrl}
-                               target="_blank" rel="noopener"><img
-                                src="https://th.bing.com/th/id/R.974d87a2520493d5c4a249d7fe169b5c?rik=Q%2bU8dRSd9bc9mg&riu=http%3a%2f%2fclients.sosimplecms.com%2fimages%2fshared%2flinkedin.png&ehk=9MDD6yV6bPdOu2xhFjxktAqLM7h2BX5ljRPHwJymi54%3d&risl=&pid=ImgRaw&r=0"
-                                alt="" width="50" height="20" className="share-btn twitter-btn-padding"/>
-                            </a>
-                        </div>
+                        {/*<div className="col-2">*/}
+                        {/*    <a href={linkedinShareUrl}*/}
+                        {/*       target="_blank" rel="noopener"><img*/}
+                        {/*        src="https://th.bing.com/th/id/R.974d87a2520493d5c4a249d7fe169b5c?rik=Q%2bU8dRSd9bc9mg&riu=http%3a%2f%2fclients.sosimplecms.com%2fimages%2fshared%2flinkedin.png&ehk=9MDD6yV6bPdOu2xhFjxktAqLM7h2BX5ljRPHwJymi54%3d&risl=&pid=ImgRaw&r=0"*/}
+                        {/*        alt="" width="50" height="20" className="share-btn twitter-btn-padding"/>*/}
+                        {/*    </a>*/}
+                        {/*</div>*/}
 
-                        <div className="col-2">
-                            <a href={twitterShareUrl}
-                               target="_blank" rel="noopener"><img
-                                src="https://www.thehouseshop.com/property-blog/images/twitter-share-btn.png"
-                                alt="" width="70" height="22" className="share-btn twitter-btn-padding"/>
-                            </a>
-                        </div>
+                        {/*<div className="col-2">*/}
+                        {/*    <a href={twitterShareUrl}*/}
+                        {/*       target="_blank" rel="noopener"><img*/}
+                        {/*        src="https://www.thehouseshop.com/property-blog/images/twitter-share-btn.png"*/}
+                        {/*        alt="" width="70" height="22" className="share-btn twitter-btn-padding"/>*/}
+                        {/*    </a>*/}
+                        {/*</div>*/}
 
 
 
