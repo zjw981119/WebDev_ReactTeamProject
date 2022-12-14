@@ -11,6 +11,7 @@ const NavigationSidebar = () => {
     const {pathname} = useLocation();
     const paths = pathname.split('/')
     const active = paths[2];
+    console.log(active)
     const [loggedInUser, setLoggedInUser] = useState({});
     const [isLoggedIn, setLoginStatus] = useState({});
     useEffect(() => {
@@ -31,7 +32,7 @@ const NavigationSidebar = () => {
     return (
         <div className="list-group">
             <div  className="list-group-item"><img className="w-100" src="/images/GEN.png"/></div>
-            <Link to="/tuiter/home" className={`list-group-item ${active === 'home'?'active':''}`}>
+            <Link to="/tuiter/home" className={`list-group-item ${active === 'home' || !active ?'active':''}`}>
                 <div className="row">
                     <div className="col-2">
                         <i className="fa-solid fa-house me-2"/>

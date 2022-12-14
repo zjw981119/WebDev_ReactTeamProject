@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 import * as userService from "../services/user-service";
 import {message} from "antd";
@@ -20,7 +20,7 @@ const EditProfile = () => {
     const [phone, setPhone] = useState('');
     const [banner, setBanner] = useState('');
     const [avatar, setAvatar] = useState('');
-
+    const navigate = useNavigate();
     // retrieve the currently logged in user
     useEffect(() => {
         async function getProfile() {
@@ -43,6 +43,7 @@ const EditProfile = () => {
         }
         userService.updateProfile(profile._id, data)
             .then(message.success("Update successfully!"))
+            .then(() => navigate(`/tuiter/profile/${profile._id}`))
     }
 
     return (
@@ -51,10 +52,10 @@ const EditProfile = () => {
                 <Link to={`/tuiter/profile/${profile._id}`} className="btn btn-light rounded-pill fa-pull-left fw-bolder mt-2 mb-2 ms-2">
                     <i className="fa-solid fa-xmark"/>
                 </Link>
-                <Link to={`/tuiter/profile/${profile._id}`} className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2"
+                <div className="btn btn-dark rounded-pill fa-pull-right fw-bolder mt-2 mb-2 me-2"
                       onClick={saveChangeHandler}>
                     Save
-                </Link>
+                </div>
                 <h5 className="p-3 mb-0 fw-bolder">Edit profile</h5>
                 <div className="position-relative">
                     <img className="w-100" src="https://th.bing.com/th/id/OIP.b2-Z2RfU6u2Fghz13FPcTAHaEK?pid=ImgDet&rs=1" height='250px' style={{"filter": "brightness(50%)"}}/>

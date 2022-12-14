@@ -70,7 +70,7 @@ const GameComponent = () => {
         }
         catch{
             console.log("Fail to Init")
-        }``
+        }
     }
 
     const refreshReview  = () => {
