@@ -64,8 +64,8 @@ const GameComponent = () => {
 
             setreviews(await service.findReviewByRawgId(RawgId));
 
-            setlinkedinShareUrl("https://www.linkedin.com/shareArticle?mini=true&url=" + gameLocation.pathname)
-            settwitterShareUrl("http://www.twitter.com/intent/tweet?url=" + gameLocation.pathname)
+            setlinkedinShareUrl("https://www.linkedin.com/shareArticle?mini=true&url=https://dashing-narwhal-6c67c2.netlify.app/" +  gameLocation.pathname)
+            settwitterShareUrl("http://www.twitter.com/intent/tweet?url=https://dashing-narwhal-6c67c2.netlify.app/" + gameLocation.pathname)
 
         }
         catch{
