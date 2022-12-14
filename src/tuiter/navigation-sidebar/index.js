@@ -11,7 +11,6 @@ const NavigationSidebar = () => {
     const {pathname} = useLocation();
     const paths = pathname.split('/')
     const active = paths[2];
-    console.log(active)
     const [loggedInUser, setLoggedInUser] = useState({});
     const [isLoggedIn, setLoginStatus] = useState({});
     useEffect(() => {
