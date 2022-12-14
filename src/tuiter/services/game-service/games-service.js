@@ -1,5 +1,7 @@
 import axios from 'axios';
-const Games_API = 'http://localhost:4000/api/games';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+// const Games_API = 'http://localhost:4000/api/games';
+const Games_API = BASE_URL + '/api/games';
 const RapidAPI_Key = '6b661fe439msh3a879a9b179992bp107604jsn3cc592bd533e'
 
 // const TUITS_API = 'https://webdev-tuiter-server.herokuapp.com/api/tuits';
