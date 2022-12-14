@@ -1,6 +1,7 @@
 import axios from 'axios';
-const Reviews_API = 'http://localhost:4000/api/reviews';
-const Base_API = 'http://localhost:4000/api';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+const Reviews_API = BASE_URL + '/api/reviews';
+const Base_API = BASE_URL + '/api';
 
 // const TUITS_API = 'https://webdev-tuiter-server.herokuapp.com/api/tuits';
 
