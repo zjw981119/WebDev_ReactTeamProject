@@ -2,12 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {AddGame} from "../services/rawg-game-service/rawg-games-service";
 
-const Recommended_game_list_item = (
-    {
-        gameSummary = { name: 'GTA', id: 3489 ,released: '2022-11-01', background_image: '' }
-    }
-
-) => {
+const Recommended_game_list_item = ({gameSummary}) => {
 
     return(
         <li className="list-group-item">

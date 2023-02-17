@@ -1,90 +1,76 @@
 import axios from 'axios';
 import {createGame} from "../game-service/games-service";
-const rawg_search_API = 'https://api.rawg.io/api/games?key=7292389b6f3b4ef5a8dbfac340a07684&search=';
-const key = "b640803dd45b4af69427cc78f96539a0";
-const rawg_detail_API = 'https://api.rawg.io/api/games/';
-const rawg_recommended_API = 'https://api.rawg.io/api/games?key=';
+const BASE_URL = process.env.REACT_APP_RAWG_URL;
+const KEY = process.env.REACT_APP_RAWG_API_KEY;
+const rawg_search_API = `${BASE_URL}?key=${KEY}&search=`;
+const rawg_detail_API = `${BASE_URL}/`;
+const rawg_recommended_API = `${BASE_URL}?key=${KEY}`;
 
-
-const api = axios.create({
-    withCredentials: true
-});
-
-// find all games based on input
+// find all games based on query
 export const searchRAWGGames  = async (searchInput) => {
-    const searchRequest = rawg_search_API + searchInput;
+    const searchRequest = rawg_search_API + searchInput + "&ordering=-added";
     const response = await axios.get(searchRequest);
     return response.data;
 }
 
 // get game detail information
 export const findRAWGGameDetail  = async (gameId) => {
-    const request = rawg_detail_API + gameId + '?key=' + key;
+    const request = rawg_detail_API + gameId + '?key=' + KEY;
     const response = await axios.get(request);
     return response.data;
 }
 
+// get recent two years games, sort by rating in descending order
+// this api is for new games sidebar
 export const findRAWGRecommendedGame  = async () => {
     const date = new Date();
-    let Startmonth = date.getMonth() - 2;
-    let Startyear = date.getFullYear();
-    let Endmonth = date.getMonth();
-    if(date.getMonth() - 2 <= 0)
-    {
-        Startmonth = 12 - date.getMonth() + 2;
-    }
-
-    if(date.getMonth() - 2 < 10)
-    {
-        Startmonth = "0" + Startmonth;
-    }
-
-    if(Endmonth < 10)
-    {
-        Endmonth = "0" + Endmonth;
-    }
-
-    const startDate = Startyear + "-" + Startmonth  + "-01"
-    const endDate = (Startyear + 1) + "-" + Endmonth  + "-30"
-    const request = rawg_recommended_API + key + "&dates="+startDate + "," + endDate + "&ordering=-rating";
+    const curYear = date.getFullYear();
+    // start from last year's first day
+    const startDate = (curYear - 1) + "-01-01";
+    // current year's last day
+    const endDate = curYear + "-12-31";
+    const request = rawg_recommended_API + "&dates=" + startDate + "," + endDate + "&ordering=-rating";
     const response = await axios.get(request);
     return response.data;
 }
 
-
+// get games with top ratings(40 records) since 2001-01-01, sort by metacritic score in descending order
 export const findTopRatingRAWGGame  = async () => {
     const date = new Date();
-
-    const endDate = date.getFullYear() + "-12" + "-30"
-    const request = rawg_recommended_API + key + "&dates=2001-01-01" +  "," + endDate + "&page_size=100&ordering=-added";
+    const endDate = date.getFullYear() + "-12-31";
+    const request = rawg_recommended_API + "&dates=2001-01-01" +  "," + endDate + "&page_size=40&ordering=-metacritic";
     const response = await axios.get(request);
     return response.data;
 }
 
+// get recent 1 year games(40 records), sort by metacritic score in descending order
 export const findTrendingRAWGGame  = async () => {
     const date = new Date();
-    let StartMonth = date.getMonth()
-    if(StartMonth < 10)
-    {
-        StartMonth = "0" + StartMonth;
-    }
-
-    const endDate = date.getFullYear() + "-" + StartMonth + "-30"
-    const request = rawg_recommended_API + key + "&dates=" + (date.getFullYear() - 1) + "-" + StartMonth +  "-01" +  "," + endDate + "&page_size=60&ordering=-added";
+    // getMonth() -> value[0,11]
+    let startMonth = date.getMonth() + 1;
+    // getDate() -> [1,31]
+    let curDay = date.getDate();
+    if(startMonth < 10) startMonth = "0" + startMonth;
+    if(curDay < 10) curDay = "0" + curDay;
+    const startDate = (date.getFullYear() - 1) + "-" + startMonth + "-01";
+    const endDate = date.getFullYear() + "-" + startMonth + "-" + curDay;
+    const request = rawg_recommended_API + "&dates=" + startDate +  "," + endDate + "&page_size=40&ordering=-metacritic";
     const response = await axios.get(request);
     return response.data;
 }
 
+// get recent 1 year games(40 records) based on different platform, sort by metacritic score in descending order
 export const findPCRAWGGamebyPlatformId  = async (platformId) => {
     const date = new Date();
-    let StartMonth = date.getMonth()
-    if(StartMonth < 10)
-    {
-        StartMonth = "0" + StartMonth;
-    }
-
-    const endDate = date.getFullYear() + "-" + StartMonth + "-30"
-    const request = rawg_recommended_API + key + "&dates=" + (date.getFullYear() - 1) + "-" + StartMonth +  "-01" +  "," + endDate + "&page_size=60&ordering=-added&platforms=" + platformId;
+    // getMonth() -> value[0,11]
+    let startMonth = date.getMonth() + 1;
+    // getDate() -> [1,31]
+    let curDay = date.getDate();
+    if(startMonth < 10) startMonth = "0" + startMonth;
+    if(curDay < 10) curDay = "0" + curDay;
+    const startDate = (date.getFullYear() - 1) + "-" + startMonth + "-01";
+    const endDate = date.getFullYear() + "-" + startMonth + "-" + curDay;
+    const request = rawg_recommended_API + "&dates=" + startDate + "," +  endDate + "&page_size=40&ordering=-metacritic&platforms=" + platformId;
     const response = await axios.get(request);
     return response.data;
 }
@@ -92,7 +78,7 @@ export const findPCRAWGGamebyPlatformId  = async (platformId) => {
 
 
 
-
+// add game info to database
 export const AddGame  = async (SelectedId) =>
 {
     const res = await findRAWGGameDetail(Number(SelectedId));
