@@ -80,41 +80,18 @@ const SearchComponent = () => {
     }
 
 
-    //Pageination
-
+    //Pagination
     const [postsPerPage] = useState(6);
     const [totalPosts, setTotalPosts] = useState()
     const [curPageNum, setCurPageNum] = useState(1)
     const [lastPost, setLastPost] = useState(postsPerPage - 1)
     const [firstPost, setFirstPost] = useState(0)
 
-    const [pageAtServerCall, setPageAtServerCall] = useState([])
 
-    // useEffect(() => {
-    //     const serverCallPage = []
-    //
-    //     serverCallPage.push((20 / postsPerPage) + 1)
-    //     for (var i = 0; i < (totalPosts / postsPerPage) - 1; i++) {
-    //         if (serverCallPage.indexOf(serverCallPage[0] + i * (20 / postsPerPage)) === -1) {
-    //             serverCallPage.push(serverCallPage[0] + i * (20 / postsPerPage))
-    //         }
-    //     }
-    //
-    //     setPageAtServerCall(serverCallPage)
-    //
-    // }, [totalPosts, postsPerPage])
-
-
+    // update when page number changes
     const pageChangeHandler = (pageNumber) => {
         const indexOfLastPost = (pageNumber * postsPerPage) - 1
         const indexOfFirstPost = indexOfLastPost - postsPerPage + 1
-        // const index = pageAtServerCall.indexOf(pageNumber)
-        //
-        //
-        // if (index !== -1) {
-        //     pageAtServerCall.splice(index, 1)
-        // }
-        // update page number and item index
         setCurPageNum(pageNumber)
         setFirstPost(indexOfFirstPost)
         setLastPost(indexOfLastPost)
@@ -203,21 +180,14 @@ const SearchComponent = () => {
                 }
             </ul>
 
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}
-            >
+            <div className='d-flex justify-content-center'>
                 {/*Called when the page number or pageSize is changed,
                 and it takes the resulting page number and pageSize as its arguments*/}
                 <Pagination className="pagination-color"
                             current={curPageNum}
                             total={totalPosts}
                             pageSize={postsPerPage}
-                            onChange={pageChangeHandler}
-                />
+                            onChange={pageChangeHandler}/>
             </div>
 
         </>

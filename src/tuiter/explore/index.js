@@ -21,20 +21,20 @@ const ExploreComponent = () => {
 
     async function TrendingNewsHandler() {
         const response = await findGameTrendingNews();
-        await setnewsArray(response.data);
-        await setTabIndex(1);
+        setnewsArray(response.data);
+        setTabIndex(1);
     }
 
     async function ForYouGameDealHandler() {
         const response = await findGameDeals();
-        await setnewsArray(response.data);
-        await setTabIndex(0);
+        setnewsArray(response.data);
+        setTabIndex(0);
     }
 
     async function GameNewsHandler() {
         const response = await findGameNews();
-        await setnewsArray(response.data);
-        await setTabIndex(2);
+        setnewsArray(response.data);
+        setTabIndex(2);
     }
 
     useEffect(() => {
@@ -42,9 +42,11 @@ const ExploreComponent = () => {
     }, []);
 
 
-
+    //For pagination, when gamesArray changes, update total, pageNum and index
     useEffect(() => {
         setTotalPosts(newsArray.length)
+        setCurPageNum(1);
+        pageChangeHandler(1);
     }, [newsArray]);
 
     async function TagSearchInputHandler() {
@@ -59,39 +61,18 @@ const ExploreComponent = () => {
     }
 
 
-    //Pageination
+    //Pagination
     const [postsPerPage] = useState(10);
     const [totalPosts, setTotalPosts] = useState()
+    const [curPageNum, setCurPageNum] = useState(1)
     const [lastPost, setLastPost] = useState(postsPerPage - 1)
     const [firstPost, setFirstPost] = useState(0)
 
-    const [pageAtServerCall, setPageAtServerCall] = useState([])
-
-    useEffect(() => {
-        const serverCallPage = []
-
-        serverCallPage.push((20 / postsPerPage) + 1)
-        for (var i = 0; i < (totalPosts / postsPerPage) - 1; i++) {
-            if (serverCallPage.indexOf(serverCallPage[0] + i * (20 / postsPerPage)) === -1) {
-                serverCallPage.push(serverCallPage[0] + i * (20 / postsPerPage))
-            }
-        }
-
-        setPageAtServerCall(serverCallPage)
-
-    }, [totalPosts, postsPerPage])
-
-
+    // update when page number changes
     const pageChangeHandler = (pageNumber) => {
         const indexOfLastPost = (pageNumber * postsPerPage) - 1
         const indexOfFirstPost = indexOfLastPost - postsPerPage + 1
-        const index = pageAtServerCall.indexOf(pageNumber)
-
-
-        if (index !== -1) {
-            pageAtServerCall.splice(index, 1)
-        }
-
+        setCurPageNum(pageNumber)
         setFirstPost(indexOfFirstPost)
         setLastPost(indexOfLastPost)
     }
@@ -104,17 +85,13 @@ const ExploreComponent = () => {
                 <div className="col-11">
                     <div className="position-relative">
                         <Link>
-                            <i className="fa-solid fa-magnifying-glass ps-3 pt-2 position-absolute" style={{"color": "gray"}} onClick={TagSearchInputHandler}></i>
+                            <i className="fa-solid fa-magnifying-glass ps-3 pt-2 position-absolute" style={{"color": "gray"}} onClick={TagSearchInputHandler}/>
                         </Link>
                         <input className="form-control rounded-pill ps-5 border border-secondary"
                                placeholder="Search News"  value = {Input}
                                onChange={(event) => setInput(event.target.value)} onKeyDown={handleKeyPress}/>
                     </div>
                 </div>
-
-                {/*<div className="col-1 d-flex align-items-center">*/}
-                {/*    <i className="fa fa-cog me-1" style={{"color": "deepskyblue"}}></i>*/}
-                {/*</div>*/}
 
             </div>
 
@@ -125,20 +102,21 @@ const ExploreComponent = () => {
                     <button className={` nav-link ${TabIndex === 0 ?'active':''}`} onClick={ForYouGameDealHandler}>Deals For You</button>
                 </li>
                 <li className="nav-item">
-                    <button className={`nav-link ${TabIndex === 1 ?'active':''}`} onClick={TrendingNewsHandler}>Trending Now</button>
+                    <button className={`nav-link ${TabIndex === 1 ?'active':''}`} onClick={TrendingNewsHandler}>Release Trending</button>
                 </li>
                 <li className="nav-item">
-                    <button className={` nav-link ${TabIndex === 2 ?'active':''}`} onClick={GameNewsHandler}>News</button>
+                    <button className={` nav-link ${TabIndex === 2 ?'active':''}`} onClick={GameNewsHandler}>Game News</button>
                 </li>
 
             </ul>
 
 
+            {/* image display */}
             <div className="position-relative mb-2">
                 {
                     newsArray ?
-                    <img src={newsArray[Math.floor(Math.random() * (newsArray.length > 10 ? 10 : newsArray.length - 1)) + 1].photo_url} height={360} className="w-100"/> :
-                    <img src="https://www.spieltimes.com/wp-content/uploads/2021/08/Unreal-Engine-5.png" height={360} className="w-100"/>
+                    <img src={newsArray[Math.floor(Math.random() * (newsArray.length > 10 ? 10 : newsArray.length - 1)) + 1].photo_url} height={360} className="w-100" alt=''/> :
+                    <img src="https://www.spieltimes.com/wp-content/uploads/2021/08/Unreal-Engine-5.png" height={360} className="w-100" alt=''/>
                 }
             </div>
 
@@ -152,19 +130,15 @@ const ExploreComponent = () => {
             </ul>: <h5>Loading</h5>
             }
 
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}
-            >
+            <div className='d-flex justify-content-center'>
+                {/* onChange called when the page number or pageSize is changed,
+                and it takes the resulting page number and pageSize as its arguments*/}
                 <Pagination className="pagination-color"
-                            defaultCurrent={1}
+                            current={curPageNum}
                             total={totalPosts}
                             pageSize={postsPerPage}
-                            onChange={pageChangeHandler}
-                />
+                            showSizeChanger={false}
+                            onChange={pageChangeHandler}/>
             </div>
 
 
