@@ -1,15 +1,10 @@
 import axios from 'axios';
+
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-// const Games_API = 'http://localhost:4000/api/games';
 const Games_API = BASE_URL + '/api/games';
-const RapidAPI_Key = '6b661fe439msh3a879a9b179992bp107604jsn3cc592bd533e'
-
-// const TUITS_API = 'https://webdev-tuiter-server.herokuapp.com/api/tuits';
-
-// use different path according to different machine
-// REACT_APP_API_BASE is saved in .bash_profile in the local computer
-//const API_BASE = process.env.REACT_APP_API_BASE2;
-//const TUITS_API = `${API_BASE}/tuits`;
+const YOUTUBE_URL = process.env.REACT_APP_YOUTUBE_URL;
+const SPOTIFT_URL = process.env.REACT_APP_SPOTIFY_URL;
+const RapidAPI_Key = process.env.REACT_APP_RAPID_API_KEY;
 
 const api = axios.create({
     withCredentials: true
@@ -20,58 +15,60 @@ export const createGame = async (game) => {
     return response.data;
 }
 
-export const findGameByRawgId  = async (RawgId) => {
+// retrieve game detail info from own database instead of external api
+export const findGameByRawgId = async (RawgId) => {
     const req_API = Games_API + "/" + RawgId
     const response = await api.get(req_API);
     return response.data;
 }
 
-export const getGameTrailerUrl  = async (GameName) => {
+// get the game trailer video url
+export const getGameTrailerUrl = async (GameName) => {
     const keyword = GameName + " Trailer";
+    // configure request
+    const options = {
+        method: 'GET',
+        url: YOUTUBE_URL,
+        params: {query: keyword, lang: 'en', order_by: 'this_month', country: 'us'},
+        headers: {
+            'X-RapidAPI-Key': RapidAPI_Key,
+            'X-RapidAPI-Host': 'youtube-v2.p.rapidapi.com'
+        }
+    };
 
-    try {
-        const req_fast_API = "https://youtube-v2.p.rapidapi.com/search/?query=" + keyword+"&lang=en&order_by=this_month&country=us";
-        const response = await axios.get(req_fast_API, {
-            headers: {
-                'X-RapidAPI-Host': 'youtube-v2.p.rapidapi.com',
-                'X-RapidAPI-Key': RapidAPI_Key
-            }
-        });
-        const videoId = response.data.videos[0].video_id;
-        const trailer_url = "https://www.youtube.com/embed/" + videoId
-        return trailer_url;
-
-    }
-    catch (e) {
-        console.log("trailer video is loading or cannot be found");
-    }
+    // return the game trailer video url
+    const response = await axios.request(options);
+    const videoId = response.data.videos[0].video_id;
+    return "https://www.youtube.com/embed/" + videoId;
 }
 
-
-export const getGameMusicUrl  = async (GameName) => {
+// get the game playlist uri
+export const getGameMusicUrl = async (GameName) => {
     let keyword = GameName;
-    if(keyword.includes(':') && keyword.indexOf(':') > keyword.length/2)
-    {
+    if (keyword.includes(':') && keyword.indexOf(':') > keyword.length / 2) {
         keyword = keyword.substring(0, keyword.indexOf(':'))
-    }
-    else if(keyword.includes('-'))
-    {
+    } else if (keyword.includes('-')) {
         keyword = keyword.substring(0, keyword.indexOf('-'))
     }
-
-    const req_fast_API = "https://spotify23.p.rapidapi.com/search/?q=" + keyword+"&type=multi&offset=0&limit=10&numberOfTopResults=5";
-
-    const res = await axios.get(req_fast_API, {
+    // configure request
+    const options = {
+        method: 'GET',
+        url: SPOTIFT_URL,
+        params: {
+            q: keyword,
+            type: 'multi',
+            offset: '0',
+            limit: '10',
+            numberOfTopResults: '5'
+        },
         headers: {
-            'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
-            'X-RapidAPI-Key': RapidAPI_Key
+            'X-RapidAPI-Key': RapidAPI_Key,
+            'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
         }
-    });
-
-    const SpotifyMusicId = res.data.playlists.items[0].data.uri.split(':')[2];
-
-    return SpotifyMusicId
-
+    };
+    // return the bg playlists uri
+    const response = await axios.request(options);
+    return response.data.playlists.items[0].data.uri.split(':')[2];
 }
 
 

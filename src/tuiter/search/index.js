@@ -181,6 +181,7 @@ const SearchComponent = () => {
                 {
                     gamesArray.slice(firstPost, lastPost + 1).map(game =>
                         <li className="list-group-item border-secondary" key={game.id}>
+                            {/*Before navigating to game detail page, adding game info into database*/}
                             <Link className="text-decoration-none" to={{pathname: "/tuiter/game/:" + game.id}}
                                   state={{"GameName": game.name}} onClick={() => AddGame(game.id)}>
                                 <div className="row">
