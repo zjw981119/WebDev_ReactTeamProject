@@ -53,8 +53,10 @@ const Home = () => {
 
     // retrieve the currently logged in user
     useEffect(() => {
+        // logged in user profile
         async function getProfile() {
             const user = await userService.profile();
+            // is not logged in
             if (Object.keys(user).length === 0) setUserStat(false);
             else setUserStat(true);
             //console.log("user", user)

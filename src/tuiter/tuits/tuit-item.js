@@ -6,9 +6,9 @@ import {useNavigate} from "react-router-dom";
 const TuitItem = ({tuit, profile, deleteTuit, likeTuit}) => {
     // TUITER-ADMIN can delete anything
     // other users can only delete the tuits of their own
-    const navigate = useNavigate();
     const canDeleteTuit = Object.keys(profile).length !== 0 &&
         (profile.accountType === 'TUITER-ADMIN' || tuit.postedBy.username === profile.username);
+    // console.log('loggedIn user = ' + profile.username + ", postedBy = " + tuit.postedBy.username )
     // convert ISO date string into local time string
     const formattedDate = new Date(tuit.postedOn).toLocaleString();
     return (

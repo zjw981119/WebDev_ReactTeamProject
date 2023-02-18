@@ -112,8 +112,6 @@ const Profile = () => {
                             </span>
                         </div>
                     </div>
-                    {/*<b>{profile.followingCount}</b> Following*/}
-                    {/*<b className="ms-4">{profile.followersCount}</b> Followers*/}
 
                 </div>
                 <Tabbar/>

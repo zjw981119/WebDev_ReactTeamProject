@@ -155,7 +155,7 @@ const SearchComponent = () => {
                     </button>
                 </li>
                 <li className="nav-item">
-                    <button className={` nav-link ${TabIndex === 2 ? 'active' : ''}`} onClick={TopGameHandler}>Top 100
+                    <button className={` nav-link ${TabIndex === 2 ? 'active' : ''}`} onClick={TopGameHandler}>Top 40
                     </button>
                 </li>
                 <li className="nav-item">

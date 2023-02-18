@@ -6,6 +6,7 @@ import {message} from "antd";
 import {useNavigate} from "react-router-dom";
 
 const Tuits = ({tuits = [], profile, refreshTuits}) => {
+    // console.log(profile)
     const navigate = useNavigate();
     const likeTuit = (tuit) =>
         likesService

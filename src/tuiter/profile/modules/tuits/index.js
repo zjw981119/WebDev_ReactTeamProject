@@ -7,12 +7,14 @@ import {ObjectID} from "bson";
 
 export const UserTuits = () => {
   const {uid} = useParams();
+  const [profile, setProfile] = useState({});
   const [tuits, setTuits] = useState([]);
-  const profileUser = userService.getUserProfile(uid);
+
 
   const fetchTuits = async () => {
     if (uid) {
       const user = await userService.profile();
+      setProfile(user);
       const reviewerId = Object.keys(user).length !== 0 ? user._id : new ObjectID();
       findAllTuitsPostedByUser(reviewerId, uid)
         .then(data => {
@@ -28,7 +30,7 @@ export const UserTuits = () => {
 
   return (
     <div>
-      <MyTuits refreshTuits={fetchTuits} tuits={tuits} profile={profileUser}/>
+      <MyTuits refreshTuits={fetchTuits} tuits={tuits} profile={profile}/>
     </div>
   )
 }
