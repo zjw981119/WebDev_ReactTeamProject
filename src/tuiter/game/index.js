@@ -31,16 +31,17 @@ const GameComponent = () => {
 
     // get the game info(detail, reviews) from server
     async function ComponentInit() {
+        const gameDetail = await findGameByRawgId(RawgId);
+        setGame(gameDetail);
+        // set reviews
+        setReviews(await service.findReviewByRawgId(RawgId));
         try {
-            const gameDetail = await findGameByRawgId(RawgId);
-            setGame(gameDetail);
             // set video and music url
             setVideoUrl(await getGameTrailerUrl(gameDetail.GameName));
             setMusicId(await getGameMusicUrl(gameDetail.GameName));
-            // set reviews
-            setReviews(await service.findReviewByRawgId(RawgId));
+
         } catch {
-            console.log("Fail to init game detail info")
+            console.log("Failed to retrieve video and playlist")
         }
     }
 
