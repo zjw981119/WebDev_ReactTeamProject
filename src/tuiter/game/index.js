@@ -39,7 +39,6 @@ const GameComponent = () => {
             // set video and music url
             setVideoUrl(await getGameTrailerUrl(gameDetail.GameName));
             setMusicId(await getGameMusicUrl(gameDetail.GameName));
-
         } catch {
             console.log("Failed to retrieve video and playlist")
         }
